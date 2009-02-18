@@ -2,345 +2,276 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-09 00:30-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2008-09-19 00:30-0400\n"
+"PO-Revision-Date: 2009-02-18 06:08-0500\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.0.1\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
-#: ../src/intro/intro.py:67
+#: ../src/intro/intro.py:65 ../src/controlpanel/view/aboutme.py:100
 msgid "Name:"
-msgstr ""
+msgstr "Tên: "
 
-#: ../src/intro/intro.py:96
+#: ../src/intro/intro.py:97
 msgid "Click to change color:"
-msgstr ""
+msgstr "Nhấn vào để thay đổi mảu : "
 
-#: ../src/intro/intro.py:146
+#: ../src/intro/intro.py:148
 msgid "Back"
-msgstr ""
+msgstr "Lùi"
 
-#: ../src/intro/intro.py:160
+#: ../src/intro/intro.py:162 ../src/controlpanel/toolbar.py:61
 msgid "Done"
-msgstr ""
+msgstr "Hoàn tất"
 
-#: ../src/intro/intro.py:163
+#: ../src/intro/intro.py:165
 msgid "Next"
-msgstr ""
+msgstr "Tiếp"
 
-#: ../src/view/BuddyMenu.py:59
+#: ../src/view/BuddyMenu.py:60
 msgid "Remove friend"
-msgstr ""
+msgstr "Bỏ bạn"
 
-#: ../src/view/BuddyMenu.py:62
+#: ../src/view/BuddyMenu.py:63
 msgid "Make friend"
-msgstr ""
+msgstr "Kết bạn"
 
-#: ../src/view/BuddyMenu.py:84
+#: ../src/view/BuddyMenu.py:92
 #, python-format
 msgid "Invite to %s"
-msgstr ""
+msgstr "Mời vào %s"
 
-#: ../src/view/clipboardmenu.py:58
+#: ../src/view/clipboardmenu.py:48
 msgid "Remove"
-msgstr ""
+msgstr "Bỏ"
 
-#: ../src/view/clipboardmenu.py:63
+#: ../src/view/clipboardmenu.py:53 ../src/view/clipboardmenu.py:79
 msgid "Open"
-msgstr ""
+msgstr "Mở"
 
 #. self._stop_item = MenuItem(_('Stop download'), 'stock-close')
 #. TODO: Implement stopping downloads
 #. self._stop_item.connect('activate', self._stop_item_activate_cb)
 #. self.append_menu_item(self._stop_item)
-#: ../src/view/clipboardmenu.py:73
-msgid "Add to journal"
-msgstr ""
+#: ../src/view/clipboardmenu.py:63 ../src/view/home/HomeBox.py:85
+msgid "Keep"
+msgstr "Giữ"
 
-#: ../src/view/clipboardmenu.py:213
+#: ../src/view/clipboardmenu.py:84
+msgid "Open with"
+msgstr "Mở bằng"
+
+#: ../src/view/clipboardmenu.py:216
 #, python-format
 msgid "Clipboard object: %s."
-msgstr ""
+msgstr "Đối tượng bảng nháp: %s."
 
-#: ../src/hardware/keydialog.py:149
+#: ../src/hardware/keydialog.py:150
 msgid "Key Type:"
-msgstr ""
+msgstr "Kiểu khoá:"
 
-#: ../src/hardware/keydialog.py:169
+#: ../src/hardware/keydialog.py:170
 msgid "Authentication Type:"
-msgstr ""
+msgstr "Cách xác thực: "
 
-#: ../src/hardware/keydialog.py:250
+#: ../src/hardware/keydialog.py:251
 msgid "Encryption Type:"
-msgstr ""
+msgstr "Cách mật mã: "
 
-#: ../src/view/home/activitiesdonut.py:90
-msgid "Starting..."
-msgstr ""
+#: ../src/hardware/schoolserver.py:17
+msgid "Cannot obtain data needed for registration."
+msgstr "Không thể lấy dữ liệu cần thiết để đăng ký."
 
-#: ../src/view/home/activitiesdonut.py:104 ../src/view/home/MeshBox.py:295
-msgid "Resume"
-msgstr ""
+#: ../src/hardware/schoolserver.py:31
+msgid "Cannot connect to the server."
+msgstr "Không thể kết nối tới máy phục vụ."
 
-#: ../src/view/home/activitiesdonut.py:111
-msgid "Stop"
-msgstr ""
+#: ../src/hardware/schoolserver.py:36
+msgid "The server could not complete the request."
+msgstr "Máy phục vụ không thể hoàn tất yêu cầu."
 
-#: ../src/view/Shell.py:285
+#: ../src/view/Shell.py:251
 msgid "Screenshot"
-msgstr ""
+msgstr "Ảnh chụp màn hình"
 
-#: ../src/view/home/HomeBox.py:159
-msgid "Reboot"
-msgstr ""
+#: ../src/view/home/HomeBox.py:79
+msgid "Confirm erase"
+msgstr "Xác nhận việc xoá"
 
-#: ../src/view/home/HomeBox.py:164
-msgid "Shutdown"
-msgstr ""
-
-#: ../src/view/home/HomeBox.py:170
-msgid "Register"
-msgstr ""
-
-#: ../src/view/home/HomeBox.py:175 ../src/view/home/HomeBox.py:216
-msgid "About this XO"
-msgstr ""
-
-#: ../src/view/home/HomeBox.py:222
-msgid "Not available"
-msgstr ""
-
-#. Only show disconnect when there's a mesh device, because mesh takes
-#. priority over the normal wireless device.  NM doesn't have a "disconnect"
-#. method for a device either (for various reasons) so this doesn't
-#. have a good mapping
-#: ../src/view/home/MeshBox.py:90 ../src/view/home/MeshBox.py:197
-#: ../src/view/devices/network/wireless.py:113
-#: ../src/view/devices/network/mesh.py:83
-msgid "Disconnect..."
-msgstr ""
-
-#: ../src/view/home/MeshBox.py:195 ../src/view/devices/network/mesh.py:37
-#: ../src/view/devices/network/mesh.py:62
-#: ../src/view/devices/network/mesh.py:66
-msgid "Mesh Network"
-msgstr ""
-
-#: ../src/view/home/MeshBox.py:300
-msgid "Join"
-msgstr ""
-
-#: ../src/view/devices/battery.py:38
-msgid "My Battery life"
-msgstr ""
-
-#: ../src/view/devices/battery.py:94
-msgid "Battery charging"
-msgstr ""
-
-#: ../src/view/devices/battery.py:96
-msgid "Battery discharging"
-msgstr ""
-
-#: ../src/view/devices/battery.py:98
-msgid "Battery fully charged"
-msgstr ""
-
-#: ../src/view/devices/network/wireless.py:61
-msgid "Disconnected"
-msgstr ""
-
-#: ../src/view/devices/network/wireless.py:131
-msgid "Channel"
-msgstr ""
-
-#: ../src/view/frame/zoomtoolbar.py:42
-msgid "Neighborhood"
-msgstr ""
-
-#: ../src/view/frame/zoomtoolbar.py:54
-msgid "Group"
-msgstr ""
-
-#: ../src/view/frame/zoomtoolbar.py:66
-msgid "Home"
-msgstr ""
-
-#: ../src/view/frame/zoomtoolbar.py:78
-msgid "Activity"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:115
-msgid "Share with:"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:117
-msgid "Private"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:118
-msgid "My Neighborhood"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:126
-msgid "Keep"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:245
-msgid "Undo"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:250
-msgid "Redo"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:260
-msgid "Copy"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:265
-msgid "Paste"
-msgstr ""
-
-#: ../lib/sugar/activity/activity.py:454
+#: ../src/view/home/HomeBox.py:81
 #, python-format
-msgid "%s Activity"
-msgstr ""
+msgid "Confirm erase: Do you want to permanently erase %s?"
+msgstr "Xác nhận việc xoá: bạn có muốn xoá hẳn %s không?"
 
-#: ../lib/sugar/activity/activity.py:824
-msgid "Keep error"
-msgstr ""
+#: ../src/view/home/HomeBox.py:88 ../src/view/palettes.py:120
+msgid "Erase"
+msgstr "Xoá"
 
-#: ../lib/sugar/activity/activity.py:825
-msgid "Keep error: all changes will be lost"
-msgstr ""
+#: ../src/view/home/HomeBox.py:118
+msgid "Software Update"
+msgstr "Cập nhật Phần mềm"
 
-#: ../lib/sugar/activity/activity.py:828
-msgid "Don't stop"
-msgstr ""
+#: ../src/view/home/HomeBox.py:119
+msgid "Update your activities to ensure compatibility with your new software"
+msgstr "Cập nhật các hoạt động để đảm bảo tính tương thích với phần mềm mới"
 
-#: ../lib/sugar/activity/activity.py:831
-msgid "Stop anyway"
-msgstr ""
-
-#: ../lib/sugar/graphics/alert.py:164 ../lib/sugar/graphics/alert.py:206
+#: ../src/view/home/HomeBox.py:123 ../src/controlpanel/toolbar.py:115
 msgid "Cancel"
-msgstr ""
+msgstr "Thôi"
 
-#: ../lib/sugar/graphics/alert.py:168
-msgid "Ok"
-msgstr ""
+#: ../src/view/home/HomeBox.py:125 ../src/controlpanel/gui.py:286
+msgid "Later"
+msgstr "Về sau"
 
-#: ../lib/sugar/graphics/alert.py:216
-msgid "Continue"
-msgstr ""
+#: ../src/view/home/HomeBox.py:128
+msgid "Check now"
+msgstr "Kiểm tra ngay"
 
-#: ../lib/sugar/graphics/alert.py:244
-msgid "OK"
-msgstr ""
+#: ../src/view/home/HomeBox.py:262
+msgid "List view"
+msgstr "Xem danh sách"
 
-#: ../src/controlpanel/control.py:219
-msgid "To apply your changes you have to restart sugar.\n"
-msgstr ""
+#: ../src/view/home/HomeBox.py:263
+msgid "<Ctrl>2"
+msgstr "<Ctrl>2"
 
-#: ../src/controlpanel/control.py:273
-msgid "Error in specified color modifiers."
-msgstr ""
+#: ../src/view/home/HomeBox.py:321
+msgid "Favorites view"
+msgstr "Xem Ưa thích"
 
-#: ../src/controlpanel/control.py:276
-msgid "Error in specified colors."
-msgstr ""
+#: ../src/view/home/HomeBox.py:322
+msgid "<Ctrl>1"
+msgstr "<Ctrl>1"
 
-#: ../src/controlpanel/control.py:312
-msgid "off"
-msgstr ""
+#: ../src/view/home/MeshBox.py:97
+msgid "Connect"
+msgstr "Kết nối"
 
-#: ../src/controlpanel/control.py:314
-msgid "on"
-msgstr ""
+#: ../src/view/home/MeshBox.py:106
+msgid "Disconnect"
+msgstr "Ngắt kết nối"
 
-#: ../src/controlpanel/control.py:316
-msgid "State is unknown."
-msgstr ""
+#: ../src/view/home/MeshBox.py:118
+msgid "Disconnecting..."
+msgstr "Đang ngắt kết nối..."
 
-#: ../src/controlpanel/control.py:336
-msgid "Error in specified radio argument use on/off."
-msgstr ""
+#: ../src/view/home/MeshBox.py:152
+msgid "Connecting..."
+msgstr "Đang kết nối..."
 
-#: ../src/controlpanel/control.py:340
-msgid "Permission denied. You need to be root to run this method."
-msgstr ""
+#. TODO: show the channel number
+#: ../src/view/home/MeshBox.py:159
+msgid "Connected"
+msgstr "Đã kết nối"
 
-#: ../src/controlpanel/control.py:370
-msgid "Error in reading timezone"
-msgstr ""
+#. only temporarily
+#: ../src/view/home/MeshBox.py:211 ../src/view/devices/network/mesh.py:51
+#: ../src/view/devices/network/mesh.py:92
+#: ../src/view/devices/network/mesh.py:96
+msgid "Mesh Network"
+msgstr "Mạng mắc lưới"
 
-#: ../src/controlpanel/control.py:401
+#: ../src/view/home/MeshBox.py:214 ../src/view/devices/network/wireless.py:160
+#: ../src/view/devices/network/mesh.py:125
+msgid "Disconnect..."
+msgstr "Ngắt kết nối..."
+
+#: ../src/view/home/MeshBox.py:302 ../src/view/palettes.py:61
+msgid "Resume"
+msgstr "Tiếp tục"
+
+#: ../src/view/home/MeshBox.py:307 ../src/view/frame/activitiestray.py:205
+msgid "Join"
+msgstr "Vào"
+
+#: ../src/view/devices/battery.py:45
+msgid "My Battery"
+msgstr "Pin của mình"
+
+#: ../src/view/devices/battery.py:114
+msgid "Charging"
+msgstr "Đang sạc"
+
+#: ../src/view/devices/battery.py:117
+msgid "Very little power remaining"
+msgstr "Pin yếu"
+
+#: ../src/view/devices/battery.py:123
 #, python-format
-msgid "Error copying timezone (from %s): %s"
-msgstr ""
+msgid "%(hour)d:%(min).2d remaining"
+msgstr "%(hour)d:%(min).2d còn lại"
 
-#: ../src/controlpanel/control.py:406
+#: ../src/view/devices/battery.py:127
+msgid "Charged"
+msgstr "Sạc đầy"
+
+#: ../src/view/devices/speaker.py:44
+msgid "My Speakers"
+msgstr "Loa của mình"
+
+#: ../src/view/devices/speaker.py:119
+msgid "Unmute"
+msgstr "Bỏ câm"
+
+#: ../src/view/devices/speaker.py:122
+msgid "Mute"
+msgstr "Câm"
+
+#: ../src/view/devices/network/wireless.py:37
 #, python-format
-msgid "Changing permission of timezone: %s"
-msgstr ""
+msgid "IP address: %s"
+msgstr "Địa chỉ IP: %s"
 
-#: ../src/controlpanel/control.py:416
-msgid "Error timezone does not exist."
-msgstr ""
+#: ../src/view/devices/network/wireless.py:86
+msgid "Disconnected"
+msgstr "Bị ngắt kết nối"
 
-#: ../src/controlpanel/control.py:421 ../src/controlpanel/control.py:440
+#: ../src/view/devices/network/wireless.py:178
+msgid "Channel"
+msgstr "Kênh"
+
+#: ../src/view/frame/zoomtoolbar.py:37
+msgid "Neighborhood"
+msgstr "Hàng xóm"
+
+#: ../src/view/frame/zoomtoolbar.py:39
+msgid "Group"
+msgstr "Nhóm"
+
+#: ../src/view/frame/zoomtoolbar.py:41
+msgid "Home"
+msgstr "Nhà"
+
+#: ../src/view/frame/zoomtoolbar.py:43
+msgid "Activity"
+msgstr "Hoạt động"
+
+#: ../src/controlpanel/cmd.py:26
 #, python-format
-msgid "Could not access %s. Create standard settings."
+msgid ""
+"sugar-control-panel: WARNING, found more than one option with the same name: "
+"%s module: %r"
 msgstr ""
+"sugar-control-panel: CẢNH BÁO : tìm nhiều tùy chọn cùng tên: mô-đun %s: %r"
 
-#: ../src/controlpanel/control.py:467
+#: ../src/controlpanel/cmd.py:28
 #, python-format
-msgid "Language for code=%s could not be determined."
-msgstr ""
+msgid "sugar-control-panel: key=%s not an available option"
+msgstr "sugar-control-panel: khoá=%s không phải là một tùy chọn sẵn sàng"
 
-#: ../src/controlpanel/control.py:477
+#: ../src/controlpanel/cmd.py:29
 #, python-format
-msgid "Sorry I do not speak '%s'."
-msgstr ""
+msgid "sugar-control-panel: %s"
+msgstr "sugar-control-panel: %s"
 
-#: ../src/view/devices/network/mesh.py:105
-msgid "Connected to a School Mesh Portal"
-msgstr ""
-
-#: ../src/view/devices/network/mesh.py:107
-msgid "Looking for a School Mesh Portal..."
-msgstr ""
-
-#: ../src/view/devices/network/mesh.py:110
-msgid "Connected to an XO Mesh Portal"
-msgstr ""
-
-#: ../src/view/devices/network/mesh.py:112
-msgid "Looking for an XO Mesh Portal..."
-msgstr ""
-
-#: ../src/view/devices/network/mesh.py:115
-msgid "Connected to a Simple Mesh"
-msgstr ""
-
-#: ../src/view/devices/network/mesh.py:117
-msgid "Starting a Simple Mesh"
-msgstr ""
-
-#: ../src/view/devices/network/mesh.py:124
-msgid "Unknown Mesh"
-msgstr ""
-
-#: ../src/controlpanel/cmd.py:27
+#: ../src/controlpanel/cmd.py:33
 msgid ""
 "Usage: sugar-control-panel [ option ] key [ args ... ] \n"
 "    Control for the sugar environment. \n"
@@ -350,16 +281,402 @@ msgid ""
 "    -h key       show information about this key \n"
 "    -g key       get the current value of the key \n"
 "    -s key       set the current value for the key \n"
+"    -c key       clear the current value for the key \n"
 "    "
 msgstr ""
+"Sử dụng: sugar-control-panel [ tùy_chọn ] khoá [ đối_số ... ]\n"
+"    Điều khiển môi trường sugar.\n"
+"\n"
+"    Tùy chọn:\n"
+"     -h           hiển thị trợ giúp này và thoát\n"
+"    -l           liệt kê tất cả các tùy chọn sẵn sàng\n"
+"    -h khoá       hiển thị thông tin về khoá này\n"
+"    -g khoá       lấy giá trị hiện thời của khoá này\n"
+"    -s khoá       đặt giá trị hiện thời của khoá này\n"
+"    -c khoá       xoá sạch giá trị hiện thời của khoá này\n"
+"     "
 
-#: ../src/controlpanel/cmd.py:55 ../src/controlpanel/cmd.py:67
-#: ../src/controlpanel/cmd.py:74
-#, python-format
-msgid "sugar-control-panel: key=%s not an available option"
-msgstr ""
+#: ../src/controlpanel/cmd.py:46
+msgid "To apply your changes you have to restart sugar.\n"
+msgstr "Để áp dụng các thay đổi thì cần phải khởi chạy lại pn sugar.\n"
 
-#: ../src/controlpanel/cmd.py:80
+#: ../src/controlpanel/toolbar.py:121 ../src/view/home/favoritesview.py:305
+msgid "Ok"
+msgstr "OK"
+
+#: ../src/controlpanel/sectionview.py:42 ../src/controlpanel/gui.py:278
+msgid "Changes require restart"
+msgstr "Có thay đổi thì cần phải khởi chạy lại"
+
+#: ../src/controlpanel/gui.py:277
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#: ../src/controlpanel/gui.py:281
+msgid "Cancel changes"
+msgstr "Thôi thay đổi"
+
+#: ../src/controlpanel/gui.py:290
+msgid "Restart now"
+msgstr "Khởi chạy lại ngay"
+
+#: ../src/controlpanel/model/aboutme.py:44
+msgid "You must enter a name."
+msgstr "Bạn cần phải nhập một tên."
+
+#: ../src/controlpanel/model/aboutme.py:69
 #, python-format
-msgid "sugar-control-panel: %s"
+msgid "stroke:   color=%s hue=%s"
+msgstr "nét vẽ:   màu=%s sắc=%s"
+
+#: ../src/controlpanel/model/aboutme.py:72
+#, python-format
+msgid "stroke:   %s"
+msgstr "nét vẽ: %s"
+
+#: ../src/controlpanel/model/aboutme.py:74
+#, python-format
+msgid "fill:     color=%s hue=%s"
+msgstr "tô màu :   màu=%s sắc=%s"
+
+#: ../src/controlpanel/model/aboutme.py:76
+#, python-format
+msgid "fill:     %s"
+msgstr "tô màu :    %s"
+
+#: ../src/controlpanel/model/aboutme.py:87
+msgid "Error in specified color modifiers."
+msgstr "Sai xác định sự sửa đổi màu."
+
+#: ../src/controlpanel/model/aboutme.py:90
+msgid "Error in specified colors."
+msgstr "Sai xác định màu."
+
+#: ../src/controlpanel/model/aboutxo.py:24
+msgid "Not available"
+msgstr "Không sẵn sàng"
+
+#: ../src/controlpanel/model/datetime.py:89
+msgid "Error timezone does not exist."
+msgstr "Lỗi: múi giờ không tồn tại."
+
+#: ../src/controlpanel/model/frame.py:38 ../src/controlpanel/model/frame.py:60
+msgid "Value must be an integer."
+msgstr "Giá trị phải là một số nguyên."
+
+#: ../src/controlpanel/model/language.py:28
+msgid "Could not access ~/.i18n. Create standard settings."
 msgstr ""
+"Không thể truy cập đến thư mục « ~/.i18n ». Hãy tạo thiết lập tiêu chuẩn."
+
+#: ../src/controlpanel/model/language.py:114
+#, python-format
+msgid "Language for code=%s could not be determined."
+msgstr "Không thể quyết định ngôn ngữ cho mã=%s."
+
+#: ../src/controlpanel/model/language.py:131
+#, python-format
+msgid "Sorry I do not speak '%s'."
+msgstr "Tiếc là chương trình này không hiểu « %s »."
+
+#: ../src/controlpanel/model/network.py:62
+msgid "State is unknown."
+msgstr "Không rõ tình trạng."
+
+#: ../src/controlpanel/model/network.py:82
+msgid "Error in specified radio argument use on/off."
+msgstr "Lỗi trong đối số chọn một đã ghi rõ bật/tắt."
+
+#: ../src/controlpanel/model/power.py:57
+msgid "Error in automatic pm argument, use on/off."
+msgstr "Lỗi trong đối số tự động pm: dùng on/off."
+
+#: ../src/controlpanel/model/power.py:86
+msgid "Error in extreme pm argument, use on/off."
+msgstr "Lỗi trong đối số extreme pm: dùng on/off."
+
+#: ../src/controlpanel/view/aboutme.py:32
+msgid "About Me"
+msgstr "Giới thiệu mình"
+
+#: ../src/controlpanel/view/aboutme.py:134
+msgid "Click to change your color:"
+msgstr "Nhấn chuột để thay đổi màu :"
+
+#: ../src/controlpanel/view/aboutxo.py:28
+msgid "About my XO"
+msgstr "Giới thiệu XO của mình"
+
+#: ../src/controlpanel/view/aboutxo.py:59
+msgid "Identity"
+msgstr "Cá tính"
+
+#: ../src/controlpanel/view/aboutxo.py:68
+msgid "Serial Number:"
+msgstr "Số sản xuất: "
+
+#: ../src/controlpanel/view/aboutxo.py:91
+msgid "Software"
+msgstr "Phần mềm"
+
+#: ../src/controlpanel/view/aboutxo.py:100
+msgid "Build:"
+msgstr "Bản xây dựng: "
+
+#: ../src/controlpanel/view/aboutxo.py:115
+msgid "Sugar:"
+msgstr "Sugar:"
+
+#: ../src/controlpanel/view/aboutxo.py:130
+msgid "Firmware:"
+msgstr "Phần vững: "
+
+#: ../src/controlpanel/view/aboutxo.py:152
+msgid "Copyright and License"
+msgstr "Tác quyền và Giấy phép"
+
+#: ../src/controlpanel/view/aboutxo.py:160
+msgid ""
+"© 2008 One Laptop per Child Association Inc; Red Hat Inc; and Contributors."
+msgstr ""
+"© 2008 One Laptop per Child Association Inc; Red Hat Inc; and Contributors."
+
+#: ../src/controlpanel/view/aboutxo.py:167
+msgid ""
+"Sugar is the graphical user interface that you are looking at. Sugar is free "
+"software, covered by the GNU General Public License, and you are welcome to "
+"change it and/or distribute copies of it under certain conditions described "
+"therein."
+msgstr ""
+"Sugar là giao diện người dùng đồ họa thích hợp với bạn. Sugar là phần mềm tự "
+"do, được bao quát bởi Giấy Phép Công Cộng GNU (GPL), thì bạn có quyền sửa "
+"đổi và/hay phân phối lại bản sao nó với các điều kiện GPL."
+
+#: ../src/controlpanel/view/aboutxo.py:179
+msgid "Full license:"
+msgstr "Giấy phép đầy đủ :"
+
+#: ../src/controlpanel/view/datetime.py:29
+msgid "Date & Time"
+msgstr "Ngày và Giờ"
+
+#: ../src/controlpanel/view/datetime.py:72
+msgid "Timezone"
+msgstr "Múi giờ"
+
+#: ../src/controlpanel/view/frame.py:28
+msgid "Frame"
+msgstr "Khung"
+
+#: ../src/controlpanel/view/frame.py:30
+msgid "never"
+msgstr "không bao giờ"
+
+#: ../src/controlpanel/view/frame.py:31
+msgid "instantaneous"
+msgstr "ngay lập tức"
+
+#: ../src/controlpanel/view/frame.py:32
+#, python-format
+msgid "%s seconds"
+msgstr "%s giây"
+
+#: ../src/controlpanel/view/frame.py:56
+msgid "Activation Delay"
+msgstr "Khoảng đợi kích hoạt"
+
+#: ../src/controlpanel/view/frame.py:80
+msgid "Corner"
+msgstr "Góc"
+
+#: ../src/controlpanel/view/frame.py:115
+msgid "Edge"
+msgstr "Cạnh"
+
+#: ../src/controlpanel/view/language.py:29
+#: ../src/controlpanel/view/language.py:74
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: ../src/controlpanel/view/network.py:28
+msgid "Network"
+msgstr "Mạng"
+
+#: ../src/controlpanel/view/network.py:54
+msgid "Wireless"
+msgstr "Không dây"
+
+#: ../src/controlpanel/view/network.py:62
+msgid "Turn of the wireless radio to save battery life"
+msgstr "Tắt máy thu thanh không dây để tiết kiệm thời gian chạy bằng pin"
+
+#: ../src/controlpanel/view/network.py:75
+msgid "Radio"
+msgstr "Thu thanh"
+
+#: ../src/controlpanel/view/network.py:91
+msgid "Discard network history if you have trouble connecting to the network"
+msgstr "Hủy lịch sử mạng nếu bạn gặp khó khăn trong việc kết nối tới mạng"
+
+#: ../src/controlpanel/view/network.py:100
+msgid "Discard network history"
+msgstr "Hủy lịch sử mạng"
+
+#: ../src/controlpanel/view/network.py:113
+msgid "Mesh"
+msgstr "Mesh"
+
+#: ../src/controlpanel/view/network.py:122
+msgid "Server:"
+msgstr "Máy phục vụ : "
+
+#: ../src/controlpanel/view/power.py:27
+msgid "Power"
+msgstr "Năng lượng"
+
+#: ../src/controlpanel/view/power.py:51
+msgid "Power management"
+msgstr "Quản lý năng lượng"
+
+#: ../src/controlpanel/view/power.py:61
+msgid "Automatic power management (increases battery life)"
+msgstr "Tự động quản lý năng lượng (tăng thời gian chạy bằng pin)"
+
+#: ../src/controlpanel/view/power.py:89
+msgid ""
+"Extreme power management (disables wireless radio, increases battery life)"
+msgstr ""
+"Rất quản lý năng lượng (tắt máy thu thanh không dây, tăng thời gian chạy "
+"bằng pin)"
+
+#: ../src/view/devices/network/mesh.py:154
+msgid "Connected to a School Mesh Portal"
+msgstr "Có kết nối tới một cổng chính Mesh trường học"
+
+#: ../src/view/devices/network/mesh.py:156
+msgid "Looking for a School Mesh Portal..."
+msgstr "Đang tìm một cổng chính Mesh trường học..."
+
+#: ../src/view/devices/network/mesh.py:159
+msgid "Connected to an XO Mesh Portal"
+msgstr "Có kết nối tới một cổng chính Mesh XO"
+
+#: ../src/view/devices/network/mesh.py:161
+msgid "Looking for an XO Mesh Portal..."
+msgstr "Đang tìm một cổng chính Mesh XO..."
+
+#: ../src/view/devices/network/mesh.py:164
+msgid "Connected to a Simple Mesh"
+msgstr "Có kết nối tới một Mesh đơn giản"
+
+#: ../src/view/devices/network/mesh.py:166
+msgid "Starting a Simple Mesh"
+msgstr "Đang khởi chạy một Mesh đơn giản"
+
+#: ../src/view/devices/network/mesh.py:173
+msgid "Unknown Mesh"
+msgstr "Không rõ Mesh"
+
+#: ../src/view/frame/activitiestray.py:210
+msgid "Decline"
+msgstr "Từ chối"
+
+#: ../src/view/home/favoritesview.py:296
+msgid "Registration Failed"
+msgstr "Lỗi đăng ký"
+
+#: ../src/view/home/favoritesview.py:297
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/view/home/favoritesview.py:299
+msgid "Registration Successful"
+msgstr "Đang ký thành công"
+
+#: ../src/view/home/favoritesview.py:300
+msgid "You are now registered with your school server."
+msgstr "Bạn đã đăng ký với máy phục vụ trường học."
+
+#: ../src/view/home/favoritesview.py:420
+msgid "Control Panel"
+msgstr "Bảng điều khiển"
+
+#: ../src/view/home/favoritesview.py:425
+msgid "Restart"
+msgstr "Khởi chạy lại"
+
+#: ../src/view/home/favoritesview.py:430
+msgid "Shutdown"
+msgstr "Tắt máy"
+
+#: ../src/view/home/favoritesview.py:436
+msgid "Register"
+msgstr "Đăng ký"
+
+#: ../src/view/palettes.py:42
+msgid "Starting..."
+msgstr "Đang khởi chạy..."
+
+#: ../src/view/palettes.py:72
+msgid "Stop"
+msgstr "Dừng"
+
+#: ../src/view/palettes.py:104
+msgid "Start"
+msgstr "Khởi chạy"
+
+#: ../src/view/palettes.py:138
+msgid "Remove favorite"
+msgstr "Bỏ Ưa thích"
+
+#: ../src/view/palettes.py:142
+msgid "Make favorite"
+msgstr "Đặt Ưa thích"
+
+#: ../src/view/palettes.py:191
+msgid "Show contents"
+msgstr "Hiện nội dung"
+
+#: ../src/view/palettes.py:215
+#, python-format
+msgid "%(free_space)d MB Free"
+msgstr "%(free_space)d MB còn rảnh"
+
+# TRANS: label for the freeform layout in the favorites view
+#~ msgid "Freeform"
+#~ msgstr "Dạng tự do"
+
+# TRANS: label for the ring layout in the favorites view
+#~ msgid "Ring"
+#~ msgstr "Vòng"
+
+#~ msgid "You must enter a server."
+#~ msgstr "Bạn cần phải nhập một máy phục vụ."
+
+#~ msgid "<Ctrl>R"
+#~ msgstr "<Ctrl>R"
+
+#~ msgid "Ring view"
+#~ msgstr "Xem vòng"
+
+#~ msgid "Remove from ring"
+#~ msgstr "Gỡ ra vòng"
+
+#~ msgid "Add to ring"
+#~ msgstr "Thêm vào vòng"
+
+#~ msgid "Changes require a sugar restart to take effect."
+#~ msgstr "Để thay đổi có tác động, cần phải khởi chạy lại phần mềm sugar."
+
+#~ msgid "Changes require restart to take effect"
+#~ msgstr "Để thay đổi có tác động, cần phải khởi chạy lại phần mềm"
+
+#~ msgid "Delay in milliseconds:"
+#~ msgstr "Khoảng đợi theo mili-giây: "
+
+#~ msgid "Hot Corners"
+#~ msgstr "Góc nóng"
+
+#~ msgid "Warm Edges"
+#~ msgstr "Cạnh ấm"
