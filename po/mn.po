@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 17:12-0400\n"
+"POT-Creation-Date: 2008-09-19 00:30-0400\n"
 "PO-Revision-Date: 2008-09-18 17:06-0400\n"
 "Last-Translator: Odontsetseg Bat-Erdene <obat-erdene@suffolk.edu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,15 +35,15 @@ msgstr "Боллоо"
 msgid "Next"
 msgstr "Дараах"
 
-#: ../src/view/BuddyMenu.py:58
+#: ../src/view/BuddyMenu.py:60
 msgid "Remove friend"
 msgstr "Найзыг хасах"
 
-#: ../src/view/BuddyMenu.py:61
+#: ../src/view/BuddyMenu.py:63
 msgid "Make friend"
 msgstr "Найз нэмэх"
 
-#: ../src/view/BuddyMenu.py:91
+#: ../src/view/BuddyMenu.py:92
 #, python-format
 msgid "Invite to %s"
 msgstr "%s-д урих"
@@ -64,7 +64,7 @@ msgstr "Нээх"
 #. TODO: Implement stopping downloads
 #. self._stop_item.connect('activate', self._stop_item_activate_cb)
 #. self.append_menu_item(self._stop_item)
-#: ../src/view/clipboardmenu.py:63 ../src/view/home/HomeBox.py:87
+#: ../src/view/clipboardmenu.py:63 ../src/view/home/HomeBox.py:85
 msgid "Keep"
 msgstr "Хадгалах"
 
@@ -101,70 +101,58 @@ msgstr "Серверт холбогдож чадахгүй байна."
 msgid "The server could not complete the request."
 msgstr "Сервер хүсэлт биэлүүлэж чадаагүй."
 
-#: ../src/view/Shell.py:240
+#: ../src/view/Shell.py:251
 msgid "Screenshot"
 msgstr "Дэлгэцний зураг"
 
-#: ../src/view/home/HomeBox.py:81
+#: ../src/view/home/HomeBox.py:79
 msgid "Confirm erase"
 msgstr "Арилгахыг зөвшөөрөх"
 
-#: ../src/view/home/HomeBox.py:83
+#: ../src/view/home/HomeBox.py:81
 #, python-format
 msgid "Confirm erase: Do you want to permanently erase %s?"
 msgstr "Арилгахыг зөвшөөрөх: Та %s бүр мөсөн арилгахыг хүсч байна уу?"
 
-#: ../src/view/home/HomeBox.py:90 ../src/view/palettes.py:120
+#: ../src/view/home/HomeBox.py:88 ../src/view/palettes.py:120
 msgid "Erase"
 msgstr "Арилгах"
 
-#: ../src/view/home/HomeBox.py:120
+#: ../src/view/home/HomeBox.py:118
 msgid "Software Update"
 msgstr "Хангамж Шинэчлэх"
 
-#: ../src/view/home/HomeBox.py:121
+#: ../src/view/home/HomeBox.py:119
 msgid "Update your activities to ensure compatibility with your new software"
 msgstr "Шинэ хангамжид тохируулахыг батлахын тулд үйл ажилагаануудаа шинэчлэх"
 
-#: ../src/view/home/HomeBox.py:125 ../src/controlpanel/toolbar.py:115
+#: ../src/view/home/HomeBox.py:123 ../src/controlpanel/toolbar.py:115
 msgid "Cancel"
 msgstr "Болих"
 
-#: ../src/view/home/HomeBox.py:127 ../src/controlpanel/gui.py:275
+#: ../src/view/home/HomeBox.py:125 ../src/controlpanel/gui.py:286
 msgid "Later"
 msgstr "Дараа"
 
-#: ../src/view/home/HomeBox.py:130
+#: ../src/view/home/HomeBox.py:128
 msgid "Check now"
 msgstr "Одоо шалгах"
 
-#: ../src/view/home/HomeBox.py:266
+#: ../src/view/home/HomeBox.py:262
 msgid "List view"
 msgstr "Жагсаалтыг харах"
 
-#: ../src/view/home/HomeBox.py:267
+#: ../src/view/home/HomeBox.py:263
 msgid "<Ctrl>2"
 msgstr "<Ctrl>2"
 
-#: ../src/view/home/HomeBox.py:325
+#: ../src/view/home/HomeBox.py:321
 msgid "Favorites view"
 msgstr "Дуртай зүйлсийг үзэх"
 
-#: ../src/view/home/HomeBox.py:326
+#: ../src/view/home/HomeBox.py:322
 msgid "<Ctrl>1"
 msgstr "<Ctrl>1"
-
-# TRANS: label for the freeform layout in the favorites view
-#. TRANS: label for the freeform layout in the favorites view
-#: ../src/view/home/HomeBox.py:334
-msgid "Freeform"
-msgstr "Дурын хэлбэр"
-
-# TRANS: label for the ring layout in the favorites view
-#. TRANS: label for the ring layout in the favorites view
-#: ../src/view/home/HomeBox.py:341
-msgid "Ring"
-msgstr "Цагираг"
 
 #: ../src/view/home/MeshBox.py:97
 msgid "Connect"
@@ -195,9 +183,10 @@ msgstr "Холбогдож байна..."
 msgid "Connected"
 msgstr "Холбогдсон"
 
-#: ../src/view/home/MeshBox.py:211 ../src/view/devices/network/mesh.py:41
-#: ../src/view/devices/network/mesh.py:68
-#: ../src/view/devices/network/mesh.py:72
+#. only temporarily
+#: ../src/view/home/MeshBox.py:211 ../src/view/devices/network/mesh.py:51
+#: ../src/view/devices/network/mesh.py:92
+#: ../src/view/devices/network/mesh.py:96
 msgid "Mesh Network"
 msgstr "Тархалтын сүлжээ"
 
@@ -205,8 +194,8 @@ msgstr "Тархалтын сүлжээ"
 # priority over the normal wireless device.  NM doesn't have a "disconnect"
 # method for a device either (for various reasons) so this doesn't
 # have a good mapping
-#: ../src/view/home/MeshBox.py:214 ../src/view/devices/network/wireless.py:119
-#: ../src/view/devices/network/mesh.py:89
+#: ../src/view/home/MeshBox.py:214 ../src/view/devices/network/wireless.py:160
+#: ../src/view/devices/network/mesh.py:125
 msgid "Disconnect..."
 msgstr "Салгах..."
 
@@ -251,11 +240,16 @@ msgstr "Дуутай болгох"
 msgid "Mute"
 msgstr "Дуугүй болгох"
 
-#: ../src/view/devices/network/wireless.py:67
+#: ../src/view/devices/network/wireless.py:37
+#, python-format
+msgid "IP address: %s"
+msgstr ""
+
+#: ../src/view/devices/network/wireless.py:86
 msgid "Disconnected"
 msgstr "Салгагдсан"
 
-#: ../src/view/devices/network/wireless.py:137
+#: ../src/view/devices/network/wireless.py:178
 msgid "Channel"
 msgstr "Суваг"
 
@@ -319,23 +313,23 @@ msgstr ""
 msgid "To apply your changes you have to restart sugar.\n"
 msgstr "Өөрчлөлтийг идэвхжүүлэхийн тулд та дахин эхлүүлэх шаардлагатай.\n"
 
-#: ../src/controlpanel/toolbar.py:121 ../src/view/home/favoritesview.py:296
+#: ../src/controlpanel/toolbar.py:121 ../src/view/home/favoritesview.py:305
 msgid "Ok"
 msgstr "Тийм"
 
-#: ../src/controlpanel/sectionview.py:42 ../src/controlpanel/gui.py:267
+#: ../src/controlpanel/sectionview.py:42 ../src/controlpanel/gui.py:278
 msgid "Changes require restart"
 msgstr "Өөрчлөхийн тулд дахин эхлүүлэх хэрэгтэй"
 
-#: ../src/controlpanel/gui.py:266
+#: ../src/controlpanel/gui.py:277
 msgid "Warning"
 msgstr "Анхаар"
 
-#: ../src/controlpanel/gui.py:270
+#: ../src/controlpanel/gui.py:281
 msgid "Cancel changes"
 msgstr "Өөрчлөлтийг цуцлах"
 
-#: ../src/controlpanel/gui.py:279
+#: ../src/controlpanel/gui.py:290
 msgid "Restart now"
 msgstr "Одоо эхлүүлэх үү"
 
@@ -375,7 +369,7 @@ msgstr "Сонгосон өнгөнд алдаа гарлаа"
 msgid "Not available"
 msgstr "Боломжгүй байна"
 
-#: ../src/controlpanel/model/datetime.py:85
+#: ../src/controlpanel/model/datetime.py:89
 msgid "Error timezone does not exist."
 msgstr "Алдаа: цагийн бүс байхгүй байна."
 
@@ -387,25 +381,21 @@ msgstr "Тоо хэмжээ нь бүхэл байх ёстой"
 msgid "Could not access ~/.i18n. Create standard settings."
 msgstr "~/.i18n. Хандаж чадсангүй. Үндсэн тохиргоог үүсгэнэ үү. "
 
-#: ../src/controlpanel/model/language.py:104
+#: ../src/controlpanel/model/language.py:114
 #, python-format
 msgid "Language for code=%s could not be determined."
 msgstr "Кодны хэл=%s тодорхойлж чадсангүй."
 
-#: ../src/controlpanel/model/language.py:121
+#: ../src/controlpanel/model/language.py:131
 #, python-format
 msgid "Sorry I do not speak '%s'."
 msgstr "Уучлаарай, би '%s' хэлээр ярьдаггүй."
 
-#: ../src/controlpanel/model/network.py:48
-msgid "You must enter a server."
-msgstr "Сервер оруулах шаардлагатай."
-
-#: ../src/controlpanel/model/network.py:63
+#: ../src/controlpanel/model/network.py:62
 msgid "State is unknown."
 msgstr "Төлөв тодорхойгүй."
 
-#: ../src/controlpanel/model/network.py:83
+#: ../src/controlpanel/model/network.py:82
 msgid "Error in specified radio argument use on/off."
 msgstr "Сонгосон тохиргооны төлөвд алдаа гарлаа."
 
@@ -425,29 +415,54 @@ msgstr "Миний тухай"
 msgid "Click to change your color:"
 msgstr "Товшиж өнгөө солино уу:"
 
-#: ../src/controlpanel/view/aboutxo.py:26
+#: ../src/controlpanel/view/aboutxo.py:28
 msgid "About my XO"
 msgstr "Миний ХО-гын тухай"
 
-#: ../src/controlpanel/view/aboutxo.py:47
+#: ../src/controlpanel/view/aboutxo.py:59
 msgid "Identity"
 msgstr "Онцлох шинж"
 
-#: ../src/controlpanel/view/aboutxo.py:56
+#: ../src/controlpanel/view/aboutxo.py:68
 msgid "Serial Number:"
 msgstr "Цувралын дугаар:"
 
-#: ../src/controlpanel/view/aboutxo.py:79
+#: ../src/controlpanel/view/aboutxo.py:91
 msgid "Software"
 msgstr "Програм хангамж"
 
-#: ../src/controlpanel/view/aboutxo.py:88
+#: ../src/controlpanel/view/aboutxo.py:100
 msgid "Build:"
 msgstr "Хувилбар:"
 
-#: ../src/controlpanel/view/aboutxo.py:103
+#: ../src/controlpanel/view/aboutxo.py:115
+msgid "Sugar:"
+msgstr ""
+
+#: ../src/controlpanel/view/aboutxo.py:130
 msgid "Firmware:"
 msgstr "Firmware:"
+
+#: ../src/controlpanel/view/aboutxo.py:152
+msgid "Copyright and License"
+msgstr ""
+
+#: ../src/controlpanel/view/aboutxo.py:160
+msgid ""
+"© 2008 One Laptop per Child Association Inc; Red Hat Inc; and Contributors."
+msgstr ""
+
+#: ../src/controlpanel/view/aboutxo.py:167
+msgid ""
+"Sugar is the graphical user interface that you are looking at. Sugar is free "
+"software, covered by the GNU General Public License, and you are welcome to "
+"change it and/or distribute copies of it under certain conditions described "
+"therein."
+msgstr ""
+
+#: ../src/controlpanel/view/aboutxo.py:179
+msgid "Full license:"
+msgstr ""
 
 #: ../src/controlpanel/view/datetime.py:29
 msgid "Date & Time"
@@ -495,19 +510,32 @@ msgstr "Хэл"
 msgid "Network"
 msgstr "Сүлжээ"
 
-#: ../src/controlpanel/view/network.py:53
+#: ../src/controlpanel/view/network.py:54
 msgid "Wireless"
 msgstr "Утасгүй холболт"
 
-#: ../src/controlpanel/view/network.py:61
-msgid "Radio:"
+#: ../src/controlpanel/view/network.py:62
+msgid "Turn of the wireless radio to save battery life"
+msgstr ""
+
+#: ../src/controlpanel/view/network.py:75
+#, fuzzy
+msgid "Radio"
 msgstr "Радио:"
 
-#: ../src/controlpanel/view/network.py:94
+#: ../src/controlpanel/view/network.py:91
+msgid "Discard network history if you have trouble connecting to the network"
+msgstr ""
+
+#: ../src/controlpanel/view/network.py:100
+msgid "Discard network history"
+msgstr ""
+
+#: ../src/controlpanel/view/network.py:113
 msgid "Mesh"
 msgstr "Тархалт"
 
-#: ../src/controlpanel/view/network.py:103
+#: ../src/controlpanel/view/network.py:122
 msgid "Server:"
 msgstr "Сервер:"
 
@@ -529,31 +557,31 @@ msgid ""
 msgstr ""
 "Хүчдэлийг дээд зэргээр хэмнэх (радио долгионыг хааснаар батерейг хэмнэх)"
 
-#: ../src/view/devices/network/mesh.py:111
+#: ../src/view/devices/network/mesh.py:154
 msgid "Connected to a School Mesh Portal"
 msgstr "Сургуулийн тархалтын порталд холбогдлоо."
 
-#: ../src/view/devices/network/mesh.py:113
+#: ../src/view/devices/network/mesh.py:156
 msgid "Looking for a School Mesh Portal..."
 msgstr "Сургуулийн тархалтын порталыг хайж байна ..."
 
-#: ../src/view/devices/network/mesh.py:116
+#: ../src/view/devices/network/mesh.py:159
 msgid "Connected to an XO Mesh Portal"
 msgstr "XO-ын тархалтын порталд холбогдлоо"
 
-#: ../src/view/devices/network/mesh.py:118
+#: ../src/view/devices/network/mesh.py:161
 msgid "Looking for an XO Mesh Portal..."
 msgstr "XO нэгдсэн порталыг хайж байна ..."
 
-#: ../src/view/devices/network/mesh.py:121
+#: ../src/view/devices/network/mesh.py:164
 msgid "Connected to a Simple Mesh"
 msgstr "Энгийн тархалтын сүлжээнд холбогдлоо"
 
-#: ../src/view/devices/network/mesh.py:123
+#: ../src/view/devices/network/mesh.py:166
 msgid "Starting a Simple Mesh"
 msgstr "Энгийн тархалтын сүлжээ эхэлж байна"
 
-#: ../src/view/devices/network/mesh.py:130
+#: ../src/view/devices/network/mesh.py:173
 msgid "Unknown Mesh"
 msgstr "Үл мэдэгдэх тархалтын сүлжээ"
 
@@ -561,36 +589,36 @@ msgstr "Үл мэдэгдэх тархалтын сүлжээ"
 msgid "Decline"
 msgstr "Үл зөвшөөрөх"
 
-#: ../src/view/home/favoritesview.py:287
+#: ../src/view/home/favoritesview.py:296
 msgid "Registration Failed"
 msgstr "Бүртгэл бүтэлгүйтлээ"
 
-#: ../src/view/home/favoritesview.py:288
+#: ../src/view/home/favoritesview.py:297
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/view/home/favoritesview.py:290
+#: ../src/view/home/favoritesview.py:299
 msgid "Registration Successful"
 msgstr "Бүртгэл амжилттай"
 
-#: ../src/view/home/favoritesview.py:291
+#: ../src/view/home/favoritesview.py:300
 msgid "You are now registered with your school server."
 msgstr "Та одоо сургуулийн серверт бүртгэгдлээ."
 
-#: ../src/view/home/favoritesview.py:407
+#: ../src/view/home/favoritesview.py:420
 msgid "Control Panel"
 msgstr "Удирдах Самбар"
 
-#: ../src/view/home/favoritesview.py:418
+#: ../src/view/home/favoritesview.py:425
 msgid "Restart"
 msgstr "Дахин эхлүүлэх"
 
-#: ../src/view/home/favoritesview.py:423
+#: ../src/view/home/favoritesview.py:430
 msgid "Shutdown"
 msgstr "Унтраах"
 
-#: ../src/view/home/favoritesview.py:429
+#: ../src/view/home/favoritesview.py:436
 msgid "Register"
 msgstr "Бүртгүүлэх"
 
@@ -606,22 +634,33 @@ msgstr "Зогсоох"
 msgid "Start"
 msgstr "Эхлэх"
 
-#: ../src/view/palettes.py:132
+#: ../src/view/palettes.py:138
 msgid "Remove favorite"
 msgstr "Дуртай зүйлийг устгах"
 
-#: ../src/view/palettes.py:136
+#: ../src/view/palettes.py:142
 msgid "Make favorite"
 msgstr "Дуртай зүйл болгох"
 
-#: ../src/view/palettes.py:185
+#: ../src/view/palettes.py:191
 msgid "Show contents"
 msgstr "Агуулгийг үзэх"
 
-#: ../src/view/palettes.py:209
+#: ../src/view/palettes.py:215
 #, python-format
 msgid "%(free_space)d MB Free"
 msgstr "%(free_space)d MB ашиглаагүй"
+
+# TRANS: label for the freeform layout in the favorites view
+#~ msgid "Freeform"
+#~ msgstr "Дурын хэлбэр"
+
+# TRANS: label for the ring layout in the favorites view
+#~ msgid "Ring"
+#~ msgstr "Цагираг"
+
+#~ msgid "You must enter a server."
+#~ msgstr "Сервер оруулах шаардлагатай."
 
 #~ msgid "<Ctrl>R"
 #~ msgstr "<Ctrl>R"
