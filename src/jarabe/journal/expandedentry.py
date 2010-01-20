@@ -32,7 +32,7 @@ from sugar.graphics.entry import CanvasEntry
 from sugar.graphics.canvastextview import CanvasTextView
 from sugar.util import format_size
 
-from jarabe.journal.keepicon import KeepIcon
+from jarabe.journal.widgets import KeepIconCanvas
 from jarabe.journal.palettes import ObjectPalette, BuddyPalette
 from jarabe.journal import misc
 from jarabe.journal import model
@@ -99,7 +99,7 @@ class ExpandedEntry(hippo.CanvasBox):
 
         # Header
 
-        self._keep_icon = self._create_keep_icon()
+        self._keep_icon = KeepIconCanvas(box_width=style.GRID_CELL_SIZE * 3 / 5)
         header.append(self._keep_icon)
 
         self._icon = None
@@ -140,7 +140,7 @@ class ExpandedEntry(hippo.CanvasBox):
             return
         self._metadata = metadata
 
-        self._keep_icon.keep = (int(metadata.get('keep', 0)) == 1)
+        self._keep_icon.check_out(metadata)
 
         self._icon = self._create_icon()
         self._icon_box.clear()
@@ -168,11 +168,6 @@ class ExpandedEntry(hippo.CanvasBox):
         tags = self._tags.text_view_widget
         tags.props.buffer.props.text = metadata.get('tags', '')
         tags.props.editable = model.is_editable(metadata)
-
-    def _create_keep_icon(self):
-        keep_icon = KeepIcon(False)
-        keep_icon.connect('activated', self._keep_icon_activated_cb)
-        return keep_icon
 
     def _create_icon(self):
         icon = CanvasIcon(file_name=misc.get_icon_name(self._metadata))
@@ -404,20 +399,6 @@ class ExpandedEntry(hippo.CanvasBox):
             model.write(self._metadata, update_mtime=False)
 
         self._update_title_sid = None
-
-    def get_keep(self):
-        return int(self._metadata.get('keep', 0)) == 1
-
-    def _keep_icon_activated_cb(self, keep_icon):
-        if not model.is_editable(self._metadata):
-            return
-        if self.get_keep():
-            self._metadata['keep'] = 0
-        else:
-            self._metadata['keep'] = 1
-        model.write(self._metadata, update_mtime=False)
-
-        keep_icon.props.keep = self.get_keep()
 
     def _icon_button_release_event_cb(self, button, event):
         logging.debug('_icon_button_release_event_cb')

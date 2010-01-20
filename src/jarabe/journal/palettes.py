@@ -33,16 +33,11 @@ from jarabe.model import friends
 from jarabe.model import filetransfer
 from jarabe.journal import misc
 from jarabe.journal import model
+from jarabe.journal import controler
 
 class ObjectPalette(Palette):
 
     __gtype_name__ = 'ObjectPalette'
-
-    __gsignals__ = {
-        'detail-clicked': (gobject.SIGNAL_RUN_FIRST,
-                           gobject.TYPE_NONE,
-                           ([str])),
-    }
 
     def __init__(self, metadata, detail=False):
 
@@ -135,7 +130,7 @@ class ObjectPalette(Palette):
         model.delete(self._metadata['uid'])
 
     def __detail_activate_cb(self, menu_item):
-        self.emit('detail-clicked', self._metadata['uid'])
+        controler.objects.emit('detail-clicked', self._metadata['uid'])
 
     def __friend_selected_cb(self, menu_item, buddy):
         logging.debug('__friend_selected_cb')

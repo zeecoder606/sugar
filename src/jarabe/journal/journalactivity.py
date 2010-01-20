@@ -34,7 +34,7 @@ from sugar import wm
 
 from jarabe.model import bundleregistry
 from jarabe.journal.journaltoolbox import MainToolbox, DetailToolbox
-from jarabe.journal.listview import ListView
+from jarabe.journal.view import View
 from jarabe.journal.detailview import DetailView
 from jarabe.journal.volumestoolbar import VolumesToolbar
 from jarabe.journal import misc
@@ -42,6 +42,7 @@ from jarabe.journal.journalentrybundle import JournalEntryBundle
 from jarabe.journal.objectchooser import ObjectChooser
 from jarabe.journal.modalalert import ModalAlert
 from jarabe.journal import model
+from jarabe.journal import controler
 
 J_DBUS_SERVICE = 'org.laptop.Journal'
 J_DBUS_INTERFACE = 'org.laptop.Journal'
@@ -105,11 +106,15 @@ class JournalActivity(Window):
         logging.debug("STARTUP: Loading the journal")
         Window.__init__(self)
 
+        accel_group = gtk.AccelGroup()
+        self.set_data('sugar-accel-group', accel_group)
+        self.add_accel_group(accel_group)
+
         self.set_title(_('Journal'))
 
         self._main_view = None
         self._secondary_view = None
-        self._list_view = None
+        self._view = None
         self._detail_view = None
         self._main_toolbox = None
         self._detail_toolbox = None
@@ -152,11 +157,11 @@ class JournalActivity(Window):
         self._main_toolbox = MainToolbox()
         self._main_view = gtk.VBox()
 
-        self._list_view = ListView()
-        self._list_view.connect('detail-clicked', self.__detail_clicked_cb)
-        self._list_view.connect('clear-clicked', self.__clear_clicked_cb)
-        self._main_view.pack_start(self._list_view)
-        self._list_view.show()
+        self._view = View()
+        controler.objects.connect('detail-clicked', self.__detail_clicked_cb)
+        self._view.connect('clear-clicked', self.__clear_clicked_cb)
+        self._main_view.pack_start(self._view)
+        self._view.show()
 
         self._volumes_toolbar = VolumesToolbar()
         self._volumes_toolbar.connect('volume-changed',
@@ -165,6 +170,7 @@ class JournalActivity(Window):
 
         search_toolbar = self._main_toolbox.search_toolbar
         search_toolbar.connect('query-changed', self._query_changed_cb)
+        search_toolbar.connect('view-changed', self.__view_changed_cb)
         search_toolbar.set_mount_point('/')
 
     def _setup_secondary_view(self):
@@ -183,7 +189,7 @@ class JournalActivity(Window):
         if keyname == 'Escape':
             self.show_main_view()
 
-    def __detail_clicked_cb(self, list_view, object_id):
+    def __detail_clicked_cb(self, controler, object_id):
         self._show_secondary_view(object_id)
 
     def __clear_clicked_cb(self, list_view):
@@ -193,8 +199,11 @@ class JournalActivity(Window):
         self.show_main_view()
 
     def _query_changed_cb(self, toolbar, query):
-        self._list_view.update_with_query(query)
+        self._view.update_with_query(query)
         self.show_main_view()
+
+    def __view_changed_cb(self, sender, view):
+        self._view.view = view
 
     def show_main_view(self):
         if self.toolbar_box != self._main_toolbox:
@@ -259,7 +268,7 @@ class JournalActivity(Window):
 
     def _focus_in_event_cb(self, window, event):
         self.search_grab_focus()
-        self._list_view.update_dates()
+        self._view.update_dates()
 
     def _check_for_bundle(self, object_id):
         registry = bundleregistry.get_registry()
@@ -306,12 +315,12 @@ class JournalActivity(Window):
         if event.changed_mask & gtk.gdk.WINDOW_STATE_ICONIFIED:
             state = event.new_window_state
             visible = not state & gtk.gdk.WINDOW_STATE_ICONIFIED
-            self._list_view.set_is_visible(visible)
+            self._view.set_is_visible(visible)
 
     def __visibility_notify_event_cb(self, window, event):
         logging.debug('visibility_notify_event_cb %r', self)
         visible = event.state != gtk.gdk.VISIBILITY_FULLY_OBSCURED
-        self._list_view.set_is_visible(visible)
+        self._view.set_is_visible(visible)
 
     def _check_available_space(self):
         ''' Check available space on device
