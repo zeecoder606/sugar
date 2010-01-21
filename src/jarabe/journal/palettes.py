@@ -130,7 +130,7 @@ class ObjectPalette(Palette):
         model.delete(self._metadata['uid'])
 
     def __detail_activate_cb(self, menu_item):
-        controler.objects.emit('detail-clicked', self._metadata['uid'])
+        controler.details.send(None, uid=self._metadata['uid'])
 
     def __friend_selected_cb(self, menu_item, buddy):
         logging.debug('__friend_selected_cb')

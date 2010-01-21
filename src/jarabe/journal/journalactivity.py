@@ -158,10 +158,11 @@ class JournalActivity(Window):
         self._main_view = gtk.VBox()
 
         self._view = View()
-        controler.objects.connect('detail-clicked', self.__detail_clicked_cb)
         self._view.connect('clear-clicked', self.__clear_clicked_cb)
         self._main_view.pack_start(self._view)
         self._view.show()
+
+        controler.details.connect(self.__view_details_cb)
 
         self._volumes_toolbar = VolumesToolbar()
         self._volumes_toolbar.connect('volume-changed',
@@ -189,8 +190,8 @@ class JournalActivity(Window):
         if keyname == 'Escape':
             self.show_main_view()
 
-    def __detail_clicked_cb(self, controler, object_id):
-        self._show_secondary_view(object_id)
+    def __view_details_cb(self, sender, signal, uid):
+        self._show_secondary_view(uid)
 
     def __clear_clicked_cb(self, list_view):
         self._main_toolbox.search_toolbar.clear_query()

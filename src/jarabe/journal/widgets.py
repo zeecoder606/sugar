@@ -274,7 +274,7 @@ class DetailsIconCanvas(CanvasIcon):
 
     def __activated_cb(self, button):
         self._set_leave_color()
-        controler.objects.emit('detail-clicked', self.metadata['uid'])
+        controler.details.send(None, uid=self.metadata['uid'])
 
     def __motion_notify_event_cb(self, icon, event):
         if event.detail == hippo.MOTION_DETAIL_ENTER:

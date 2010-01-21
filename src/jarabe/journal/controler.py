@@ -14,18 +14,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import gobject
+from sugar import dispatch
 
 
-class _Objects(gobject.GObject):
-
-    __gsignals__ = {
-            'detail-clicked': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
-                              ([str])),
-            }
-
-    def __init__(self):
-        gobject.GObject.__init__(self)
-
-
-objects = _Objects()
+details = dispatch.Signal()
