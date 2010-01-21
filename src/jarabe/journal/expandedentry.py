@@ -140,7 +140,7 @@ class ExpandedEntry(hippo.CanvasBox):
             return
         self._metadata = metadata
 
-        self._keep_icon.check_out(metadata)
+        self._keep_icon.fill_in(metadata)
 
         self._icon = self._create_icon()
         self._icon_box.clear()

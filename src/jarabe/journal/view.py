@@ -63,6 +63,7 @@ class View(gtk.EventBox):
         self._current_page = None
         self._view = None
         self._last_progress_bar_pulse = None
+        self._progress_bar = None
 
         self._page_ctors = {
                 VIEW_LIST: lambda: self._view_new(ListView),
@@ -93,7 +94,7 @@ class View(gtk.EventBox):
             # change view only if current page is view as well
             self._page = view
         self._view = view
-        self.view.result_set = self._result_set
+        self.view.set_result_set(self._result_set)
 
     view = property(get_view, set_view)
 
@@ -148,7 +149,7 @@ class View(gtk.EventBox):
         self.refresh()
 
     def refresh(self):
-        logging.debug('View._refresh query %r', self._query)
+        logging.debug('View.refresh query %r', self._query)
 
         if self._result_set is not None:
             self._result_set.stop()
@@ -159,9 +160,6 @@ class View(gtk.EventBox):
         self._result_set.progress.connect(self.__result_set_progress_cb)
         self._result_set.setup()
 
-        self._page = self._view
-        self.view.result_set = self._result_set
-
     def __result_set_ready_cb(self, **kwargs):
         if self._result_set.length == 0:
             if self._is_query_empty():
@@ -170,7 +168,7 @@ class View(gtk.EventBox):
                 self._page = _MESSAGE_NO_MATCH
         else:
             self._page = self._view
-            self.view.result_set = self._result_set
+            self.view.set_result_set(self._result_set)
 
     def _is_query_empty(self):
         # FIXME: This is a hack, we shouldn't have to update this every time
@@ -188,7 +186,7 @@ class View(gtk.EventBox):
             self._page = _MESSAGE_PROGRESS
 
         if time.time() - self._last_progress_bar_pulse > 0.05:
-            self.child.pulse()
+            self._progress_bar.pulse()
             self._last_progress_bar_pulse = time.time()
 
     def _view_new(self, view_class):
@@ -205,9 +203,9 @@ class View(gtk.EventBox):
     def _progress_new(self):
         alignment = gtk.Alignment(xalign=0.5, yalign=0.5, xscale=0.5)
 
-        progress_bar = gtk.ProgressBar()
-        progress_bar.props.pulse_step = 0.01
-        alignment.add(progress_bar)
+        self._progress_bar = gtk.ProgressBar()
+        self._progress_bar.props.pulse_step = 0.01
+        alignment.add(self._progress_bar)
 
         return alignment
 

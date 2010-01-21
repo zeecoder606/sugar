@@ -30,13 +30,14 @@ class Cell(gtk.EventBox):
         gtk.EventBox.__init__(self)
         self.select(False)
 
-    def do_fill_in_cell_content(self, table, metadata):
+    def do_fill_in_cell_content(self, table, offset, metadata):
         # needs to be overriden
         pass
 
     def do_fill_in(self, table, cell_index):
-        table.result_set.seek(cell_index)
-        self.do_fill_in_cell_content(table, table.result_set.read())
+        result_set = table.get_result_set()
+        result_set.seek(cell_index)
+        self.do_fill_in_cell_content(table, cell_index, result_set.read())
         if table.hover_selection:
             self.select(table.cursor == cell_index)
 
@@ -81,8 +82,6 @@ class HomogeneView(VHomogeneTable):
             self.refill()
         else:
             self.cell_count = result_set_length
-
-    result_set = property(get_result_set, set_result_set)
 
     def __cursor_changed_cb(self, table, old_cursor):
         if not self.hover_selection:

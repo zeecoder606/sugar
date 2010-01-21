@@ -29,7 +29,8 @@ import simplejson
 from sugar.graphics import style
 from sugar.graphics.icon import CanvasIcon
 from sugar.graphics.xocolor import XoColor
-from sugar.graphics.palette import CanvasInvoker
+from sugar.graphics.palette import Invoker
+from sugar.graphics.palette import WidgetInvoker
 from sugar.graphics.roundbox import CanvasRoundBox
 
 from jarabe.journal.entry import Entry
@@ -38,6 +39,7 @@ from jarabe.journal.palettes import ObjectPalette
 from jarabe.journal import misc
 from jarabe.journal import model
 from jarabe.journal import controler
+from jarabe.journal import preview
 
 
 class KeepIconCanvas(CanvasIcon):
@@ -46,15 +48,15 @@ class KeepIconCanvas(CanvasIcon):
                 size=style.SMALL_ICON_SIZE,
                 **kwargs)
 
-        self._metadata = None
+        self.metadata = None
         self._prelight = False
         self._keep_color = None
 
         self.connect_after('activated', self.__activated_cb)
         self.connect('motion-notify-event', self.__motion_notify_event_cb)
 
-    def check_out(self, metadata):
-        self._metadata = metadata
+    def fill_in(self, metadata):
+        self.metadata = metadata
         keep = metadata.get('keep', "")
         if keep.isdigit():
             self._set_keep(int(keep))
@@ -96,7 +98,7 @@ class KeepIconCanvas(CanvasIcon):
                 self.props.xo_color = self._keep_color
 
     def __activated_cb(self, icon):
-        if not model.is_editable(self._metadata):
+        if not model.is_editable(self.metadata):
             return
 
         if self._keep_color is None:
@@ -104,8 +106,8 @@ class KeepIconCanvas(CanvasIcon):
         else:
             keep = 0
 
-        self._metadata['keep'] = keep
-        model.write(self._metadata, update_mtime=False)
+        self.metadata['keep'] = keep
+        model.write(self.metadata, update_mtime=False)
 
         self._set_keep(keep)
 
@@ -116,19 +118,15 @@ def KeepIcon(**kwargs):
 
 class _Launcher(object):
 
-    def __init__(self, launching, detail):
+    def __init__(self, detail):
         self.metadata = None
         self._detail = detail
-        self._launching = launching
 
-        if launching:
-            self.connect_after('button-release-event',
-                    self.__button_release_event_cb)
+        self.connect_after('button-release-event',
+                self.__button_release_event_cb)
 
     def create_palette(self):
-        if not self._launching or self.metadata is None:
-            return
-        else:
+        if self.metadata is not None:
             return ObjectPalette(self.metadata, detail=self._detail)
 
     def __button_release_event_cb(self, button, event):
@@ -139,12 +137,13 @@ class _Launcher(object):
 
 class ObjectIconCanvas(_Launcher, CanvasIcon):
 
-    def __init__(self, launching=True, detail=True, **kwargs):
+    def __init__(self, detail=True, **kwargs):
         CanvasIcon.__init__(self, **kwargs)
-        _Launcher.__init__(self, launching, detail)
+        _Launcher.__init__(self, detail)
 
-    def check_out(self, metadata):
+    def fill_in(self, metadata):
         self.metadata = metadata
+        self.palette = None
 
         self.props.file_name = misc.get_icon_name(metadata)
 
@@ -164,26 +163,26 @@ class Title(gtk.Alignment):
     def __init__(self, max_line_count=1, **kwargs):
         gtk.Alignment.__init__(self, **kwargs)
 
-        self._metadata = None
+        self.metadata = None
 
         self._entry = Entry(max_line_count=max_line_count)
         self.add(self._entry)
 
         self._entry.connect_after('focus-out-event', self.__focus_out_event_cb)
 
-    def check_out(self, metadata):
-        self._metadata = metadata
+    def fill_in(self, metadata):
+        self.metadata = metadata
         self._entry.props.text = metadata.get('title', _('Untitled'))
         self._entry.props.editable = model.is_editable(metadata)
 
     def __focus_out_event_cb(self, widget, event):
-        old_title = self._metadata.get('title', None)
+        old_title = self.metadata.get('title', None)
         new_title = self._entry.props.text
 
         if old_title != new_title:
-            self._metadata['title'] = new_title
-            self._metadata['title_set_by_user'] = '1'
-            model.write(self._metadata, update_mtime=False)
+            self.metadata['title'] = new_title
+            self.metadata['title_set_by_user'] = '1'
+            model.write(self.metadata, update_mtime=False)
 
 
 class Buddies(gtk.Alignment):
@@ -201,7 +200,7 @@ class Buddies(gtk.Alignment):
         self._buddies = gtk.HBox()
         self._buddies.show()
 
-    def check_out(self, metadata):
+    def fill_in(self, metadata):
         if self.child is not None:
             self.remove(self.child)
 
@@ -247,7 +246,7 @@ class Timestamp(gtk.Label):
     def __init__(self, **kwargs):
         gobject.GObject.__init__(self, **kwargs)
 
-    def check_out(self, metadata):
+    def fill_in(self, metadata):
         self.props.label = misc.get_date(metadata)
 
 
@@ -260,22 +259,22 @@ class DetailsIconCanvas(CanvasIcon):
                 size=style.SMALL_ICON_SIZE,
                 stroke_color=style.COLOR_TRANSPARENT.get_svg())
 
-        self._metadata = None
+        self.metadata = None
 
         self.connect('motion-notify-event', self.__motion_notify_event_cb)
         self.connect_after('activated', self.__activated_cb)
 
         self._set_leave_color()
 
-    def check_out(self, metadata):
-        self._metadata = metadata
+    def fill_in(self, metadata):
+        self.metadata = metadata
 
     def _set_leave_color(self):
         self.props.fill_color = style.COLOR_BUTTON_GREY.get_svg()
 
     def __activated_cb(self, button):
         self._set_leave_color()
-        controler.objects.emit('detail-clicked', self._metadata['uid'])
+        controler.objects.emit('detail-clicked', self.metadata['uid'])
 
     def __motion_notify_event_cb(self, icon, event):
         if event.detail == hippo.MOTION_DETAIL_ENTER:
@@ -288,19 +287,45 @@ def DetailsIcon(**kwargs):
     return _CanvasToWidget(DetailsIconCanvas, **kwargs)
 
 
-class ThumbCanvas(_Launcher, hippo.CanvasWidget):
+class Thumb(_Launcher, gtk.EventBox):
 
-    def __init__(self, cell, **kwargs):
-        hippo.CanvasWidget.__init__(self, **kwargs)
-        _Launcher.__init__(self, cell)
+    def __init__(self, detail=True):
+        gtk.EventBox.__init__(self)
+        _Launcher.__init__(self, detail)
 
-        self._palette_invoker = CanvasInvoker()
-        self._palette_invoker.attach(self)
+        self.modify_fg(gtk.STATE_NORMAL,
+                style.COLOR_PANEL_GREY.get_gdk_color())
+        self.modify_bg(gtk.STATE_NORMAL,
+                style.COLOR_WHITE.get_gdk_color())
+
+        self.add_events(gtk.gdk.BUTTON_PRESS_MASK | \
+                        gtk.gdk.BUTTON_RELEASE_MASK | \
+                        gtk.gdk.LEAVE_NOTIFY_MASK | \
+                        gtk.gdk.ENTER_NOTIFY_MASK)
+        self.set_size_request(preview.THUMB_WIDTH, preview.THUMB_HEIGHT)
+
+        self.connect_after('expose-event', self.__expose_event_cb)
+
+        self.image = gtk.Image()
+        self.image.show()
+        self.add(self.image)
+
+        self._invoker = WidgetInvoker(self)
+        self._invoker._position_hint = Invoker.AT_CURSOR
         self.connect('destroy', self.__destroy_cb)
 
+    def __expose_event_cb(self, widget, event):
+        __, __, width, height = self.allocation
+        fg = self.style.fg_gc[gtk.STATE_NORMAL]
+        self.window.draw_rectangle(fg, False, 0, 0, width - 1, height - 1)
+
+    def fill_in(self, metadata):
+        self.metadata = metadata
+        self._invoker.palette = None
+
     def __destroy_cb(self, icon):
-        if self._palette_invoker is not None:
-            self._palette_invoker.detach()
+        if self._invoker is not None:
+            self._invoker.detach()
 
 
 class _BuddyIcon(CanvasIcon):
@@ -327,5 +352,5 @@ class _CanvasToWidget(hippo.Canvas):
         self.root = canvas_class(**kwargs)
         self.set_root(self.root)
 
-    def check_out(self, metadata):
-        self.root.check_out(metadata)
+    def fill_in(self, metadata):
+        self.root.fill_in(metadata)

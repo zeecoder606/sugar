@@ -21,25 +21,18 @@ import logging
 from jarabe.journal.homogeneview import HomogeneView
 from jarabe.journal.homogeneview import Cell
 from jarabe.journal.widgets import *
+from jarabe.journal import preview
 
 
-TOOLBAR_WIDTH = 20
-
-THUMB_WIDTH = 240
-THUMB_HEIGHT = 180
-
-TEXT_HEIGHT = gtk.EventBox().create_pango_layout('W').get_pixel_size()[1]
-
-CELL_WIDTH = THUMB_WIDTH + TOOLBAR_WIDTH + style.DEFAULT_PADDING + \
-             style.DEFAULT_SPACING
-CELL_HEIGHT = THUMB_HEIGHT + TEXT_HEIGHT * 3 + style.DEFAULT_PADDING * 3 + \
-              style.DEFAULT_SPACING
+_TEXT_HEIGHT = gtk.EventBox().create_pango_layout('W').get_pixel_size()[1]
 
 
 class _Cell(Cell):
 
     def __init__(self):
         Cell.__init__(self)
+
+        self._offset = None
 
         cell = gtk.HBox()
         self.add(cell)
@@ -49,43 +42,70 @@ class _Cell(Cell):
         toolbar = gtk.VBox()
         cell.pack_start(toolbar, expand=False)
 
-        self._keep = KeepIcon(
-                box_width=style.GRID_CELL_SIZE)
+        self._keep = KeepIcon()
         toolbar.pack_start(self._keep, expand=False)
 
         self._details = DetailsIcon()
         toolbar.pack_start(self._details, expand=False)
 
-        # thumb
+        # main
 
         main = gtk.VBox()
         cell.pack_end(main)
 
-        #thumb = Thumb()
-        #main.pack_end(thumb)
+        self._icon = ObjectIcon(
+                border=style.LINE_WIDTH,
+                border_color=style.COLOR_PANEL_GREY.get_int(),
+                box_width=preview.THUMB_WIDTH,
+                box_height=preview.THUMB_HEIGHT)
+        self._icon.show()
 
-        # text
+        self._thumb = Thumb()
+        self._thumb.show()
 
-        text = gtk.VBox()
-        main.pack_end(text, expand=False)
+        self._thumb_box = gtk.HBox()
+        main.pack_start(self._thumb_box, expand=False)
 
         self._title = Title(
                 max_line_count=2,
                 xalign=0, yalign=0, xscale=1, yscale=0)
-        text.pack_start(self._title)
+        main.pack_start(self._title, expand=False)
 
         self._date = Timestamp(
                 xalign=0.0,
                 ellipsize=pango.ELLIPSIZE_END)
-        text.pack_end(self._date, expand=False)
+        main.pack_start(self._date, expand=False)
 
         self.show_all()
 
-    def do_fill_in_cell_content(self, table, metadata):
-        self._keep.check_out(metadata)
-        self._details.check_out(metadata)
-        self._title.check_out(metadata)
-        self._date.check_out(metadata)
+    def discard_thumb(self):
+        self._set_thumb_widget(self._icon)
+        self._offset = None
+
+    def do_fill_in_cell_content(self, table, offset, metadata):
+        self._keep.fill_in(metadata)
+        self._details.fill_in(metadata)
+        self._title.fill_in(metadata)
+        self._date.fill_in(metadata)
+        self._icon.fill_in(metadata)
+        self._thumb.fill_in(metadata)
+
+        if self._offset != offset:
+            self.discard_thumb()
+            preview.fetch(offset, metadata)
+        else:
+            self._set_thumb_widget(self._thumb)
+
+    def fill_pixbuf_in(self, offset, pixbuf):
+        self._offset = offset
+        self._thumb.image.set_from_pixbuf(pixbuf)
+        self._set_thumb_widget(self._thumb)
+
+    def _set_thumb_widget(self, widget):
+        if widget not in self._thumb_box.get_children():
+            for child in self._thumb_box.get_children():
+                self._thumb_box.remove(child)
+            self._thumb_box.pack_start(widget, expand=False)
 
 
 class ThumbsView(HomogeneView):
@@ -93,9 +113,29 @@ class ThumbsView(HomogeneView):
     def __init__(self):
         HomogeneView.__init__(self, _Cell)
 
-    def do_size_allocate(self, allocation):
-        column_count = gtk.gdk.screen_width() / CELL_WIDTH
-        row_count = gtk.gdk.screen_height() / CELL_HEIGHT
-        self.frame_size = (row_count, column_count)
+        cell_width = preview.THUMB_WIDTH + style.SMALL_ICON_SIZE + \
+                     style.DEFAULT_PADDING + style.DEFAULT_SPACING * 2
+        cell_height = preview.THUMB_HEIGHT + _TEXT_HEIGHT * 3 + \
+                      style.DEFAULT_PADDING * 3 + style.DEFAULT_SPACING
+        self.cell_size = (cell_width, cell_height)
 
-        HomogeneView.do_size_allocate(self, allocation)
+        self.connect('frame-scrolled', self.__frame_scrolled_cb)
+        preview.fetched.connect(self.__preview_fetched_cb)
+
+    def set_result_set(self, result_set):
+        if result_set is self.get_result_set():
+            return
+
+        for cell in self.frame_cells:
+            cell.discard_thumb()
+
+        HomogeneView.set_result_set(self, result_set)
+
+    def __frame_scrolled_cb(self, table):
+        preview.discard_queue(table.frame_range)
+
+    def __preview_fetched_cb(self, sender, signal, offset, pixbuf):
+        cell = self.get_cell(offset)
+        if cell is not None:
+            cell.fill_pixbuf_in(offset, pixbuf)
+            self.refill([offset])

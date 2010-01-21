@@ -45,6 +45,7 @@ class VHomogeneTable(gtk.Container):
             'set-scroll-adjustments': (gobject.SIGNAL_RUN_FIRST, None,
                                       [gtk.Adjustment, gtk.Adjustment]),
             'cursor-changed': (gobject.SIGNAL_RUN_FIRST, None, [object]),
+            'frame-scrolled': (gobject.SIGNAL_RUN_FIRST, None, []),
             }
 
     def __init__(self, cell_class, **kwargs):
@@ -64,6 +65,7 @@ class VHomogeneTable(gtk.Container):
         self._selected_index = None
         self._editable = True
         self._pending_allocate = None
+        self._frame_range = None
 
         gtk.Container.__init__(self, **kwargs)
 
@@ -115,9 +117,10 @@ class VHomogeneTable(gtk.Container):
     def set_cell_count(self, count):
         if self._cell_count == count:
             return
+
         self._cell_count = count
-        self.refill()
         self._setup_adjustment(dry_run=False)
+        self._resize_table()
 
     """Number of virtual cells
        Defines maximal number of virtual rows, the minimal has being described
@@ -148,6 +151,21 @@ class VHomogeneTable(gtk.Container):
 
     """Selected cell"""
     cursor = gobject.property(getter=get_cursor, setter=set_cursor)
+
+    def get_frame_range(self):
+        if self._frame_range is None:
+            return xrange(0)
+        else:
+            begin, end = self._frame_range
+            return xrange(begin, end + 1)
+
+    """Range of visible cells"""
+    frame_range = gobject.property(getter=get_frame_range)
+
+    @property
+    def frame_cells(self):
+        for cell in self._cell_cache:
+            yield cell.widget
 
     def get_editable(self):
         return self._editable
@@ -213,12 +231,12 @@ class VHomogeneTable(gtk.Container):
 
         self._pos_changed()
 
-    def refill(self):
+    def refill(self, cells=None):
         """Force VHomogeneTable widget to run filling method for all cells"""
         for cell in self._cell_cache:
-            cell.invalidate_pos()
-            cell.index = -1
-        self._allocate_rows(force=True)
+            if cells is None or cell.index in cells:
+                cell.index = -1
+        self._allocate_rows(force=False)
 
     # gtk.Widget overrides
 
@@ -360,16 +378,6 @@ class VHomogeneTable(gtk.Container):
                 return True
 
     @property
-    def _frame_range(self):
-        if self._empty:
-            return xrange(0)
-        else:
-            first = self._pos_y / self._cell_height * self._column_count
-            last = int(math.ceil(float(self._pos_y + self._page) / \
-                    self._cell_height) * self._column_count)
-            return xrange(first, min(last, self.cell_count))
-
-    @property
     def _empty(self):
         return not self._row_cache
 
@@ -501,6 +509,7 @@ class VHomogeneTable(gtk.Container):
             for row in self._row_cache:
                 for cell in row:
                     cell.invalidate_pos()
+                    cell.index = -1
 
         self._cell_height = height / self._frame_row_count
         self._setup_adjustment(dry_run=True)
@@ -561,6 +570,7 @@ class VHomogeneTable(gtk.Container):
 
         spare_rows = []
         visible_rows = []
+        frame_rows = []
         page_end = pos + self._page
 
         if force:
@@ -584,6 +594,7 @@ class VHomogeneTable(gtk.Container):
                     row = spare_rows.pop()
                     self._allocate_cells(row, cell_y)
                     cell_y = cell_y + self._cell_height
+                    frame_rows.append(row)
 
             # visible_rows could not be continuous
             # lets try to add spare rows to missed points
@@ -591,15 +602,25 @@ class VHomogeneTable(gtk.Container):
             for i in visible_rows:
                 cell = i.row[0].widget.allocation
                 try_insert_spare_row(cell_y, cell.y)
+                self._allocate_cells(i.row, cell.y)
                 cell_y = cell.y + cell.height
+                frame_rows.append(i.row)
 
             try_insert_spare_row(cell_y, page_end)
 
-            if self.editing and self._selected_index not in self._frame_range:
-                self.editing = False
-
         self._bin_window.move(0, int(-pos))
         self._bin_window.process_updates(True)
+
+        if frame_rows:
+            frame_range = (frame_rows[0][0].index, frame_rows[-1][-1].index)
+        else:
+            frame_range = None
+        if frame_range != self._frame_range:
+            self._frame_range = frame_range
+            self.emit('frame-scrolled')
+
+        if self.editing and self._selected_index not in self.frame_range:
+            self.editing = False
 
     def __adjustment_value_changed_cb(self, adjustment):
         self._allocate_rows(force=False)

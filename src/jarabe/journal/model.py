@@ -288,7 +288,8 @@ class InplaceResultSet(BaseResultSet):
             metadata['mountpoint'] = self._mount_point
             entries.append(metadata)
 
-        logging.debug('InplaceResultSet.find took %f s.', time.time() - t)
+        logging.debug('InplaceResultSet.find took %f s. for %s entries',
+                time.time() - t, total_count)
 
         return entries, total_count
 
@@ -408,16 +409,33 @@ def _get_mount_point(path):
         else:
             dir_path = dir_path.rsplit(os.sep, 1)[0]
 
-def get(object_id):
+def get(object_id, reply_cb=None):
     """Returns the metadata for an object
     """
     if os.path.exists(object_id):
         stat = os.stat(object_id)
         metadata = _get_file_metadata(object_id, stat)
         metadata['mountpoint'] = _get_mount_point(object_id)
-    else:
+    elif reply_cb is None:
         metadata = _get_datastore().get_properties(object_id, byte_arrays=True)
         metadata['mountpoint'] = '/'
+    else:
+        def apply_cb(metadata):
+            metadata['mountpoint'] = '/'
+            reply_cb(metadata)
+
+        def error_cb(e):
+            logging.error('Cannot get object %s', object_id)
+            reply_cb(None)
+
+        _get_datastore().get_properties(object_id, byte_arrays=True,
+                reply_handler=reply_cb,
+                error_handler=lambda e: reply_cb(None))
+        return None
+
+    if reply_cb is not None:
+        reply_cb(metadata)
+
     return metadata
 
 def get_file(object_id):

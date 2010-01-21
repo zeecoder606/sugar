@@ -56,9 +56,9 @@ class _Cell(Cell):
 
         self.show_all()
 
-    def do_fill_in_cell_content(self, table, metadata):
+    def do_fill_in_cell_content(self, table, offset, metadata):
         for i in self._row.get_children():
-            i.check_out(metadata)
+            i.fill_in(metadata)
 
 
 class ListView(HomogeneView):
