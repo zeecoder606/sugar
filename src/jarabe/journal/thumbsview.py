@@ -30,7 +30,8 @@ class _Cell(Cell):
     def __init__(self):
         Cell.__init__(self)
 
-        self._offset = None
+        self._last_thumb_offset = None
+        self._last_thumb_mtime = None
 
         cell = gtk.HBox()
         self.add(cell)
@@ -74,10 +75,6 @@ class _Cell(Cell):
 
         self.show_all()
 
-    def discard_thumb(self):
-        self._set_thumb_widget(self._icon)
-        self._offset = None
-
     def do_fill_in_cell_content(self, table, offset, metadata):
         self._keep.fill_in(metadata)
         self._details.fill_in(metadata)
@@ -86,14 +83,17 @@ class _Cell(Cell):
         self._icon.fill_in(metadata)
         self._thumb.fill_in(metadata)
 
-        if self._offset != offset:
-            self.discard_thumb()
+        if self._last_thumb_offset != offset or \
+                self._last_thumb_mtime != metadata.get('timestamp'):
+            self._set_thumb_widget(self._icon)
+            self._last_thumb_offset = None
+            self._last_thumb_mtime = metadata.get('timestamp')
             preview.fetch(offset, metadata)
         else:
             self._set_thumb_widget(self._thumb)
 
     def fill_pixbuf_in(self, offset, pixbuf):
-        self._offset = offset
+        self._last_thumb_offset = offset
         self._thumb.image.set_from_pixbuf(pixbuf)
         self._set_thumb_widget(self._thumb)
 
@@ -117,15 +117,6 @@ class ThumbsView(HomogeneView):
 
         self.connect('frame-scrolled', self.__frame_scrolled_cb)
         preview.fetched.connect(self.__preview_fetched_cb)
-
-    def set_result_set(self, result_set):
-        if result_set is self.get_result_set():
-            return
-
-        for cell in self.frame_cells:
-            cell.discard_thumb()
-
-        HomogeneView.set_result_set(self, result_set)
 
     def __frame_scrolled_cb(self, table):
         preview.discard_queue(table.frame_range)
