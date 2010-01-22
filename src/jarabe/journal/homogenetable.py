@@ -184,7 +184,16 @@ class VHomogeneTable(gtk.Container):
         if cell is None:
             return False
         else:
-            return cell.widget.get_focus_child()
+            # XXX why gtk.Container.get_focus_child() doesn't work some time
+            window = self.get_toplevel()
+            if window is None:
+                return False
+            focus = window.get_focus()
+            while focus is not None and focus.parent is not None:
+                if focus is self:
+                    return True
+                focus = focus.parent
+            return False
 
     def set_editing(self, value):
         if value == self.editing:
@@ -358,7 +367,7 @@ class VHomogeneTable(gtk.Container):
         if widget is not None:
             x, y, __, __ = widget.allocation
             cursor = self._get_cell_at_pos(x, y)
-            if cursor not in self.frame_range:
+            if self.cursor is None or cursor not in self.frame_range:
                 self.cursor = cursor
 
     def do_focus(self, type):
