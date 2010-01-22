@@ -357,7 +357,9 @@ class VHomogeneTable(gtk.Container):
     def do_set_focus_child(self, widget):
         if widget is not None:
             x, y, __, __ = widget.allocation
-            self.cursor = self._get_cell_at_pos(x, y)
+            cursor = self._get_cell_at_pos(x, y)
+            if cursor not in self.frame_range:
+                self.cursor = cursor
 
     def do_focus(self, type):
         if self.editing:
@@ -631,7 +633,9 @@ class VHomogeneTable(gtk.Container):
 
         page = self._column_count * self._frame_row_count
 
-        if event.keyval == gtk.keysyms.Return and self.editable:
+        if event.keyval == gtk.keysyms.Escape and self.editing:
+            self.editing = False
+        elif event.keyval == gtk.keysyms.Return and self.editable:
             self.editing = not self.editing
         elif event.keyval == gtk.keysyms.Left:
             self.cursor -= 1

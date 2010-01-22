@@ -22,9 +22,7 @@ from jarabe.journal.homogeneview import HomogeneView
 from jarabe.journal.homogeneview import Cell
 from jarabe.journal.widgets import *
 from jarabe.journal import preview
-
-
-_TEXT_HEIGHT = gtk.EventBox().create_pango_layout('W').get_pixel_size()[1]
+from jarabe.journal import entry
 
 
 class _Cell(Cell):
@@ -51,6 +49,7 @@ class _Cell(Cell):
         # main
 
         main = gtk.VBox()
+        main.props.spacing = style.DEFAULT_PADDING
         cell.pack_end(main)
 
         self._icon = ObjectIcon(
@@ -66,14 +65,11 @@ class _Cell(Cell):
         self._thumb_box = gtk.HBox()
         main.pack_start(self._thumb_box, expand=False)
 
-        self._title = Title(
-                max_line_count=2,
-                xalign=0, yalign=0, xscale=1, yscale=0)
+        self._title = Title(max_line_count=2)
         main.pack_start(self._title, expand=False)
 
-        self._date = Timestamp(
-                xalign=0.0,
-                ellipsize=pango.ELLIPSIZE_END)
+        self._date = Timestamp(wrap=True, xalign=0.0)
+        self._date.set_size_request(preview.THUMB_WIDTH, -1)
         main.pack_start(self._date, expand=False)
 
         self.show_all()
@@ -115,7 +111,7 @@ class ThumbsView(HomogeneView):
 
         cell_width = preview.THUMB_WIDTH + style.SMALL_ICON_SIZE + \
                      style.DEFAULT_PADDING + style.DEFAULT_SPACING * 2
-        cell_height = preview.THUMB_HEIGHT + _TEXT_HEIGHT * 3 + \
+        cell_height = preview.THUMB_HEIGHT + entry.TEXT_HEIGHT * 4 + \
                       style.DEFAULT_PADDING * 3 + style.DEFAULT_SPACING
         self.cell_size = (cell_width, cell_height)
 

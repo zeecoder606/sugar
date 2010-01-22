@@ -21,6 +21,9 @@ import gobject
 import pango
 
 
+TEXT_HEIGHT = gtk.EventBox().create_pango_layout('W').get_pixel_size()[1]
+
+
 class Entry(gtk.TextView):
     """One paragraph string entry with additional features
 
@@ -36,6 +39,7 @@ class Entry(gtk.TextView):
     def __init__(self, **kwargs):
         self._max_line_count = 1
         self._text = None
+        self._button_pressed = False
 
         gobject.GObject.__init__(self, **kwargs)
 
@@ -48,7 +52,9 @@ class Entry(gtk.TextView):
         self.connect('key-press-event', self.__key_press_event_cb)
         self.connect('focus-in-event', self.__focus_in_event_cb)
         self.connect('focus-out-event', self.__focus_out_event_cb)
+        self.connect('button-press-event', self.__button_press_event_cb)
         self.connect('button-release-event', self.__button_release_event_cb)
+        self.props.buffer.connect('changed', self.__buffer_changed_cb)
 
     def set_accepts_tab(self, value):
         # accepts_tab cannot be set by users
@@ -74,19 +80,7 @@ class Entry(gtk.TextView):
         return self._max_line_count
 
     def set_max_line_count(self, max_line_count):
-        max_line_count = max(1, max_line_count)
-        self._max_line_count = max_line_count
-
-        if max_line_count == 1:
-            gtk.TextView.set_wrap_mode(self, gtk.WRAP_NONE)
-        else:
-            gtk.TextView.set_wrap_mode(self, gtk.WRAP_WORD)
-
-        context = self.get_pango_context()
-        metrics = context.get_metrics(self.style.font_desc)
-        line_height = pango.PIXELS(metrics.get_ascent() + \
-                metrics.get_descent())
-        self.set_size_request(-1, line_height * max_line_count)
+        self._max_line_count = max(1, max_line_count)
 
     max_line_count = gobject.property(
             getter=get_max_line_count, setter=set_max_line_count)
@@ -98,16 +92,31 @@ class Entry(gtk.TextView):
         self._text = value
         self.props.buffer.props.text = value
         if not self.props.has_focus:
-            self._accept()
+            self._set_accent_mode()
 
     text = gobject.property(getter=get_text, setter=set_text)
 
     def do_size_allocate(self, allocation):
         gtk.TextView.do_size_allocate(self, allocation)
         if not self.props.has_focus:
-            self._accept()
+            self._set_accent_mode()
 
-    def _accept(self):
+    def _line_count(self):
+        iter = self.props.buffer.get_start_iter()
+        for lines in xrange(self.max_line_count):
+            if not self.forward_display_line(iter):
+                break
+        return lines + 1
+
+    def _set_edit_mode(self):
+        if self.max_line_count == 1:
+            gtk.TextView.set_wrap_mode(self, gtk.WRAP_NONE)
+            self.set_size_request(-1, TEXT_HEIGHT)
+        else:
+            gtk.TextView.set_wrap_mode(self, gtk.WRAP_WORD)
+            self.set_size_request(-1, TEXT_HEIGHT * self._line_count())
+
+    def _set_accent_mode(self):
         if self._text is None:
             return
 
@@ -123,7 +132,7 @@ class Entry(gtk.TextView):
 
         def last_offset():
             iter = buf.get_start_iter()
-            for __ in xrange(self._max_line_count):
+            for __ in xrange(self.max_line_count):
                 if not self.forward_display_line(iter):
                     return None
             return iter.get_offset()
@@ -141,31 +150,53 @@ class Entry(gtk.TextView):
                 buf.props.text = buf.props.text[:offset - 3] + '...'
 
         accent()
+        self.set_size_request(-1, TEXT_HEIGHT * self._line_count())
 
-    def __button_release_event_cb(self, widget, event):
+    def _select(self):
         buf = self.props.buffer
         if not buf.get_has_selection():
+            self.scroll_to_iter(buf.get_end_iter(), 0, False)
             buf.select_range(buf.get_end_iter(), buf.get_start_iter())
+
+    def __buffer_changed_cb(self, buffer):
+        if self.props.has_focus and self.max_line_count > 1:
+            __, height = self.get_size_request()
+            new_height = TEXT_HEIGHT * self._line_count()
+            if new_height != height:
+                self.set_size_request(-1, new_height)
+                self.parent.check_resize()
+
+        return False
+
+    def __button_press_event_cb(self, widget, event):
+        self._button_pressed = self.props.has_focus or -1
+        return False
+
+    def __button_release_event_cb(self, widget, event):
+        if self._button_pressed == -1:
+            self._select()
+        self._button_pressed = False
         return False
 
     def __focus_in_event_cb(self, widget, event):
         self.props.buffer.props.text = self._text
+        self._set_edit_mode()
+        self.parent.check_resize()
 
-        if self._max_line_count == 1:
-            gtk.TextView.set_wrap_mode(self, gtk.WRAP_NONE)
-        else:
-            gtk.TextView.set_wrap_mode(self, gtk.WRAP_WORD)
+        if not self._button_pressed:
+            self._select()
 
         return False
 
     def __focus_out_event_cb(self, widget, event):
         self._text = self.props.buffer.props.text
-        self._accept()
+        self._set_accent_mode()
+        self.parent.check_resize()
         return False
 
     def __key_press_event_cb(self, widget, event):
         ignore_mask  = [gtk.keysyms.Return]
-        if self._max_line_count == 1:
+        if self.max_line_count == 1:
             ignore_mask.extend([gtk.keysyms.Up, gtk.keysyms.Down])
 
         if event.keyval in ignore_mask:
@@ -180,5 +211,8 @@ class Entry(gtk.TextView):
             key_event.hardware_keycode = 0
             gtk.main_do_event(key_event)
             return True
+
+        elif event.keyval == gtk.keysyms.Escape:
+            self.props.buffer.props.text = self._text
 
         return False

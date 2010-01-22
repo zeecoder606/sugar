@@ -31,34 +31,41 @@ class _Cell(Cell):
     def __init__(self):
         Cell.__init__(self)
 
-        self._row = gtk.HBox()
-        self._row.props.spacing = style.DEFAULT_SPACING
-        self.add(self._row)
+        row = gtk.HBox()
+        row.props.spacing = style.DEFAULT_SPACING
+        self.add(row)
 
-        keep = KeepIcon(box_width=style.GRID_CELL_SIZE)
-        self._row.pack_start(keep, expand=False)
+        self._keep = KeepIcon(box_width=style.GRID_CELL_SIZE)
+        row.pack_start(self._keep, expand=False)
 
-        icon = ObjectIcon(size=style.STANDARD_ICON_SIZE)
-        self._row.pack_start(icon, expand=False)
+        self._icon = ObjectIcon(size=style.STANDARD_ICON_SIZE)
+        row.pack_start(self._icon, expand=False)
 
-        title = Title(xalign=0, yalign=0.5, xscale=1, yscale=0)
-        self._row.pack_start(title)
+        self._title = Title()
+        title_alignment = gtk.Alignment(
+                xalign=0, yalign=0.5, xscale=1, yscale=0)
+        title_alignment.add(self._title)
+        row.pack_start(title_alignment)
 
-        details = DetailsIcon()
-        self._row.pack_end(details, expand=False)
+        self._details = DetailsIcon()
+        row.pack_end(self._details, expand=False)
 
-        date = Timestamp()
-        self._row.pack_end(date, expand=False)
+        self._date = Timestamp()
+        row.pack_end(self._date, expand=False)
 
-        buddies = Buddies(buddies_max=3,
+        self._buddies = Buddies(buddies_max=3,
                 xalign=0, yalign=0.5, xscale=1, yscale=0.15)
-        self._row.pack_end(buddies, expand=False)
+        row.pack_end(self._buddies, expand=False)
 
         self.show_all()
 
     def do_fill_in_cell_content(self, table, offset, metadata):
-        for i in self._row.get_children():
-            i.fill_in(metadata)
+        self._keep.fill_in(metadata)
+        self._icon.fill_in(metadata)
+        self._title.fill_in(metadata)
+        self._details.fill_in(metadata)
+        self._date.fill_in(metadata)
+        self._buddies.fill_in(metadata)
 
 
 class ListView(HomogeneView):

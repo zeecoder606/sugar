@@ -158,26 +158,23 @@ def ObjectIcon(**kwargs):
     return _CanvasToWidget(ObjectIconCanvas, **kwargs)
 
 
-class Title(gtk.Alignment):
+class Title(Entry):
 
-    def __init__(self, max_line_count=1, **kwargs):
-        gtk.Alignment.__init__(self, **kwargs)
+    def __init__(self, **kwargs):
+        Entry.__init__(self, **kwargs)
 
         self.metadata = None
 
-        self._entry = Entry(max_line_count=max_line_count)
-        self.add(self._entry)
-
-        self._entry.connect_after('focus-out-event', self.__focus_out_event_cb)
+        self.connect_after('focus-out-event', self.__focus_out_event_cb)
 
     def fill_in(self, metadata):
         self.metadata = metadata
-        self._entry.props.text = metadata.get('title', _('Untitled'))
-        self._entry.props.editable = model.is_editable(metadata)
+        self.props.text = metadata.get('title', _('Untitled'))
+        self.props.editable = model.is_editable(metadata)
 
     def __focus_out_event_cb(self, widget, event):
         old_title = self.metadata.get('title', None)
-        new_title = self._entry.props.text
+        new_title = self.props.text
 
         if old_title != new_title:
             self.metadata['title'] = new_title
