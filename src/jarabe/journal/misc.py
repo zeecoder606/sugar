@@ -27,6 +27,7 @@ from sugar.activity import activityfactory
 from sugar.activity.activityhandle import ActivityHandle
 from sugar.graphics.icon import get_icon_file_name
 from sugar.graphics.xocolor import XoColor
+from sugar.graphics import style
 from sugar import mime
 from sugar.bundle.activitybundle import ActivityBundle
 from sugar.bundle.contentbundle import ContentBundle
@@ -244,7 +245,10 @@ def is_bundle(metadata):
             is_journal_bundle(metadata)
 
 def get_icon_color(metadata):
-    if metadata is None or not 'icon-color' in metadata:
+    if metadata is not None and is_activity_bundle(metadata):
+        xo_color = XoColor('%s,%s' % (style.COLOR_BUTTON_GREY.get_svg(),
+                                      style.COLOR_TRANSPARENT.get_svg()))
+    elif metadata is None or not 'icon-color' in metadata:
         client = gconf.client_get_default()
         return XoColor(client.get_string('/desktop/sugar/user/color'))
     else:

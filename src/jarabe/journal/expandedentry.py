@@ -174,13 +174,7 @@ class ExpandedEntry(hippo.CanvasBox):
         icon.connect_after('button-release-event',
                            self._icon_button_release_event_cb)
 
-        if misc.is_activity_bundle(self._metadata):
-            xo_color = XoColor('%s,%s' % (style.COLOR_BUTTON_GREY.get_svg(),
-                                          style.COLOR_TRANSPARENT.get_svg()))
-        else:
-            xo_color = misc.get_icon_color(self._metadata)
-        icon.props.xo_color = xo_color
-
+        icon.props.xo_color = misc.get_icon_color(self._metadata)
         icon.set_palette(ObjectPalette(self._metadata))
 
         return icon

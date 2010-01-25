@@ -31,7 +31,6 @@ from sugar.graphics.icon import CanvasIcon
 from sugar.graphics.xocolor import XoColor
 from sugar.graphics.palette import Invoker
 from sugar.graphics.palette import WidgetInvoker
-from sugar.graphics.roundbox import CanvasRoundBox
 
 from jarabe.journal.entry import Entry
 from jarabe.journal.palettes import BuddyPalette
@@ -146,12 +145,7 @@ class ObjectIconCanvas(_Launcher, CanvasIcon):
         self.palette = None
 
         self.props.file_name = misc.get_icon_name(metadata)
-
-        if misc.is_activity_bundle(metadata):
-            self.props.fill_color = style.COLOR_TRANSPARENT.get_svg()
-            self.props.stroke_color = style.COLOR_BUTTON_GREY.get_svg()
-        else:
-            self.props.xo_color = misc.get_icon_color(metadata)
+        self.props.xo_color = misc.get_icon_color(metadata)
 
 
 def ObjectIcon(**kwargs):
