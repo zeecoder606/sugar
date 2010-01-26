@@ -79,6 +79,10 @@ class _Button(gtk.Alignment):
             self.icon.props.fill_color = style.COLOR_BUTTON_GREY.get_svg()
 
     def __enter_notify_event_cb(self, widget, event):
+        x, y = self.get_pointer()
+        if x < 0 or x >= self.allocation.width or \
+                y < 0 or y >= self.allocation.height:
+            return
         self.prelight = True
         self.do_colors()
 
