@@ -319,6 +319,7 @@ class Timestamp(gtk.Label):
 
     def __init__(self, **kwargs):
         gobject.GObject.__init__(self, **kwargs)
+        self.props.selectable = True
 
     def fill_in(self, metadata):
         self.props.label = misc.get_date(metadata)

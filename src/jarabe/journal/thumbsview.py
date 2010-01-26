@@ -35,6 +35,7 @@ class _Cell(Cell):
         self._last_thumb_mtime = None
 
         cell = gtk.HBox()
+        cell.props.border_width = style.DEFAULT_PADDING
         self.add(cell)
 
         # toolbar
@@ -110,10 +111,15 @@ class ThumbsView(HomogeneView):
     def __init__(self):
         HomogeneView.__init__(self, _Cell)
 
-        cell_width = preview.THUMB_WIDTH + style.SMALL_ICON_SIZE + \
-                     style.DEFAULT_PADDING + style.DEFAULT_SPACING * 2
-        cell_height = preview.THUMB_HEIGHT + entry.TEXT_HEIGHT * 4 + \
-                      style.DEFAULT_PADDING * 3 + style.DEFAULT_SPACING
+        cell_width = style.DEFAULT_PADDING * 2 + \
+                     style.GRID_CELL_SIZE + \
+                     preview.THUMB_WIDTH
+
+        cell_height = style.DEFAULT_PADDING * 2 + \
+                      preview.THUMB_HEIGHT + \
+                      style.DEFAULT_PADDING * 2 + \
+                      entry.TEXT_HEIGHT * 4
+
         self.cell_size = (cell_width, cell_height)
 
         self.connect('frame-scrolled', self.__frame_scrolled_cb)

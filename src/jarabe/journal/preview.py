@@ -31,8 +31,8 @@ from jarabe.journal import model
 
 fetched = dispatch.Signal()
 
-THUMB_WIDTH = style.zoom(240)
-THUMB_HEIGHT = style.zoom(180)
+THUMB_WIDTH = style.zoom(190)
+THUMB_HEIGHT = style.zoom(142)
 
 _CHUNK_SIZE = 1024 * 10 # 10K
 _MAX_FILESIZE = 1024 * 1024 * 10 # 10M
