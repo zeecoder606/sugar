@@ -32,7 +32,7 @@ from sugar.graphics.entry import CanvasEntry
 from sugar.graphics.canvastextview import CanvasTextView
 from sugar.util import format_size
 
-from jarabe.journal.widgets import KeepIconCanvas
+from jarabe.journal.widgets import KeepIcon
 from jarabe.journal.palettes import ObjectPalette, BuddyPalette
 from jarabe.journal import misc
 from jarabe.journal import model
@@ -99,7 +99,10 @@ class ExpandedEntry(hippo.CanvasBox):
 
         # Header
 
-        self._keep_icon = KeepIconCanvas(box_width=style.GRID_CELL_SIZE * 3 / 5)
+        keep_icon = KeepIcon()
+        keep_size = style.GRID_CELL_SIZE * 3 / 5
+        keep_icon.set_size_request(keep_size, keep_size)
+        self._keep_icon = hippo.CanvasWidget(widget=keep_icon)
         header.append(self._keep_icon)
 
         self._icon = None
@@ -140,7 +143,7 @@ class ExpandedEntry(hippo.CanvasBox):
             return
         self._metadata = metadata
 
-        self._keep_icon.fill_in(metadata)
+        self._keep_icon.props.widget.fill_in(metadata)
 
         self._icon = self._create_icon()
         self._icon_box.clear()

@@ -21,17 +21,15 @@ from gettext import gettext as _
 
 import gtk
 import gobject
-import hippo
 import gconf
-import pango
 import simplejson
 
 from sugar.graphics import style
-from sugar.graphics.icon import CanvasIcon
 from sugar.graphics.xocolor import XoColor
 from sugar.graphics.palette import Invoker
 from sugar.graphics.palette import WidgetInvoker
-from sugar.graphics import icon
+from sugar.graphics.icon import Icon
+from sugar.graphics.icon import get_surface
 
 from jarabe.journal.entry import Entry
 from jarabe.journal.palettes import BuddyPalette
@@ -42,62 +40,95 @@ from jarabe.journal import controler
 from jarabe.journal import preview
 
 
-class KeepIconCanvas(CanvasIcon):
+class _Button(gtk.Alignment):
+
     def __init__(self, **kwargs):
-        CanvasIcon.__init__(self, icon_name='emblem-favorite',
-                size=style.SMALL_ICON_SIZE,
-                **kwargs)
+        gtk.Alignment.__init__(self, xalign=0.5, yalign=0.5, xscale=0, yscale=0)
 
         self.metadata = None
-        self._prelight = False
-        self._keep_color = None
+        self.prelight = False
 
-        self.connect_after('activated', self.__activated_cb)
-        self.connect('motion-notify-event', self.__motion_notify_event_cb)
+        self.set_size_request(style.GRID_CELL_SIZE, -1)
+
+        box = gtk.EventBox()
+        box.props.visible_window = False
+        box.show()
+        self.add(box)
+
+        self.icon = Icon(**kwargs)
+        self.icon.show()
+        box.add(self.icon)
+
+        box.connect('enter-notify-event', self.__enter_notify_event_cb)
+        box.connect('leave-notify-event', self.__leave_notify_event_cb)
+        box.connect('button-release-event', self.__button_release_event_cb)
+
+        self.do_colors()
 
     def fill_in(self, metadata):
         self.metadata = metadata
+
+    def do_activate(self):
+        # stub
+        pass
+
+    def do_colors(self):
+        if self.prelight:
+            self.icon.props.fill_color = style.COLOR_BLACK.get_svg()
+        else:
+            self.icon.props.fill_color = style.COLOR_BUTTON_GREY.get_svg()
+
+    def __enter_notify_event_cb(self, widget, event):
+        self.prelight = True
+        self.do_colors()
+
+    def __leave_notify_event_cb(self, widget, event):
+        self.prelight = False
+        self.do_colors()
+
+    def __button_release_event_cb(self, widget, event):
+        if self.prelight:
+            self.do_activate()
+
+
+class KeepIcon(_Button):
+
+    def __init__(self):
+        self._keep_color = None
+
+        _Button.__init__(self,
+                icon_name='emblem-favorite',
+                pixel_size=style.SMALL_ICON_SIZE)
+
+    def fill_in(self, metadata):
+        _Button.fill_in(self, metadata)
+
         keep = metadata.get('keep', "")
         if keep.isdigit():
             self._set_keep(int(keep))
         else:
             self._set_keep(0)
 
-    def _set_keep(self, keep):
-        if keep:
-            client = gconf.client_get_default()
-            color = client.get_string('/desktop/sugar/user/color')
-            self._keep_color = XoColor(color)
-        else:
-            self._keep_color = None
-
-        self._set_colors()
-
-    def __motion_notify_event_cb(self, icon, event):
-        if event.detail == hippo.MOTION_DETAIL_ENTER:
-            self._prelight = True
-        elif event.detail == hippo.MOTION_DETAIL_LEAVE:
-            self._prelight = False
-        self._set_colors()
-
-    def _set_colors(self):
-        if self._prelight:
+    def do_colors(self):
+        if self.prelight:
             if self._keep_color is None:
-                self.props.stroke_color = style.COLOR_BUTTON_GREY.get_svg()
-                self.props.fill_color = style.COLOR_BUTTON_GREY.get_svg()
+                self.icon.props.stroke_color = \
+                        style.COLOR_BUTTON_GREY.get_svg()
+                self.icon.props.fill_color = style.COLOR_BUTTON_GREY.get_svg()
             else:
                 stroke_color = style.Color(self._keep_color.get_stroke_color())
                 fill_color = style.Color(self._keep_color.get_fill_color())
-                self.props.stroke_color = fill_color.get_svg()
-                self.props.fill_color = stroke_color.get_svg()
+                self.icon.props.stroke_color = fill_color.get_svg()
+                self.icon.props.fill_color = stroke_color.get_svg()
         else:
             if self._keep_color is None:
-                self.props.stroke_color = style.COLOR_BUTTON_GREY.get_svg()
-                self.props.fill_color = style.COLOR_TRANSPARENT.get_svg()
+                self.icon.props.stroke_color = \
+                        style.COLOR_BUTTON_GREY.get_svg()
+                self.icon.props.fill_color = style.COLOR_TRANSPARENT.get_svg()
             else:
-                self.props.xo_color = self._keep_color
+                self.icon.props.xo_color = self._keep_color
 
-    def __activated_cb(self, icon):
+    def do_activate(self):
         if not model.is_editable(self.metadata):
             return
 
@@ -111,9 +142,15 @@ class KeepIconCanvas(CanvasIcon):
 
         self._set_keep(keep)
 
+    def _set_keep(self, keep):
+        if keep:
+            client = gconf.client_get_default()
+            color = client.get_string('/desktop/sugar/user/color')
+            self._keep_color = XoColor(color)
+        else:
+            self._keep_color = None
 
-def KeepIcon(**kwargs):
-    return _CanvasToWidget(KeepIconCanvas, **kwargs)
+        self.do_colors()
 
 
 class _JournalObject(gtk.EventBox):
@@ -131,11 +168,6 @@ class _JournalObject(gtk.EventBox):
                 style.COLOR_PANEL_GREY.get_gdk_color())
         self.modify_bg(gtk.STATE_NORMAL,
                 style.COLOR_WHITE.get_gdk_color())
-
-        self.add_events(gtk.gdk.BUTTON_PRESS_MASK | \
-                        gtk.gdk.BUTTON_RELEASE_MASK | \
-                        gtk.gdk.LEAVE_NOTIFY_MASK | \
-                        gtk.gdk.ENTER_NOTIFY_MASK)
 
         self.connect_after('button-release-event',
                 self.__button_release_event_cb)
@@ -178,7 +210,7 @@ class _JournalObject(gtk.EventBox):
         if self._invoker.palette is not None:
             self._invoker.palette.popdown(immediate=True)
 
-        surface = icon.get_surface(
+        surface = get_surface(
                 file_name=misc.get_icon_name(self.metadata),
                 xo_color=misc.get_icon_color(self.metadata))
         pixmap, bitmask = _surface_to_pixels(self.window, surface)
@@ -212,7 +244,7 @@ class ObjectIcon(_JournalObject):
     def __init__(self, detail=True, paint_box=True, **kwargs):
         _JournalObject.__init__(self, detail, paint_box)
 
-        self._icon = icon.Icon(**kwargs)
+        self._icon = Icon(**kwargs)
         self._icon.show()
         self.add(self._icon)
 
@@ -292,9 +324,7 @@ class Buddies(gtk.Alignment):
             buddies = buddies[:self._buddies_max]
 
             def show(icon, buddy):
-                icon.root.buddy = buddy
-                nick_, color = buddy
-                icon.root.props.xo_color = XoColor(color)
+                icon.set_buddy(buddy)
                 icon.show()
 
             for icon in self._buddies:
@@ -304,7 +334,7 @@ class Buddies(gtk.Alignment):
                     icon.hide()
 
             for buddy in buddies:
-                icon = _CanvasToWidget(_BuddyIcon)
+                icon = _BuddyIcon()
                 show(icon, buddy)
                 self._buddies.add(icon)
 
@@ -325,69 +355,51 @@ class Timestamp(gtk.Label):
         self.props.label = misc.get_date(metadata)
 
 
-class DetailsIconCanvas(CanvasIcon):
-
+class DetailsIcon(_Button):
     def __init__(self):
-        CanvasIcon.__init__(self,
-                box_width=style.GRID_CELL_SIZE,
+        _Button.__init__(self,
                 icon_name='go-right',
-                size=style.SMALL_ICON_SIZE,
+                pixel_size=style.SMALL_ICON_SIZE,
                 stroke_color=style.COLOR_TRANSPARENT.get_svg())
 
-        self.metadata = None
-
-        self.connect('motion-notify-event', self.__motion_notify_event_cb)
-        self.connect_after('activated', self.__activated_cb)
-
-        self._set_leave_color()
-
-    def fill_in(self, metadata):
-        self.metadata = metadata
-
-    def _set_leave_color(self):
-        self.props.fill_color = style.COLOR_BUTTON_GREY.get_svg()
-
-    def __activated_cb(self, button):
-        self._set_leave_color()
+    def do_activate(self):
+        self.prelight = False
+        self.do_colors()
         controler.details.send(None, uid=self.metadata['uid'])
 
-    def __motion_notify_event_cb(self, icon, event):
-        if event.detail == hippo.MOTION_DETAIL_ENTER:
-            icon.props.fill_color = style.COLOR_BLACK.get_svg()
-        elif event.detail == hippo.MOTION_DETAIL_LEAVE:
-            self._set_leave_color()
 
-
-def DetailsIcon(**kwargs):
-    return _CanvasToWidget(DetailsIconCanvas, **kwargs)
-
-
-class _BuddyIcon(CanvasIcon):
+class _BuddyIcon(gtk.EventBox):
 
     def __init__(self):
-        CanvasIcon.__init__(self,
-                icon_name='computer-xo',
-                size=style.STANDARD_ICON_SIZE)
+        gtk.EventBox.__init__(self)
 
         self.buddy = None
+
+        self.props.visible_window = False
+
+        self._icon = Icon(
+                icon_name='computer-xo',
+                pixel_size=style.STANDARD_ICON_SIZE)
+        self._icon.show()
+        self.add(self._icon)
+
+        self._invoker = WidgetInvoker(self)
+        self._invoker._position_hint = Invoker.AT_CURSOR
+
+        self.connect('destroy', self.__destroy_cb)
+
+    def set_buddy(self, buddy):
+        self.buddy = buddy
+        self._invoker.palette = None
+        nick_, color = buddy
+        self._icon.props.xo_color = XoColor(color)
 
     def create_palette(self):
         return BuddyPalette(self.buddy)
 
-
-class _CanvasToWidget(hippo.Canvas):
-
-    def __init__(self, canvas_class, **kwargs):
-        hippo.Canvas.__init__(self)
-
-        self.modify_bg(gtk.STATE_NORMAL,
-                style.COLOR_WHITE.get_gdk_color())
-
-        self.root = canvas_class(**kwargs)
-        self.set_root(self.root)
-
-    def fill_in(self, metadata):
-        self.root.fill_in(metadata)
+    def __destroy_cb(self, icon):
+        if self._invoker is not None:
+            self._invoker.detach()
 
 
 def _surface_to_pixels(drawable, surface):

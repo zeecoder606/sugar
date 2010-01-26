@@ -17,8 +17,6 @@
 import gobject
 import logging
 
-import hippo
-
 from sugar.graphics import style
 
 from jarabe.journal.homogeneview import HomogeneView
@@ -35,7 +33,7 @@ class _Cell(Cell):
         row.props.spacing = style.DEFAULT_SPACING
         self.add(row)
 
-        self._keep = KeepIcon(box_width=style.GRID_CELL_SIZE)
+        self._keep = KeepIcon()
         row.pack_start(self._keep, expand=False)
 
         self._icon = ObjectIcon(
@@ -72,7 +70,7 @@ class _Cell(Cell):
 
 class ListView(HomogeneView):
 
-    def __init__(self):
-        HomogeneView.__init__(self, _Cell)
+    def __init__(self, selection):
+        HomogeneView.__init__(self, _Cell, selection)
         self.frame_size = (None, 1)
         self.cell_size = (None, style.GRID_CELL_SIZE)
