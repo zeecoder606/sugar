@@ -31,6 +31,7 @@ from sugar.graphics.icon import CanvasIcon
 from sugar.graphics.xocolor import XoColor
 from sugar.graphics.palette import Invoker
 from sugar.graphics.palette import WidgetInvoker
+from sugar.graphics import icon
 
 from jarabe.journal.entry import Entry
 from jarabe.journal.palettes import BuddyPalette
@@ -115,41 +116,123 @@ def KeepIcon(**kwargs):
     return _CanvasToWidget(KeepIconCanvas, **kwargs)
 
 
-class _Launcher(object):
+class _JournalObject(gtk.EventBox):
 
-    def __init__(self, detail):
+    def __init__(self, detail, paint_box):
+        gtk.EventBox.__init__(self)
+
         self.metadata = None
         self._detail = detail
 
+        self._invoker = WidgetInvoker(self)
+        self._invoker._position_hint = Invoker.AT_CURSOR
+
+        self.modify_fg(gtk.STATE_NORMAL,
+                style.COLOR_PANEL_GREY.get_gdk_color())
+        self.modify_bg(gtk.STATE_NORMAL,
+                style.COLOR_WHITE.get_gdk_color())
+
+        self.add_events(gtk.gdk.BUTTON_PRESS_MASK | \
+                        gtk.gdk.BUTTON_RELEASE_MASK | \
+                        gtk.gdk.LEAVE_NOTIFY_MASK | \
+                        gtk.gdk.ENTER_NOTIFY_MASK)
+
         self.connect_after('button-release-event',
                 self.__button_release_event_cb)
+
+        self.connect('destroy', self.__destroy_cb)
+        if paint_box:
+            self.connect_after('expose-event', self.__expose_event_cb)
+
+        # DND stuff
+
+        self._drag = False
+        self._temp_drag_file_path = None
+        self.drag_source_set(gtk.gdk.BUTTON1_MASK,
+                [('text/uri-list', 0, 0), ('journal-object-id', 0, 0)],
+                gtk.gdk.ACTION_COPY)
+        self.connect('drag-begin', self.__drag_begin_cb)
+        self.connect('drag-data-get', self.__drag_data_get_cb)
+        self.connect('drag-end', self.__drag_end_cb)
+
+    def fill_in(self, metadata):
+        self.metadata = metadata
+        self._invoker.palette = None
 
     def create_palette(self):
         if self.metadata is not None:
             return ObjectPalette(self.metadata, detail=self._detail)
 
+    def __destroy_cb(self, icon):
+        if self._invoker is not None:
+            self._invoker.detach()
+
+    def __expose_event_cb(self, widget, event):
+        __, __, width, height = self.allocation
+        fg = self.style.fg_gc[gtk.STATE_NORMAL]
+        self.window.draw_rectangle(fg, False, 0, 0, width - 1, height - 1)
+
+    def __drag_begin_cb(self, widget, context):
+        self._drag = True
+
+        if self._invoker.palette is not None:
+            self._invoker.palette.popdown(immediate=True)
+
+        surface = icon.get_surface(
+                file_name=misc.get_icon_name(self.metadata),
+                xo_color=misc.get_icon_color(self.metadata))
+        pixmap, bitmask = _surface_to_pixels(self.window, surface)
+
+        context.set_icon_pixmap(self.get_colormap(), pixmap, bitmask,
+                surface.get_width() / 2, surface.get_height() / 2)
+
+    def __drag_data_get_cb(self, widget, context, selection, target_type,
+            event_time):
+        if selection.target == 'text/uri-list':
+            # Get hold of a reference so the temp file doesn't get deleted
+            self._temp_drag_file_path = model.get_file(self.metadata)
+            logging.debug('putting %r in selection', self._temp_drag_file_path)
+            selection.set(selection.target, 8, self._temp_drag_file_path)
+
+        elif selection.target == 'journal-object-id':
+            selection.set(selection.target, 8, self.metadata['uid'])
+
+    def __drag_end_cb(self, widget, context):
+        self._drag = False
+        self._temp_drag_file_path = None
+
     def __button_release_event_cb(self, button, event):
-        if self.metadata is not None:
+        if not self._drag and self.metadata is not None:
             misc.resume(self.metadata)
         return True
 
 
-class ObjectIconCanvas(_Launcher, CanvasIcon):
+class ObjectIcon(_JournalObject):
 
-    def __init__(self, detail=True, **kwargs):
-        CanvasIcon.__init__(self, **kwargs)
-        _Launcher.__init__(self, detail)
+    def __init__(self, detail=True, paint_box=True, **kwargs):
+        _JournalObject.__init__(self, detail, paint_box)
+
+        self._icon = icon.Icon(**kwargs)
+        self._icon.show()
+        self.add(self._icon)
 
     def fill_in(self, metadata):
-        self.metadata = metadata
-        self.palette = None
-
-        self.props.file_name = misc.get_icon_name(metadata)
-        self.props.xo_color = misc.get_icon_color(metadata)
+        _JournalObject.fill_in(self, metadata)
+        self._icon.props.file = misc.get_icon_name(metadata)
+        self._icon.props.xo_color = misc.get_icon_color(metadata)
 
 
-def ObjectIcon(**kwargs):
-    return _CanvasToWidget(ObjectIconCanvas, **kwargs)
+class Thumb(_JournalObject):
+
+    def __init__(self, detail=True, paint_box=True):
+        _JournalObject.__init__(self, detail, paint_box)
+
+        self._image = gtk.Image()
+        self._image.show()
+        self.add(self._image)
+
+    def set_from_pixbuf(self, pixbuf):
+        self._image.set_from_pixbuf(pixbuf)
 
 
 class Title(Entry):
@@ -278,47 +361,6 @@ def DetailsIcon(**kwargs):
     return _CanvasToWidget(DetailsIconCanvas, **kwargs)
 
 
-class Thumb(_Launcher, gtk.EventBox):
-
-    def __init__(self, detail=True):
-        gtk.EventBox.__init__(self)
-        _Launcher.__init__(self, detail)
-
-        self.modify_fg(gtk.STATE_NORMAL,
-                style.COLOR_PANEL_GREY.get_gdk_color())
-        self.modify_bg(gtk.STATE_NORMAL,
-                style.COLOR_WHITE.get_gdk_color())
-
-        self.add_events(gtk.gdk.BUTTON_PRESS_MASK | \
-                        gtk.gdk.BUTTON_RELEASE_MASK | \
-                        gtk.gdk.LEAVE_NOTIFY_MASK | \
-                        gtk.gdk.ENTER_NOTIFY_MASK)
-        self.set_size_request(preview.THUMB_WIDTH, preview.THUMB_HEIGHT)
-
-        self.connect_after('expose-event', self.__expose_event_cb)
-
-        self.image = gtk.Image()
-        self.image.show()
-        self.add(self.image)
-
-        self._invoker = WidgetInvoker(self)
-        self._invoker._position_hint = Invoker.AT_CURSOR
-        self.connect('destroy', self.__destroy_cb)
-
-    def __expose_event_cb(self, widget, event):
-        __, __, width, height = self.allocation
-        fg = self.style.fg_gc[gtk.STATE_NORMAL]
-        self.window.draw_rectangle(fg, False, 0, 0, width - 1, height - 1)
-
-    def fill_in(self, metadata):
-        self.metadata = metadata
-        self._invoker.palette = None
-
-    def __destroy_cb(self, icon):
-        if self._invoker is not None:
-            self._invoker.detach()
-
-
 class _BuddyIcon(CanvasIcon):
 
     def __init__(self):
@@ -345,3 +387,23 @@ class _CanvasToWidget(hippo.Canvas):
 
     def fill_in(self, metadata):
         self.root.fill_in(metadata)
+
+
+def _surface_to_pixels(drawable, surface):
+    width = surface.get_width()
+    height = surface.get_height()
+
+    pixmap = gtk.gdk.Pixmap(drawable, width, height)
+    pixmap_context = pixmap.cairo_create()
+    pixmap_context.set_source_surface(surface)
+    pixmap_context.paint();
+
+    mask_row_size = (width + 7) / 8
+    mask_size = height * mask_row_size
+    mask_data = '\x00' * mask_size
+    mask = gtk.gdk.bitmap_create_from_data(drawable, mask_data, width, height)
+    mask_context = mask.cairo_create()
+    mask_context.set_source_surface(surface)
+    mask_context.paint();
+
+    return pixmap, mask

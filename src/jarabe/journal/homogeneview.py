@@ -19,7 +19,6 @@ import gobject
 import logging
 
 from sugar.graphics import style
-from sugar.graphics.roundbox import CanvasRoundBox
 
 from jarabe.journal.homogenetable import VHomogeneTable
 
@@ -35,9 +34,8 @@ class Cell(gtk.EventBox):
         pass
 
     def do_fill_in(self, table, cell_index):
-        result_set = table.get_result_set()
-        result_set.seek(cell_index)
-        self.do_fill_in_cell_content(table, cell_index, result_set.read())
+        metadata = table.get_metadata(cell_index)
+        self.do_fill_in_cell_content(table, cell_index, metadata)
         if table.hover_selection:
             self.select(table.cursor == cell_index)
 
@@ -68,9 +66,6 @@ class HomogeneView(VHomogeneTable):
 
         self.connect('cursor-changed', self.__cursor_changed_cb)
 
-    def get_result_set(self):
-        return self._result_set
-
     def set_result_set(self, result_set):
         if self._result_set is result_set:
             return
@@ -82,6 +77,10 @@ class HomogeneView(VHomogeneTable):
             self.refill()
         else:
             self.cell_count = result_set_length
+
+    def get_metadata(self, offset):
+        self._result_set.seek(offset)
+        return self._result_set.read()
 
     def __cursor_changed_cb(self, table, old_cursor):
         if not self.hover_selection:

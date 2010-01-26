@@ -30,6 +30,7 @@ class _Cell(Cell):
     def __init__(self):
         Cell.__init__(self)
 
+        self._last_thumb_uid = None
         self._last_thumb_offset = None
         self._last_thumb_mtime = None
 
@@ -53,14 +54,12 @@ class _Cell(Cell):
         main.props.spacing = style.DEFAULT_PADDING
         cell.pack_end(main)
 
-        self._icon = ObjectIcon(
-                border=style.LINE_WIDTH,
-                border_color=style.COLOR_PANEL_GREY.get_int(),
-                box_width=preview.THUMB_WIDTH,
-                box_height=preview.THUMB_HEIGHT)
+        self._icon = ObjectIcon(pixel_size=style.MEDIUM_ICON_SIZE)
+        self._icon.set_size_request(preview.THUMB_WIDTH, preview.THUMB_HEIGHT)
         self._icon.show()
 
         self._thumb = Thumb()
+        self._thumb.set_size_request(preview.THUMB_WIDTH, preview.THUMB_HEIGHT)
         self._thumb.show()
 
         self._thumb_box = gtk.HBox()
@@ -84,9 +83,11 @@ class _Cell(Cell):
         self._thumb.fill_in(metadata)
 
         if self._last_thumb_offset != offset or \
+                self._last_thumb_uid != metadata.get('uid') or \
                 self._last_thumb_mtime != metadata.get('timestamp'):
             self._set_thumb_widget(self._icon)
             self._last_thumb_offset = None
+            self._last_thumb_uid = metadata.get('uid')
             self._last_thumb_mtime = metadata.get('timestamp')
             preview.fetch(offset, metadata)
         else:
@@ -94,7 +95,7 @@ class _Cell(Cell):
 
     def fill_pixbuf_in(self, offset, pixbuf):
         self._last_thumb_offset = offset
-        self._thumb.image.set_from_pixbuf(pixbuf)
+        self._thumb.set_from_pixbuf(pixbuf)
         self._set_thumb_widget(self._thumb)
 
     def _set_thumb_widget(self, widget):

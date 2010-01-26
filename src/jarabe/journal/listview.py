@@ -38,7 +38,9 @@ class _Cell(Cell):
         self._keep = KeepIcon(box_width=style.GRID_CELL_SIZE)
         row.pack_start(self._keep, expand=False)
 
-        self._icon = ObjectIcon(size=style.STANDARD_ICON_SIZE)
+        self._icon = ObjectIcon(
+                paint_box=False,
+                pixel_size=style.STANDARD_ICON_SIZE)
         row.pack_start(self._icon, expand=False)
 
         self._title = Title()
