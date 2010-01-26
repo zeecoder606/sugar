@@ -376,13 +376,13 @@ def _get_datastore():
     return _datastore
 
 def _datastore_created_cb(object_id):
-    created.send(None, object_id=object_id)
+    created.send(None, object_id=object_id, mountpoint='/')
 
 def _datastore_updated_cb(object_id):
-    updated.send(None, object_id=object_id)
+    updated.send(None, object_id=object_id, mountpoint='/')
 
 def _datastore_deleted_cb(object_id):
-    deleted.send(None, object_id=object_id)
+    deleted.send(None, object_id=object_id, mountpoint='/')
 
 def find(query_, page_size):
     """Returns a ResultSet

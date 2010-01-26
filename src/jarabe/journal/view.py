@@ -126,14 +126,14 @@ class View(gtk.EventBox):
 
     _page = property(_get_page, _set_page)
 
-    def __model_created_cb(self, sender, **kwargs):
-        self._set_dirty()
+    def __model_created_cb(self, signal, **kwargs):
+        self._set_dirty(kwargs['mountpoint'])
 
-    def __model_updated_cb(self, sender, **kwargs):
-        self._set_dirty()
+    def __model_updated_cb(self, signal, **kwargs):
+        self._set_dirty(kwargs['mountpoint'])
 
-    def __model_deleted_cb(self, sender, **kwargs):
-        self._set_dirty()
+    def __model_deleted_cb(self, signal, **kwargs):
+        self._set_dirty(kwargs['mountpoint'])
 
     def __destroy_cb(self, widget):
         if self._result_set is not None:
@@ -255,7 +255,9 @@ class View(gtk.EventBox):
     def update_dates(self):
         self.view.refill()
 
-    def _set_dirty(self):
+    def _set_dirty(self, mountpoint):
+        if mountpoint not in self._query.get('mountpoints', []):
+            return
         if self._fully_obscured:
             self._dirty = True
         else:
