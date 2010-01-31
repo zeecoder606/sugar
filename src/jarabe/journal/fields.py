@@ -141,7 +141,7 @@ class KeepIcon(_Button):
         else:
             keep = 0
 
-        self.metadata['keep'] = keep
+        self.metadata['keep'] = str(keep)
         model.write(self.metadata, update_mtime=False)
 
         self._set_keep(keep)
@@ -168,10 +168,10 @@ class _JournalObject(gtk.EventBox):
         self._invoker = WidgetInvoker(self)
         self._invoker._position_hint = Invoker.AT_CURSOR
 
+        self.props.visible_window = False
+
         self.modify_fg(gtk.STATE_NORMAL,
                 style.COLOR_PANEL_GREY.get_gdk_color())
-        self.modify_bg(gtk.STATE_NORMAL,
-                style.COLOR_WHITE.get_gdk_color())
 
         self.connect_after('button-release-event',
                 self.__button_release_event_cb)
@@ -204,9 +204,9 @@ class _JournalObject(gtk.EventBox):
             self._invoker.detach()
 
     def __expose_event_cb(self, widget, event):
-        __, __, width, height = self.allocation
+        x, y, width, height = self.allocation
         fg = self.style.fg_gc[gtk.STATE_NORMAL]
-        self.window.draw_rectangle(fg, False, 0, 0, width - 1, height - 1)
+        self.window.draw_rectangle(fg, False, x, y, width - 1, height - 1)
 
     def __drag_begin_cb(self, widget, context):
         self._drag = True

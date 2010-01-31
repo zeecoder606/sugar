@@ -54,7 +54,7 @@ class View(gtk.EventBox):
                             ([str])),
     }
 
-    def __init__(self):
+    def __init__(self, selection=False):
         gtk.EventBox.__init__(self)
 
         self._query = {}
@@ -66,8 +66,8 @@ class View(gtk.EventBox):
         self._progress_bar = None
 
         self._page_ctors = {
-                VIEW_LIST: lambda: self._view_new(ListView),
-                VIEW_THUMBS: lambda: self._view_new(ThumbsView),
+                VIEW_LIST: lambda: self._view_new(ListView, selection),
+                VIEW_THUMBS: lambda: self._view_new(ThumbsView, selection),
                 _MESSAGE_PROGRESS: self._progress_new,
                 _MESSAGE_EMPTY_JOURNAL: self._message_new,
                 _MESSAGE_NO_MATCH: self._message_new,
@@ -97,13 +97,6 @@ class View(gtk.EventBox):
         self.view.set_result_set(self._result_set)
 
     view = property(get_view, set_view)
-
-    def set_hover_selection(self, hover_selection):
-        for i in self._view_widgets:
-            i.child.props.hover_selection = hover_selection
-
-    hover_selection = gobject.property(type=bool, default=False,
-            setter=set_hover_selection)
 
     def _set_page(self, page):
         if self._current_page == page:
@@ -189,8 +182,8 @@ class View(gtk.EventBox):
             self._progress_bar.pulse()
             self._last_progress_bar_pulse = time.time()
 
-    def _view_new(self, view_class):
-        view = view_class()
+    def _view_new(self, view_class, selection):
+        view = view_class(selection)
         view.modify_bg(gtk.STATE_NORMAL, style.COLOR_WHITE.get_gdk_color())
         view.connect('entry-activated', self.__entry_activated_cb)
 

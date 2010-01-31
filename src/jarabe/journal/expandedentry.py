@@ -32,7 +32,7 @@ from sugar.graphics.entry import CanvasEntry
 from sugar.graphics.canvastextview import CanvasTextView
 from sugar.util import format_size
 
-from jarabe.journal.widgets import KeepIcon
+from jarabe.journal.fields import KeepIcon
 from jarabe.journal.palettes import ObjectPalette, BuddyPalette
 from jarabe.journal import misc
 from jarabe.journal import model

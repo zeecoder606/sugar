@@ -20,7 +20,7 @@ import logging
 
 from jarabe.journal.homogeneview import HomogeneView
 from jarabe.journal.homogeneview import Cell
-from jarabe.journal.widgets import *
+from jarabe.journal.fields import *
 from jarabe.journal import preview
 from jarabe.journal import entry
 
@@ -43,11 +43,13 @@ class _Cell(Cell):
         toolbar = gtk.VBox()
         cell.pack_start(toolbar, expand=False)
 
-        self._keep = KeepIcon()
-        toolbar.pack_start(self._keep, expand=False)
+        keep = KeepIcon()
+        toolbar.pack_start(keep, expand=False)
+        self.add_field(keep)
 
-        self._details = DetailsIcon()
-        toolbar.pack_start(self._details, expand=False)
+        details = DetailsIcon()
+        toolbar.pack_start(details, expand=False)
+        self.add_field(details)
 
         # main
 
@@ -58,31 +60,28 @@ class _Cell(Cell):
         self._icon = ObjectIcon(pixel_size=style.MEDIUM_ICON_SIZE)
         self._icon.set_size_request(preview.THUMB_WIDTH, preview.THUMB_HEIGHT)
         self._icon.show()
+        self.add_field(self._icon)
 
         self._thumb = Thumb()
         self._thumb.set_size_request(preview.THUMB_WIDTH, preview.THUMB_HEIGHT)
         self._thumb.show()
+        self.add_field(self._thumb)
 
         self._thumb_box = gtk.HBox()
         main.pack_start(self._thumb_box, expand=False)
 
-        self._title = Title(max_line_count=2)
-        main.pack_start(self._title, expand=False)
+        title = Title(max_line_count=2)
+        main.pack_start(title, expand=False)
+        self.add_field(title)
 
-        self._date = Timestamp(wrap=True, xalign=0.0)
-        self._date.set_size_request(preview.THUMB_WIDTH, -1)
-        main.pack_start(self._date, expand=False)
+        date = Timestamp(wrap=True, xalign=0.0)
+        date.set_size_request(preview.THUMB_WIDTH, -1)
+        main.pack_start(date, expand=False)
+        self.add_field(date)
 
         self.show_all()
 
-    def do_fill_in_cell_content(self, table, offset, metadata):
-        self._keep.fill_in(metadata)
-        self._details.fill_in(metadata)
-        self._title.fill_in(metadata)
-        self._date.fill_in(metadata)
-        self._icon.fill_in(metadata)
-        self._thumb.fill_in(metadata)
-
+    def fill_in(self, offset, metadata):
         if self._last_thumb_offset != offset or \
                 self._last_thumb_uid != metadata.get('uid') or \
                 self._last_thumb_mtime != metadata.get('timestamp'):
@@ -108,8 +107,8 @@ class _Cell(Cell):
 
 class ThumbsView(HomogeneView):
 
-    def __init__(self):
-        HomogeneView.__init__(self, _Cell)
+    def __init__(self, selection):
+        HomogeneView.__init__(self, selection)
 
         cell_width = style.DEFAULT_PADDING * 2 + \
                      style.GRID_CELL_SIZE + \
@@ -124,6 +123,9 @@ class ThumbsView(HomogeneView):
 
         self.connect('frame-scrolled', self.__frame_scrolled_cb)
         preview.fetched.connect(self.__preview_fetched_cb)
+
+    def do_cell_new(self):
+        return _Cell()
 
     def __frame_scrolled_cb(self, table):
         preview.discard_queue(table.frame_range)

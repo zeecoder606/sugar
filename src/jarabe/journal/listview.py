@@ -21,7 +21,7 @@ from sugar.graphics import style
 
 from jarabe.journal.homogeneview import HomogeneView
 from jarabe.journal.homogeneview import Cell
-from jarabe.journal.widgets import *
+from jarabe.journal.fields import *
 
 
 class _Cell(Cell):
@@ -33,44 +33,45 @@ class _Cell(Cell):
         row.props.spacing = style.DEFAULT_SPACING
         self.add(row)
 
-        self._keep = KeepIcon()
-        row.pack_start(self._keep, expand=False)
+        keep = KeepIcon()
+        row.pack_start(keep, expand=False)
+        self.add_field(keep)
 
-        self._icon = ObjectIcon(
+        icon = ObjectIcon(
                 paint_box=False,
                 pixel_size=style.STANDARD_ICON_SIZE)
-        row.pack_start(self._icon, expand=False)
+        row.pack_start(icon, expand=False)
+        self.add_field(icon)
 
-        self._title = Title()
+        title = Title()
         title_alignment = gtk.Alignment(
                 xalign=0, yalign=0.5, xscale=1, yscale=0)
-        title_alignment.add(self._title)
+        title_alignment.add(title)
         row.pack_start(title_alignment)
+        self.add_field(title)
 
-        self._details = DetailsIcon()
-        row.pack_end(self._details, expand=False)
+        details = DetailsIcon()
+        row.pack_end(details, expand=False)
+        self.add_field(details)
 
-        self._date = Timestamp()
-        row.pack_end(self._date, expand=False)
+        date = Timestamp()
+        row.pack_end(date, expand=False)
+        self.add_field(date)
 
-        self._buddies = Buddies(buddies_max=3,
+        buddies = Buddies(buddies_max=3,
                 xalign=0, yalign=0.5, xscale=1, yscale=0.15)
-        row.pack_end(self._buddies, expand=False)
+        row.pack_end(buddies, expand=False)
+        self.add_field(buddies)
 
         self.show_all()
-
-    def do_fill_in_cell_content(self, table, offset, metadata):
-        self._keep.fill_in(metadata)
-        self._icon.fill_in(metadata)
-        self._title.fill_in(metadata)
-        self._details.fill_in(metadata)
-        self._date.fill_in(metadata)
-        self._buddies.fill_in(metadata)
 
 
 class ListView(HomogeneView):
 
     def __init__(self, selection):
-        HomogeneView.__init__(self, _Cell, selection)
+        HomogeneView.__init__(self, selection)
         self.frame_size = (None, 1)
         self.cell_size = (None, style.GRID_CELL_SIZE)
+
+    def do_cell_new(self):
+        return _Cell()

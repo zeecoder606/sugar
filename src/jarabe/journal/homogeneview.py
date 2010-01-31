@@ -20,35 +20,41 @@ import logging
 
 from sugar.graphics import style
 
-from jarabe.journal.homogenetable import VHomogeneTable
+from jarabe.journal.homogenetable import HomogeneTable
 
 
 class Cell(gtk.EventBox):
 
     def __init__(self):
         gtk.EventBox.__init__(self)
-        self.select(False)
+        self._fields = []
+        self.fill_background(False)
 
-    def do_fill_in_cell_content(self, table, offset, metadata):
-        # needs to be overriden
+    def add_field(self, field):
+        self._fields.append(field)
+
+    def fill_in(self, offset, metadata):
+        # stub
         pass
 
     def do_fill_in(self, table, cell_index):
         metadata = table.get_metadata(cell_index)
-        self.do_fill_in_cell_content(table, cell_index, metadata)
-        if table.hover_selection:
-            self.select(table.cursor == cell_index)
+        for i in self._fields:
+            i.fill_in(metadata)
+        self.fill_in(cell_index, metadata)
 
-    def select(self, selected):
+    def fill_background(self, selected):
         if selected:
-            self.modify_bg(gtk.STATE_NORMAL,
-                    style.COLOR_SELECTION_GREY.get_gdk_color())
+            color = style.COLOR_SELECTION_GREY.get_gdk_color()
         else:
-            self.modify_bg(gtk.STATE_NORMAL,
-                    style.COLOR_WHITE.get_gdk_color())
+            color = style.COLOR_WHITE.get_gdk_color()
+        self.modify_bg(gtk.STATE_NORMAL, color)
+        for i in self._fields:
+            if isinstance(i, gtk.TextView):
+                i.modify_base(gtk.STATE_NORMAL, color)
 
 
-class HomogeneView(VHomogeneTable):
+class HomogeneView(HomogeneTable):
 
     __gsignals__ = {
             'entry-activated': (gobject.SIGNAL_RUN_FIRST,
@@ -56,15 +62,13 @@ class HomogeneView(VHomogeneTable):
                                 ([str])),
             }
 
-    def __init__(self, cell_class, **kwargs):
-        assert(issubclass(cell_class, Cell))
+    def __init__(self, selection, **kwargs):
+        HomogeneTable.__init__(self, **kwargs)
 
-        VHomogeneTable.__init__(self, cell_class, **kwargs)
-
+        self.editable = not selection
+        self.cursor_visible = selection
+        self.hover_selection = selection
         self._result_set = None
-        self.hover_selection = False
-
-        self.connect('cursor-changed', self.__cursor_changed_cb)
 
     def set_result_set(self, result_set):
         if self._result_set is result_set:
@@ -82,12 +86,5 @@ class HomogeneView(VHomogeneTable):
         self._result_set.seek(offset)
         return self._result_set.read()
 
-    def __cursor_changed_cb(self, table, old_cursor):
-        if not self.hover_selection:
-            return
-        old_cell = table[old_cursor]
-        if old_cell is not None:
-            old_cell.select(False)
-        new_cell = table[table.cursor]
-        if new_cell is not None:
-            new_cell.select(True)
+    def do_highlight_cell(self, cell, selected):
+        cell.fill_background(selected)

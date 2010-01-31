@@ -24,7 +24,7 @@ import logging
 _SPARE_ROWS_COUNT = 2
 
 
-class VHomogeneTable(gtk.Container):
+class HomogeneTable(gtk.Container):
     """
     Grid widget with homogeneously placed children of the same class.
 
@@ -33,8 +33,8 @@ class VHomogeneTable(gtk.Container):
     cells and virtual (widget is model less itself and only ask callback
     object about right cell's value) ones - just cells. User can scroll up/down
     grid to see all virtual cells and the same frame cell could represent
-    content of various virtual cells (widget will call cell_fill_in_cb callback
-    to refill frame cell content) in different time moments.
+    content of various virtual cells (widget will call do_fill_cell_in to
+    refill frame cell content) in different time moments.
 
     By default widget doesn't have any cells, to make it useful, assign proper
     value to either frame_size or cell_size property. Also set cell_count to
@@ -44,28 +44,26 @@ class VHomogeneTable(gtk.Container):
     __gsignals__ = {
             'set-scroll-adjustments': (gobject.SIGNAL_RUN_FIRST, None,
                                       [gtk.Adjustment, gtk.Adjustment]),
-            'cursor-changed': (gobject.SIGNAL_RUN_FIRST, None, [object]),
+            'cursor-changed': (gobject.SIGNAL_RUN_FIRST, None, []),
             'frame-scrolled': (gobject.SIGNAL_RUN_FIRST, None, []),
             }
 
-    def __init__(self, cell_class, **kwargs):
-        assert(hasattr(cell_class, 'do_fill_in'))
-
-        self._cell_class = cell_class
+    def __init__(self, **kwargs):
         self._row_cache = []
         self._cell_cache = []
         self._cell_cache_pos = 0
-        self._adjustment = None
-        self._adjustment_value_changed_id = None
+        self._adjustments = []
         self._bin_window = None
         self._cell_count = 0
-        self._cell_height = 0
+        self._cell_length = 0
         self._frame_size = [None, None]
         self._cell_size = [None, None]
-        self._selected_index = None
-        self._editable = True
+        self._cursor_index = None
         self._pending_allocate = None
         self._frame_range = None
+        self._orientation = gtk.ORIENTATION_VERTICAL
+        self._hover_selection = False
+        self._cursor_visible = True
 
         gtk.Container.__init__(self, **kwargs)
 
@@ -127,6 +125,41 @@ class VHomogeneTable(gtk.Container):
        by frame_size/cell_size values."""
     cell_count = gobject.property(getter=get_cell_count, setter=set_cell_count)
 
+    def get_orientation(self):
+        return self._orientation
+
+    def set_orientation(self, value):
+        if self._orientation == value:
+            return
+
+        self._orientation = value
+        for adjustment, __ in self._adjustments:
+            adjustment.lower = 0
+            adjustment.upper = 0
+        self._resize_table()
+
+    orientation = gobject.property(getter=get_orientation,
+            setter=set_orientation)
+
+    def get_hover_selection(self):
+        return self._hover_selection
+
+    def set_hover_selection(self, value):
+        if value == self.hover_selection:
+            return
+        if value:
+            self.add_events(gtk.gdk.POINTER_MOTION_HINT_MASK | \
+                            gtk.gdk.POINTER_MOTION_MASK)
+        self._hover_selection = value
+
+    def do_motion_notify_event(self, event):
+        if not self.hover_selection:
+            return
+        self.cursor = self.get_cell_at_pos(*self.get_pointer())
+
+    hover_selection = gobject.property(
+            getter=get_hover_selection, setter=set_hover_selection)
+
     def get_cell(self, cell_index):
         """Get cell widget by index
            Method returns non-None values only for visible cells."""
@@ -136,11 +169,8 @@ class VHomogeneTable(gtk.Container):
         else:
             return cell.widget
 
-    def __getitem__(self, cell_index):
-        return self.get_cell(cell_index)
-
     def get_cursor(self):
-        return self._selected_index
+        return self._cursor_index
 
     def set_cursor(self, cell_index):
         cell_index = min(max(0, cell_index), self.cell_count - 1)
@@ -151,6 +181,20 @@ class VHomogeneTable(gtk.Container):
 
     """Selected cell"""
     cursor = gobject.property(getter=get_cursor, setter=set_cursor)
+
+    def get_cursor_visible(self):
+        return self._cursor_visible
+
+    def set_cursor_visible(self, value):
+        if value == self.cursor_visible:
+            return
+        cell = self._get_cell(self.cursor)
+        if cell is not None:
+            self.do_highlight_cell(cell.widget, value)
+        self._cursor_visible = value
+
+    cursor_visible = gobject.property(
+            getter=get_cursor_visible, setter=set_cursor_visible)
 
     def get_frame_range(self):
         if self._frame_range is None:
@@ -167,20 +211,10 @@ class VHomogeneTable(gtk.Container):
         for cell in self._cell_cache:
             yield cell.widget
 
-    def get_editable(self):
-        return self._editable
-
-    def set_editable(self, value):
-        self._editable = value
-
-    """Can cells be focused"""
-    editable = gobject.property(getter=get_editable, setter=set_editable)
-
-    def get_editing(self):
-        if not self._editable or self._selected_index is None or \
-                self.props.has_focus:
+    def get_focus_cell(self):
+        if self.cursor is None or self.props.has_focus:
             return False
-        cell = self._get_cell(self._selected_index)
+        cell = self._get_cell(self.cursor)
         if cell is None:
             return False
         else:
@@ -195,59 +229,84 @@ class VHomogeneTable(gtk.Container):
                 focus = focus.parent
             return False
 
-    def set_editing(self, value):
-        if value == self.editing:
+    def set_focus_cell(self, value):
+        if value == self.focus_cell:
             return
         if value:
             if not self.props.has_focus:
                 self.grab_focus()
-            cell = self._get_cell(self._selected_index)
+            cell = self._get_cell(self.cursor)
             if cell is not None:
                 cell.widget.child_focus(gtk.DIR_TAB_FORWARD)
         else:
             self.grab_focus()
 
     """Selected cell got focused"""
-    editing = gobject.property(getter=get_editing, setter=set_editing)
+    focus_cell = gobject.property(getter=get_focus_cell, setter=set_focus_cell)
 
     def get_cell_at_pos(self, x, y):
-        """Get cell index at pos which is relative to VHomogeneTable widget"""
+        """Get cell index at pos which is relative to HomogeneTable widget"""
         if self._empty:
             return None
 
-        x, y = self.get_pointer()
-        x = min(max(0, x), self.allocation.width)
-        y = min(max(0, y), self.allocation.height) + self._pos_y
+        x = min(max(0, x), self.allocation.width - 1)
+        y = min(max(0, y), self.allocation.height - 1)
+
+        x, y = self._rotate(x, y)
+        y += self._pos
 
         return self._get_cell_at_pos(x, y)
 
     def scroll_to_cell(self, cell_index):
-        """Scroll VHomogeneTable to position where cell is viewable"""
+        """Scroll HomogeneTable to position where cell is viewable"""
         if self._empty:
             return
 
-        self.editing = False
+        self.focus_cell = False
 
         row = cell_index / self._column_count
-        pos = row * self._cell_height
+        pos = row * self._cell_length
 
-        if pos < self._pos_y:
-            self._pos_y = pos
-        elif pos + self._cell_height >= self._pos_y + self._page:
-            self._pos_y = pos + self._cell_height - self._page
+        if pos < self._pos:
+            self._pos = pos
+        elif pos + self._cell_length >= self._pos + self._page:
+            self._pos = pos + self._cell_length - self._page
         else:
             return
 
         self._pos_changed()
 
     def refill(self, cells=None):
-        """Force VHomogeneTable widget to run filling method for all cells"""
+        """Force HomogeneTable widget to run filling method for all cells"""
         for cell in self._cell_cache:
             if cells is None or cell.index in cells:
                 cell.index = -1
         self._allocate_rows(force=False)
 
+    def do_cell_new(self):
+        raise Exception('do_cell_new() should be implemented in subclass')
+
+    def do_fill_cell_in(self, cell, cell_index):
+        cell.do_fill_in(self, cell_index)
+
+    def do_highlight_cell(self, cell, selected):
+        pass
+
     # gtk.Widget overrides
+
+    def do_scroll_event(self, event):
+        if self._adjustment is not None and \
+                self.orientation == gtk.ORIENTATION_HORIZONTAL:
+            adj = self._adjustment
+            if event.direction == gtk.gdk.SCROLL_UP:
+                value = max(0, adj.value - self._cell_length)
+            elif event.direction == gtk.gdk.SCROLL_DOWN:
+                value = min(self._max_pos, adj.value + self._cell_length)
+            else:
+                return False
+            adj.value = value
+            return True
+        return False
 
     def do_realize(self):
         self.set_flags(gtk.REALIZED)
@@ -267,10 +326,10 @@ class VHomogeneTable(gtk.Container):
         self._bin_window = gtk.gdk.Window(
                 self.window,
                 window_type=gtk.gdk.WINDOW_CHILD,
-                x=0,
-                y=-self._pos_y,
-                width=self.allocation.width,
-                height=self._max_y,
+                x=self._rotate(0, -self._pos)[0],
+                y=self._rotate(-self._pos, 0)[0],
+                width=self._rotate(self._thickness, self._length)[0],
+                height=self._rotate(self._length, self._thickness)[0],
                 colormap=self.get_colormap(),
                 wclass=gtk.gdk.INPUT_OUTPUT,
                 event_mask=(self.get_events() | gtk.gdk.EXPOSURE_MASK |
@@ -291,7 +350,7 @@ class VHomogeneTable(gtk.Container):
         #self.queue_resize()
 
     def do_size_allocate(self, allocation):
-        resize_tabel = self.allocation != allocation
+        resize_tabel = tuple(self.allocation) != tuple(allocation)
         self.allocation = allocation
 
         if resize_tabel:
@@ -322,7 +381,8 @@ class VHomogeneTable(gtk.Container):
 
         for row in self._row_cache:
             for cell in row:
-                cell.widget.map()
+                if cell.widget.props.visible:
+                    cell.widget.map()
 
         self._bin_window.show()
         self.window.show()
@@ -336,17 +396,20 @@ class VHomogeneTable(gtk.Container):
                 cell.widget.size_request()
 
     def do_set_scroll_adjustments(self, hadjustment, vadjustment):
-        if vadjustment is None or vadjustment == self._adjustment:
+        for adjustment, handler in self._adjustments:
+            adjustment.disconnect(handler)
+
+        if vadjustment is None or hadjustment is None:
+            self._adjustments = []
             return
 
-        if self._adjustment is not None:
-            self._adjustment.disconnect(self._adjustment_value_changed_id)
+        self._adjustments = (
+                [vadjustment, vadjustment.connect('value-changed',
+                    self.__adjustment_value_changed_cb)],
+                [hadjustment, hadjustment.connect('value-changed',
+                    self.__adjustment_value_changed_cb)])
 
-        self._adjustment = vadjustment
         self._setup_adjustment(dry_run=True)
-
-        self._adjustment_value_changed_id = vadjustment.connect(
-                'value-changed', self.__adjustment_value_changed_cb)
 
     # gtk.Container overrides
 
@@ -366,15 +429,15 @@ class VHomogeneTable(gtk.Container):
     def do_set_focus_child(self, widget):
         if widget is not None:
             x, y, __, __ = widget.allocation
-            cursor = self._get_cell_at_pos(x, y)
+            cursor = self._get_cell_at_pos(*self._rotate(x, y))
             if self.cursor is None or cursor not in self.frame_range:
                 self.cursor = cursor
 
     def do_focus(self, type):
-        if self.editing:
-            cell = self._get_cell(self._selected_index)
+        if self.focus_cell:
+            cell = self._get_cell(self.cursor)
             if cell is None:
-                logging.error('cannot find _selected_index cell')
+                logging.error('cannot find cursor cell')
             elif not cell.widget.child_focus(type):
                 self.grab_focus()
             return True
@@ -382,7 +445,7 @@ class VHomogeneTable(gtk.Container):
             if self.props.has_focus:
                 return False
             else:
-                if self._selected_index is None:
+                if self.cursor is None:
                     x, y = self.get_pointer()
                     self._set_cursor(self.get_cell_at_pos(x, y))
                 self.grab_focus()
@@ -391,6 +454,13 @@ class VHomogeneTable(gtk.Container):
     @property
     def _empty(self):
         return not self._row_cache
+
+    @property
+    def _adjustment(self):
+        if not self._adjustments:
+            return None
+        else:
+            return self._rotate(*[i[0] for i in self._adjustments])[0]
 
     @property
     def _column_count(self):
@@ -413,33 +483,47 @@ class VHomogeneTable(gtk.Container):
 
     @property
     def _page(self):
-        return self._frame_row_count * self._cell_height
+        return self._frame_row_count * self._cell_length
 
     @property
-    def _pos_y(self):
+    def _pos(self):
         if self._adjustment is None or math.isnan(self._adjustment.value):
             return 0
         else:
             return max(0, int(self._adjustment.value))
 
-    @_pos_y.setter
-    def _pos_y(self, value):
+    @_pos.setter
+    def _pos(self, value):
         if self._adjustment is not None:
             self._adjustment.value = value
 
     @property
-    def _max_pos_y(self):
+    def _max_pos(self):
         if self._adjustment is None:
             return 0
         else:
-            return max(0, self._max_y - self._page)
+            return max(0, self._length - self._page)
 
     @property
-    def _max_y(self):
+    def _thickness(self):
+        return self._rotate(self.allocation.width, self.allocation.height)[0]
+
+    @property
+    def _frame_length(self):
+        return self._rotate(self.allocation.height, self.allocation.width)[0]
+
+    @property
+    def _length(self):
         if self._adjustment is None:
-            return self.allocation.height
+            return self._frame_length
         else:
             return int(self._adjustment.upper)
+
+    def _rotate(self, x, y):
+        if self._orientation == gtk.ORIENTATION_VERTICAL:
+            return (x, y)
+        else:
+            return (y, x)
 
     def _get_cell(self, cell_index):
         if cell_index is None:
@@ -451,15 +535,28 @@ class VHomogeneTable(gtk.Container):
                 return row[column]
         return None
 
+    def _get_row_pos(self, row):
+        allocation = row[0].widget.allocation
+        return self._rotate(allocation.y, allocation.x)[0]
+
     def _set_cursor(self, cell_index):
-        old_cursor = self._selected_index
-        self._selected_index = cell_index
-        if old_cursor != self._selected_index:
-            self.emit('cursor-changed', old_cursor)
+        if self.cursor_visible:
+            cell = self._get_cell(self.cursor)
+            if cell is not None:
+                self.do_highlight_cell(cell.widget, False)
+
+        self._cursor_index = cell_index
+
+        if self.cursor_visible:
+            cell = self._get_cell(self.cursor)
+            if cell is not None:
+                self.do_highlight_cell(cell.widget, True)
+
+        self.emit('cursor-changed')
 
     def _get_cell_at_pos(self, x, y):
-        cell_row = y / self._cell_height
-        cell_column = x / (self.allocation.width / self._column_count)
+        cell_row = y / self._cell_length
+        cell_column = x / (self._thickness / self._column_count)
         cell_index = cell_row * self._column_count + cell_column
         return min(cell_index, self.cell_count - 1)
 
@@ -480,7 +577,8 @@ class VHomogeneTable(gtk.Container):
             self._cell_cache_pos += 1
         else:
             cell = _Cell()
-            cell.widget = self._cell_class()
+            cell.widget = self.do_cell_new()
+            assert(cell.widget is not None)
             self._cell_cache.append(cell)
             self._cell_cache_pos = len(self._cell_cache)
 
@@ -488,8 +586,8 @@ class VHomogeneTable(gtk.Container):
         return cell
 
     def _resize_table(self):
-        x, y, width, height = self.allocation
-        if x < 0 or y < 0:
+        x, y, w, h = self.allocation
+        if x + w == 0 or y + h == 0:
             return
 
         frame_row_count, column_count = self._frame_size
@@ -498,11 +596,11 @@ class VHomogeneTable(gtk.Container):
         if frame_row_count is None:
             if cell_height is None:
                 return
-            frame_row_count = max(1, height / cell_height)
+            frame_row_count = max(1, self._frame_length / cell_height)
         if column_count is None:
             if cell_width is None:
                 return
-            column_count = max(1, width / cell_width)
+            column_count = max(1, self._thickness / cell_width)
 
         if (column_count != self._column_count or \
                 frame_row_count != self._frame_row_count):
@@ -522,11 +620,12 @@ class VHomogeneTable(gtk.Container):
                     cell.invalidate_pos()
                     cell.index = -1
 
-        self._cell_height = height / self._frame_row_count
+        self._cell_length = self._frame_length / self._frame_row_count
         self._setup_adjustment(dry_run=True)
 
         if self.flags() & gtk.REALIZED:
-            self._bin_window.resize(self.allocation.width, self._max_y)
+            self._bin_window.resize(
+                    *self._rotate(self._thickness, self._length))
 
         self._allocate_rows(force=True)
 
@@ -535,36 +634,43 @@ class VHomogeneTable(gtk.Container):
             return
 
         self._adjustment.lower = 0
-        self._adjustment.upper = self._row_count * self._cell_height
+        self._adjustment.upper = self._row_count * self._cell_length
         self._adjustment.page_size = self._page
         self._adjustment.changed()
 
-        if self._pos_y > self._max_pos_y:
-            self._pos_y = self._max_pos_y
+        if self._pos > self._max_pos:
+            self._pos = self._max_pos
             if not dry_run:
                 self._adjustment.value_changed()
 
     def _allocate_cells(self, row, cell_y):
         cell_x = 0
-        cell_row = cell_y / self._cell_height
+        cell_row = cell_y / self._cell_length
         cell_index = cell_row * self._column_count
 
         for cell_column, cell in enumerate(row):
             if cell.index != cell_index:
                 if cell_index < self.cell_count:
-                    cell.widget.do_fill_in(self, cell_index)
+                    self.do_fill_cell_in(cell.widget, cell_index)
+                    if self.cursor_visible:
+                        self.do_highlight_cell(cell.widget,
+                                cell_index == self.cursor)
                     cell.widget.show()
                 else:
                     cell.widget.hide()
                 cell.index = cell_index
 
-            cell_alloc = gtk.gdk.Rectangle(cell_x, cell_y)
-            cell_alloc.width = self.allocation.width / self._column_count
-            cell_alloc.height = self._cell_height
-            cell.widget.size_request()
-            cell.widget.size_allocate(cell_alloc)
+            cell_thickness = self._thickness / self._column_count
 
-            cell_x += cell_alloc.width
+            alloc = gtk.gdk.Rectangle()
+            alloc.x, alloc.y = self._rotate(cell_x, cell_y)
+            alloc.width, alloc.height = \
+                    self._rotate(cell_thickness, self._cell_length)
+
+            cell.widget.size_request()
+            cell.widget.size_allocate(alloc)
+
+            cell_x += cell_thickness
             cell_index += 1
 
     def _allocate_rows(self, force):
@@ -575,8 +681,8 @@ class VHomogeneTable(gtk.Container):
             self._pending_allocate = self._pending_allocate or force
             return
 
-        pos = self._pos_y
-        if pos < 0 or pos > self._max_pos_y:
+        pos = self._pos
+        if pos < 0 or pos > self._max_pos:
             return
 
         spare_rows = []
@@ -588,38 +694,39 @@ class VHomogeneTable(gtk.Container):
             spare_rows = [] + self._row_cache
         else:
             for row in self._row_cache:
-                row_y = row[0].widget.allocation.y
-                if row_y < 0 or row_y > page_end or \
-                        (row_y + self._cell_height) < pos:
+                row_pos = self._get_row_pos(row)
+                if row_pos < 0 or row_pos > page_end or \
+                        (row_pos + self._cell_length) < pos:
                     spare_rows.append(row)
                 else:
-                    bisect.insort_right(visible_rows, _IndexedRow(row))
+                    bisect.insort_right(visible_rows,
+                            _IndexedRow(row, row_pos))
 
         if visible_rows or spare_rows:
 
-            def try_insert_spare_row(cell_y, end_y):
-                while cell_y < end_y:
+            def try_insert_spare_row(pos_begin, pos_end):
+                while pos_begin < pos_end:
                     if not spare_rows:
                         logging.error('spare_rows should not be empty')
                         return
                     row = spare_rows.pop()
-                    self._allocate_cells(row, cell_y)
-                    cell_y = cell_y + self._cell_height
+                    self._allocate_cells(row, pos_begin)
+                    pos_begin = pos_begin + self._cell_length
                     frame_rows.append(row)
 
             # visible_rows could not be continuous
             # lets try to add spare rows to missed points
-            cell_y = int(pos) - int(pos) % self._cell_height
+            next_row_pos = int(pos) - int(pos) % self._cell_length
             for i in visible_rows:
-                cell = i.row[0].widget.allocation
-                try_insert_spare_row(cell_y, cell.y)
-                self._allocate_cells(i.row, cell.y)
-                cell_y = cell.y + cell.height
+                row_pos = self._get_row_pos(i.row)
+                try_insert_spare_row(next_row_pos, row_pos)
+                self._allocate_cells(i.row, row_pos)
+                next_row_pos = row_pos + self._cell_length
                 frame_rows.append(i.row)
 
-            try_insert_spare_row(cell_y, page_end)
+            try_insert_spare_row(next_row_pos, page_end)
 
-        self._bin_window.move(0, int(-pos))
+        self._bin_window.move(*self._rotate(0, int(-pos)))
         self._bin_window.process_updates(True)
 
         if frame_rows:
@@ -630,11 +737,12 @@ class VHomogeneTable(gtk.Container):
             self._frame_range = frame_range
             self.emit('frame-scrolled')
 
-        if self.editing and self._selected_index not in self.frame_range:
-            self.editing = False
+        if self.focus_cell and self.cursor not in self.frame_range:
+            self.focus_cell = False
 
     def __adjustment_value_changed_cb(self, adjustment):
         self._allocate_rows(force=False)
+        self.cursor = self.get_cell_at_pos(*self.get_pointer())
 
     def __key_press_event_cb(self, widget, event):
         if self._empty or self.cursor is None:
@@ -642,18 +750,21 @@ class VHomogeneTable(gtk.Container):
 
         page = self._column_count * self._frame_row_count
 
-        if event.keyval == gtk.keysyms.Escape and self.editing:
-            self.editing = False
-        elif event.keyval == gtk.keysyms.Return and self.editable:
-            self.editing = not self.editing
-        elif event.keyval == gtk.keysyms.Left:
+        prev_cell, prev_row = self._rotate(gtk.keysyms.Left, gtk.keysyms.Up)
+        next_cell, next_row = self._rotate(gtk.keysyms.Right, gtk.keysyms.Down)
+
+        if event.keyval == gtk.keysyms.Escape and self.focus_cell:
+            self.focus_cell = False
+        elif event.keyval == gtk.keysyms.Return:
+            self.focus_cell = not self.focus_cell
+        elif event.keyval == prev_cell:
             self.cursor -= 1
-        elif event.keyval == gtk.keysyms.Right:
+        elif event.keyval == next_cell:
             self.cursor += 1
-        elif event.keyval == gtk.keysyms.Up:
+        elif event.keyval == prev_row:
             if self.cursor >= self._column_count:
                 self.cursor -= self._column_count
-        elif event.keyval == gtk.keysyms.Down:
+        elif event.keyval == next_row:
             if self.cursor / self._column_count < \
                     (self.cell_count - 1) / self._column_count:
                 self.cursor += self._column_count
@@ -673,12 +784,12 @@ class VHomogeneTable(gtk.Container):
 
 class _IndexedRow:
 
-    def __init__(self, row):
+    def __init__(self, row, row_pos):
         self.row = row
+        self.row_pos = row_pos
 
     def __lt__(self, other):
-        return self.row[0].widget.allocation.y < \
-               other.row[0].widget.allocation.y
+        return self.row_pos < other.row_pos
 
 
 class _Cell:
@@ -693,4 +804,4 @@ class _Cell:
                self.widget.allocation >= 0 and self.widget.allocation >= 0
 
 
-VHomogeneTable.set_set_scroll_adjustments_signal('set-scroll-adjustments')
+HomogeneTable.set_set_scroll_adjustments_signal('set-scroll-adjustments')

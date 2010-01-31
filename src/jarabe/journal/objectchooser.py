@@ -84,8 +84,7 @@ class ObjectChooser(gtk.Window):
         vbox.pack_start(self._toolbar, expand=False)
         self._toolbar.show()
 
-        self._view = View()
-        self._view.props.hover_selection = True
+        self._view = View(selection=True)
         self._view.connect('entry-activated', self.__entry_activated_cb)
         vbox.pack_start(self._view)
         self._view.show()
@@ -129,7 +128,7 @@ class ObjectChooser(gtk.Window):
         self._view.update_with_query(query)
 
     def __view_changed_cb(self, sender, view):
-        self._view.change_view(view)
+        self._view.view = view
 
     def __volume_changed_cb(self, volume_toolbar, mount_point):
         logging.debug('Selected volume: %r.', mount_point)

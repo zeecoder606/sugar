@@ -5,6 +5,7 @@ sugar_PYTHON =              \
 	detailview.py           \
 	entry.py                \
 	expandedentry.py        \
+	fields.py               \
 	homogenetable.py        \
 	homogeneview.py         \
 	journalactivity.py      \
@@ -19,5 +20,4 @@ sugar_PYTHON =              \
 	preview.py              \
 	thumbsview.py           \
 	view.py                 \
-	volumestoolbar.py       \
-	widgets.py
+	volumestoolbar.py
