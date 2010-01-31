@@ -20,11 +20,14 @@ import math
 import bisect
 import logging
 
+from jarabe.journal.sugarbin import SugarBin
+
+
 # Having spare rows let us making smooth scrolling w/o empty spaces
 _SPARE_ROWS_COUNT = 2
 
 
-class HomogeneTable(gtk.Container):
+class HomogeneTable(SugarBin):
     """
     Grid widget with homogeneously placed children of the same class.
 
@@ -65,7 +68,7 @@ class HomogeneTable(gtk.Container):
         self._hover_selection = False
         self._cursor_visible = True
 
-        gtk.Container.__init__(self, **kwargs)
+        SugarBin.__init__(self, **kwargs)
 
         # when focused cell is out of visible frame,
         # table itslef will be focused to follow gtk focusing scheme
@@ -249,8 +252,8 @@ class HomogeneTable(gtk.Container):
         if self._empty:
             return None
 
-        x = min(max(0, x), self.allocation.width - 1)
-        y = min(max(0, y), self.allocation.height - 1)
+        x = min(max(0, x), self.width - 1)
+        y = min(max(0, y), self.height - 1)
 
         x, y = self._rotate(x, y)
         y += self._pos
@@ -309,25 +312,13 @@ class HomogeneTable(gtk.Container):
         return False
 
     def do_realize(self):
-        self.set_flags(gtk.REALIZED)
-
-        self.window = gtk.gdk.Window(
-                self.get_parent_window(),
-                window_type=gtk.gdk.WINDOW_CHILD,
-                x=self.allocation.x,
-                y=self.allocation.y,
-                width=self.allocation.width,
-                height=self.allocation.height,
-                wclass=gtk.gdk.INPUT_OUTPUT,
-                colormap=self.get_colormap(),
-                event_mask=gtk.gdk.VISIBILITY_NOTIFY_MASK)
-        self.window.set_user_data(self)
+        SugarBin.do_realize(self)
 
         self._bin_window = gtk.gdk.Window(
                 self.window,
                 window_type=gtk.gdk.WINDOW_CHILD,
-                x=self._rotate(0, -self._pos)[0],
-                y=self._rotate(-self._pos, 0)[0],
+                x=self._rotate(self.x, -self._pos)[0],
+                y=self._rotate(-self._pos, self.y)[0],
                 width=self._rotate(self._thickness, self._length)[0],
                 height=self._rotate(self._length, self._thickness)[0],
                 colormap=self.get_colormap(),
@@ -335,9 +326,6 @@ class HomogeneTable(gtk.Container):
                 event_mask=(self.get_events() | gtk.gdk.EXPOSURE_MASK |
                             gtk.gdk.SCROLL_MASK))
         self._bin_window.set_user_data(self)
-
-        self.set_style(self.style.attach(self.window))
-        self.style.set_background(self.window, gtk.STATE_NORMAL)
         self.style.set_background(self._bin_window, gtk.STATE_NORMAL)
 
         for row in self._row_cache:
@@ -347,37 +335,33 @@ class HomogeneTable(gtk.Container):
         if self._pending_allocate is not None:
             self._allocate_rows(force=self._pending_allocate)
             self._pending_allocate = None
-        #self.queue_resize()
 
     def do_size_allocate(self, allocation):
         resize_tabel = tuple(self.allocation) != tuple(allocation)
-        self.allocation = allocation
-
+        SugarBin.do_size_allocate(self, allocation)
         if resize_tabel:
             self._resize_table()
-
-        if self.flags() & gtk.REALIZED:
-            self.window.move_resize(*allocation)
 
     def do_unrealize(self):
         self._bin_window.set_user_data(None)
         self._bin_window.destroy()
         self._bin_window = None
-        gtk.Container.do_unrealize(self)
+        SugarBin.do_unrealize(self)
 
+    """
     def do_style_set(self, style):
-        gtk.Widget.do_style_set(self, style)
+        SugarBin.do_style_set(self, style)
         if self.flags() & gtk.REALIZED:
             self.style.set_background(self._bin_window, gtk.STATE_NORMAL)
+    """
 
     def do_expose_event(self, event):
-        if event.window != self._bin_window:
-            return False
-        gtk.Container.do_expose_event(self, event)
+        if event.window == self._bin_window:
+            SugarBin.do_expose_event(self, event)
         return False
 
     def do_map(self):
-        self.set_flags(gtk.MAPPED)
+        SugarBin.do_map(self)
 
         for row in self._row_cache:
             for cell in row:
@@ -385,7 +369,6 @@ class HomogeneTable(gtk.Container):
                     cell.widget.map()
 
         self._bin_window.show()
-        self.window.show()
 
     def do_size_request(self, req):
         req.width = 0
@@ -416,6 +399,7 @@ class HomogeneTable(gtk.Container):
     def do_forall(self, include_internals, callback, data):
         for row in self._row_cache:
             for cell in row:
+                #if cell.widget.has_screen():
                 callback(cell.widget, data)
 
     def do_add(self, widget):
@@ -506,11 +490,11 @@ class HomogeneTable(gtk.Container):
 
     @property
     def _thickness(self):
-        return self._rotate(self.allocation.width, self.allocation.height)[0]
+        return self._rotate(self.width, self.height)[0]
 
     @property
     def _frame_length(self):
-        return self._rotate(self.allocation.height, self.allocation.width)[0]
+        return self._rotate(self.height, self.width)[0]
 
     @property
     def _length(self):
@@ -726,7 +710,7 @@ class HomogeneTable(gtk.Container):
 
             try_insert_spare_row(next_row_pos, page_end)
 
-        self._bin_window.move(*self._rotate(0, int(-pos)))
+        self._bin_window.move(*self._rotate(self.x, self.y + int(-pos)))
         self._bin_window.process_updates(True)
 
         if frame_rows:

@@ -18,6 +18,7 @@ sugar_PYTHON =              \
 	objectchooser.py        \
 	palettes.py             \
 	preview.py              \
+	sugarbin.py             \
 	thumbsview.py           \
 	view.py                 \
 	volumestoolbar.py
