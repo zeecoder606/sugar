@@ -87,14 +87,24 @@ class View(gtk.EventBox):
         self.view = VIEW_LIST
 
     def get_view(self):
-        return self._pages[self._view].child
+        if self._view is None:
+            return None
+        else:
+            return self._pages[self._view].child
 
     def set_view(self, view):
         if self._page == self._view:
             # change view only if current page is view as well
             self._page = view
-        self._view = view
-        self.view.set_result_set(self._result_set)
+
+        if view != self._view:
+            if self.view is not None:
+                frame_range = self.view.frame_range
+            else:
+                frame_range = None
+            self._view = view
+            self.view.set_result_set(self._result_set)
+            self.view.frame_range = frame_range
 
     view = property(get_view, set_view)
 

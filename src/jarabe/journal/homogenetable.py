@@ -206,8 +206,23 @@ class HomogeneTable(SugarBin):
             begin, end = self._frame_range
             return xrange(begin, end + 1)
 
+    def set_frame_range(self, new):
+        if not new:
+            return
+        old = self.frame_range
+        if new[0] in old and new[-1] in old:
+            pass
+        elif len(new) <= len(old):
+            self.scroll_to_cell(new[-1])
+            self.scroll_to_cell(new[0])
+        elif not old or old[0] < new[0]:
+            self.scroll_to_cell(new[0] + len(old) - 1)
+        elif old[-1] > new[-1]:
+            self.scroll_to_cell(new[-1] - len(old) + 1)
+
     """Range of visible cells"""
-    frame_range = gobject.property(getter=get_frame_range)
+    frame_range = gobject.property(
+            getter=get_frame_range, setter=set_frame_range)
 
     @property
     def frame_cells(self):
