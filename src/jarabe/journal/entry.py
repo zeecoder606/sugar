@@ -111,16 +111,16 @@ class Entry(gtk.TextView):
     def _set_edit_mode(self):
         if self.max_line_count == 1:
             gtk.TextView.set_wrap_mode(self, gtk.WRAP_NONE)
-            self.set_size_request(-1, TEXT_HEIGHT)
+            self._set_height_request(1)
         else:
-            gtk.TextView.set_wrap_mode(self, gtk.WRAP_WORD)
-            self.set_size_request(-1, TEXT_HEIGHT * self._line_count())
+            gtk.TextView.set_wrap_mode(self, gtk.WRAP_WORD_CHAR)
+            self._set_height_request(self._line_count())
 
     def _set_accent_mode(self):
         if self._text is None:
             return
 
-        gtk.TextView.set_wrap_mode(self, gtk.WRAP_WORD)
+        gtk.TextView.set_wrap_mode(self, gtk.WRAP_WORD_CHAR)
 
         buf = self.props.buffer
         buf.props.text = self._text
@@ -140,17 +140,14 @@ class Entry(gtk.TextView):
         accent()
         offset = last_offset()
 
-        if offset is not None:
-            offset = len(buf.props.text[:offset].rstrip()) - 1
+        while offset is not None:
+            offset = len(buf.props.text[:offset].rstrip())
             buf.props.text = buf.props.text[:offset] + '...'
-
-            final_offset = last_offset()
-            if final_offset is not None and final_offset < offset + 3:
-                # ellipses added new line
-                buf.props.text = buf.props.text[:offset - 3] + '...'
+            accent()
+            offset = last_offset()
 
         accent()
-        self.set_size_request(-1, TEXT_HEIGHT * self._line_count())
+        self._set_height_request(self._line_count())
 
     def _select(self):
         buf = self.props.buffer
@@ -158,14 +155,17 @@ class Entry(gtk.TextView):
             self.scroll_to_iter(buf.get_end_iter(), 0, False)
             buf.select_range(buf.get_end_iter(), buf.get_start_iter())
 
+    def _set_height_request(self, lines_number):
+        new_height = TEXT_HEIGHT * lines_number
+        width, old_height = self.get_size_request()
+
+        if new_height != old_height:
+            self.set_size_request(width, new_height)
+            self.parent.check_resize()
+
     def __buffer_changed_cb(self, buffer):
         if self.props.has_focus and self.max_line_count > 1:
-            __, height = self.get_size_request()
-            new_height = TEXT_HEIGHT * self._line_count()
-            if new_height != height:
-                self.set_size_request(-1, new_height)
-                self.parent.check_resize()
-
+            self._set_height_request(self._line_count())
         return False
 
     def __button_press_event_cb(self, widget, event):

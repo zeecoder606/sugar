@@ -96,6 +96,7 @@ class _Cell(Cell):
         # text box
 
         title = Title(max_line_count=2)
+        title.set_size_request(style.GRID_CELL_SIZE / 2 + preview.THUMB_WIDTH, -1)
         table.attach(title, 1, 4, 1, 2, gtk.EXPAND | gtk.FILL, gtk.SHRINK, 0, 0)
         self.add_field(title)
 
