@@ -68,6 +68,9 @@ class HomogeneTable(SugarBin):
         self._hover_selection = False
         self._cursor_visible = True
 
+        # TODO looks like cursor mode is usless in current sugar workflows
+        self._cursor_mode = False
+
         SugarBin.__init__(self, **kwargs)
 
         # when focused cell is out of visible frame,
@@ -429,6 +432,10 @@ class HomogeneTable(SugarBin):
                 self.cursor = cursor
 
     def do_focus(self, type):
+        if not self._cursor_mode:
+            self.grab_focus()
+            return True
+
         if self.focus_cell:
             cell = self._get_cell(self.cursor)
             if cell is None:
@@ -744,14 +751,17 @@ class HomogeneTable(SugarBin):
         if self._empty or self.cursor is None:
             return
 
-        page = self._column_count * self._frame_row_count
+        if event.keyval == gtk.keysyms.Escape and self.focus_cell:
+            self.focus_cell = False
 
+        if not self._cursor_mode:
+            return False
+
+        page = self._column_count * self._frame_row_count
         prev_cell, prev_row = self._rotate(gtk.keysyms.Left, gtk.keysyms.Up)
         next_cell, next_row = self._rotate(gtk.keysyms.Right, gtk.keysyms.Down)
 
-        if event.keyval == gtk.keysyms.Escape and self.focus_cell:
-            self.focus_cell = False
-        elif event.keyval == gtk.keysyms.Return:
+        if event.keyval == gtk.keysyms.Return:
             self.focus_cell = not self.focus_cell
         elif event.keyval == prev_cell:
             self.cursor -= 1
