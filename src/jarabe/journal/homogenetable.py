@@ -227,10 +227,11 @@ class HomogeneTable(SugarBin):
     frame_range = gobject.property(
             getter=get_frame_range, setter=set_frame_range)
 
-    @property
-    def frame_cells(self):
+    def get_frame_cells(self):
         for cell in self._cell_cache:
             yield cell.widget
+
+    frame_cells = gobject.property(getter=get_frame_cells)
 
     def get_focus_cell(self):
         if self.cursor is None or self.props.has_focus:
@@ -267,33 +268,33 @@ class HomogeneTable(SugarBin):
 
     def get_cell_at_pos(self, x, y):
         """Get cell index at pos which is relative to HomogeneTable widget"""
-        if self._empty:
+        if self._is_empty():
             return None
 
         x = min(max(0, x), self.width - 1)
         y = min(max(0, y), self.height - 1)
 
         x, y = self._rotate(x, y)
-        y += self._pos
+        y += self._get_pos()
 
         return self._get_cell_at_pos(x, y)
 
     def scroll_to_cell(self, cell_index):
         """Scroll HomogeneTable to position where cell is viewable"""
-        if self._empty or cell_index == self.cursor:
+        if self._is_empty() or cell_index == self.cursor:
             return
 
         self.focus_cell = False
 
-        row = cell_index / self._column_count
+        row = cell_index / self._get_column_count()
         pos = row * self._cell_length
 
-        if pos <= self._pos:
-            self._pos = pos
+        if pos <= self._get_pos():
+            self._set_pos(pos)
         else:
-            pos = pos + self._cell_length - self._frame_length
-            if pos >= self._pos:
-                self._pos = pos
+            pos = pos + self._cell_length - self._get_frame_length()
+            if pos >= self._get_pos():
+                self._set_pos(pos)
 
     def refill(self, cells=None):
         """Force HomogeneTable widget to run filling method for all cells"""
@@ -314,13 +315,13 @@ class HomogeneTable(SugarBin):
     # gtk.Widget overrides
 
     def do_scroll_event(self, event):
-        if self._adjustment is not None and \
+        if self._get_adjustment() is not None and \
                 self.orientation == gtk.ORIENTATION_HORIZONTAL:
-            adj = self._adjustment
+            adj = self._get_adjustment()
             if event.direction == gtk.gdk.SCROLL_UP:
                 value = max(0, adj.value - self._cell_length)
             elif event.direction == gtk.gdk.SCROLL_DOWN:
-                value = min(self._max_pos, adj.value + self._cell_length)
+                value = min(self._get_max_pos(), adj.value + self._cell_length)
             else:
                 return False
             adj.value = value
@@ -333,10 +334,10 @@ class HomogeneTable(SugarBin):
         self._bin_window = gtk.gdk.Window(
                 self.window,
                 window_type=gtk.gdk.WINDOW_CHILD,
-                x=self._rotate(self.x, -self._pos)[0],
-                y=self._rotate(-self._pos, self.y)[0],
-                width=self._rotate(self._thickness, self._length)[0],
-                height=self._rotate(self._length, self._thickness)[0],
+                x=self._rotate(self.x, -self._get_pos())[0],
+                y=self._rotate(-self._get_pos(), self.y)[0],
+                width=self._rotate(self._get_thickness(), self._get_length())[0],
+                height=self._rotate(self._get_length(), self._get_thickness())[0],
                 colormap=self.get_colormap(),
                 wclass=gtk.gdk.INPUT_OUTPUT,
                 event_mask=(self.get_events() | gtk.gdk.EXPOSURE_MASK |
@@ -453,69 +454,59 @@ class HomogeneTable(SugarBin):
                 self.grab_focus()
                 return True
 
-    @property
-    def _empty(self):
+    def _is_empty(self):
         return not self._row_cache
 
-    @property
-    def _adjustment(self):
+    def _get_adjustment(self):
         if not self._adjustments:
             return None
         else:
             return self._rotate(*[i[0] for i in self._adjustments])[0]
 
-    @property
-    def _column_count(self):
+    def _get_column_count(self):
         if self._row_cache:
             return len(self._row_cache[0])
         else:
             return 0
 
-    @property
-    def _row_count(self):
-        if self._column_count == 0:
+    def _get_row_count(self):
+        if self._get_column_count() == 0:
             return 0
         else:
-            rows = math.ceil(float(self.cell_count) / self._column_count)
-            return max(self._frame_row_count, rows)
+            rows = math.ceil(float(self.cell_count) / self._get_column_count())
+            return max(self._get_frame_row_count(), rows)
 
-    @property
-    def _frame_row_count(self):
+    def _get_frame_row_count(self):
         return len(self._row_cache) - _SPARE_ROWS_COUNT
 
-    @property
-    def _pos(self):
-        if self._adjustment is None or math.isnan(self._adjustment.value):
+    def _get_pos(self):
+        if self._get_adjustment() is None or \
+                math.isnan(self._get_adjustment().value):
             return 0
         else:
-            return max(0, int(self._adjustment.value))
+            return max(0, int(self._get_adjustment().value))
 
-    @_pos.setter
-    def _pos(self, value):
-        if self._adjustment is not None:
-            self._adjustment.value = value
+    def _set_pos(self, value):
+        if self._get_adjustment() is not None:
+            self._get_adjustment().value = value
 
-    @property
-    def _max_pos(self):
-        if self._adjustment is None:
+    def _get_max_pos(self):
+        if self._get_adjustment() is None:
             return 0
         else:
-            return max(0, self._length - self._frame_length)
+            return max(0, self._get_length() - self._get_frame_length())
 
-    @property
-    def _thickness(self):
+    def _get_thickness(self):
         return self._rotate(self.width, self.height)[0]
 
-    @property
-    def _frame_length(self):
+    def _get_frame_length(self):
         return self._rotate(self.height, self.width)[0]
 
-    @property
-    def _length(self):
-        if self._adjustment is None:
-            return self._frame_length
+    def _get_length(self):
+        if self._get_adjustment() is None:
+            return self._get_frame_length()
         else:
-            return int(self._adjustment.upper)
+            return int(self._get_adjustment().upper)
 
     def _rotate(self, x, y):
         if self._orientation == gtk.ORIENTATION_VERTICAL:
@@ -526,7 +517,7 @@ class HomogeneTable(SugarBin):
     def _get_cell(self, cell_index):
         if cell_index is None:
             return None
-        column = cell_index % self._column_count
+        column = cell_index % self._get_column_count()
         base_index = cell_index - column
         for row in self._row_cache:
             if row[0].is_valid() and row[0].index == base_index:
@@ -554,13 +545,13 @@ class HomogeneTable(SugarBin):
 
     def _get_cell_at_pos(self, x, y):
         cell_row = y / self._cell_length
-        cell_column = x / (self._thickness / self._column_count)
-        cell_index = cell_row * self._column_count + cell_column
+        cell_column = x / (self._get_thickness() / self._get_column_count())
+        cell_index = cell_row * self._get_column_count() + cell_column
         return min(cell_index, self.cell_count - 1)
 
     def _pos_changed(self):
-        if self._adjustment is not None:
-            self._adjustment.value_changed()
+        if self._get_adjustment() is not None:
+            self._get_adjustment().value_changed()
 
     def _abandon_cells(self):
         for row in self._row_cache:
@@ -594,19 +585,19 @@ class HomogeneTable(SugarBin):
         if row_count is None:
             if cell_height is None:
                 return
-            row_count = math.ceil(self._frame_length / float(cell_height))
+            row_count = math.ceil(self._get_frame_length() / float(cell_height))
             row_count = max(1, int(row_count))
             self._cell_length = cell_height
         else:
-            self._cell_length = self._frame_length / self._frame_row_count
+            self._cell_length = self._get_frame_length() / self._get_frame_row_count()
 
         if column_count is None:
             if cell_width is None:
                 return
-            column_count = max(1, self._thickness / cell_width)
+            column_count = max(1, self._get_thickness() / cell_width)
 
-        if (column_count != self._column_count or \
-                row_count != self._frame_row_count):
+        if (column_count != self._get_column_count() or \
+                row_count != self._get_frame_row_count()):
             self._abandon_cells()
             for i_ in range(row_count + _SPARE_ROWS_COUNT):
                 row = []
@@ -627,28 +618,28 @@ class HomogeneTable(SugarBin):
 
         if self.flags() & gtk.REALIZED:
             self._bin_window.resize(
-                    *self._rotate(self._thickness, self._length))
+                    *self._rotate(self._get_thickness(), self._get_length()))
 
         self._allocate_rows(force=True)
 
     def _setup_adjustment(self, dry_run):
-        if self._adjustment is None:
+        if self._get_adjustment() is None:
             return
 
-        self._adjustment.lower = 0
-        self._adjustment.upper = self._row_count * self._cell_length
-        self._adjustment.page_size = self._frame_length
-        self._adjustment.changed()
+        self._get_adjustment().lower = 0
+        self._get_adjustment().upper = self._get_row_count() * self._cell_length
+        self._get_adjustment().page_size = self._get_frame_length()
+        self._get_adjustment().changed()
 
-        if self._pos > self._max_pos:
-            self._pos = self._max_pos
+        if self._get_pos() > self._get_max_pos():
+            self._set_pos(self._get_max_pos())
             if not dry_run:
-                self._adjustment.value_changed()
+                self._get_adjustment().value_changed()
 
     def _allocate_cells(self, row, cell_y):
         cell_x = 0
         cell_row = cell_y / self._cell_length
-        cell_index = cell_row * self._column_count
+        cell_index = cell_row * self._get_column_count()
 
         for cell_column, cell in enumerate(row):
             if cell.index != cell_index:
@@ -662,7 +653,7 @@ class HomogeneTable(SugarBin):
                     cell.widget.hide()
                 cell.index = cell_index
 
-            cell_thickness = self._thickness / self._column_count
+            cell_thickness = self._get_thickness() / self._get_column_count()
 
             alloc = gtk.gdk.Rectangle()
             alloc.x, alloc.y = self._rotate(cell_x, cell_y)
@@ -676,21 +667,21 @@ class HomogeneTable(SugarBin):
             cell_index += 1
 
     def _allocate_rows(self, force):
-        if self._empty:
+        if self._is_empty():
             return
 
         if not self.flags() & gtk.REALIZED:
             self._pending_allocate = self._pending_allocate or force
             return
 
-        pos = self._pos
-        if pos < 0 or pos > self._max_pos:
+        pos = self._get_pos()
+        if pos < 0 or pos > self._get_max_pos():
             return
 
         spare_rows = []
         visible_rows = []
         frame_rows = []
-        page_end = pos + self._frame_length
+        page_end = pos + self._get_frame_length()
 
         if force:
             spare_rows = [] + self._row_cache
@@ -748,7 +739,7 @@ class HomogeneTable(SugarBin):
             self.cursor = self.get_cell_at_pos(*self.get_pointer())
 
     def __key_press_event_cb(self, widget, event):
-        if self._empty or self.cursor is None:
+        if self._is_empty() or self.cursor is None:
             return
 
         if event.keyval == gtk.keysyms.Escape and self.focus_cell:
@@ -757,7 +748,7 @@ class HomogeneTable(SugarBin):
         if not self._cursor_mode:
             return False
 
-        page = self._column_count * self._frame_row_count
+        page = self._get_column_count() * self._get_frame_row_count()
         prev_cell, prev_row = self._rotate(gtk.keysyms.Left, gtk.keysyms.Up)
         next_cell, next_row = self._rotate(gtk.keysyms.Right, gtk.keysyms.Down)
 
@@ -768,12 +759,12 @@ class HomogeneTable(SugarBin):
         elif event.keyval == next_cell:
             self.cursor += 1
         elif event.keyval == prev_row:
-            if self.cursor >= self._column_count:
-                self.cursor -= self._column_count
+            if self.cursor >= self._get_column_count():
+                self.cursor -= self._get_column_count()
         elif event.keyval == next_row:
-            if self.cursor / self._column_count < \
-                    (self.cell_count - 1) / self._column_count:
-                self.cursor += self._column_count
+            if self.cursor / self._get_column_count() < \
+                    (self.cell_count - 1) / self._get_column_count():
+                self.cursor += self._get_column_count()
         elif event.keyval in (gtk.keysyms.Page_Up, gtk.keysyms.KP_Page_Up):
             self.cursor -= page
         elif event.keyval in (gtk.keysyms.Page_Down, gtk.keysyms.KP_Page_Down):

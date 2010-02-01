@@ -28,49 +28,53 @@ class SugarBin(gtk.EventBox):
         self._padding_top = 0
         self._padding_bottom = 0
 
-    @property
-    def padding_left(self):
+    def get_padding_left(self):
         return self._padding_left
 
-    @padding_left.setter
-    def padding_left(self, value):
+    def set_padding_left(self, value):
         if value == self._padding_left:
             return
         self._padding_left = value
         self.queue_resize()
 
-    @property
-    def padding_right(self):
+    padding_left = gobject.property(
+            getter=get_padding_left, setter=set_padding_left)
+
+    def get_padding_right(self):
         return self._padding_right
 
-    @padding_right.setter
-    def padding_right(self, value):
+    def set_padding_right(self, value):
         if value == self._padding_right:
             return
         self._padding_right = value
         self.queue_resize()
 
-    @property
-    def padding_top(self):
+    padding_right = gobject.property(
+            getter=get_padding_right, setter=set_padding_right)
+
+    def get_padding_top(self):
         return self._padding_top
 
-    @padding_top.setter
-    def padding_top(self, value):
+    def set_padding_top(self, value):
         if value == self._padding_top:
             return
         self._padding_top = value
         self.queue_resize()
 
-    @property
-    def padding_bottom(self):
+    padding_top = gobject.property(
+            getter=get_padding_top, setter=set_padding_top)
+
+    def get_padding_bottom(self):
         return self._padding_bottom
 
-    @padding_bottom.setter
-    def padding_bottom(self, value):
+    def set_padding_bottom(self, value):
         if value == self._padding_bottom:
             return
         self._padding_bottom = value
         self.queue_resize()
+
+    padding_bottom = gobject.property(
+            getter=get_padding_bottom, setter=set_padding_bottom)
 
     def set_padding(self, value):
         self._padding_left = value
@@ -79,23 +83,30 @@ class SugarBin(gtk.EventBox):
         self._padding_bottom = value
         self.queue_resize()
 
-    padding = property(None, set_padding)
+    padding = gobject.property(setter=set_padding)
 
-    @property
-    def x(self):
+    # TODO later props are intended only only padding* but
+    # for future border* as well
+
+    def get_x(self):
         return self._padding_left
 
-    @property
-    def y(self):
+    x = gobject.property(getter=get_x)
+
+    def get_y(self):
         return self._padding_top
 
-    @property
-    def width(self):
+    y = gobject.property(getter=get_y)
+
+    def get_width(self):
         return self.allocation.width - self._padding_left - self._padding_right
 
-    @property
-    def height(self):
+    width = gobject.property(getter=get_width)
+
+    def get_height(self):
         return self.allocation.height - self._padding_top - self._padding_bottom
+
+    height = gobject.property(getter=get_height)
 
     # gtk.Widget overrides
 
