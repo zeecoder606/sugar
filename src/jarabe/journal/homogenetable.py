@@ -262,7 +262,7 @@ class HomogeneTable(SugarBin):
 
     def scroll_to_cell(self, cell_index):
         """Scroll HomogeneTable to position where cell is viewable"""
-        if self._empty:
+        if self._empty or cell_index == self.cursor:
             return
 
         self.focus_cell = False
@@ -270,14 +270,12 @@ class HomogeneTable(SugarBin):
         row = cell_index / self._column_count
         pos = row * self._cell_length
 
-        if pos < self._pos:
+        if pos <= self._pos:
             self._pos = pos
-        elif pos + self._cell_length >= self._pos + self._page:
-            self._pos = pos + self._cell_length - self._page
         else:
-            return
-
-        self._pos_changed()
+            pos = pos + self._cell_length - self._frame_length
+            if pos >= self._pos:
+                self._pos = pos
 
     def refill(self, cells=None):
         """Force HomogeneTable widget to run filling method for all cells"""
@@ -348,12 +346,10 @@ class HomogeneTable(SugarBin):
         self._bin_window = None
         SugarBin.do_unrealize(self)
 
-    """
     def do_style_set(self, style):
         SugarBin.do_style_set(self, style)
         if self.flags() & gtk.REALIZED:
             self.style.set_background(self._bin_window, gtk.STATE_NORMAL)
-    """
 
     def do_expose_event(self, event):
         if event.window == self._bin_window:
@@ -466,10 +462,6 @@ class HomogeneTable(SugarBin):
         return len(self._row_cache) - _SPARE_ROWS_COUNT
 
     @property
-    def _page(self):
-        return self._frame_row_count * self._cell_length
-
-    @property
     def _pos(self):
         if self._adjustment is None or math.isnan(self._adjustment.value):
             return 0
@@ -486,7 +478,7 @@ class HomogeneTable(SugarBin):
         if self._adjustment is None:
             return 0
         else:
-            return max(0, self._length - self._page)
+            return max(0, self._length - self._frame_length)
 
     @property
     def _thickness(self):
@@ -571,25 +563,30 @@ class HomogeneTable(SugarBin):
 
     def _resize_table(self):
         x, y, w, h = self.allocation
-        if x + w == 0 or y + h == 0:
+        if x + w <= 0 or y + h <= 0:
             return
 
-        frame_row_count, column_count = self._frame_size
+        row_count, column_count = self._frame_size
         cell_width, cell_height = self._cell_size
 
-        if frame_row_count is None:
+        if row_count is None:
             if cell_height is None:
                 return
-            frame_row_count = max(1, self._frame_length / cell_height)
+            row_count = math.ceil(self._frame_length / float(cell_height))
+            row_count = max(1, int(row_count))
+            self._cell_length = cell_height
+        else:
+            self._cell_length = self._frame_length / self._frame_row_count
+
         if column_count is None:
             if cell_width is None:
                 return
             column_count = max(1, self._thickness / cell_width)
 
         if (column_count != self._column_count or \
-                frame_row_count != self._frame_row_count):
+                row_count != self._frame_row_count):
             self._abandon_cells()
-            for i_ in range(frame_row_count + _SPARE_ROWS_COUNT):
+            for i_ in range(row_count + _SPARE_ROWS_COUNT):
                 row = []
                 for j_ in range(column_count):
                     cell = self._pop_a_cell()
@@ -604,7 +601,6 @@ class HomogeneTable(SugarBin):
                     cell.invalidate_pos()
                     cell.index = -1
 
-        self._cell_length = self._frame_length / self._frame_row_count
         self._setup_adjustment(dry_run=True)
 
         if self.flags() & gtk.REALIZED:
@@ -619,7 +615,7 @@ class HomogeneTable(SugarBin):
 
         self._adjustment.lower = 0
         self._adjustment.upper = self._row_count * self._cell_length
-        self._adjustment.page_size = self._page
+        self._adjustment.page_size = self._frame_length
         self._adjustment.changed()
 
         if self._pos > self._max_pos:
@@ -672,7 +668,7 @@ class HomogeneTable(SugarBin):
         spare_rows = []
         visible_rows = []
         frame_rows = []
-        page_end = pos + self._page
+        page_end = pos + self._frame_length
 
         if force:
             spare_rows = [] + self._row_cache
@@ -726,7 +722,8 @@ class HomogeneTable(SugarBin):
 
     def __adjustment_value_changed_cb(self, adjustment):
         self._allocate_rows(force=False)
-        self.cursor = self.get_cell_at_pos(*self.get_pointer())
+        if self.hover_selection:
+            self.cursor = self.get_cell_at_pos(*self.get_pointer())
 
     def __key_press_event_cb(self, widget, event):
         if self._empty or self.cursor is None:
