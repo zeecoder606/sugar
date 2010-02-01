@@ -39,7 +39,6 @@ class Entry(gtk.TextView):
     def __init__(self, **kwargs):
         self._max_line_count = 1
         self._text = None
-        self._button_pressed = False
 
         gobject.GObject.__init__(self, **kwargs)
 
@@ -52,9 +51,11 @@ class Entry(gtk.TextView):
         self.connect('key-press-event', self.__key_press_event_cb)
         self.connect('focus-in-event', self.__focus_in_event_cb)
         self.connect('focus-out-event', self.__focus_out_event_cb)
-        self.connect('button-press-event', self.__button_press_event_cb)
         self.connect('button-release-event', self.__button_release_event_cb)
+        self.connect('drag-motion', self.__drag_motion_cb)
         self.props.buffer.connect('changed', self.__buffer_changed_cb)
+
+        self.props.can_focus = False
 
     def set_accepts_tab(self, value):
         # accepts_tab cannot be set by users
@@ -168,30 +169,29 @@ class Entry(gtk.TextView):
             self._set_height_request(self._line_count())
         return False
 
-    def __button_press_event_cb(self, widget, event):
-        self._button_pressed = self.props.has_focus or -1
-        return False
-
     def __button_release_event_cb(self, widget, event):
-        if self._button_pressed == -1:
-            self._select()
-        self._button_pressed = False
+        x, y = self.get_pointer()
+        if not self.dragging and \
+                x in xrange(self.allocation.width) and \
+                y in xrange(self.allocation.height):
+            self.props.can_focus = True
+            self.grab_focus()
         return False
 
     def __focus_in_event_cb(self, widget, event):
+        self.can_source_drag = False
         self.props.buffer.props.text = self._text
         self._set_edit_mode()
         self.parent.check_resize()
-
-        if not self._button_pressed:
-            self._select()
-
+        self._select()
         return False
 
     def __focus_out_event_cb(self, widget, event):
         self._text = self.props.buffer.props.text
         self._set_accent_mode()
         self.parent.check_resize()
+        self.props.can_focus = False
+        self.can_source_drag = True
         return False
 
     def __key_press_event_cb(self, widget, event):
@@ -216,3 +216,8 @@ class Entry(gtk.TextView):
             self.props.buffer.props.text = self._text
 
         return False
+
+    def __drag_motion_cb(self, widget, context, x, y, time):
+        # disable text dragging
+        context.drag_status(0, time)
+        return True

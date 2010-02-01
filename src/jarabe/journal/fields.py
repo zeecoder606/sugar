@@ -155,67 +155,39 @@ class KeepIcon(_Button):
         self.do_colors()
 
 
-class _JournalObject(gtk.EventBox):
+class _DragObject(object):
 
-    def __init__(self, detail, paint_border, paint_fill):
-        gtk.EventBox.__init__(self)
-
-        self.metadata = None
-        self._detail = detail
-
-        self._invoker = WidgetInvoker(self)
-        self._invoker._position_hint = Invoker.AT_CURSOR
-
-        self.modify_fg(gtk.STATE_NORMAL,
-                style.COLOR_PANEL_GREY.get_gdk_color())
-
-        self.connect_after('button-release-event',
-                self.__button_release_event_cb)
-        self.connect('destroy', self.__destroy_cb)
-
-        if paint_border:
-            self.connect_after('expose-event', self.__expose_event_cb)
-            paint_fill = True
-
-        if paint_fill:
-            self.modify_bg(gtk.STATE_NORMAL,
-                    style.COLOR_WHITE.get_gdk_color())
-        else:
-            self.props.visible_window = False
-
-        # DND stuff
-
-        self._drag = False
+    def __init__(self):
+        self._can_source_drag = False
+        self._dragging = False
         self._temp_drag_file_path = None
-        self.drag_source_set(gtk.gdk.BUTTON1_MASK,
-                [('text/uri-list', 0, 0), ('journal-object-id', 0, 0)],
-                gtk.gdk.ACTION_COPY)
+
         self.connect('drag-begin', self.__drag_begin_cb)
         self.connect('drag-data-get', self.__drag_data_get_cb)
         self.connect('drag-end', self.__drag_end_cb)
 
-    def fill_in(self, metadata):
-        self.metadata = metadata
-        self._invoker.palette = None
+        self.can_source_drag = True
 
-    def create_palette(self):
-        if self.metadata is not None:
-            return ObjectPalette(self.metadata, detail=self._detail)
+    @property
+    def can_source_drag(self):
+        return self._can_source_drag
 
-    def __destroy_cb(self, icon):
-        if self._invoker is not None:
-            self._invoker.detach()
+    @can_source_drag.setter
+    def can_source_drag(self, value):
+        if value:
+            self.drag_source_set(gtk.gdk.BUTTON1_MASK,
+                    [('text/uri-list', 0, 0), ('journal-object-id', 0, 0)],
+                    gtk.gdk.ACTION_COPY)
+        else:
+            self.drag_source_set(0, [], 0)
+        self._can_source_drag = value
 
-    def __expose_event_cb(self, widget, event):
-        __, __, width, height = self.allocation
-        fg = self.style.fg_gc[gtk.STATE_NORMAL]
-        self.window.draw_rectangle(fg, False, 0, 0, width - 1, height - 1)
+    @property
+    def dragging(self):
+        return self._dragging
 
     def __drag_begin_cb(self, widget, context):
-        self._drag = True
-
-        if self._invoker.palette is not None:
-            self._invoker.palette.popdown(immediate=True)
+        self._dragging = True
 
         surface = get_surface(
                 file_name=misc.get_icon_name(self.metadata),
@@ -237,11 +209,62 @@ class _JournalObject(gtk.EventBox):
             selection.set(selection.target, 8, self.metadata['uid'])
 
     def __drag_end_cb(self, widget, context):
-        self._drag = False
+        self._dragging = False
         self._temp_drag_file_path = None
 
+
+class _JournalObject(_DragObject, gtk.EventBox):
+
+    def __init__(self, detail, paint_border, paint_fill):
+        gtk.EventBox.__init__(self)
+        _DragObject.__init__(self)
+
+        self.metadata = None
+        self._detail = detail
+
+        self._invoker = WidgetInvoker(self)
+        self._invoker._position_hint = Invoker.AT_CURSOR
+
+        if paint_border:
+            self.modify_fg(gtk.STATE_NORMAL,
+                    style.COLOR_PANEL_GREY.get_gdk_color())
+            self.connect_after('expose-event', self.__expose_event_cb)
+            paint_fill = True
+
+        if paint_fill:
+            self.modify_bg(gtk.STATE_NORMAL,
+                    style.COLOR_WHITE.get_gdk_color())
+        else:
+            self.props.visible_window = False
+
+        self.connect_after('button-release-event',
+                self.__button_release_event_cb)
+        self.connect('destroy', self.__destroy_cb)
+        self.connect('drag-begin', self.__drag_begin_cb)
+
+    def fill_in(self, metadata):
+        self.metadata = metadata
+        self._invoker.palette = None
+
+    def create_palette(self):
+        if self.metadata is not None:
+            return ObjectPalette(self.metadata, detail=self._detail)
+
+    def __destroy_cb(self, icon):
+        if self._invoker is not None:
+            self._invoker.detach()
+
+    def __expose_event_cb(self, widget, event):
+        __, __, width, height = self.allocation
+        fg = self.style.fg_gc[gtk.STATE_NORMAL]
+        self.window.draw_rectangle(fg, False, 0, 0, width - 1, height - 1)
+
+    def __drag_begin_cb(self, widget, context):
+        if self._invoker.palette is not None:
+            self._invoker.palette.popdown(immediate=True)
+
     def __button_release_event_cb(self, button, event):
-        if not self._drag and self.metadata is not None:
+        if not self.dragging and self.metadata is not None:
             misc.resume(self.metadata)
         return True
 
@@ -274,10 +297,11 @@ class Thumb(_JournalObject):
         self._image.set_from_pixbuf(pixbuf)
 
 
-class Title(Entry):
+class Title(_DragObject, Entry):
 
     def __init__(self, **kwargs):
         Entry.__init__(self, **kwargs)
+        _DragObject.__init__(self)
 
         self.metadata = None
 
