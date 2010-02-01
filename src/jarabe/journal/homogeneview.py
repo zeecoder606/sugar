@@ -21,12 +21,14 @@ import logging
 from sugar.graphics import style
 
 from jarabe.journal.homogenetable import HomogeneTable
+from jarabe.journal.sugarbin import SugarBin
 
 
-class Cell(gtk.EventBox):
+class Cell(SugarBin):
 
     def __init__(self):
-        gtk.EventBox.__init__(self)
+        SugarBin.__init__(self)
+
         self._fields = []
         self.fill_background(False)
 
@@ -45,7 +47,7 @@ class Cell(gtk.EventBox):
 
     def fill_background(self, selected):
         if selected:
-            color = style.COLOR_SELECTION_GREY.get_gdk_color()
+            color = style.COLOR_HIGHLIGHT.get_gdk_color()
         else:
             color = style.COLOR_WHITE.get_gdk_color()
         self.modify_bg(gtk.STATE_NORMAL, color)
@@ -65,10 +67,11 @@ class HomogeneView(HomogeneTable):
     def __init__(self, selection, **kwargs):
         HomogeneTable.__init__(self, **kwargs)
 
+        self._result_set = None
+
         self.editable = not selection
         self.cursor_visible = selection
         self.hover_selection = selection
-        self._result_set = None
 
     def set_result_set(self, result_set):
         if self._result_set is result_set:

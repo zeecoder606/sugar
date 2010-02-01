@@ -26,7 +26,7 @@ from jarabe.journal.fields import *
 
 class _Cell(Cell):
 
-    def __init__(self):
+    def __init__(self, use_details):
         Cell.__init__(self)
 
         row = gtk.HBox()
@@ -34,11 +34,14 @@ class _Cell(Cell):
         self.add(row)
 
         keep = KeepIcon()
+        keep.set_size_request(style.GRID_CELL_SIZE, -1)
         row.pack_start(keep, expand=False)
         self.add_field(keep)
 
         icon = ObjectIcon(
-                paint_box=False,
+                detail=use_details,
+                paint_border=False,
+                paint_fill=False,
                 pixel_size=style.STANDARD_ICON_SIZE)
         row.pack_start(icon, expand=False)
         self.add_field(icon)
@@ -50,16 +53,25 @@ class _Cell(Cell):
         row.pack_start(title_alignment)
         self.add_field(title)
 
-        details = DetailsIcon()
-        row.pack_end(details, expand=False)
-        self.add_field(details)
+        if use_details:
+            details = DetailsIcon()
+            self.add_field(details)
+            details.set_size_request(style.GRID_CELL_SIZE, -1)
+            row.pack_end(details, expand=False)
+        else:
+            padding = gtk.EventBox()
+            padding.props.visible_window = False
+            padding.set_size_request(style.DEFAULT_SPACING, -1)
+            row.pack_end(padding, expand=False)
 
         date = Timestamp()
+        date.set_size_request(style.GRID_CELL_SIZE * 3, -1)
         row.pack_end(date, expand=False)
         self.add_field(date)
 
-        buddies = Buddies(buddies_max=3,
+        buddies = Buddies(buddies_max=4,
                 xalign=0, yalign=0.5, xscale=1, yscale=0.15)
+        buddies.set_size_request(style.GRID_CELL_SIZE * 3, -1)
         row.pack_end(buddies, expand=False)
         self.add_field(buddies)
 
@@ -74,4 +86,4 @@ class ListView(HomogeneView):
         self.cell_size = (None, style.GRID_CELL_SIZE)
 
     def do_cell_new(self):
-        return _Cell()
+        return _Cell(not self.hover_selection)

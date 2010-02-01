@@ -27,6 +27,7 @@ from sugar.graphics.toolbutton import ToolButton
 from jarabe.journal.view import View
 from jarabe.journal.journaltoolbox import SearchToolbar
 from jarabe.journal.volumestoolbar import VolumesToolbar
+from jarabe.journal.sugarbin import SugarBin
 
 class ObjectChooser(gtk.Window):
 
@@ -81,8 +82,15 @@ class ObjectChooser(gtk.Window):
         self._toolbar.connect('query-changed', self.__query_changed_cb)
         self._toolbar.connect('view-changed', self.__view_changed_cb)
         self._toolbar.set_size_request(-1, style.GRID_CELL_SIZE)
-        vbox.pack_start(self._toolbar, expand=False)
         self._toolbar.show()
+
+        toolbar_bin = SugarBin()
+        toolbar_bin.padding_left = style.DEFAULT_SPACING
+        toolbar_bin.modify_bg(gtk.STATE_NORMAL,
+                style.COLOR_TOOLBAR_GREY.get_gdk_color())
+        toolbar_bin.add(self._toolbar)
+        toolbar_bin.show()
+        vbox.pack_start(toolbar_bin, expand=False)
 
         self._view = View(selection=True)
         self._view.connect('entry-activated', self.__entry_activated_cb)

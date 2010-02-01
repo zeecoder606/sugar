@@ -48,8 +48,6 @@ class _Button(gtk.Alignment):
         self.metadata = None
         self.prelight = False
 
-        self.set_size_request(style.GRID_CELL_SIZE, -1)
-
         box = gtk.EventBox()
         box.props.visible_window = False
         box.show()
@@ -159,7 +157,7 @@ class KeepIcon(_Button):
 
 class _JournalObject(gtk.EventBox):
 
-    def __init__(self, detail, paint_box):
+    def __init__(self, detail, paint_border, paint_fill):
         gtk.EventBox.__init__(self)
 
         self.metadata = None
@@ -168,17 +166,22 @@ class _JournalObject(gtk.EventBox):
         self._invoker = WidgetInvoker(self)
         self._invoker._position_hint = Invoker.AT_CURSOR
 
-        self.props.visible_window = False
-
         self.modify_fg(gtk.STATE_NORMAL,
                 style.COLOR_PANEL_GREY.get_gdk_color())
 
         self.connect_after('button-release-event',
                 self.__button_release_event_cb)
-
         self.connect('destroy', self.__destroy_cb)
-        if paint_box:
+
+        if paint_border:
             self.connect_after('expose-event', self.__expose_event_cb)
+            paint_fill = True
+
+        if paint_fill:
+            self.modify_bg(gtk.STATE_NORMAL,
+                    style.COLOR_WHITE.get_gdk_color())
+        else:
+            self.props.visible_window = False
 
         # DND stuff
 
@@ -204,9 +207,9 @@ class _JournalObject(gtk.EventBox):
             self._invoker.detach()
 
     def __expose_event_cb(self, widget, event):
-        x, y, width, height = self.allocation
+        __, __, width, height = self.allocation
         fg = self.style.fg_gc[gtk.STATE_NORMAL]
-        self.window.draw_rectangle(fg, False, x, y, width - 1, height - 1)
+        self.window.draw_rectangle(fg, False, 0, 0, width - 1, height - 1)
 
     def __drag_begin_cb(self, widget, context):
         self._drag = True
@@ -245,8 +248,8 @@ class _JournalObject(gtk.EventBox):
 
 class ObjectIcon(_JournalObject):
 
-    def __init__(self, detail=True, paint_box=True, **kwargs):
-        _JournalObject.__init__(self, detail, paint_box)
+    def __init__(self, detail, paint_border, paint_fill, **kwargs):
+        _JournalObject.__init__(self, detail, paint_border, paint_fill)
 
         self._icon = Icon(**kwargs)
         self._icon.show()
@@ -260,8 +263,8 @@ class ObjectIcon(_JournalObject):
 
 class Thumb(_JournalObject):
 
-    def __init__(self, detail=True, paint_box=True):
-        _JournalObject.__init__(self, detail, paint_box)
+    def __init__(self, detail, paint_border, paint_fill):
+        _JournalObject.__init__(self, detail, paint_border, paint_fill)
 
         self._image = gtk.Image()
         self._image.show()
@@ -340,7 +343,7 @@ class Buddies(gtk.Alignment):
             for buddy in buddies:
                 icon = _BuddyIcon()
                 show(icon, buddy)
-                self._buddies.add(icon)
+                self._buddies.pack_start(icon, expand=False)
 
         if self.child is not child:
             if self.child is not None:
@@ -352,8 +355,11 @@ class Buddies(gtk.Alignment):
 class Timestamp(gtk.Label):
 
     def __init__(self, **kwargs):
-        gobject.GObject.__init__(self, **kwargs)
-        self.props.selectable = True
+        gobject.GObject.__init__(self,
+                selectable=True,
+                ellipsize=True,
+                xalign=0.0,
+                **kwargs)
 
     def fill_in(self, metadata):
         self.props.label = misc.get_date(metadata)

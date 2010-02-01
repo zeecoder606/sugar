@@ -123,7 +123,8 @@ class SugarBin(gtk.EventBox):
                     x=self._padding_left, y=self._padding_top,
                     width=width - self._padding_left - self._padding_right,
                     height=height - self._padding_top - self._padding_bottom)
+            child_allocation.width = max(0, child_allocation.width)
+            child_allocation.height = max(0, child_allocation.height)
             self.child.size_allocate(child_allocation)
-
 
 gobject.type_register(SugarBin)
