@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: glucose 84\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-21 07:08-0400\n"
-"PO-Revision-Date: 2011-05-16 15:32+0200\n"
+"PO-Revision-Date: 2011-05-16 16:01+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Armenian\n"
 "Language: hy\n"
@@ -528,6 +528,7 @@ msgstr ""
 "-g key ստանալ ներկա արժեքը key \n"
 "-s key սահմանել ընթացիկ արժեքը key \n"
 "-c key ջնջել ընթացիկ արժեքը key \n"
+"    "
 
 #: ../src/jarabe/controlpanel/cmd.py:50
 msgid "To apply your changes you have to restart sugar.\n"
@@ -904,7 +905,7 @@ msgstr "Ձեր Մատյանը դաատրկ է"
 
 #: ../src/jarabe/journal/listview.py:41
 msgid "No matching entries "
-msgstr "Չկա համընկնող գրառում"
+msgstr "Չկա համընկնող գրառում "
 
 #: ../src/jarabe/journal/listview.py:372
 msgid "Clear search"
