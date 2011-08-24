@@ -96,7 +96,7 @@ msgstr "Firmware:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:147
 msgid "Wireless Firmware:"
-msgstr ""
+msgstr "Утасгүй бичил хангамж"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:170
 msgid "Copyright and License"
