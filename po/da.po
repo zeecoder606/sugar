@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-01 00:30-0400\n"
-"PO-Revision-Date: 2011-04-06 03:32+0200\n"
-"Last-Translator: Aputsiaq <aj@isit.gl>\n"
+"POT-Creation-Date: 2011-06-01 00:30-0400\n"
+"PO-Revision-Date: 2011-08-31 18:46+0200\n"
+"Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -221,7 +221,7 @@ msgstr "Adgangskode:"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:118
 msgid "Number:"
-msgstr "Tal:"
+msgstr "Nummer:"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:130
 msgid "Access Point Name (APN):"
@@ -496,9 +496,9 @@ msgstr "Forbindelse afsluttet"
 #: ../extensions/deviceicon/network.py:289
 #: ../src/jarabe/controlpanel/toolbar.py:119
 #: ../src/jarabe/desktop/homebox.py:70
-#: ../src/jarabe/frame/activitiestray.py:587
-#: ../src/jarabe/frame/activitiestray.py:687
-#: ../src/jarabe/frame/activitiestray.py:715
+#: ../src/jarabe/frame/activitiestray.py:592
+#: ../src/jarabe/frame/activitiestray.py:692
+#: ../src/jarabe/frame/activitiestray.py:720
 msgid "Cancel"
 msgstr "Annullér"
 
@@ -544,7 +544,7 @@ msgstr "Tjek konfigurationen på dit adgangspunktnavn (APN)"
 
 #: ../extensions/deviceicon/network.py:361
 msgid "Check the Number configuration."
-msgstr "Tjek Tal-konfigurationen."
+msgstr "Tjek konfiguration af nummeret."
 
 #: ../extensions/deviceicon/network.py:363
 msgid "Check your configuration."
@@ -943,6 +943,7 @@ msgstr "For at dine ændringer træder i kraft skal du genstarte sukker.\n"
 
 #: ../src/jarabe/controlpanel/gui.py:296
 #: ../src/jarabe/journal/journaltoolbox.py:437
+#: ../src/jarabe/journal/palettes.py:150
 #: ../src/jarabe/journal/volumestoolbar.py:289
 msgid "Warning"
 msgstr "Advarsel"
@@ -1106,8 +1107,8 @@ msgstr "Trådløs sikkerhed:"
 
 #. TRANS: Action label for resuming an activity.
 #: ../src/jarabe/desktop/meshbox.py:109
-#: ../src/jarabe/frame/activitiestray.py:622
-#: ../src/jarabe/journal/journaltoolbox.py:485
+#: ../src/jarabe/frame/activitiestray.py:627
+#: ../src/jarabe/journal/journaltoolbox.py:488
 #: ../src/jarabe/journal/palettes.py:66 ../src/jarabe/view/palettes.py:78
 msgid "Resume"
 msgstr "Genoptag"
@@ -1136,51 +1137,51 @@ msgid "The server could not complete the request."
 msgstr "Serveren kunne ikke gennemføre forespørgslen."
 
 #: ../src/jarabe/frame/activitiestray.py:178
-#: ../src/jarabe/frame/activitiestray.py:559
+#: ../src/jarabe/frame/activitiestray.py:564
 msgid "Decline"
 msgstr "Afslå"
 
-#: ../src/jarabe/frame/activitiestray.py:509
+#: ../src/jarabe/frame/activitiestray.py:514
 #, python-format
 msgid "%dB"
 msgstr "%dB"
 
-#: ../src/jarabe/frame/activitiestray.py:511
+#: ../src/jarabe/frame/activitiestray.py:516
 #, python-format
 msgid "%dKB"
 msgstr "%dKB"
 
-#: ../src/jarabe/frame/activitiestray.py:513
+#: ../src/jarabe/frame/activitiestray.py:518
 #, python-format
 msgid "%dMB"
 msgstr "%dMB"
 
-#: ../src/jarabe/frame/activitiestray.py:530
+#: ../src/jarabe/frame/activitiestray.py:535
 #, python-format
 msgid "%s of %s"
 msgstr "%s af %s"
 
-#: ../src/jarabe/frame/activitiestray.py:544
+#: ../src/jarabe/frame/activitiestray.py:549
 #, python-format
 msgid "Transfer from %s"
 msgstr "Overfør fra %s"
 
-#: ../src/jarabe/frame/activitiestray.py:554
+#: ../src/jarabe/frame/activitiestray.py:559
 msgid "Accept"
 msgstr "Godkend"
 
-#: ../src/jarabe/frame/activitiestray.py:577
-#: ../src/jarabe/frame/activitiestray.py:705
+#: ../src/jarabe/frame/activitiestray.py:582
+#: ../src/jarabe/frame/activitiestray.py:710
 #, python-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: ../src/jarabe/frame/activitiestray.py:611
-#: ../src/jarabe/frame/activitiestray.py:740
+#: ../src/jarabe/frame/activitiestray.py:616
+#: ../src/jarabe/frame/activitiestray.py:745
 msgid "Dismiss"
 msgstr "Afvis"
 
-#: ../src/jarabe/frame/activitiestray.py:675
+#: ../src/jarabe/frame/activitiestray.py:680
 #, python-format
 msgid "Transfer to %s"
 msgstr "Overfør til %s"
@@ -1363,24 +1364,24 @@ msgid "Error"
 msgstr "Fejl"
 
 #. TRANS: Action label for starting an entry.
-#: ../src/jarabe/journal/journaltoolbox.py:488
+#: ../src/jarabe/journal/journaltoolbox.py:491
 #: ../src/jarabe/journal/palettes.py:69
 msgid "Start"
 msgstr "Start"
 
-#: ../src/jarabe/journal/journaltoolbox.py:516
+#: ../src/jarabe/journal/journaltoolbox.py:519
 msgid "Sort by date modified"
 msgstr "Sortér efter ændringsdato"
 
-#: ../src/jarabe/journal/journaltoolbox.py:517
+#: ../src/jarabe/journal/journaltoolbox.py:520
 msgid "Sort by date created"
 msgstr "Sortér efter oprettelsesdato"
 
-#: ../src/jarabe/journal/journaltoolbox.py:518
+#: ../src/jarabe/journal/journaltoolbox.py:521
 msgid "Sort by size"
 msgstr "Sortér efter størrelse"
 
-#: ../src/jarabe/journal/journaltoolbox.py:527
+#: ../src/jarabe/journal/journaltoolbox.py:530
 msgid "Sort view"
 msgstr "Sorteringsvisning"
 
@@ -1435,7 +1436,7 @@ msgstr "Fortsæt med"
 msgid "Start with"
 msgstr "Start med"
 
-#: ../src/jarabe/journal/palettes.py:83 ../src/jarabe/journal/palettes.py:216
+#: ../src/jarabe/journal/palettes.py:83 ../src/jarabe/journal/palettes.py:223
 msgid "No activity to start entry"
 msgstr "Ingen aktivitet til startpost"
 
@@ -1447,15 +1448,19 @@ msgstr "Send til"
 msgid "View Details"
 msgstr "Vis detaljer"
 
-#: ../src/jarabe/journal/palettes.py:181
+#: ../src/jarabe/journal/palettes.py:149
+msgid "Entries without a file cannot be sent."
+msgstr "Poster uden en fil kan ikke sendes."
+
+#: ../src/jarabe/journal/palettes.py:188
 msgid "No friends present"
 msgstr "Ingen venner tilstede"
 
-#: ../src/jarabe/journal/palettes.py:186
+#: ../src/jarabe/journal/palettes.py:193
 msgid "No valid connection found"
 msgstr "Ingen gyldig forbindelse fundet"
 
-#: ../src/jarabe/journal/palettes.py:214
+#: ../src/jarabe/journal/palettes.py:221
 msgid "No activity to resume entry"
 msgstr "Ingen aktivitet for genoptagelsespost"
 
@@ -1504,7 +1509,8 @@ msgstr "Hemmelighed var påkrævet, men blev ikke tilbudt."
 msgid ""
 "The 802.1X supplicant disconnected from the access point or authentication "
 "server."
-msgstr "802.1X-supplikanten koblet fra adgangspunktet eller godkendelsesserver."
+msgstr ""
+"Supplikanten 802.1X er koblet fra adgangspunktet eller godkendelsesserver."
 
 #: ../src/jarabe/model/network.py:183
 msgid "Configuration of the 802.1X supplicant failed."
@@ -1512,7 +1518,7 @@ msgstr "Konfiguration af 802.1X-supplikanten mislykkedes."
 
 #: ../src/jarabe/model/network.py:185
 msgid "The 802.1X supplicant quit or failed unexpectedly."
-msgstr "802.1X-supplikanten blev afbrudt eller fejlede på uventet vis."
+msgstr "Supplikanten 802.1X blev afbrudt eller fejlede på uventet vis."
 
 #: ../src/jarabe/model/network.py:187
 msgid "The 802.1X supplicant took too long to authenticate."
@@ -1561,7 +1567,7 @@ msgstr "AutoIP-tjenesten rapporterede en uventet fejl."
 
 #: ../src/jarabe/model/network.py:210
 msgid "The AutoIP service quit or failed unexpectedly."
-msgstr "Auto-tjenesten blev afbrudt eller fejlede på uventet vis."
+msgstr "AutoIP-tjenesten blev afbrudt eller fejlede på uventet vis."
 
 #: ../src/jarabe/model/network.py:212
 msgid "Dialing failed because the line was busy."
@@ -1573,7 +1579,7 @@ msgstr "Opringning mislykkedes fordi der manglede klartone."
 
 #: ../src/jarabe/model/network.py:216
 msgid "Dialing failed because there was no carrier."
-msgstr "Opringning mislykkedes fordi der ikke var noget teleselskab."
+msgstr "Opringning mislykkedes fordi der ikke var noget teleudbyder."
 
 #: ../src/jarabe/model/network.py:218
 msgid "Dialing timed out."
@@ -1633,7 +1639,7 @@ msgstr "En bruger eller klient anmodede om afbrydelse af forbindelsen."
 
 #: ../src/jarabe/model/network.py:247
 msgid "The device's carrier/link changed."
-msgstr "Enhedens teleselskab/kæde blev ændret."
+msgstr "Enhedens teleudbyder/kæde blev ændret."
 
 #: ../src/jarabe/view/buddymenu.py:64
 msgid "Remove friend"
@@ -1645,7 +1651,7 @@ msgstr "Opret ven"
 
 #: ../src/jarabe/view/buddymenu.py:84
 msgid "Shutdown"
-msgstr "Nedlukning"
+msgstr "Luk ned"
 
 #: ../src/jarabe/view/buddymenu.py:92
 msgid "Restart"
@@ -1704,7 +1710,7 @@ msgstr "Kilde"
 
 #: ../src/jarabe/view/viewsource.py:295
 msgid "Activity Bundle Source"
-msgstr "Aktivitetsbundt-kilde"
+msgstr "Kilde for aktivitetsbundt"
 
 #: ../src/jarabe/view/viewsource.py:302
 #, python-format
