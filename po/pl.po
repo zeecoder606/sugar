@@ -27,12 +27,12 @@ msgstr "Musisz podać imię"
 #: ../extensions/cpsection/aboutme/model.py:68
 #, python-format
 msgid "stroke:   color=%s hue=%s"
-msgstr ""
+msgstr "kreska:   kolor=%s odcień=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:71
 #, python-format
 msgid "stroke:   %s"
-msgstr ""
+msgstr "kreska:   %s"
 
 #: ../extensions/cpsection/aboutme/model.py:73
 #, python-format
@@ -70,7 +70,7 @@ msgstr "Nie dostępny"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:60
 msgid "Identity"
-msgstr ""
+msgstr "Tożsamość"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:69
 msgid "Serial Number:"
@@ -90,11 +90,11 @@ msgstr "Drops:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:131
 msgid "Firmware:"
-msgstr ""
+msgstr "Firmware:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:146
 msgid "Wireless Firmware:"
-msgstr ""
+msgstr "Firmware łączności bezprzewodowej:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:169
 msgid "Copyright and License"
@@ -130,7 +130,7 @@ msgstr "Strefa czasowa"
 
 #: ../extensions/cpsection/frame/__init__.py:21
 msgid "Frame"
-msgstr ""
+msgstr "Ramka"
 
 #: ../extensions/cpsection/frame/model.py:38
 #: ../extensions/cpsection/frame/model.py:60
@@ -156,7 +156,7 @@ msgstr "Opóźnienie aktywacji"
 
 #: ../extensions/cpsection/frame/view.py:76
 msgid "Corner"
-msgstr ""
+msgstr "Róg"
 
 #: ../extensions/cpsection/frame/view.py:111
 msgid "Edge"
@@ -187,14 +187,12 @@ msgid "Network"
 msgstr "Sieć"
 
 #: ../extensions/cpsection/network/model.py:79
-#, fuzzy
 msgid "State is unknown."
-msgstr "Nieokreślony stan."
+msgstr "Stan nieznany."
 
 #: ../extensions/cpsection/network/model.py:105
-#, fuzzy
 msgid "Error in specified radio argument use on/off."
-msgstr "Błąd w podanych arugumentach radia użyj Włącz/Wyłącz"
+msgstr "Błąd w podanym argumencie radia użyj Włącz/Wyłącz"
 
 #: ../extensions/cpsection/network/model.py:137
 msgid "Error in specified argument use 0/1."
@@ -215,10 +213,12 @@ msgstr "Radio"
 #: ../extensions/cpsection/network/view.py:93
 msgid "Discard network history if you have trouble connecting to the network"
 msgstr ""
+"Usuń historię połączeń sieciowych jeżeli masz problemy z połączeniem się z "
+"siecią."
 
 #: ../extensions/cpsection/network/view.py:102
 msgid "Discard network history"
-msgstr ""
+msgstr "Usuń historię połączeń sieciowych"
 
 #: ../extensions/cpsection/network/view.py:115
 msgid "Collaboration"
@@ -245,10 +245,12 @@ msgstr "Zasilanie"
 #: ../extensions/cpsection/power/model.py:84
 msgid "Error in automatic pm argument, use on/off."
 msgstr ""
+"Błąd w argumencie (trybu automatycznego) modułu zasilania, użyj "
+"Włącz/Wyłącz."
 
 #: ../extensions/cpsection/power/model.py:111
 msgid "Error in extreme pm argument, use on/off."
-msgstr ""
+msgstr "Błąd w argumencie modułu zasilania, użyj Włącz/Wyłącz."
 
 #: ../extensions/cpsection/power/view.py:47
 msgid "Power management"
@@ -262,6 +264,8 @@ msgstr "Automatyczne zarządzanie zasilanie (zwiększa czas pracy baterii)"
 msgid ""
 "Extreme power management (disableswireless radio, increases battery life)"
 msgstr ""
+"Oszczędne zarządzanie zasilaniem (wyłącza łączność bezprzewodową, zwiększa "
+"czas pracy baterii)"
 
 #: ../extensions/deviceicon/battery.py:58
 msgid "My Battery"
@@ -318,7 +322,7 @@ msgstr "Kanał"
 
 #: ../extensions/deviceicon/network.py:162
 msgid "Wired Network"
-msgstr ""
+msgstr "Sieć przewodowa"
 
 #: ../extensions/deviceicon/network.py:190
 msgid "Speed"
@@ -327,7 +331,7 @@ msgstr "Szybkość"
 #: ../extensions/deviceicon/network.py:429
 #, python-format
 msgid "%s's network"
-msgstr ""
+msgstr "sieć użytkownika %s"
 
 #: ../extensions/deviceicon/speaker.py:59
 msgid "My Speakers"
@@ -347,7 +351,7 @@ msgstr "Zrzut ekranu"
 
 #: ../data/sugar.schemas.in.h:1
 msgid "Backup URL"
-msgstr ""
+msgstr "URL dla kopii zapasowej"
 
 #: ../data/sugar.schemas.in.h:2
 msgid ""
@@ -355,10 +359,12 @@ msgid ""
 "composed of the stroke color and fill color, format is that of rbg colors. "
 "Example: #AC32FF,#9A5200"
 msgstr ""
+"Kolor ikony XO, który jest wyświetlany na ekranie. Ciąg znaków składa się z "
+"kolorów linii i wypełnienia w formacie kolorów RGB. Np: #AC32FF,#9A5200"
 
 #: ../data/sugar.schemas.in.h:3
 msgid "Corner Delay"
-msgstr ""
+msgstr "Opóźnienie (w rogu)"
 
 #: ../data/sugar.schemas.in.h:4
 msgid "Default font face"
@@ -386,7 +392,7 @@ msgstr "Układ ulubionych"
 
 #: ../data/sugar.schemas.in.h:10
 msgid "Favorites resume mode"
-msgstr ""
+msgstr "Tryb przywracania ulubionych"
 
 #: ../data/sugar.schemas.in.h:11
 msgid "Font face that is used throughout the desktop."
@@ -401,6 +407,8 @@ msgid ""
 "If TRUE, Sugar will make us searchable for the other users of the Jabber "
 "server."
 msgstr ""
+"Jeżeli TAK, Sugar sprawi, że będziemy do odnalezienia przez innych "
+"użytkowników serwera Jabber."
 
 #: ../data/sugar.schemas.in.h:14
 msgid "Jabber Server"
@@ -420,15 +428,15 @@ msgstr "Zasilanie Automatyczne"
 
 #: ../data/sugar.schemas.in.h:18
 msgid "Power Extreme"
-msgstr ""
+msgstr "Kontrola zasilania - oszczędna"
 
 #: ../data/sugar.schemas.in.h:19
 msgid "Power Extreme."
-msgstr ""
+msgstr "Kontrola zasilania - oszczędna."
 
 #: ../data/sugar.schemas.in.h:20
 msgid "Publish to Gadget"
-msgstr ""
+msgstr "Publikuj do gadżetu"
 
 #: ../data/sugar.schemas.in.h:21
 msgid "Setting for muting the sound device."
@@ -468,13 +476,15 @@ msgstr "Głośność"
 
 #: ../data/sugar.schemas.in.h:31
 msgid "Volume level for the sound device."
-msgstr ""
+msgstr "Poziom głośności urządzenia dźwiękowego."
 
 #: ../data/sugar.schemas.in.h:32
 msgid ""
 "When in resume mode, clicking on a favorite icon will cause the last entry "
 "for that activity to be resumed."
 msgstr ""
+"W trybie przywracania, kliknięcie na ikonę ulubionych spowoduje przywrócenie "
+"ostatniego wpisu dla tej czynności."
 
 #: ../src/jarabe/controlpanel/cmd.py:28
 #, python-format
@@ -488,7 +498,7 @@ msgstr ""
 #: ../src/jarabe/controlpanel/cmd.py:30
 #, python-format
 msgid "sugar-control-panel: key=%s not an available option"
-msgstr ""
+msgstr "sugar-control-panel: nie ma zmiennej o nazwie %s"
 
 #: ../src/jarabe/controlpanel/cmd.py:31
 #, python-format
@@ -510,6 +520,16 @@ msgid ""
 "    -c key       clear the current value for the key \n"
 "    "
 msgstr ""
+"Sposób użycia: sugar-control-panel [ opcja ] zmienna [ argumenty ... ] \n"
+"    Konfiguracja środowiska pracy Sugar, ustawianie zmiennych środowiska. \n"
+"    Opcje: \n"
+"    -h           pokazuje tę wiadomość i kończy pracę \n"
+"    -l           pokazuje listę wszystkich dostępnych opcji \n"
+"    -h zmienna       pokazuje informację na temat podanej zmiennej \n"
+"    -g zmienna       zwraca wartość podanej zmiennej \n"
+"    -s zmienna       ustawia wartość podanej zmiennej \n"
+"    -c zmienna       czyści wartość podanej zmiennej \n"
+"    "
 
 #: ../src/jarabe/controlpanel/cmd.py:50
 msgid "To apply your changes you have to restart sugar.\n"
@@ -556,7 +576,7 @@ msgstr "Ok"
 #. TRANS: label for the freeform layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:116
 msgid "Freeform"
-msgstr ""
+msgstr "Dowolne"
 
 #. TRANS: label for the ring layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:198
@@ -626,6 +646,8 @@ msgstr "Aktualizacja oprogramowania"
 #: ../src/jarabe/desktop/homebox.py:107
 msgid "Update your activities to ensure compatibility with your new software"
 msgstr ""
+"Uaktualnij swoje \"czynności\" aby zapewnić ich zgodność z nowym "
+"(uaktualnionym) oprogramowaniem."
 
 #: ../src/jarabe/desktop/homebox.py:116
 msgid "Check now"
@@ -739,7 +761,7 @@ msgstr "%s (%s)"
 #: ../src/jarabe/frame/activitiestray.py:750
 #: ../src/jarabe/frame/activitiestray.py:873
 msgid "Dismiss"
-msgstr ""
+msgstr "Odrzuć"
 
 #: ../src/jarabe/frame/activitiestray.py:810
 #, python-format
@@ -888,7 +910,7 @@ msgstr "Brak pasujących wpisów "
 
 #: ../src/jarabe/journal/listview.py:372
 msgid "Clear search"
-msgstr ""
+msgstr "Wyczyść wyszukiwanie"
 
 #: ../src/jarabe/journal/misc.py:93
 msgid "No date"
@@ -909,7 +931,7 @@ msgstr "Pokaż Dziennik"
 
 #: ../src/jarabe/journal/objectchooser.py:147
 msgid "Choose an object"
-msgstr ""
+msgstr "Wybierz obiekt"
 
 #: ../src/jarabe/journal/objectchooser.py:152
 #: ../src/jarabe/view/viewsource.py:308
@@ -942,11 +964,11 @@ msgstr "Brak prawidłowych połączeń"
 
 #: ../src/jarabe/journal/palettes.py:218
 msgid "No activity to resume entry"
-msgstr ""
+msgstr "Brak czynności aby wznowić wpis"
 
 #: ../src/jarabe/journal/palettes.py:220
 msgid "No activity to start entry"
-msgstr ""
+msgstr "Brak czynności aby otworzyć wpis"
 
 #: ../src/jarabe/view/buddymenu.py:62
 msgid "Remove friend"
@@ -1005,7 +1027,7 @@ msgstr "Pokaż zawartość"
 #: ../src/jarabe/view/palettes.py:263 ../src/jarabe/view/palettes.py:313
 #, python-format
 msgid "%(free_space)d MB Free"
-msgstr ""
+msgstr "%(free_space)d MB wolnego miejsca"
 
 #: ../src/jarabe/view/palettes.py:288
 msgid "Unmount"
@@ -1013,7 +1035,7 @@ msgstr "Odłącz"
 
 #: ../src/jarabe/view/viewsource.py:208
 msgid "Instance Source"
-msgstr ""
+msgstr "Źródło instancji"
 
 #: ../src/jarabe/view/viewsource.py:233
 msgid "Source"
