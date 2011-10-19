@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: olpc-sugar\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: 2011-09-27 12:44+0200\n"
+"PO-Revision-Date: 2011-10-19 14:33+0200\n"
 "Last-Translator: Gonzalo <godiard@sugarlabs.org>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "Language: es\n"
@@ -1793,7 +1793,7 @@ msgstr "Mostrar contenidos"
 #: ../src/jarabe/view/palettes.py:229
 msgctxt "Volume"
 msgid "Remove"
-msgstr "Eliminar"
+msgstr "Quitar"
 
 #: ../src/jarabe/view/viewsource.py:263
 msgid "Instance Source"
