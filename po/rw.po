@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-20 07:47-0400\n"
-"PO-Revision-Date: 2011-06-02 04:38+0200\n"
+"PO-Revision-Date: 2011-10-06 09:38+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: rw\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../extensions/cpsection/aboutme/__init__.py:24
 msgid "About Me"
@@ -483,8 +483,9 @@ msgid "Connected"
 msgstr "Byahujwe"
 
 #: ../extensions/deviceicon/network.py:130
+#, fuzzy
 msgid "No wireless connection"
-msgstr ""
+msgstr "Nta kwihuza"
 
 #: ../extensions/deviceicon/network.py:144
 msgid "Channel"
@@ -667,8 +668,9 @@ msgid "Corner Delay"
 msgstr "Gutinda kw'inguni"
 
 #: ../data/sugar.schemas.in.h:7
+#, fuzzy
 msgid "Default font face"
-msgstr ""
+msgstr "Imyandikire yizanamo"
 
 #: ../data/sugar.schemas.in.h:8
 msgid "Default font size"
@@ -872,8 +874,9 @@ msgid "User Color"
 msgstr "Koresha Ibara"
 
 #: ../data/sugar.schemas.in.h:57
+#, fuzzy
 msgid "User Name"
-msgstr ""
+msgstr "Izina ry'ukoresha"
 
 #: ../data/sugar.schemas.in.h:58
 msgid "User name that is used throughout the desktop."
@@ -981,9 +984,9 @@ msgid "Ok"
 msgstr "Ok"
 
 #: ../src/jarabe/desktop/activitieslist.py:230
-#, python-format
+#, python-format, fuzzy
 msgid "Version %s"
-msgstr ""
+msgstr "Verisiyo %s"
 
 #: ../src/jarabe/desktop/activitieslist.py:356
 msgid "Confirm erase"
@@ -1029,8 +1032,9 @@ msgstr "Isone"
 
 #. TRANS: label for the spiral layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:402
+#, fuzzy
 msgid "Spiral"
-msgstr ""
+msgstr "Nyamwihinahine"
 
 #. TRANS: label for the box layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:472
@@ -1179,8 +1183,9 @@ msgid "Transfer from %s"
 msgstr ""
 
 #: ../src/jarabe/frame/activitiestray.py:569
+#, fuzzy
 msgid "Accept"
-msgstr ""
+msgstr "Kwemera"
 
 #: ../src/jarabe/frame/activitiestray.py:592
 #: ../src/jarabe/frame/activitiestray.py:722
@@ -1278,7 +1283,7 @@ msgstr ""
 #: ../src/jarabe/journal/listmodel.py:150
 #: ../src/jarabe/journal/listmodel.py:158
 msgid "Unknown"
-msgstr ""
+msgstr "Kitazwi"
 
 #: ../src/jarabe/journal/expandedentry.py:265
 #, python-format
@@ -1367,13 +1372,15 @@ msgstr "Icyo aricyo cyose"
 
 #: ../src/jarabe/journal/journaltoolbox.py:381
 #: ../src/jarabe/journal/palettes.py:93
+#, fuzzy
 msgid "Copy to"
-msgstr ""
+msgstr "Gukoporora ku"
 
 #: ../src/jarabe/journal/journaltoolbox.py:389
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
+#, fuzzy
 msgid "Duplicate"
-msgstr ""
+msgstr "Gusubiramo"
 
 #: ../src/jarabe/journal/journaltoolbox.py:422
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254
@@ -1480,8 +1487,9 @@ msgid "Send to"
 msgstr ""
 
 #: ../src/jarabe/journal/palettes.py:121
+#, fuzzy
 msgid "View Details"
-msgstr ""
+msgstr "Kwerekana Birambuye"
 
 #: ../src/jarabe/journal/palettes.py:160
 msgid "Entries without a file cannot be sent."
@@ -1493,8 +1501,9 @@ msgid "Entries without a file cannot be copied."
 msgstr ""
 
 #: ../src/jarabe/journal/palettes.py:267
+#, fuzzy
 msgid "Clipboard"
-msgstr ""
+msgstr "Ububikokoporora"
 
 #: ../src/jarabe/journal/palettes.py:322
 msgid "No friends present"
@@ -1509,8 +1518,9 @@ msgid "No activity to resume entry"
 msgstr ""
 
 #: ../src/jarabe/journal/volumestoolbar.py:209
+#, fuzzy
 msgid "Documents"
-msgstr ""
+msgstr "Inyandiko"
 
 #: ../src/jarabe/journal/volumestoolbar.py:391
 #: ../src/jarabe/view/palettes.py:202 ../src/jarabe/view/palettes.py:254
@@ -1702,8 +1712,9 @@ msgid "Restart"
 msgstr "Kongera gutangira"
 
 #: ../src/jarabe/view/buddymenu.py:101
+#, fuzzy
 msgid "Logout"
-msgstr ""
+msgstr "Gufunga"
 
 #: ../src/jarabe/view/buddymenu.py:106
 msgid "My Settings"
@@ -1737,8 +1748,9 @@ msgid "Stop"
 msgstr "Hagarara"
 
 #: ../src/jarabe/view/palettes.py:139
+#, fuzzy
 msgid "Start new"
-msgstr ""
+msgstr "Gutangira a Gishya"
 
 #: ../src/jarabe/view/palettes.py:180
 msgid "Show contents"
@@ -1755,8 +1767,9 @@ msgid "Instance Source"
 msgstr ""
 
 #: ../src/jarabe/view/viewsource.py:312
+#, fuzzy
 msgid "Source"
-msgstr ""
+msgstr "Inkomoko"
 
 #: ../src/jarabe/view/viewsource.py:374
 msgid "Activity Bundle Source"

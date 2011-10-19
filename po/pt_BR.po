@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: olpc-sugar-pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: 2011-09-28 19:42+0200\n"
+"PO-Revision-Date: 2011-10-15 14:10+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Brazilian Portuguese <fedora-docs-br@redhat.com>\n"
 "Language: pt_BR\n"
@@ -478,8 +478,9 @@ msgid "Connected"
 msgstr "Conectado"
 
 #: ../extensions/deviceicon/network.py:130
+#, fuzzy
 msgid "No wireless connection"
-msgstr ""
+msgstr "Nenhuma conexão sem fio"
 
 #: ../extensions/deviceicon/network.py:144
 msgid "Channel"
@@ -522,18 +523,19 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: ../extensions/deviceicon/network.py:333
+#, fuzzy
 msgid "Try connection again"
-msgstr ""
+msgstr "Tentar conexão novamente"
 
 #: ../extensions/deviceicon/network.py:336
 #, python-format
 msgid "Error: %s"
-msgstr ""
+msgstr "Erro: %s"
 
 #: ../extensions/deviceicon/network.py:340
-#, python-format
+#, python-format, fuzzy
 msgid "Suggestion: %s"
-msgstr ""
+msgstr "Sugestão: %s"
 
 #: ../extensions/deviceicon/network.py:349
 #, python-format
@@ -708,28 +710,33 @@ msgid "Font size that is used throughout the desktop."
 msgstr "Tamanho da fonte que é utilizada por toda área de trabalho."
 
 #: ../data/sugar.schemas.in.h:18
+#, fuzzy
 msgid "GSM network APN"
-msgstr ""
+msgstr "APN da rede GSM"
 
 #: ../data/sugar.schemas.in.h:19
+#, fuzzy
 msgid "GSM network PIN"
-msgstr ""
+msgstr "PIN da rede GSM"
 
 #: ../data/sugar.schemas.in.h:20
+#, fuzzy
 msgid "GSM network PUK"
-msgstr ""
+msgstr "PUK da rede GSM"
 
 #: ../data/sugar.schemas.in.h:21
 msgid "GSM network access point name configuration"
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:22
+#, fuzzy
 msgid "GSM network number"
-msgstr ""
+msgstr "Número da rede GSM"
 
 #: ../data/sugar.schemas.in.h:23
+#, fuzzy
 msgid "GSM network password"
-msgstr ""
+msgstr "Senha da rede GSM"
 
 #: ../data/sugar.schemas.in.h:24
 msgid "GSM network password configuration"
@@ -748,8 +755,9 @@ msgid "GSM network telephone number configuration"
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:28
+#, fuzzy
 msgid "GSM network username"
-msgstr ""
+msgstr "Nome de usuário da rede GSM"
 
 #: ../data/sugar.schemas.in.h:29
 msgid "GSM network username configuration"
@@ -1063,8 +1071,9 @@ msgstr "Cadastrar"
 
 #: ../src/jarabe/desktop/favoritesview.py:643
 #: ../src/jarabe/desktop/favoritesview.py:660
+#, fuzzy
 msgid "Register again"
-msgstr ""
+msgstr "Registrar novamente"
 
 #: ../src/jarabe/desktop/homebox.py:66
 msgid "Software Update"
@@ -1199,7 +1208,6 @@ msgid "Transfer to %s"
 msgstr ""
 
 #: ../src/jarabe/frame/clipboardmenu.py:56
-#, fuzzy
 msgctxt "Clipboard"
 msgid "Remove"
 msgstr "Remover"
@@ -1363,12 +1371,12 @@ msgstr "Qualquer coisa"
 #: ../src/jarabe/journal/journaltoolbox.py:381
 #: ../src/jarabe/journal/palettes.py:93
 msgid "Copy to"
-msgstr ""
+msgstr "Copiar para"
 
 #: ../src/jarabe/journal/journaltoolbox.py:389
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: ../src/jarabe/journal/journaltoolbox.py:422
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254
@@ -1381,7 +1389,7 @@ msgstr ""
 #: ../src/jarabe/journal/palettes.py:142 ../src/jarabe/journal/palettes.py:255
 #: ../src/jarabe/journal/volumestoolbar.py:316
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 # TRANS: Action label for starting an entry.
 #. TRANS: Action label for starting an entry.
@@ -1506,7 +1514,7 @@ msgstr "Nenhuma atividade para continuar a entrada"
 
 #: ../src/jarabe/journal/volumestoolbar.py:209
 msgid "Documents"
-msgstr ""
+msgstr "Documentos"
 
 #: ../src/jarabe/journal/volumestoolbar.py:391
 #: ../src/jarabe/view/palettes.py:202 ../src/jarabe/view/palettes.py:254
@@ -1711,9 +1719,9 @@ msgid "Invite to %s"
 msgstr "Convidar para %s"
 
 #: ../src/jarabe/view/launcher.py:145
-#, python-format
+#, python-format, fuzzy
 msgid "<b>%s</b> failed to start."
-msgstr ""
+msgstr "<b>%s</b> falha ao iniciar."
 
 #: ../src/jarabe/view/palettes.py:48
 msgid "Starting..."
@@ -1741,7 +1749,6 @@ msgid "Show contents"
 msgstr "Mostar conteúdos"
 
 #: ../src/jarabe/view/palettes.py:229
-#, fuzzy
 msgctxt "Volume"
 msgid "Remove"
 msgstr "Remover"
