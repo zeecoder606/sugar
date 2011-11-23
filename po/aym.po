@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-20 00:32-0400\n"
-"PO-Revision-Date: 2011-11-23 07:42+0200\n"
+"PO-Revision-Date: 2011-11-23 17:04+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: aym\n"
@@ -74,7 +74,7 @@ msgstr "Kumputaruraja tuqita"
 #  "No disponible"
 #: ../extensions/cpsection/aboutcomputer/model.py:43
 msgid "Not available"
-msgstr "jani wakisiri"
+msgstr "Jani wakisiri"
 
 #  "%(interface)s: %(version)s"
 #: ../extensions/cpsection/aboutcomputer/model.py:183
@@ -167,12 +167,12 @@ msgstr "Chanipaxa parisa jakhuñapawa."
 #  "nunca"
 #: ../extensions/cpsection/frame/view.py:27
 msgid "never"
-msgstr "Janipuniwa"
+msgstr "janipuniwa"
 
 #  "instantáneo"
 #: ../extensions/cpsection/frame/view.py:28
 msgid "instantaneous"
-msgstr "Mäpita"
+msgstr "mäpita"
 
 #: ../extensions/cpsection/frame/view.py:29
 #, python-format
@@ -330,7 +330,7 @@ msgstr ""
 
 #: ../extensions/cpsection/network/view.py:140
 msgid "Server:"
-msgstr "katuqiri"
+msgstr "Katuqiri:"
 
 #: ../extensions/cpsection/power/__init__.py:21
 msgid "Power"
@@ -338,11 +338,11 @@ msgstr "Ch'ama"
 
 #: ../extensions/cpsection/power/model.py:90
 msgid "Error in automatic pm argument, use on/off."
-msgstr "Pantjata automatic pm amuyt'awipa janiwa/jisa"
+msgstr "Pantjata automatic pm amuyt'awipa janiwa/jisa."
 
 #: ../extensions/cpsection/power/model.py:120
 msgid "Error in extreme pm argument, use on/off."
-msgstr "Pantjata extreme pm amuyt'awipa janiwa/jisa"
+msgstr "Pantjata extreme pm amuyt'awipa janiwa/jisa."
 
 #: ../extensions/cpsection/power/view.py:48
 msgid "Power management"
@@ -367,12 +367,12 @@ msgid ""
 "provide new features."
 msgstr ""
 "amuyt'awi machaqaptayañanaka pantjatanaka askichaña, pantjatanaka jarqayaña, "
-"machaq amuyt'awinaka"
+"machaq amuyt'awinaka."
 
 #: ../extensions/cpsection/updater/view.py:125
 #, python-format
 msgid "Checking %s..."
-msgstr "yant'aski %s..."
+msgstr "Yant'aski %s..."
 
 #: ../extensions/cpsection/updater/view.py:127
 #, python-format
@@ -397,11 +397,11 @@ msgstr[1] "uchantaña qalltasmawa machaqachañanaka"
 
 #: ../extensions/cpsection/updater/view.py:159
 msgid "Checking for updates..."
-msgstr "machaqaptayañanaka thaqaski"
+msgstr "machaqaptayañanaka thaqaski..."
 
 #: ../extensions/cpsection/updater/view.py:164
 msgid "Installing updates..."
-msgstr "machaqaptayaña ut'ayaski"
+msgstr "machaqaptayaña ut'ayaski..."
 
 #: ../extensions/cpsection/updater/view.py:173
 #, python-format, fuzzy
@@ -490,7 +490,7 @@ msgstr "jaljtayaña"
 #: ../src/jarabe/desktop/networkviews.py:548
 #: ../src/jarabe/desktop/networkviews.py:683
 msgid "Connecting..."
-msgstr "Mayachasa"
+msgstr "Mayachasa..."
 
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
@@ -1726,7 +1726,7 @@ msgstr ""
 
 #: ../src/jarabe/view/palettes.py:102
 msgid "Stop"
-msgstr ""
+msgstr "Sayt'ayaña"
 
 #: ../src/jarabe/view/palettes.py:139
 msgid "Start new"
