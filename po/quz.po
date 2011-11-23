@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-20 07:47-0400\n"
-"PO-Revision-Date: 2011-11-20 01:55+0200\n"
+"PO-Revision-Date: 2011-11-23 16:10+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Runasimipi.org\n"
 "Language: quz\n"
@@ -34,7 +34,7 @@ msgstr "muyunkuna:   lipi=%s tonalidad=%s"
 #: ../extensions/cpsection/aboutme/model.py:78
 #, python-format
 msgid "stroke:   %s"
-msgstr "muyunkuna: %s"
+msgstr "muyunkuna:   %s"
 
 #  "relleno:     color=%s tonalidad=%s"
 #: ../extensions/cpsection/aboutme/model.py:80
@@ -46,7 +46,7 @@ msgstr "hunt'ana:     llimp'i=%s tonalidad=%s\""
 #: ../extensions/cpsection/aboutme/model.py:82
 #, python-format
 msgid "fill:     %s"
-msgstr "hunt'ana:  %s"
+msgstr "hunt'ana:     %s"
 
 #  "Error en modificadores de color especificados."
 #: ../extensions/cpsection/aboutme/model.py:94
@@ -56,7 +56,7 @@ msgstr "Pantay aqllasqa llimp'ikunapi."
 #  "Error en colores especificados."
 #: ../extensions/cpsection/aboutme/model.py:97
 msgid "Error in specified colors."
-msgstr "Pantay aqllasqa llimp'ikunapi"
+msgstr "Pantay aqllasqa llimp'ikunapi."
 
 #  "Clic para cambiar su color:"
 #: ../extensions/cpsection/aboutme/view.py:235
@@ -103,7 +103,7 @@ msgstr "Ruwasqa kuti:"
 #  "Azúcar:"
 #: ../extensions/cpsection/aboutcomputer/view.py:116
 msgid "Sugar:"
-msgstr "Misk'i"
+msgstr "Misk'i:"
 
 #  "Firmware:"
 #: ../extensions/cpsection/aboutcomputer/view.py:132
@@ -113,7 +113,7 @@ msgstr "Firmware:"
 #  "Firmware de la red inalámbrica:"
 #: ../extensions/cpsection/aboutcomputer/view.py:147
 msgid "Wireless Firmware:"
-msgstr "Firmware jila llika inala"
+msgstr "Firmware jila llika inala:"
 
 #  "Licencia y derechos de autor"
 #: ../extensions/cpsection/aboutcomputer/view.py:170
@@ -135,7 +135,7 @@ msgstr ""
 #  "Licencia completa:"
 #: ../extensions/cpsection/aboutcomputer/view.py:200
 msgid "Full license:"
-msgstr "Lli'punte mañakuy"
+msgstr "Lli'punte mañakuy:"
 
 #  "Fecha y hora"
 #: ../extensions/cpsection/datetime/__init__.py:21
@@ -163,7 +163,7 @@ msgstr "Muyuykunapi"
 #: ../extensions/cpsection/frame/model.py:41
 #: ../extensions/cpsection/frame/model.py:66
 msgid "Value must be an integer."
-msgstr "Tukuy kanan huk llipin yupana"
+msgstr "Tukuy kanan huk llipin yupana."
 
 #  "nunca"
 #: ../extensions/cpsection/frame/view.py:27
@@ -217,7 +217,7 @@ msgstr "Ñit'ina wakpaq ñit'ina(kuna)"
 #: ../extensions/cpsection/keyboard/view.py:319
 #, fuzzy
 msgid "Keyboard Layout(s)"
-msgstr "Ñit'ina chhalay"
+msgstr "Ñit'ina(kuna) chhalay"
 
 #  "Idioma"
 #: ../extensions/cpsection/language/__init__.py:21
@@ -229,13 +229,13 @@ msgstr "Simi"
 #: ../extensions/cpsection/language/model.py:30
 #, fuzzy
 msgid "Could not access ~/.i18n. Create standard settings."
-msgstr "Mana \"~/.i18n\"pi yaykuyta atikunchu.   "
+msgstr "Mana \"~/.i18n\"pi yaykuyta atikunchu."
 
 #  "El lenguaje del código=%s no pudo ser determinado."
 #: ../extensions/cpsection/language/model.py:129
 #, python-format
 msgid "Language for code=%s could not be determined."
-msgstr "Chimpu=%s, chay simi mana riqsisqachu.  "
+msgstr "Chimpu=%s, chay simi mana riqsisqachu."
 
 #  "Lo siento, yo no hablo '%s'."
 #: ../extensions/cpsection/language/model.py:152
@@ -265,7 +265,7 @@ msgstr "Runa suti:"
 #  "Contraseña:"
 #: ../extensions/cpsection/modemconfiguration/view.py:106
 msgid "Password:"
-msgstr "Pakasqa simi"
+msgstr "Pakasqa simi:"
 
 #  "Número:"
 #: ../extensions/cpsection/modemconfiguration/view.py:118
@@ -409,7 +409,7 @@ msgstr ""
 #: ../extensions/cpsection/updater/view.py:125
 #, python-format
 msgid "Checking %s..."
-msgstr "\"%s\"ta mallichkan... "
+msgstr "%s ta mallichkan..."
 
 #  "Descargando %s..."
 #: ../extensions/cpsection/updater/view.py:127
@@ -453,13 +453,13 @@ msgstr "Kunanchanakunata churachkan..."
 #, python-format
 msgid "%s update was installed"
 msgid_plural "%s updates were installed"
-msgstr[0] "%s kunanchanata churaran "
+msgstr[0] "%s kunanchanata churaran"
 msgstr[1] "%s kunanchanakunata churaran"
 
 #  "Instalación seleccionada"
 #: ../extensions/cpsection/updater/view.py:255
 msgid "Install selected"
-msgstr "Aqllasqa churanapaq "
+msgstr "Aqllasqa churanapaq"
 
 #  "Tamaño de descarga: %s"
 #: ../extensions/cpsection/updater/view.py:276
@@ -565,7 +565,7 @@ msgstr "T'inkisqa"
 #  "No hay conexión inalámbrica"
 #: ../extensions/deviceicon/network.py:130
 msgid "No wireless connection"
-msgstr "Inalámbrica t'inkina mana kanchu."
+msgstr "Inalámbrica t'inkina mana kanchu"
 
 #  "Canal"
 #: ../extensions/deviceicon/network.py:144
@@ -1358,7 +1358,7 @@ msgstr ""
 #  "No se puede conectar al servidor."
 #: ../src/jarabe/desktop/schoolserver.py:143
 msgid "Cannot connect to the server."
-msgstr "Servidorman mana t'inkiyta atinchu"
+msgstr "Servidorman mana t'inkiyta atinchu."
 
 #  "El servidor no pudo completar el pedido."
 #: ../src/jarabe/desktop/schoolserver.py:150
@@ -1682,12 +1682,12 @@ msgstr ""
 #  "Su diario está vacío"
 #: ../src/jarabe/journal/listview.py:316
 msgid "Your Journal is empty"
-msgstr "Diario nisqaykiqa chusaq kachkan  "
+msgstr "Diario nisqaykiqa chusaq kachkan"
 
 #  "Tu carpeta de documentos está vacía"
 #: ../src/jarabe/journal/listview.py:319
 msgid "Your documents folder is empty"
-msgstr "Wayaqaykiqa chusaq kachkan "
+msgstr "Wayaqaykiqa chusaq kachkan"
 
 #  "El dispositivo está vacío"
 #: ../src/jarabe/journal/listview.py:321
@@ -1846,7 +1846,7 @@ msgstr ""
 #  "La configuración IP ya no es válida."
 #: ../src/jarabe/model/network.py:176
 msgid "The IP configuration is no longer valid."
-msgstr "IP kamachinaqa mana allinñachu"
+msgstr "IP kamachinaqa mana allinñachu."
 
 #  "Claves requeridas, pero no fueron suministradas."
 #: ../src/jarabe/model/network.py:178
@@ -1955,7 +1955,7 @@ msgstr ""
 #  "Llamada falló."
 #: ../src/jarabe/model/network.py:220
 msgid "Dialing failed."
-msgstr "Waqyanaqa pantaran"
+msgstr "Waqyanaqa pantaran."
 
 #  "Fallo en inicialización de modem."
 #: ../src/jarabe/model/network.py:222
@@ -2072,7 +2072,7 @@ msgstr "Qallarichkan..."
 #  "Actividad falló al iniciar"
 #: ../src/jarabe/view/palettes.py:58
 msgid "Activity failed to start"
-msgstr "Ruwanaqa qallarispa pantaran."
+msgstr "Ruwanaqa qallarispa pantaran"
 
 #  "Ver fuente"
 #. TODO: share-with, keep
@@ -2098,7 +2098,7 @@ msgstr "Ukhunpi qhaway"
 #  "Eliminar"
 #: ../src/jarabe/view/palettes.py:229
 msgid "Remove"
-msgstr "Qhichuy"
+msgstr "Chinkachiy"
 
 #  "Fuente de la instancia"
 #: ../src/jarabe/view/viewsource.py:263
