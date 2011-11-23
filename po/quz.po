@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-20 07:47-0400\n"
-"PO-Revision-Date: 2011-11-23 16:10+0200\n"
+"PO-Revision-Date: 2011-11-23 16:59+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Runasimipi.org\n"
 "Language: quz\n"
@@ -168,7 +168,7 @@ msgstr "Tukuy kanan huk llipin yupana."
 #  "nunca"
 #: ../extensions/cpsection/frame/view.py:27
 msgid "never"
-msgstr "Ni haykaqpis"
+msgstr "ni haykaqpis"
 
 #  "instantáneo"
 #: ../extensions/cpsection/frame/view.py:28
@@ -229,7 +229,7 @@ msgstr "Simi"
 #: ../extensions/cpsection/language/model.py:30
 #, fuzzy
 msgid "Could not access ~/.i18n. Create standard settings."
-msgstr "Mana \"~/.i18n\"pi yaykuyta atikunchu."
+msgstr "Mana ~/.i18n\"pi yaykuyta atikunchu."
 
 #  "El lenguaje del código=%s no pudo ser determinado."
 #: ../extensions/cpsection/language/model.py:129
@@ -415,13 +415,13 @@ msgstr "%s ta mallichkan..."
 #: ../extensions/cpsection/updater/view.py:127
 #, python-format
 msgid "Downloading %s..."
-msgstr "\"%s\"ta urayachispa..."
+msgstr "%s ta urayachispa..."
 
 #  "Actualizando %s..."
 #: ../extensions/cpsection/updater/view.py:129
 #, python-format
 msgid "Updating %s..."
-msgstr "\"%s\"ta kunanchachkan..."
+msgstr "%s ta kunanchachkan..."
 
 #  "Tu software esta actualizado"
 #: ../extensions/cpsection/updater/view.py:139
@@ -1429,10 +1429,11 @@ msgstr ""
 #: ../src/jarabe/frame/activitiestray.py:691
 #, python-format
 msgid "Transfer to %s"
-msgstr "%sman apachiy"
+msgstr "%s man apachiy"
 
 #  "Eliminar"
 #: ../src/jarabe/frame/clipboardmenu.py:56
+msgctxt "Clipboard"
 msgid "Remove"
 msgstr "Chinkachiy"
 
@@ -2056,7 +2057,7 @@ msgstr "Aqllasqaykuna"
 #: ../src/jarabe/view/buddymenu.py:142
 #, python-format, fuzzy
 msgid "Invite to %s"
-msgstr "%sman mink'ay"
+msgstr "%s man mink'ay"
 
 #  "<b>%s</b> falló al iniciar."
 #: ../src/jarabe/view/launcher.py:145
@@ -2095,10 +2096,11 @@ msgstr "Musuqta qallariy"
 msgid "Show contents"
 msgstr "Ukhunpi qhaway"
 
-#  "Eliminar"
+#  "Quitar"
 #: ../src/jarabe/view/palettes.py:229
+msgctxt "Volume"
 msgid "Remove"
-msgstr "Chinkachiy"
+msgstr "Qhichuy"
 
 #  "Fuente de la instancia"
 #: ../src/jarabe/view/viewsource.py:263
