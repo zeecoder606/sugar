@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-20 00:32-0400\n"
-"PO-Revision-Date: 2011-11-23 17:04+0200\n"
+"PO-Revision-Date: 2011-11-24 05:24+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: aym\n"
@@ -463,9 +463,9 @@ msgid "Very little power remaining"
 msgstr "pisi ch'amanikxiwa watiriyaxa"
 
 #: ../extensions/deviceicon/battery.py:158
-#, python-format
+#, python-format, fuzzy
 msgid "%(hour)d:%(min).2d remaining"
-msgstr ""
+msgstr "%(hour)d:%(min).2d jilt'iri"
 
 #  "Cargada"
 #: ../extensions/deviceicon/battery.py:161
@@ -514,7 +514,7 @@ msgstr "Chinu taypit mayachasiña"
 
 #: ../extensions/deviceicon/network.py:188
 msgid "Speed"
-msgstr ""
+msgstr "Ratuki"
 
 #: ../extensions/deviceicon/network.py:213
 msgid "Wireless modem"
@@ -529,7 +529,7 @@ msgstr ""
 #: ../src/jarabe/desktop/networkviews.py:505
 #: ../src/jarabe/desktop/networkviews.py:639
 msgid "Connect"
-msgstr ""
+msgstr "Mayachaña"
 
 #: ../extensions/deviceicon/network.py:287
 msgid "Disconnected"
@@ -542,7 +542,7 @@ msgstr ""
 #: ../src/jarabe/frame/activitiestray.py:704
 #: ../src/jarabe/frame/activitiestray.py:732
 msgid "Cancel"
-msgstr ""
+msgstr "Tukuyaña"
 
 #: ../extensions/deviceicon/network.py:333
 msgid "Try connection again"
@@ -551,7 +551,7 @@ msgstr ""
 #: ../extensions/deviceicon/network.py:336
 #, python-format
 msgid "Error: %s"
-msgstr ""
+msgstr "Pantjata: %s"
 
 #: ../extensions/deviceicon/network.py:340
 #, python-format
@@ -567,7 +567,7 @@ msgstr ""
 #: ../extensions/deviceicon/network.py:356
 #, python-format
 msgid "%d KB"
-msgstr ""
+msgstr "%d KB"
 
 #: ../extensions/deviceicon/network.py:361
 msgid "Check your Pin/Puk configuration."
@@ -612,7 +612,7 @@ msgstr ""
 
 #: ../extensions/deviceicon/speaker.py:141
 msgid "Mute"
-msgstr ""
+msgstr "Amukt'ayaña"
 
 #: ../extensions/deviceicon/touchpad.py:38
 msgid "finger"
@@ -709,7 +709,7 @@ msgstr ""
 
 #: ../data/sugar.schemas.in.h:13
 msgid "Edge Delay"
-msgstr ""
+msgstr "Qawaya Qhipt'awi"
 
 #: ../data/sugar.schemas.in.h:14
 msgid "Favorites Layout"
@@ -1042,7 +1042,7 @@ msgstr ""
 #. TRANS: label for the box layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:515
 msgid "Triangle"
-msgstr ""
+msgstr "Kimsa k'uchu"
 
 #: ../src/jarabe/desktop/favoritesview.py:338
 msgid "Registration Failed"
@@ -1051,7 +1051,7 @@ msgstr ""
 #: ../src/jarabe/desktop/favoritesview.py:339
 #, python-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../src/jarabe/desktop/favoritesview.py:341
 msgid "Registration Successful"
@@ -1088,7 +1088,7 @@ msgstr ""
 
 #: ../src/jarabe/desktop/homebox.py:198
 msgid "<Ctrl>2"
-msgstr ""
+msgstr "<Ctrl>2"
 
 #: ../src/jarabe/desktop/homebox.py:253
 msgid "Favorites view"
@@ -1096,7 +1096,7 @@ msgstr ""
 
 #: ../src/jarabe/desktop/homebox.py:254
 msgid "<Ctrl>1"
-msgstr ""
+msgstr "<Ctrl>1"
 
 #: ../src/jarabe/desktop/keydialog.py:143
 msgid "Key Type:"
@@ -1119,7 +1119,7 @@ msgstr ""
 #: ../src/jarabe/journal/journaltoolbox.py:509
 #: ../src/jarabe/journal/palettes.py:71 ../src/jarabe/view/palettes.py:84
 msgid "Resume"
-msgstr ""
+msgstr "Jutiri"
 
 #: ../src/jarabe/desktop/meshbox.py:96
 #: ../src/jarabe/frame/activitiestray.py:182
@@ -1152,17 +1152,17 @@ msgstr ""
 #: ../src/jarabe/frame/activitiestray.py:523
 #, python-format
 msgid "%dB"
-msgstr ""
+msgstr "%dB"
 
 #: ../src/jarabe/frame/activitiestray.py:525
 #, python-format
 msgid "%dKB"
-msgstr ""
+msgstr "%dKB"
 
 #: ../src/jarabe/frame/activitiestray.py:527
 #, python-format
 msgid "%dMB"
-msgstr ""
+msgstr "%dMB"
 
 #: ../src/jarabe/frame/activitiestray.py:544
 #, python-format
@@ -1182,7 +1182,7 @@ msgstr ""
 #: ../src/jarabe/frame/activitiestray.py:722
 #, python-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: ../src/jarabe/frame/activitiestray.py:626
 #: ../src/jarabe/frame/activitiestray.py:639
@@ -1202,12 +1202,12 @@ msgstr ""
 #: ../src/jarabe/frame/clipboardmenu.py:56
 msgctxt "Clipboard"
 msgid "Remove"
-msgstr ""
+msgstr "Chhaqtayaña"
 
 #: ../src/jarabe/frame/clipboardmenu.py:62
 #: ../src/jarabe/frame/clipboardmenu.py:85
 msgid "Open"
-msgstr ""
+msgstr "Uñantaña"
 
 #: ../src/jarabe/frame/clipboardmenu.py:90
 msgid "Open with"
@@ -1220,23 +1220,23 @@ msgstr ""
 
 #: ../src/jarabe/frame/zoomtoolbar.py:39
 msgid "Neighborhood"
-msgstr ""
+msgstr "Wakisirinaka"
 
 #: ../src/jarabe/frame/zoomtoolbar.py:39
 msgid "F1"
-msgstr ""
+msgstr "F1"
 
 #: ../src/jarabe/frame/zoomtoolbar.py:41
 msgid "F2"
-msgstr ""
+msgstr "F2"
 
 #: ../src/jarabe/frame/zoomtoolbar.py:43
 msgid "F3"
-msgstr ""
+msgstr "F3"
 
 #: ../src/jarabe/frame/zoomtoolbar.py:45
 msgid "F4"
-msgstr ""
+msgstr "F4"
 
 #  "Nombre:"
 #: ../src/jarabe/intro/window.py:90
@@ -1255,7 +1255,7 @@ msgstr ""
 
 #: ../src/jarabe/intro/window.py:204
 msgid "Next"
-msgstr ""
+msgstr "Jutiri"
 
 #: ../src/jarabe/journal/expandedentry.py:156
 #: ../src/jarabe/journal/listmodel.py:144 ../src/jarabe/journal/palettes.py:64
@@ -1276,17 +1276,17 @@ msgstr ""
 #: ../src/jarabe/journal/listmodel.py:150
 #: ../src/jarabe/journal/listmodel.py:158
 msgid "Unknown"
-msgstr ""
+msgstr "Jani uñt'ata"
 
 #: ../src/jarabe/journal/expandedentry.py:265
 #, python-format
 msgid "Date: %s"
-msgstr ""
+msgstr "Uru chimpu: %s"
 
 #: ../src/jarabe/journal/expandedentry.py:266
 #, python-format
 msgid "Size: %s"
-msgstr ""
+msgstr "Taña: %s"
 
 #: ../src/jarabe/journal/expandedentry.py:294
 #: ../src/jarabe/journal/misc.py:108
@@ -1310,7 +1310,7 @@ msgstr ""
 #: ../src/jarabe/journal/palettes.py:198
 #: ../src/jarabe/journal/volumestoolbar.py:368
 msgid "Journal"
-msgstr ""
+msgstr "Sapüru luräwi"
 
 #: ../src/jarabe/journal/journaltoolbox.py:72
 msgid "Search"
@@ -1367,7 +1367,7 @@ msgstr ""
 #: ../src/jarabe/journal/journaltoolbox.py:404
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
 msgid "Duplicate"
-msgstr ""
+msgstr "Payaptayaña"
 
 #: ../src/jarabe/journal/journaltoolbox.py:437
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254
@@ -1380,13 +1380,13 @@ msgstr ""
 #: ../src/jarabe/journal/palettes.py:142 ../src/jarabe/journal/palettes.py:255
 #: ../src/jarabe/journal/volumestoolbar.py:316
 msgid "Error"
-msgstr ""
+msgstr "Pantjata"
 
 #. TRANS: Action label for starting an entry.
 #: ../src/jarabe/journal/journaltoolbox.py:512
 #: ../src/jarabe/journal/palettes.py:74
 msgid "Start"
-msgstr ""
+msgstr "Qalltawi"
 
 #: ../src/jarabe/journal/journaltoolbox.py:540
 msgid "Sort by date modified"
@@ -1453,7 +1453,7 @@ msgstr ""
 #: ../src/jarabe/journal/objectchooser.py:151
 #: ../src/jarabe/view/viewsource.py:410
 msgid "Close"
-msgstr ""
+msgstr "Jiwayaña"
 
 #: ../src/jarabe/journal/palettes.py:72
 msgid "Resume with"
@@ -1486,7 +1486,7 @@ msgstr ""
 
 #: ../src/jarabe/journal/palettes.py:267
 msgid "Clipboard"
-msgstr ""
+msgstr "Laphi k'ipi"
 
 #: ../src/jarabe/journal/palettes.py:322
 msgid "No friends present"
@@ -1691,7 +1691,7 @@ msgstr ""
 
 #: ../src/jarabe/view/buddymenu.py:95
 msgid "Restart"
-msgstr ""
+msgstr "Wasitata qalltaña"
 
 #: ../src/jarabe/view/buddymenu.py:101
 msgid "Logout"
@@ -1739,7 +1739,7 @@ msgstr ""
 #: ../src/jarabe/view/palettes.py:229
 msgctxt "Volume"
 msgid "Remove"
-msgstr ""
+msgstr "Chhaqtayaña"
 
 #: ../src/jarabe/view/viewsource.py:263
 msgid "Instance Source"
@@ -1747,7 +1747,7 @@ msgstr ""
 
 #: ../src/jarabe/view/viewsource.py:312
 msgid "Source"
-msgstr ""
+msgstr "Naktayiri"
 
 #: ../src/jarabe/view/viewsource.py:374
 msgid "Activity Bundle Source"
