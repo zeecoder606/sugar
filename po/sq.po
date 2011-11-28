@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: 2011-09-27 17:17+0200\n"
+"PO-Revision-Date: 2011-11-28 07:22+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sq\n"
@@ -23,7 +23,7 @@ msgstr "Rreth Meje"
 
 #: ../extensions/cpsection/aboutme/model.py:48
 msgid "You must enter a name."
-msgstr "Vetem emri duhet shkruar"
+msgstr "Vetem emri duhet shkruar."
 
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
@@ -124,7 +124,7 @@ msgstr "Data & Koha"
 
 #: ../extensions/cpsection/datetime/model.py:92
 msgid "Error timezone does not exist."
-msgstr "Gabim zona e kohës nuk ekziston"
+msgstr "Gabim zona e kohës nuk ekziston."
 
 #: ../extensions/cpsection/datetime/view.py:70 ../data/sugar.schemas.in.h:52
 msgid "Timezone"
@@ -198,7 +198,7 @@ msgstr ""
 #: ../extensions/cpsection/language/model.py:152
 #, python-format
 msgid "Sorry I do not speak '%s'."
-msgstr "Më vjen keq unë nuk flas ´%s´."
+msgstr "Më vjen keq unë nuk flas '%s'."
 
 #: ../extensions/cpsection/language/view.py:57
 msgid ""
@@ -325,7 +325,7 @@ msgstr ""
 #: ../extensions/cpsection/updater/__init__.py:21
 #, fuzzy
 msgid "Software update"
-msgstr "Përditsim Softueri"
+msgstr "Përditsim softueri"
 
 #: ../extensions/cpsection/updater/view.py:63
 msgid ""
@@ -529,9 +529,9 @@ msgstr ""
 
 #: ../extensions/deviceicon/network.py:355
 #: ../extensions/deviceicon/network.py:356
-#, python-format, fuzzy
+#, python-format, 
 msgid "%d KB"
-msgstr "%dKB"
+msgstr "%d KB"
 
 #: ../extensions/deviceicon/network.py:361
 msgid "Check your Pin/Puk configuration."
@@ -868,7 +868,7 @@ msgstr "Niveli i Volumit"
 
 #: ../data/sugar.schemas.in.h:61
 msgid "Volume level for the sound device."
-msgstr "Niveli i volumit për pajisjen"
+msgstr "Niveli i volumit për pajisjen."
 
 #: ../data/sugar.schemas.in.h:62
 msgid ""
@@ -1053,7 +1053,7 @@ msgstr "<Ctrl>2"
 
 #: ../src/jarabe/desktop/homebox.py:253
 msgid "Favorites view"
-msgstr "Shfaq Favoritët"
+msgstr "Shfaq favoritët"
 
 #: ../src/jarabe/desktop/homebox.py:254
 msgid "<Ctrl>1"
@@ -1161,10 +1161,9 @@ msgid "Transfer to %s"
 msgstr "Transfer tek %s"
 
 #: ../src/jarabe/frame/clipboardmenu.py:56
-#, fuzzy
 msgctxt "Clipboard"
 msgid "Remove"
-msgstr "Fshije"
+msgstr "Largo"
 
 #: ../src/jarabe/frame/clipboardmenu.py:62
 #: ../src/jarabe/frame/clipboardmenu.py:85
@@ -1697,10 +1696,9 @@ msgid "Show contents"
 msgstr "Shfaq përmbajtjen"
 
 #: ../src/jarabe/view/palettes.py:229
-#, fuzzy
 msgctxt "Volume"
 msgid "Remove"
-msgstr "Fshije"
+msgstr "Largo"
 
 #: ../src/jarabe/view/viewsource.py:263
 msgid "Instance Source"
