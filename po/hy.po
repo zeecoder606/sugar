@@ -2,19 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-12-12 15:42+0200\n"
+"Last-Translator: anush.mkrtchyan <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../extensions/cpsection/aboutme/__init__.py:24
 msgid "About Me"
@@ -22,7 +23,7 @@ msgstr "իմ մասին"
 
 #: ../extensions/cpsection/aboutme/model.py:48
 msgid "You must enter a name."
-msgstr "Դուք պետ է մուտքագրեք անուն:"
+msgstr "Դուք պետ է անուն մուտքագրեք:"
 
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
@@ -50,11 +51,11 @@ msgstr "Վրիպում գույնի ընտրված ցուցիչներում:"
 
 #: ../extensions/cpsection/aboutme/model.py:97
 msgid "Error in specified colors."
-msgstr "Ընտրված գույների վրիպում:"
+msgstr "Վրիպակ` ընտրված գույներում:"
 
 #: ../extensions/cpsection/aboutme/view.py:235
 msgid "Click to change your color:"
-msgstr "Քլիք գույնը փոփոխելու համար."
+msgstr "Քլիք` գույնը փոփոխելու համար."
 
 #: ../extensions/cpsection/aboutcomputer/__init__.py:21
 msgid "About my Computer"
@@ -75,7 +76,7 @@ msgstr "Ինքնություն"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:70
 msgid "Serial Number:"
-msgstr "Շարքյին Համար."
+msgstr "Ապրանքաշարի Համարը."
 
 #: ../extensions/cpsection/aboutcomputer/view.py:92
 msgid "Software"
@@ -110,7 +111,7 @@ msgid ""
 msgstr ""
 "Sugar-ը օգտվողի հետ հաղորդակցող այն գծագրային ծրագիրն է, որ դուք տեսում եք: "
 "Sugar-ը անվճար ծրագիր է և կարգավորվում է GNU General Public արտոնագրով: Դուք "
-"կարող եք օգտագործել և տարածել այն որոշակի ներքոշյալ պայմանների ներքո:"
+"կարող եք օգտագործել և տարածել այն ստորև բերված պայմաններով:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:200
 msgid "Full license:"
@@ -122,7 +123,7 @@ msgstr "Ամսաթիվը և ժամը"
 
 #: ../extensions/cpsection/datetime/model.py:92
 msgid "Error timezone does not exist."
-msgstr "Վրիպում` ժամանակային գոտին գոյություն չունի:"
+msgstr "Ձախողում` ժամանակային գոտին գոյություն չունի:"
 
 #: ../extensions/cpsection/datetime/view.py:70 ../data/sugar.schemas.in.h:52
 msgid "Timezone"
@@ -135,11 +136,11 @@ msgstr "Շրջանակ"
 #: ../extensions/cpsection/frame/model.py:41
 #: ../extensions/cpsection/frame/model.py:66
 msgid "Value must be an integer."
-msgstr "Առժեքը պետք է տրվի ամբողջ թվով:"
+msgstr "Արժեքը պետք է տրվի ամբողջ թվով:"
 
 #: ../extensions/cpsection/frame/view.py:27
 msgid "never"
-msgstr "երբեք"
+msgstr "Երբեք"
 
 #: ../extensions/cpsection/frame/view.py:28
 msgid "instantaneous"
@@ -148,7 +149,7 @@ msgstr "ակնթարթային"
 #: ../extensions/cpsection/frame/view.py:29
 #, python-format
 msgid "%s seconds"
-msgstr "%s վարկյան"
+msgstr "%s վայրկյան"
 
 #: ../extensions/cpsection/frame/view.py:54
 msgid "Activation Delay"
@@ -156,8 +157,9 @@ msgstr "Ակտիվացման Հետաձգում"
 
 #: ../extensions/cpsection/frame/view.py:78
 msgid "Corner"
-msgstr "Անկույն"
+msgstr "Անկյուն"
 
+# Եզր
 #: ../extensions/cpsection/frame/view.py:113
 msgid "Edge"
 msgstr "Կող"
@@ -169,11 +171,11 @@ msgstr "Ստեղնաշար"
 
 #: ../extensions/cpsection/keyboard/view.py:190
 msgid "Keyboard Model"
-msgstr "Ստեղնաշարի Մոդել"
+msgstr "Ստեղնաշարի նմուշ"
 
 #: ../extensions/cpsection/keyboard/view.py:250
 msgid "Key(s) to change layout"
-msgstr "Դասավորությունը փոփոխման ծածքաբառեր"
+msgstr "Դասավորության փոփոխման ծածկաբառեր"
 
 #: ../extensions/cpsection/keyboard/view.py:319
 msgid "Keyboard Layout(s)"
@@ -191,7 +193,7 @@ msgstr "Հնարավոր չէ մուտք գործել ~/.i18n. Ստեղծել ս
 #: ../extensions/cpsection/language/model.py:129
 #, python-format
 msgid "Language for code=%s could not be determined."
-msgstr "Ծածկագրի լեզուն code=%s չի կարող որոշվել:"
+msgstr "Ծածկագրի լեզուն code=%s  անծանոթ է:"
 
 #: ../extensions/cpsection/language/model.py:152
 #, python-format
@@ -204,7 +206,7 @@ msgid ""
 "the next in the list will be used."
 msgstr ""
 "Ավելացրեք լեզուները ձեր նախընտրած հաջորդականությամբ: Եթե թարգմանությունը "
-"մատչելի չէ, կօգտագործվի ցուցակով հաջյորդը:"
+"չկա, ապա կօգտագործվի ցուցակով հաջյորդ լեզվի տարբերակը:"
 
 #: ../extensions/cpsection/modemconfiguration/__init__.py:21
 msgid "Modem Configuration"
@@ -212,7 +214,7 @@ msgstr "Մոդեմի կազմաձևումը"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:94
 msgid "Username:"
-msgstr "Մականուն."
+msgstr "Օգտվողի անունը."
 
 #: ../extensions/cpsection/modemconfiguration/view.py:106
 msgid "Password:"
@@ -232,15 +234,15 @@ msgstr "Անձնական Անհատական Համար (PIN)."
 
 #: ../extensions/cpsection/modemconfiguration/view.py:154
 msgid "Personal Unblocking Key (PUK):"
-msgstr "Անձնական Արգելափակման բացման Գաղտնաբառ (PUK)."
+msgstr "Արգելափակման բացման Անձնական Գաղտնաբառ (PUK)."
 
 #: ../extensions/cpsection/modemconfiguration/view.py:175
 msgid ""
 "You will need to provide the following information to set up a mobile "
 "broadband connection to a cellular (3G) network."
 msgstr ""
-"Շարժական լայնաշերտ բջջային (3G) ցանցին միանալու համար ձեզ անհրաժեշտ է "
-"տրամադրել հետևյալ տեղեկությունները`:"
+"Շարժական լայնաշերտ բջջային (3G) ցանցին միանալու համար անհրաժեշտ է որ դուք "
+"տրամադրեք հետևյալ տեղեկությունները."
 
 #: ../extensions/cpsection/network/__init__.py:21
 #: ../extensions/cpsection/network/view.py:29
@@ -249,7 +251,7 @@ msgstr "Ցանց"
 
 #: ../extensions/cpsection/network/model.py:71
 msgid "State is unknown."
-msgstr "Կարգավիճակն անհայտ է:"
+msgstr "Վիճակն անհայտ է:"
 
 #: ../extensions/cpsection/network/model.py:99
 msgid "Error in specified radio argument use on/off."
@@ -265,7 +267,7 @@ msgstr "Անլար"
 
 #: ../extensions/cpsection/network/view.py:69
 msgid "Turn off the wireless radio to save battery life"
-msgstr "Անջատել անլար ռադիո սարքերը մարտկոցի հզորությունը տնտեսելու համար"
+msgstr "Անջատել անլար ռադիոանտենան` մարտկոցի հզորությունը տնտեսելու համար"
 
 #: ../extensions/cpsection/network/view.py:82
 msgid "Radio"
@@ -273,7 +275,7 @@ msgstr "Ռադիո"
 
 #: ../extensions/cpsection/network/view.py:98
 msgid "Discard network history if you have trouble connecting to the network"
-msgstr "Ջնջել ցանցին միացման պատմությունը միացման խնդիրների ծագման դեպքում"
+msgstr "Միացման խնդիրների ծագման դեպքում` ջնջել ցանցին միացման պատմությունը"
 
 #: ../extensions/cpsection/network/view.py:107
 msgid "Discard network history"
@@ -322,6 +324,8 @@ msgstr ""
 msgid ""
 "Extreme power management (disables wireless radio, increases battery life)"
 msgstr ""
+"Ծայրահեղ սնուցման կառավարում (անջատում է առանց հաղորդալարի ռադիոն, "
+"երկարացնում է մարտկոցի կյանքի տևողությունը)"
 
 #: ../extensions/cpsection/updater/__init__.py:21
 msgid "Software update"
@@ -333,7 +337,7 @@ msgid ""
 "provide new features."
 msgstr ""
 "Ծրագրային արդիականացումն ուղղում է վրիպումները, վերացնում է խոցելի "
-"հատվածները և ընդձեռում նոր հնարավորութուններ"
+"հատվածները և ընդձեռում նոր հնարավորութուններ:"
 
 #: ../extensions/cpsection/updater/view.py:125
 #, python-format
@@ -355,11 +359,11 @@ msgid "Your software is up-to-date"
 msgstr "Ձեր ծրագրերը արդիականացված են"
 
 #: ../extensions/cpsection/updater/view.py:141
-#, python-format
+#, python-format, 
 msgid "You can install %s update"
 msgid_plural "You can install %s updates"
-msgstr[0] "Դուք կարող եք տեղադրել %s արդիականացումը"
-msgstr[1] ""
+msgstr[0] "Դուք կարող եք տեղադրել %s արդիականացում"
+msgstr[1] "Դուք կարող եք տեղադրել %s արդիականացում"
 
 #: ../extensions/cpsection/updater/view.py:159
 msgid "Checking for updates..."
@@ -370,11 +374,11 @@ msgid "Installing updates..."
 msgstr "Արդիականացումների տեղադրում"
 
 #: ../extensions/cpsection/updater/view.py:173
-#, python-format
+#, python-format, 
 msgid "%s update was installed"
 msgid_plural "%s updates were installed"
-msgstr[0] "Արդիականացումների %s տեղադրված է"
-msgstr[1] ""
+msgstr[0] "%s արդիականացում տեղադրվեց"
+msgstr[1] "%s արդիականացում  տեղադրվեց"
 
 #: ../extensions/cpsection/updater/view.py:255
 msgid "Install selected"
@@ -467,7 +471,7 @@ msgstr "Միացած է"
 
 #: ../extensions/deviceicon/network.py:130
 msgid "No wireless connection"
-msgstr ""
+msgstr "Առանց հաղորդալարի ցանց չկա"
 
 #: ../extensions/deviceicon/network.py:144
 msgid "Channel"
@@ -577,7 +581,7 @@ msgstr "Միացնել Ձայնը"
 
 #: ../extensions/deviceicon/speaker.py:141
 msgid "Mute"
-msgstr "Անջատել Ձայնը"
+msgstr "Անձայն"
 
 #: ../extensions/deviceicon/touchpad.py:38
 msgid "finger"
@@ -900,8 +904,8 @@ msgid ""
 "sugar-control-panel: WARNING, found more than one option with the same name: "
 "%s module: %r"
 msgstr ""
-"sugar-կառավար վահանակ. ԶԳՈՒՇԱՑՈՒՄ, գտնվել է ավելի քան մեկ տարբերակ նույն "
-"անունով.%s մոդուլը.%r"
+"sugar-կառավար վահանակ. ԶԳՈՒՇԱՑՈՒՄ, գտնվել է նույն անունով ավելի քան մեկ "
+"տարբերակ .%s մոդուլը.%r"
 
 #: ../src/jarabe/controlpanel/cmd.py:30
 #, python-format
@@ -1165,7 +1169,7 @@ msgstr "%s %s-ից"
 #: ../src/jarabe/frame/activitiestray.py:558
 #, python-format
 msgid "Transfer from %s"
-msgstr ""
+msgstr "Փոխանցել %s - ից"
 
 #: ../src/jarabe/frame/activitiestray.py:569
 msgid "Accept"
@@ -1185,17 +1189,17 @@ msgstr "Արգելել"
 
 #: ../src/jarabe/frame/activitiestray.py:643
 msgid "The other participant canceled the file transfer"
-msgstr ""
+msgstr "Մյուս մասնակիցը չեղարկել է ֆայլի փոխանցումը"
 
 #: ../src/jarabe/frame/activitiestray.py:691
 #, python-format
 msgid "Transfer to %s"
-msgstr ""
+msgstr "Փոխանցել %s"
 
 #: ../src/jarabe/frame/clipboardmenu.py:56
 msgctxt "Clipboard"
 msgid "Remove"
-msgstr ""
+msgstr "Հեռացնել"
 
 #: ../src/jarabe/frame/clipboardmenu.py:62
 #: ../src/jarabe/frame/clipboardmenu.py:85
@@ -1352,7 +1356,7 @@ msgstr "Ամեն ինչը"
 #: ../src/jarabe/journal/journaltoolbox.py:381
 #: ../src/jarabe/journal/palettes.py:93
 msgid "Copy to"
-msgstr ""
+msgstr "Կրկնօրինակել"
 
 #: ../src/jarabe/journal/journaltoolbox.py:389
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
@@ -1400,11 +1404,11 @@ msgstr "Ձեր Մատյանը դաատրկ է"
 
 #: ../src/jarabe/journal/listview.py:319
 msgid "Your documents folder is empty"
-msgstr ""
+msgstr "Ձեր թղթապանակը դատարկ է"
 
 #: ../src/jarabe/journal/listview.py:321
 msgid "The device is empty"
-msgstr ""
+msgstr "Սարքը դատարկ է"
 
 #: ../src/jarabe/journal/listview.py:323
 msgid "No matching entries"
@@ -1469,7 +1473,7 @@ msgstr "Դիտել Մանրամասները"
 
 #: ../src/jarabe/journal/palettes.py:160
 msgid "Entries without a file cannot be sent."
-msgstr ""
+msgstr "Առանց ֆայլի գրառումները չեն կարող ուղարկվել"
 
 #: ../src/jarabe/journal/palettes.py:245 ../src/jarabe/journal/palettes.py:278
 #: ../src/jarabe/journal/volumestoolbar.py:306
@@ -1494,13 +1498,13 @@ msgstr "Գրառումը շարունակելու համար չկա ոչ մի գ
 
 #: ../src/jarabe/journal/volumestoolbar.py:209
 msgid "Documents"
-msgstr ""
+msgstr "Փաստաթղթեր"
 
 #: ../src/jarabe/journal/volumestoolbar.py:391
 #: ../src/jarabe/view/palettes.py:202 ../src/jarabe/view/palettes.py:254
 #, python-format
 msgid "%(free_space)d MB Free"
-msgstr "%(free_space)d ՄԲ ազատ"
+msgstr "%(free_space)d ՄԲ ազատ տարածք"
 
 #: ../src/jarabe/model/network.py:163
 msgid "The reason for the device state change is unknown."
@@ -1736,7 +1740,7 @@ msgstr "Ցույց տալ բովանդակությունը"
 #: ../src/jarabe/view/palettes.py:229
 msgctxt "Volume"
 msgid "Remove"
-msgstr ""
+msgstr "Հեռացնել"
 
 #: ../src/jarabe/view/viewsource.py:263
 msgid "Instance Source"
@@ -1752,7 +1756,7 @@ msgstr "Գործողությունների փաթեթի աղբյուր"
 
 #: ../src/jarabe/view/viewsource.py:393
 msgid "Sugar Toolkit Source"
-msgstr ""
+msgstr "«Sugar» Ծրագրերի Գործիքի աղբյուրը"
 
 #: ../src/jarabe/view/viewsource.py:400 ../src/jarabe/view/viewsource.py:401
 #, python-format
