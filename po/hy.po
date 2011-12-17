@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: 2011-12-12 15:42+0200\n"
-"Last-Translator: anush.mkrtchyan <anush.mkrtchyan@ca1492.com>\n"
+"PO-Revision-Date: 2011-12-17 10:08+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "իմ մասին"
 
 #: ../extensions/cpsection/aboutme/model.py:48
 msgid "You must enter a name."
-msgstr "Դուք պետ է անուն մուտքագրեք:"
+msgstr "Դուք պետք է մուտքագրեք անուն:"
 
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
@@ -47,11 +47,11 @@ msgstr "լցնել.     %s"
 
 #: ../extensions/cpsection/aboutme/model.py:94
 msgid "Error in specified color modifiers."
-msgstr "Վրիպում գույնի ընտրված ցուցիչներում:"
+msgstr "Ձախողում գույնի ընտրված ցուցիչներում:"
 
 #: ../extensions/cpsection/aboutme/model.py:97
 msgid "Error in specified colors."
-msgstr "Վրիպակ` ընտրված գույներում:"
+msgstr "Ընտրված գույների ձախողում:"
 
 #: ../extensions/cpsection/aboutme/view.py:235
 msgid "Click to change your color:"
@@ -63,7 +63,7 @@ msgstr "Իմ Համակարգչի մասին"
 
 #: ../extensions/cpsection/aboutcomputer/model.py:42
 msgid "Not available"
-msgstr "Մատչելի չէ"
+msgstr "Գոյություն չունի"
 
 #: ../extensions/cpsection/aboutcomputer/model.py:171
 #, python-format
@@ -76,7 +76,7 @@ msgstr "Ինքնություն"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:70
 msgid "Serial Number:"
-msgstr "Ապրանքաշարի Համարը."
+msgstr "Ապրանքախմբի համարը."
 
 #: ../extensions/cpsection/aboutcomputer/view.py:92
 msgid "Software"
@@ -109,9 +109,9 @@ msgid ""
 "change it and/or distribute copies of it under certain conditions described "
 "therein."
 msgstr ""
-"Sugar-ը օգտվողի հետ հաղորդակցող այն գծագրային ծրագիրն է, որ դուք տեսում եք: "
-"Sugar-ը անվճար ծրագիր է և կարգավորվում է GNU General Public արտոնագրով: Դուք "
-"կարող եք օգտագործել և տարածել այն ստորև բերված պայմաններով:"
+"Sugar-ը օգտվողի գրաֆիկական այն միջավայրն է, որ դուք տեսում եք: Sugar-ը "
+"անվճար ծրագիր է և կարգավորվում է GNU General Public արտոնագրով: Դուք կարող "
+"եք օգտագործել և տարածել այն ստորև բերված պայմաններով."
 
 #: ../extensions/cpsection/aboutcomputer/view.py:200
 msgid "Full license:"
@@ -127,7 +127,7 @@ msgstr "Ձախողում` ժամանակային գոտին գոյություն
 
 #: ../extensions/cpsection/datetime/view.py:70 ../data/sugar.schemas.in.h:52
 msgid "Timezone"
-msgstr "ժամանակային գոտի"
+msgstr "ժամային գոտի"
 
 #: ../extensions/cpsection/frame/__init__.py:21
 msgid "Frame"
@@ -162,7 +162,7 @@ msgstr "Անկյուն"
 # Եզր
 #: ../extensions/cpsection/frame/view.py:113
 msgid "Edge"
-msgstr "Կող"
+msgstr "Եզր"
 
 #: ../extensions/cpsection/keyboard/__init__.py:21
 #: ../extensions/cpsection/keyboard/view.py:32
@@ -193,7 +193,7 @@ msgstr "Հնարավոր չէ մուտք գործել ~/.i18n. Ստեղծել ս
 #: ../extensions/cpsection/language/model.py:129
 #, python-format
 msgid "Language for code=%s could not be determined."
-msgstr "Ծածկագրի լեզուն code=%s  անծանոթ է:"
+msgstr "code=%s -ի լեզուն  չի ճանաչվել:"
 
 #: ../extensions/cpsection/language/model.py:152
 #, python-format
@@ -255,11 +255,11 @@ msgstr "Վիճակն անհայտ է:"
 
 #: ../extensions/cpsection/network/model.py:99
 msgid "Error in specified radio argument use on/off."
-msgstr "Վրիպում ընտրված ռադիո տիրույթում` օգտագործել on/off:"
+msgstr "Ձախողում ընտրված ալեհավաքի տիրույթում` օգտագործել on/off:"
 
 #: ../extensions/cpsection/network/model.py:140
 msgid "Error in specified argument use 0/1."
-msgstr "Վրիպում ընտրված տիրույթում` օգտագործել 0/1:"
+msgstr "Ձախողում ընտրված տիրույթում` օգտագործել 0/1:"
 
 #: ../extensions/cpsection/network/view.py:61
 msgid "Wireless"
@@ -267,7 +267,7 @@ msgstr "Անլար"
 
 #: ../extensions/cpsection/network/view.py:69
 msgid "Turn off the wireless radio to save battery life"
-msgstr "Անջատել անլար ռադիոանտենան` մարտկոցի հզորությունը տնտեսելու համար"
+msgstr "Անջատել անլար ալեհավաքը` մարտկոցի հզորությունը տնտեսելու համար"
 
 #: ../extensions/cpsection/network/view.py:82
 msgid "Radio"
@@ -291,8 +291,8 @@ msgid ""
 "server will be able to see each other, even when they aren't on the same "
 "network."
 msgstr ""
-"Սերվերը համառժեք է բոլոր օգտվողների համար անկախ նրանց իրական գտնվելու "
-"վայրից: Օգտվողները կարող են տեսնել միմյանց, նույնիսկ եթե նրանք նույն ցանցում "
+"Սերվերը համարժեք է բոլոր օգտվողների համար` անկախ նրանց իրական գտնվելու "
+"վայրից: Օգտվողները կարող են տեսնել միմյանց, անգամ եթե նրանք նույն ցանցում "
 "չեն:"
 
 #: ../extensions/cpsection/network/view.py:140
@@ -305,11 +305,11 @@ msgstr "Սնուցում"
 
 #: ../extensions/cpsection/power/model.py:90
 msgid "Error in automatic pm argument, use on/off."
-msgstr "Վրիպում ավտոմատիկ pm տիրույթում՝ օգտագործել on/off:"
+msgstr "Ձախողում սնուցման ավտոմատ կառավարման տիրույթում՝ օգտագործել on/off:"
 
 #: ../extensions/cpsection/power/model.py:120
 msgid "Error in extreme pm argument, use on/off."
-msgstr "Վրիպում արտակարգ pm տիրույթում՝ օգտագործել on/off:"
+msgstr "Ձախողում սնուցման արտակարգ կառավարման տիրույթում՝ օգտագործել on/off:"
 
 #: ../extensions/cpsection/power/view.py:48
 msgid "Power management"
@@ -318,7 +318,7 @@ msgstr "Սնուցման կառավարում"
 #: ../extensions/cpsection/power/view.py:58
 msgid "Automatic power management (increases battery life)"
 msgstr ""
-"Ավտոմատ սնուցման կառավարում (Երկարացնում է մարտկոցի կյանքի տևողությունը)"
+"Սնուցման Ավտոմատ Կառավարում (Երկարացնում է մարտկոցի կյանքի տևողությունը)"
 
 #: ../extensions/cpsection/power/view.py:86
 msgid ""
@@ -430,7 +430,7 @@ msgstr "Լիցքավորում"
 
 #: ../extensions/deviceicon/battery.py:153
 msgid "Very little power remaining"
-msgstr "Մնացել է չափազանց պոքր հզորություն"
+msgstr "Մնացել է չափազանց փոքր հզորություն"
 
 #: ../extensions/deviceicon/battery.py:158
 #, python-format
@@ -439,7 +439,7 @@ msgstr "մնացել է. %(hour)d:%(min).2d"
 
 #: ../extensions/deviceicon/battery.py:161
 msgid "Charged"
-msgstr "Լիցքվորոած է"
+msgstr "Լիցքվորված է"
 
 #: ../extensions/deviceicon/network.py:49
 #, python-format
@@ -451,7 +451,7 @@ msgstr "IP հասցեն է` %s"
 #: ../src/jarabe/desktop/networkviews.py:140
 #: ../src/jarabe/desktop/networkviews.py:508
 msgid "Disconnect"
-msgstr "Անջատել"
+msgstr "Անջատում"
 
 #: ../extensions/deviceicon/network.py:112
 #: ../extensions/deviceicon/network.py:295
@@ -459,7 +459,7 @@ msgstr "Անջատել"
 #: ../src/jarabe/desktop/networkviews.py:547
 #: ../src/jarabe/desktop/networkviews.py:680
 msgid "Connecting..."
-msgstr "Միացում..."
+msgstr "Միացվում է..."
 
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
@@ -467,7 +467,7 @@ msgstr "Միացում..."
 #: ../src/jarabe/desktop/networkviews.py:553
 #: ../src/jarabe/desktop/networkviews.py:686
 msgid "Connected"
-msgstr "Միացած է"
+msgstr "Միացված է"
 
 #: ../extensions/deviceicon/network.py:130
 msgid "No wireless connection"
@@ -498,7 +498,7 @@ msgstr "Խնդրում ենք սպասել..."
 #: ../src/jarabe/desktop/networkviews.py:504
 #: ../src/jarabe/desktop/networkviews.py:637
 msgid "Connect"
-msgstr "Միացնել"
+msgstr "Միացում"
 
 #: ../extensions/deviceicon/network.py:287
 msgid "Disconnected"
@@ -581,7 +581,7 @@ msgstr "Միացնել Ձայնը"
 
 #: ../extensions/deviceicon/speaker.py:141
 msgid "Mute"
-msgstr "Անձայն"
+msgstr "Անջատել Ձայնը"
 
 #: ../extensions/deviceicon/touchpad.py:38
 msgid "finger"
@@ -639,7 +639,7 @@ msgstr ""
 
 #: ../data/sugar.schemas.in.h:3
 msgid "Backup URL"
-msgstr "Պահուստային URL"
+msgstr "Պահեստային URL"
 
 #: ../data/sugar.schemas.in.h:4
 msgid "Bundle IDs of protected activities"
@@ -661,11 +661,11 @@ msgstr "Անկյունների ՈԻշացումը"
 
 #: ../data/sugar.schemas.in.h:7
 msgid "Default font face"
-msgstr "Ենթադրյալ տառատեսակ"
+msgstr "նախորոշված տառատեսակ"
 
 #: ../data/sugar.schemas.in.h:8
 msgid "Default font size"
-msgstr "Ենթադրյալ տառաչափս"
+msgstr "Նախորոշված տառաչափս"
 
 #: ../data/sugar.schemas.in.h:9
 msgid "Default nick"
@@ -677,7 +677,7 @@ msgstr "Անկյուններն օգտագործող շրջանակի ուշաց�
 
 #: ../data/sugar.schemas.in.h:11
 msgid "Delay for the activation of the frame using the edges."
-msgstr "Սայրերն օգտագործող շրջանակի ուշացում:"
+msgstr "Եզրերն օգտագործող շրջանակի ուշացում:"
 
 #: ../data/sugar.schemas.in.h:12
 msgid "Directory to search for translations"
@@ -685,23 +685,23 @@ msgstr "Թարգմանություն որոնելու ֆայլերի գրացո�
 
 #: ../data/sugar.schemas.in.h:13
 msgid "Edge Delay"
-msgstr "Սայրի ուշացում"
+msgstr "Եզրի ուշացում"
 
 #: ../data/sugar.schemas.in.h:14
 msgid "Favorites Layout"
-msgstr "Ընտրվածների դասավորություն"
+msgstr "Ընտրյալների դասավորություն"
 
 #: ../data/sugar.schemas.in.h:15
 msgid "Favorites resume mode"
-msgstr "Ընտրվածների Շարունակելու եղանակ"
+msgstr "Ընտրյալների վերականգնման եղանակ"
 
 #: ../data/sugar.schemas.in.h:16
 msgid "Font face that is used throughout the desktop."
-msgstr "Սեղանադրում օգտագործվող տառատեսակ:"
+msgstr "Սեղնադիրում օգտագործվող տառատեսակ:"
 
 #: ../data/sugar.schemas.in.h:17
 msgid "Font size that is used throughout the desktop."
-msgstr "Սեղանադրում օգտագործվող տառաչափս:"
+msgstr "Սեղնադրում օգտագործվող տառաչափս:"
 
 #: ../data/sugar.schemas.in.h:18
 msgid "GSM network APN"
@@ -756,7 +756,7 @@ msgid ""
 "If TRUE, Sugar will make us searchable for the other users of the Jabber "
 "server."
 msgstr ""
-"եթե TRUE է, ապա Sugar-ը Ձեզ որոնելի կդառցնի Jabber սերվերի այլ օգտվողների "
+"եթե ՃԻՇՏ է, ապա Sugar-ը մեզ որոնելի կդարձնի Jabber սերվերի այլ օգտվողների "
 "համար:"
 
 #: ../data/sugar.schemas.in.h:31
@@ -795,7 +795,7 @@ msgstr "Ստեղնաշարի ընտրություն"
 
 #: ../data/sugar.schemas.in.h:38
 msgid "Layout of the favorites view."
-msgstr "Ընտրյալների դիտման դասավորության:"
+msgstr "Ընտրյալների տեսքի դասավորություն:"
 
 #: ../data/sugar.schemas.in.h:39
 msgid ""
@@ -862,7 +862,7 @@ msgstr "Jabber սերվերի Url հասցեն:"
 
 #: ../data/sugar.schemas.in.h:55
 msgid "Url where the backup is saved to."
-msgstr "Պահուստային պատճեների պահպանման Url հասցեն:"
+msgstr "Պահեստային պատճեների պահպանման URL հասցեն:"
 
 #: ../data/sugar.schemas.in.h:56
 msgid "User Color"
@@ -884,7 +884,7 @@ msgstr ""
 
 #: ../data/sugar.schemas.in.h:60
 msgid "Volume Level"
-msgstr "Ուժգնություն"
+msgstr "Ձայնի ուժգնության աստիճանը"
 
 #: ../data/sugar.schemas.in.h:61
 msgid "Volume level for the sound device."
@@ -895,7 +895,7 @@ msgid ""
 "When in resume mode, clicking on a favorite icon will cause the last entry "
 "for that activity to be resumed."
 msgstr ""
-"Վերամեկնարկի ռեժիմում ընտրյալ պատկերակի սեղմելը կառաջացնի այդ գործողության "
+"Վերամեկնարկի ռեժիմում ընտրյալ պատկերակը սեղմելը կառաջացնի այդ գործունեության "
 "վերջին մուտքի վերամեկնարկը:"
 
 #: ../src/jarabe/controlpanel/cmd.py:28
@@ -904,18 +904,18 @@ msgid ""
 "sugar-control-panel: WARNING, found more than one option with the same name: "
 "%s module: %r"
 msgstr ""
-"sugar-կառավար վահանակ. ԶԳՈՒՇԱՑՈՒՄ, գտնվել է նույն անունով ավելի քան մեկ "
+"sugar-կառավարման վահանակ. ԶԳՈՒՇԱՑՈՒՄ, գտնվել է նույն անունով մեկից ավելի "
 "տարբերակ .%s մոդուլը.%r"
 
 #: ../src/jarabe/controlpanel/cmd.py:30
 #, python-format
 msgid "sugar-control-panel: key=%s not an available option"
-msgstr "sugar-կառավար վահանակ. key=%s անմատչելի տարբերակ"
+msgstr "sugar-կառավար վահանակ. key=%s գոյություն չունեցող"
 
 #: ../src/jarabe/controlpanel/cmd.py:31
 #, python-format
 msgid "sugar-control-panel: %s"
-msgstr "sugar-կառավար վահանակ. %s"
+msgstr "sugar-կառավարման վահանակ. %s"
 
 #. TRANS: Translators, there's a empty line at the end of this string,
 #. which must appear in the translated string (msgstr) as well.
@@ -932,15 +932,15 @@ msgid ""
 "    -c key       clear the current value for the key \n"
 "    "
 msgstr ""
-"Օգտագործում. sugar-կառավար վահանակ [ option ] key [ args ... ] \n"
+"Օգտագործում. sugar-control-panel վահանակ [տարբերակ] key [ args ... ] \n"
 "    Sugar միջավայրի վերահսկողության: \n"
-"    Ընտրանքներ. \n"
-"    h           ցույց տալ այս օգնության ուղերձը և ավարտել \n"
-"    -l           բոլոր ընտրանքների ցանկը \n"
-"    -h key       ցույց տալ տեղեկատվություն  այս ստեղնի մասին key \n"
-"-g key ստանալ ներկա արժեքը key \n"
-"-s key սահմանել ընթացիկ արժեքը key \n"
-"-c key ջնջել ընթացիկ արժեքը key \n"
+"    Ընտրություններ. \n"
+"    -h ցույց տալ այս օգնության ուղերձը և ավարտել \n"
+"    -l բոլոր ընտրությունների ցանկը \n"
+"    -h key ցույց տալ տեղեկություն այս ստեղնի մասին key \n"
+"    -g key ստանալ ներկա արժեքը key \n"
+"    -s key սահմանել ընթացիկ արժեքը key \n"
+"    -c key ջնջել ընթացիկ արժեքը key \n"
 "    "
 
 #: ../src/jarabe/controlpanel/cmd.py:52
@@ -1008,11 +1008,11 @@ msgstr "Ջնջել"
 
 #: ../src/jarabe/desktop/activitieslist.py:435
 msgid "Remove favorite"
-msgstr "Ջնջել ընտրյալը"
+msgstr "Հանել ընտրյալների շարքից"
 
 #: ../src/jarabe/desktop/activitieslist.py:439
 msgid "Make favorite"
-msgstr "Նշանակել ընտրյալը"
+msgstr "Նշել որպես ընտրյալ"
 
 #. TRANS: label for the freeform layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:127
@@ -1041,7 +1041,7 @@ msgstr "Եռանկյուն"
 
 #: ../src/jarabe/desktop/favoritesview.py:338
 msgid "Registration Failed"
-msgstr "Գրանցումը Չհաջողվեց"
+msgstr "Գրանցումը ձախողվեց"
 
 #: ../src/jarabe/desktop/favoritesview.py:339
 #, python-format
@@ -1073,7 +1073,7 @@ msgstr "﻿ Ծրագրի Արդիականացում"
 msgid "Update your activities to ensure compatibility with your new software"
 msgstr ""
 "Արդիականացրեք Ձեր գործունեությունները Ձեր նոր ծրագրակազմի հետ "
-"համատեղելիությունը ապահովելու նպատակով"
+"համատեղելիությունն ապահովելու նպատակով"
 
 #: ../src/jarabe/desktop/homebox.py:76
 msgid "Check now"
@@ -1089,7 +1089,7 @@ msgstr "<Ctrl>2"
 
 #: ../src/jarabe/desktop/homebox.py:253
 msgid "Favorites view"
-msgstr "Ընտրյալների տեսքով"
+msgstr "Ընտրյալների տեսքը"
 
 #: ../src/jarabe/desktop/homebox.py:254
 msgid "<Ctrl>1"
@@ -1116,7 +1116,7 @@ msgstr "Անլար կապի անվտանգության."
 #: ../src/jarabe/journal/journaltoolbox.py:494
 #: ../src/jarabe/journal/palettes.py:71 ../src/jarabe/view/palettes.py:84
 msgid "Resume"
-msgstr "Շարունակել"
+msgstr "Վերադառնալ"
 
 #: ../src/jarabe/desktop/meshbox.py:96
 #: ../src/jarabe/frame/activitiestray.py:182
@@ -1139,7 +1139,7 @@ msgstr "Հնարավոր չէ միանալ սերվերին:"
 
 #: ../src/jarabe/desktop/schoolserver.py:150
 msgid "The server could not complete the request."
-msgstr "Սերվերը չի կարող լրացնել հարցումը:"
+msgstr "Սերվերը չի կարող ավարտել պահանջի կատարումը:"
 
 #: ../src/jarabe/frame/activitiestray.py:187
 #: ../src/jarabe/frame/activitiestray.py:574
@@ -1241,7 +1241,7 @@ msgstr "Անուն."
 
 #: ../src/jarabe/intro/window.py:126
 msgid "Click to change color:"
-msgstr "Քլիք գույնը փոխելու համար."
+msgstr "Քլիք` գույնը փոփոխելու համար."
 
 #: ../src/jarabe/intro/window.py:187 ../src/jarabe/journal/detailview.py:105
 msgid "Back"
@@ -1259,7 +1259,7 @@ msgstr "Անվերնագիր"
 
 #: ../src/jarabe/journal/expandedentry.py:245
 msgid "No preview"
-msgstr "Առանց նախադիտում"
+msgstr "Նախադիտում չկա"
 
 #: ../src/jarabe/journal/expandedentry.py:264
 #, python-format
@@ -1285,7 +1285,7 @@ msgstr "Չափս. %s"
 #: ../src/jarabe/journal/expandedentry.py:294
 #: ../src/jarabe/journal/misc.py:108
 msgid "No date"
-msgstr "Առանց ամսաթիվ"
+msgstr "Ամսաթիվ չկա"
 
 #: ../src/jarabe/journal/expandedentry.py:301
 msgid "Participants:"
@@ -1293,7 +1293,7 @@ msgstr "Մասնակիցներ."
 
 #: ../src/jarabe/journal/expandedentry.py:323
 msgid "Description:"
-msgstr "Նկարագիր."
+msgstr "Նկարագրություն."
 
 #: ../src/jarabe/journal/expandedentry.py:348
 msgid "Tags:"
@@ -1312,7 +1312,7 @@ msgstr "Որոնում"
 
 #: ../src/jarabe/journal/journaltoolbox.py:138
 msgid "Anytime"
-msgstr "Ցանկացած ժամանակ"
+msgstr "երբևէ"
 
 #: ../src/jarabe/journal/journaltoolbox.py:140
 msgid "Today"
@@ -1351,7 +1351,7 @@ msgstr "Իմ դասարանը"
 
 #: ../src/jarabe/journal/journaltoolbox.py:300
 msgid "Anything"
-msgstr "Ամեն ինչը"
+msgstr "Ամենը"
 
 #: ../src/jarabe/journal/journaltoolbox.py:381
 #: ../src/jarabe/journal/palettes.py:93
@@ -1400,7 +1400,7 @@ msgstr "Դասավորված տեսք"
 
 #: ../src/jarabe/journal/listview.py:316
 msgid "Your Journal is empty"
-msgstr "Ձեր Մատյանը դաատրկ է"
+msgstr "Ձեր Մատյանը դաատարկ է"
 
 #: ../src/jarabe/journal/listview.py:319
 msgid "Your documents folder is empty"
@@ -1416,7 +1416,7 @@ msgstr "Չկա համընկնող գրառում"
 
 #: ../src/jarabe/journal/listview.py:397
 msgid "Clear search"
-msgstr "Մաքրել որոնումը"
+msgstr "Ջնջել որոնումը"
 
 #: ../src/jarabe/journal/misc.py:273
 #, python-format
@@ -1435,7 +1435,7 @@ msgstr "Ձեր Մատյանը լիքն է"
 #: ../src/jarabe/journal/modalalert.py:68
 msgid "Please delete some old Journal entries to make space for new ones."
 msgstr ""
-"Խնդրում ենք ջնջել մատյանի որոշ հին գրառումները, որպեսզի տեղ ազատեք նորի "
+"Խնդրում ենք ջնջել Մատյանի որոշ հին գրառումները, որպեսզի տեղ ազատեք նորի "
 "համար:"
 
 #: ../src/jarabe/journal/modalalert.py:80
@@ -1714,7 +1714,7 @@ msgstr "<b>%s</b>-ը չգործարկվեց:"
 
 #: ../src/jarabe/view/palettes.py:48
 msgid "Starting..."
-msgstr "Սկսած..."
+msgstr "մեկնարկում է..."
 
 #: ../src/jarabe/view/palettes.py:58
 msgid "Activity failed to start"
@@ -1727,7 +1727,7 @@ msgstr "Դիտել աղբյուրը"
 
 #: ../src/jarabe/view/palettes.py:102
 msgid "Stop"
-msgstr "Կանգառ"
+msgstr "Կանգ"
 
 #: ../src/jarabe/view/palettes.py:139
 msgid "Start new"
@@ -1744,7 +1744,7 @@ msgstr "Հեռացնել"
 
 #: ../src/jarabe/view/viewsource.py:263
 msgid "Instance Source"
-msgstr "Միջադեպի աղբյուր"
+msgstr "Օրինակի Աղբյուրը"
 
 #: ../src/jarabe/view/viewsource.py:312
 msgid "Source"
