@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-20 00:32-0400\n"
-"PO-Revision-Date: 2012-03-27 10:16+0200\n"
+"PO-Revision-Date: 2012-03-27 10:22+0200\n"
 "Last-Translator: Meechai <malaku38@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: th\n"
@@ -38,7 +38,7 @@ msgstr "การลากขนแปรง   %s"
 #: ../extensions/cpsection/aboutme/model.py:80
 #, python-format
 msgid "fill:     color=%s hue=%s"
-msgstr "เติม:      สี=%s ความสว่างของสี=%s"
+msgstr "เติม: สี=%s ความสว่างของสี=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:82
 #, python-format
@@ -174,11 +174,11 @@ msgstr "รุ่นแป้นพิมพ์"
 
 #: ../extensions/cpsection/keyboard/view.py:250
 msgid "Key(s) to change layout"
-msgstr "คีย์(s) เพื่อเปลี่ยนเค้าโครง"
+msgstr "คีย์เพื่อเปลี่ยนเค้าโครง"
 
 #: ../extensions/cpsection/keyboard/view.py:319
 msgid "Keyboard Layout(s)"
-msgstr "ผังแป้นพิมพ์(s)"
+msgstr "ผังแป้นพิมพ์"
 
 #: ../extensions/cpsection/language/__init__.py:21
 #: ../extensions/cpsection/language/view.py:33
@@ -639,8 +639,7 @@ msgid ""
 "Example: #AC32FF,#9A5200"
 msgstr ""
 "สีสำหรับไอคอน XO จะถูกใช้ที่หน้าจอ "
-"ค่าจะประกอบด้วยการระบายสีและใส่สีในรูปแบบของสี rbg ตัวอย่าง : # AC32FF, # "
-"9A5200"
+"ค่าจะประกอบด้วยการระบายสีและใส่สีในรูปแบบของสี rbg ตัวอย่าง: #AC32FF,#9A5200"
 
 #: ../data/sugar.schemas.in.h:6
 msgid "Corner Delay"
@@ -724,7 +723,7 @@ msgstr "การตั้งค่าหมายเลขประจำตั
 
 #: ../data/sugar.schemas.in.h:26
 msgid "GSM network personal unlock key configuration"
-msgstr "การตั้งค่ากุญแจปลดล็อคส่วนบุคคลของเครือข่าย GSM "
+msgstr "การตั้งค่ากุญแจปลดล็อคส่วนบุคคลของเครือข่าย GSM"
 
 #: ../data/sugar.schemas.in.h:27
 msgid "GSM network telephone number configuration"
@@ -916,11 +915,14 @@ msgid ""
 "    "
 msgstr ""
 "Usage: sugar-control-panel [ option ] key [ args ... ] \n"
-"    Control for the sugar environment.     Options:     -h           show "
-"this help message and exit     -l           list all the available options "
-"    -h key       show information about this key     -g key       get the "
-"current value of the key     -s key       set the current value for the key "
-"    -c key       clear the current value for the key     "
+"Control for the sugar environment. \n"
+"Options: \n"
+"-h show this help message and exit \n"
+"-l list all the available options \n"
+"-h key show information about this key \n"
+"-g key get the current value of the key \n"
+"-s key set the current value for the key \n"
+"-c key clear the current value for the key \n"
 
 #: ../src/jarabe/controlpanel/cmd.py:52
 msgid "To apply your changes you have to restart sugar.\n"
@@ -1531,7 +1533,7 @@ msgstr "การกำหนดค่าของ 802.1X ล้มเหลว"
 
 #: ../src/jarabe/model/network.py:185
 msgid "The 802.1X supplicant quit or failed unexpectedly."
-msgstr "หยุดการทำงานโดยไม่ทราบสาเหตุ"
+msgstr "802.1X หยุดการทำงานโดยไม่ทราบสาเหตุ"
 
 #: ../src/jarabe/model/network.py:187
 msgid "The 802.1X supplicant took too long to authenticate."
