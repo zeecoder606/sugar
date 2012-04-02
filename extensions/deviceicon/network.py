@@ -385,7 +385,8 @@ class WirelessDeviceView(ToolButton):
         self._device = device
         self._device_props = None
         self._flags = 0
-        self._name = ''
+        self._ssid = ''
+        self._display_name = ''
         self._mode = network.NM_802_11_MODE_UNKNOWN
         self._strength = 0
         self._frequency = 0
@@ -405,7 +406,7 @@ class WirelessDeviceView(ToolButton):
         self._icon.show()
 
         self.set_palette_invoker(FrameWidgetInvoker(self))
-        self._palette = WirelessPalette(self._name)
+        self._palette = WirelessPalette(self._display_name)
         self._palette.connect('deactivate-connection',
                               self.__deactivate_connection_cb)
         self.set_palette(self._palette)
@@ -482,7 +483,8 @@ class WirelessDeviceView(ToolButton):
             self._mode = properties['Mode']
             self._color = None
         if 'Ssid' in properties:
-            self._name = properties['Ssid']
+            self._ssid = properties['Ssid']
+            self._display_name = network.ssid_to_display_name(self._ssid)
             self._color = None
         if 'Strength' in properties:
             self._strength = properties['Strength']
@@ -493,11 +495,11 @@ class WirelessDeviceView(ToolButton):
 
         if self._color == None:
             if self._mode == network.NM_802_11_MODE_ADHOC and \
-                    network.is_sugar_adhoc_network(self._name):
+                    network.is_sugar_adhoc_network(self._ssid):
                 self._color = profile.get_color()
             else:
                 sha_hash = hashlib.sha1()
-                data = self._name + hex(self._flags)
+                data = self._ssid + hex(self._flags)
                 sha_hash.update(data)
                 digest = hash(sha_hash.digest())
                 index = digest % len(xocolor.colors)
@@ -519,7 +521,8 @@ class WirelessDeviceView(ToolButton):
         else:
             self._icon.props.badge_name = None
 
-        self._palette.props.primary_text = glib.markup_escape_text(self._name)
+        label = glib.markup_escape_text(self._display_name)
+        self._palette.props.primary_text = label
 
         self._update_state()
         self._update_color()
@@ -531,7 +534,7 @@ class WirelessDeviceView(ToolButton):
             state = network.DEVICE_STATE_UNKNOWN
 
         if self._mode != network.NM_802_11_MODE_ADHOC and \
-                network.is_sugar_adhoc_network(self._name) == False:
+                network.is_sugar_adhoc_network(self._ssid) == False:
             if state == network.DEVICE_STATE_ACTIVATED:
                 icon_name = '%s-connected' % 'network-wireless'
             else:
@@ -572,7 +575,7 @@ class WirelessDeviceView(ToolButton):
 
     def __deactivate_connection_cb(self, palette, data=None):
         if self._mode == network.NM_802_11_MODE_INFRA:
-            connection = network.find_connection_by_ssid(self._name)
+            connection = network.find_connection_by_ssid(self._ssid)
             if connection:
                 connection.disable_autoconnect()
 
