@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: olpc-sugar\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2011-11-21 04:36+0200\n"
+"PO-Revision-Date: 2012-04-24 08:17+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "Language: es\n"
@@ -1142,6 +1142,8 @@ msgid ""
 "A wireless encryption key is required for\n"
 " the wireless network '%s'."
 msgstr ""
+"Una clave de encriptación es requerida para\n"
+"la red inalámbrica '%s'."
 
 # This is an encryption key type, not a keyboard key
 #: ../src/jarabe/desktop/keydialog.py:144
