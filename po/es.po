@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: olpc-sugar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-20 00:32-0400\n"
+"POT-Creation-Date: 2012-04-24 00:33-0400\n"
 "PO-Revision-Date: 2011-11-21 04:36+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
@@ -472,15 +472,15 @@ msgstr "Direccion IP: %s"
 
 #: ../extensions/deviceicon/network.py:104
 #: ../extensions/deviceicon/network.py:303
-#: ../src/jarabe/desktop/networkviews.py:140
-#: ../src/jarabe/desktop/networkviews.py:509
+#: ../src/jarabe/desktop/networkviews.py:141
+#: ../src/jarabe/desktop/networkviews.py:510
 msgid "Disconnect"
 msgstr "Desconectar"
 
 #: ../extensions/deviceicon/network.py:112
 #: ../extensions/deviceicon/network.py:295
-#: ../src/jarabe/desktop/networkviews.py:244
-#: ../src/jarabe/desktop/networkviews.py:548
+#: ../src/jarabe/desktop/networkviews.py:245
+#: ../src/jarabe/desktop/networkviews.py:549
 #: ../src/jarabe/desktop/networkviews.py:683
 msgid "Connecting..."
 msgstr "Conectando..."
@@ -488,8 +488,8 @@ msgstr "Conectando..."
 # TODO: show the channel number
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
-#: ../src/jarabe/desktop/networkviews.py:254
-#: ../src/jarabe/desktop/networkviews.py:554
+#: ../src/jarabe/desktop/networkviews.py:255
+#: ../src/jarabe/desktop/networkviews.py:555
 #: ../src/jarabe/desktop/networkviews.py:689
 msgid "Connected"
 msgstr "Conectado"
@@ -519,8 +519,8 @@ msgid "Please wait..."
 msgstr "Espere por favor..."
 
 #: ../extensions/deviceicon/network.py:286
-#: ../src/jarabe/desktop/networkviews.py:136
-#: ../src/jarabe/desktop/networkviews.py:505
+#: ../src/jarabe/desktop/networkviews.py:137
+#: ../src/jarabe/desktop/networkviews.py:506
 #: ../src/jarabe/desktop/networkviews.py:639
 msgid "Connect"
 msgstr "Conectar"
@@ -579,20 +579,20 @@ msgstr "Revise el Número en la configuración."
 msgid "Check your configuration."
 msgstr "Revise su configuración."
 
-#: ../extensions/deviceicon/network.py:612
+#: ../extensions/deviceicon/network.py:615
 msgid "Mesh Network"
 msgstr "Red Malla"
 
-#: ../extensions/deviceicon/network.py:656
+#: ../extensions/deviceicon/network.py:659
 #, python-format
 msgid "Mesh Network %s"
 msgstr "Red Malla %s"
 
-#: ../extensions/deviceicon/network.py:779
+#: ../extensions/deviceicon/network.py:782
 msgid "No GSM connection available."
 msgstr "No se dispone de conexión GSM."
 
-#: ../extensions/deviceicon/network.py:780
+#: ../extensions/deviceicon/network.py:783
 msgid "Create a connection in the control panel."
 msgstr "Crear una conexión en el panel de control."
 
@@ -980,26 +980,26 @@ msgstr ""
 msgid "To apply your changes you have to restart sugar.\n"
 msgstr "Para aplicar sus cambios tiene que reiniciar Azúcar.\n"
 
-#: ../src/jarabe/controlpanel/gui.py:296 ../src/jarabe/journal/palettes.py:161
+#: ../src/jarabe/controlpanel/gui.py:297 ../src/jarabe/journal/palettes.py:161
 #: ../src/jarabe/journal/palettes.py:246 ../src/jarabe/journal/palettes.py:279
 #: ../src/jarabe/journal/volumestoolbar.py:307
 msgid "Warning"
 msgstr "Advertencia"
 
-#: ../src/jarabe/controlpanel/gui.py:297
+#: ../src/jarabe/controlpanel/gui.py:298
 #: ../src/jarabe/controlpanel/sectionview.py:41
 msgid "Changes require restart"
 msgstr "Los cambios requieren reiniciar"
 
-#: ../src/jarabe/controlpanel/gui.py:300
+#: ../src/jarabe/controlpanel/gui.py:301
 msgid "Cancel changes"
 msgstr "Cancelar cambios"
 
-#: ../src/jarabe/controlpanel/gui.py:305 ../src/jarabe/desktop/homebox.py:73
+#: ../src/jarabe/controlpanel/gui.py:306 ../src/jarabe/desktop/homebox.py:73
 msgid "Later"
 msgstr "Después"
 
-#: ../src/jarabe/controlpanel/gui.py:309
+#: ../src/jarabe/controlpanel/gui.py:310
 msgid "Restart now"
 msgstr "Reiniciar ahora"
 
@@ -1136,20 +1136,27 @@ msgstr "Vista de favoritos"
 msgid "<Ctrl>1"
 msgstr "<Ctrl>1"
 
+#: ../src/jarabe/desktop/keydialog.py:94
+#, python-format
+msgid ""
+"A wireless encryption key is required for\n"
+" the wireless network '%s'."
+msgstr ""
+
 # This is an encryption key type, not a keyboard key
-#: ../src/jarabe/desktop/keydialog.py:143
+#: ../src/jarabe/desktop/keydialog.py:144
 msgid "Key Type:"
 msgstr "Tipo de clave:"
 
-#: ../src/jarabe/desktop/keydialog.py:163
+#: ../src/jarabe/desktop/keydialog.py:164
 msgid "Authentication Type:"
 msgstr "Tipo de autenticación:"
 
-#: ../src/jarabe/desktop/keydialog.py:229
+#: ../src/jarabe/desktop/keydialog.py:230
 msgid "WPA & WPA2 Personal"
 msgstr "WPA y WPA2 Personal"
 
-#: ../src/jarabe/desktop/keydialog.py:238
+#: ../src/jarabe/desktop/keydialog.py:239
 msgid "Wireless Security:"
 msgstr "Seguridad inalámbrica:"
 
@@ -1166,7 +1173,7 @@ msgstr "Retomar"
 msgid "Join"
 msgstr "Unirse"
 
-#: ../src/jarabe/desktop/networkviews.py:501
+#: ../src/jarabe/desktop/networkviews.py:502
 #, python-format
 msgid "Ad-hoc Network %d"
 msgstr "Red específica %d"

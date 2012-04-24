@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: 2011-09-29 15:59+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2012-04-24 00:33-0400\n"
+"PO-Revision-Date: 2012-03-15 22:07+0200\n"
+"Last-Translator: Marcin <ulinski.marcin@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "O mnie"
 
 #: ../extensions/cpsection/aboutme/model.py:48
 msgid "You must enter a name."
-msgstr "Musisz podać imię"
+msgstr "Musisz podać imię."
 
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
@@ -60,60 +60,60 @@ msgstr "Kliknij aby zmienić swój kolor:"
 msgid "About my Computer"
 msgstr "O moim komputerze"
 
-#: ../extensions/cpsection/aboutcomputer/model.py:42
+#: ../extensions/cpsection/aboutcomputer/model.py:43
 msgid "Not available"
 msgstr "Nie dostępny"
 
-#: ../extensions/cpsection/aboutcomputer/model.py:171
+#: ../extensions/cpsection/aboutcomputer/model.py:183
 #, python-format
 msgid "%(interface)s: %(version)s"
 msgstr "%(interface)s: %(version)s"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:61
+#: ../extensions/cpsection/aboutcomputer/view.py:59
 msgid "Identity"
 msgstr "Tożsamość"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:70
+#: ../extensions/cpsection/aboutcomputer/view.py:68
 msgid "Serial Number:"
 msgstr "Numer seryjny:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:92
+#: ../extensions/cpsection/aboutcomputer/view.py:90
 msgid "Software"
 msgstr "Oprogramowanie"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:101
+#: ../extensions/cpsection/aboutcomputer/view.py:99
 msgid "Build:"
 msgstr "Wersja:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:116
+#: ../extensions/cpsection/aboutcomputer/view.py:114
 msgid "Sugar:"
-msgstr "Dropsy (Sugar):"
+msgstr "Bajtek.edu.pl:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:132
+#: ../extensions/cpsection/aboutcomputer/view.py:129
 msgid "Firmware:"
 msgstr "Firmware:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:147
+#: ../extensions/cpsection/aboutcomputer/view.py:144
 msgid "Wireless Firmware:"
 msgstr "Wireless Firmware:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:170
+#: ../extensions/cpsection/aboutcomputer/view.py:167
 msgid "Copyright and License"
 msgstr "Prawa autorskie i licencja"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:188
+#: ../extensions/cpsection/aboutcomputer/view.py:185
 msgid ""
 "Sugar is the graphical user interface that you are looking at. Sugar is free "
 "software, covered by the GNU General Public License, and you are welcome to "
 "change it and/or distribute copies of it under certain conditions described "
 "therein."
 msgstr ""
-"Drops jest graficznym interfejsem użytkownika, na który patrzysz. Drops jest "
-"wolnym oprogramowaniem, podlegającym zapisom licencji GNU General Public "
-"License. Mile widzialne jest zmiana i/lub dystrybuowanie jego kopii w ramach "
-"warunków opisanych w owej licencji."
+"Bajtek.edu.pl jest graficznym interfejsem użytkownika, na który patrzysz. "
+"Bajtek.edu.pl jest wolnym oprogramowaniem, podlegającym zapisom licencji GNU "
+"General Public License. Mile widzialne jest zmiana i/lub dystrybuowanie "
+"jego kopii w ramach warunków opisanych w owej licencji."
 
-#: ../extensions/cpsection/aboutcomputer/view.py:200
+#: ../extensions/cpsection/aboutcomputer/view.py:197
 msgid "Full license:"
 msgstr "Pełna licencja:"
 
@@ -136,7 +136,7 @@ msgstr "Ramka"
 #: ../extensions/cpsection/frame/model.py:41
 #: ../extensions/cpsection/frame/model.py:66
 msgid "Value must be an integer."
-msgstr "Wartość musi być liczbą"
+msgstr "Wartość musi być liczbą."
 
 #: ../extensions/cpsection/frame/view.py:27
 msgid "never"
@@ -147,7 +147,8 @@ msgid "instantaneous"
 msgstr "natychmiastowy"
 
 #: ../extensions/cpsection/frame/view.py:29
-#, python-format, 
+#, python-format
+#, python-format,
 msgid "%s seconds"
 msgstr "%s sekund"
 
@@ -254,7 +255,7 @@ msgstr "Stan nieznany."
 
 #: ../extensions/cpsection/network/model.py:99
 msgid "Error in specified radio argument use on/off."
-msgstr "Błąd w podanym argumencie radia użyj Włącz/Wyłącz"
+msgstr "Błąd w podanym argumencie radia użyj Włącz/Wyłącz."
 
 #: ../extensions/cpsection/network/model.py:140
 msgid "Error in specified argument use 0/1."
@@ -266,7 +267,7 @@ msgstr "Bezprzewodowy"
 
 #: ../extensions/cpsection/network/view.py:69
 msgid "Turn off the wireless radio to save battery life"
-msgstr "Wyłącz łączność bezprzewodową (radio) aby oszczędzać baterie."
+msgstr "Wyłącz łączność bezprzewodową (radio) aby oszczędzać baterie"
 
 #: ../extensions/cpsection/network/view.py:82
 msgid "Radio"
@@ -276,7 +277,7 @@ msgstr "Radio"
 msgid "Discard network history if you have trouble connecting to the network"
 msgstr ""
 "Usuń historię połączeń sieciowych jeżeli masz problemy z połączeniem się z "
-"siecią."
+"siecią"
 
 #: ../extensions/cpsection/network/view.py:107
 msgid "Discard network history"
@@ -358,15 +359,15 @@ msgstr "Uaktualniam %s..."
 
 #: ../extensions/cpsection/updater/view.py:139
 msgid "Your software is up-to-date"
-msgstr "Używasz najnowszej wersji oprogramowania."
+msgstr "Używasz najnowszej wersji oprogramowania"
 
 #: ../extensions/cpsection/updater/view.py:141
 #, python-format
 msgid "You can install %s update"
 msgid_plural "You can install %s updates"
-msgstr[0] "Możesz zainstalować %s uaktualnienie."
-msgstr[1] "Możesz zainstalować %s uaktualnienia."
-msgstr[2] "Możesz zainstalować %s uaktualnień."
+msgstr[0] "Możesz zainstalować %s uaktualnienie"
+msgstr[1] "Możesz zainstalować %s uaktualnienia"
+msgstr[2] "Możesz zainstalować %s uaktualnień"
 
 #: ../extensions/cpsection/updater/view.py:159
 msgid "Checking for updates..."
@@ -380,9 +381,9 @@ msgstr "Instaluję uaktualnienia..."
 #, python-format
 msgid "%s update was installed"
 msgid_plural "%s updates were installed"
-msgstr[0] "Zostało zainstalowane %s uaktualnienie."
-msgstr[1] "Zostały zainstalowane %s uaktualnienia."
-msgstr[2] "Zostało zainstalowane %s uaktualnień."
+msgstr[0] "Zostało zainstalowane %s uaktualnienie"
+msgstr[1] "Zostały zainstalowane %s uaktualnienia"
+msgstr[2] "Zostało zainstalowane %s uaktualnień"
 
 #: ../extensions/cpsection/updater/view.py:255
 msgid "Install selected"
@@ -452,24 +453,24 @@ msgstr "Adres IP: %s"
 
 #: ../extensions/deviceicon/network.py:104
 #: ../extensions/deviceicon/network.py:303
-#: ../src/jarabe/desktop/networkviews.py:140
-#: ../src/jarabe/desktop/networkviews.py:508
+#: ../src/jarabe/desktop/networkviews.py:141
+#: ../src/jarabe/desktop/networkviews.py:510
 msgid "Disconnect"
 msgstr "Rozłącz"
 
 #: ../extensions/deviceicon/network.py:112
 #: ../extensions/deviceicon/network.py:295
-#: ../src/jarabe/desktop/networkviews.py:243
-#: ../src/jarabe/desktop/networkviews.py:547
-#: ../src/jarabe/desktop/networkviews.py:680
+#: ../src/jarabe/desktop/networkviews.py:245
+#: ../src/jarabe/desktop/networkviews.py:549
+#: ../src/jarabe/desktop/networkviews.py:683
 msgid "Connecting..."
 msgstr "Łączę..."
 
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
-#: ../src/jarabe/desktop/networkviews.py:253
-#: ../src/jarabe/desktop/networkviews.py:553
-#: ../src/jarabe/desktop/networkviews.py:686
+#: ../src/jarabe/desktop/networkviews.py:255
+#: ../src/jarabe/desktop/networkviews.py:555
+#: ../src/jarabe/desktop/networkviews.py:689
 msgid "Connected"
 msgstr "Połączony"
 
@@ -498,9 +499,9 @@ msgid "Please wait..."
 msgstr "Proszę czekać..."
 
 #: ../extensions/deviceicon/network.py:286
-#: ../src/jarabe/desktop/networkviews.py:136
-#: ../src/jarabe/desktop/networkviews.py:504
-#: ../src/jarabe/desktop/networkviews.py:637
+#: ../src/jarabe/desktop/networkviews.py:137
+#: ../src/jarabe/desktop/networkviews.py:506
+#: ../src/jarabe/desktop/networkviews.py:639
 msgid "Connect"
 msgstr "Połącz"
 
@@ -548,7 +549,7 @@ msgstr "Sprawdź konfigurację numerów PIN i PUK."
 
 #: ../extensions/deviceicon/network.py:364
 msgid "Check your Access Point Name (APN) configuration"
-msgstr "Sprawdź konfigurację nazwy punktu dostępu (APN)."
+msgstr "Sprawdź konfigurację nazwy punktu dostępu (APN)"
 
 #: ../extensions/deviceicon/network.py:368
 msgid "Check the Number configuration."
@@ -558,20 +559,21 @@ msgstr "Sprawdź jaki podałeś w konfiguracji numer (telefonu)."
 msgid "Check your configuration."
 msgstr "Sprawdź konfigurację (sieci)."
 
-#: ../extensions/deviceicon/network.py:612
+#: ../extensions/deviceicon/network.py:615
 msgid "Mesh Network"
 msgstr "Sieć kratowa (mesh)"
 
-#: ../extensions/deviceicon/network.py:656
-#, python-format, 
+#: ../extensions/deviceicon/network.py:659
+#, python-format
+#, python-format,
 msgid "Mesh Network %s"
-msgstr "Sieć kratowa (mesh)  %s"
+msgstr "Sieć kratowa (mesh) %s"
 
-#: ../extensions/deviceicon/network.py:779
+#: ../extensions/deviceicon/network.py:782
 msgid "No GSM connection available."
 msgstr "Brak dostępnego połączenia GSM."
 
-#: ../extensions/deviceicon/network.py:780
+#: ../extensions/deviceicon/network.py:783
 msgid "Create a connection in the control panel."
 msgstr "Stwórz połączenie w panelu sterowania."
 
@@ -758,16 +760,16 @@ msgid ""
 "If TRUE, Sugar will make us searchable for the other users of the Jabber "
 "server."
 msgstr ""
-"Jeżeli TAK, Drops sprawi, że będziemy do odnalezienia przez innych "
+"Jeżeli TAK, Bajtek.edu.pl sprawi, że będziemy do odnalezienia przez innych "
 "użytkowników serwera Jabber."
 
 #: ../data/sugar.schemas.in.h:31
 msgid "If TRUE, Sugar will show a \"Log out\" option."
-msgstr "Jeżeli TAK, Drops pokaże opcję \"Wyloguj się\"."
+msgstr "Jeżeli TAK, Bajtek.edu.pl pokaże opcję \"Wyloguj się\"."
 
 #: ../data/sugar.schemas.in.h:32
 msgid "If TRUE, Sugar will show a \"Restart\" option."
-msgstr "Jeżeli TAK, Drops pokaże opcję \"Restartuj\"."
+msgstr "Jeżeli TAK, Bajtek.edu.pl pokaże opcję \"Restartuj\"."
 
 #: ../data/sugar.schemas.in.h:33
 msgid ""
@@ -775,9 +777,9 @@ msgid ""
 "Sugar sees no \"known\" network when it starts, it does autoconnect to an Ad-"
 "hoc network."
 msgstr ""
-"Jeżeli TAK, Drops pokaże domyślne sieci ad-hoc dla kanałów 1,6 i 11. Jeżeli "
-"Drops nie będzie widział \"znanej\" sieci podczas startu systemu wtedy "
-"automatycznie połączy się z siecią ad-hoc."
+"Jeżeli TAK, Bajtek.edu.pl pokaże domyślne sieci ad-hoc dla kanałów 1,6 i 11. "
+"Jeżeli Bajtek.edu.pl nie będzie widział \"znanej\" sieci podczas startu "
+"systemu wtedy automatycznie połączy się z siecią ad-hoc."
 
 #: ../data/sugar.schemas.in.h:34
 msgid "Jabber Server"
@@ -803,7 +805,7 @@ msgstr "Układ widoku ulubionych."
 msgid ""
 "List of keyboard layouts. Each entry should be in the form layout(variant)"
 msgstr ""
-"Lista układów klawiatur. Każdy wpis powinien być w postaci układ(zmienna)."
+"Lista układów klawiatur. Każdy wpis powinien być w postaci układ(zmienna)"
 
 #: ../data/sugar.schemas.in.h:40
 msgid "List of keyboard options."
@@ -843,7 +845,7 @@ msgstr "Pokaż \"Restartuj\""
 
 #: ../data/sugar.schemas.in.h:49
 msgid "Show Sugar Ad-hoc networks"
-msgstr "Pokaż sieci Dropsa ad-hoc"
+msgstr "Pokaż sieci ad-hoc systemu Bajtek.edu.pl"
 
 #: ../data/sugar.schemas.in.h:50
 msgid "Sound Muted"
@@ -933,7 +935,8 @@ msgid ""
 "    "
 msgstr ""
 "Sposób użycia: sugar-control-panel [ opcja ] zmienna [ argumenty ... ] \n"
-"    Konfiguracja środowiska pracy Sugar, ustawianie zmiennych środowiska. \n"
+"    Konfiguracja środowiska pracy Bajtek.edu.pl, ustawianie zmiennych "
+"środowiska. \n"
 "    Opcje: \n"
 "    -h           pokazuje tę wiadomość i kończy pracę \n"
 "    -l           pokazuje listę wszystkich dostępnych opcji \n"
@@ -945,28 +948,28 @@ msgstr ""
 
 #: ../src/jarabe/controlpanel/cmd.py:52
 msgid "To apply your changes you have to restart sugar.\n"
-msgstr "Aby zastosować zmiany należy uruchomić ponownie Dropsa. \n"
+msgstr "Aby zastosować zmiany należy uruchomić ponownie system Bajtek.edu.pl.\n"
 
-#: ../src/jarabe/controlpanel/gui.py:296 ../src/jarabe/journal/palettes.py:161
+#: ../src/jarabe/controlpanel/gui.py:297 ../src/jarabe/journal/palettes.py:161
 #: ../src/jarabe/journal/palettes.py:246 ../src/jarabe/journal/palettes.py:279
 #: ../src/jarabe/journal/volumestoolbar.py:307
 msgid "Warning"
 msgstr "Uwaga"
 
-#: ../src/jarabe/controlpanel/gui.py:297
+#: ../src/jarabe/controlpanel/gui.py:298
 #: ../src/jarabe/controlpanel/sectionview.py:41
 msgid "Changes require restart"
 msgstr "Zmiany wymagają ponownego uruchomienia systemu"
 
-#: ../src/jarabe/controlpanel/gui.py:300
+#: ../src/jarabe/controlpanel/gui.py:301
 msgid "Cancel changes"
 msgstr "Anuluj zmiany"
 
-#: ../src/jarabe/controlpanel/gui.py:305 ../src/jarabe/desktop/homebox.py:73
+#: ../src/jarabe/controlpanel/gui.py:306 ../src/jarabe/desktop/homebox.py:73
 msgid "Later"
 msgstr "Później"
 
-#: ../src/jarabe/controlpanel/gui.py:309
+#: ../src/jarabe/controlpanel/gui.py:310
 msgid "Restart now"
 msgstr "Restartuj teraz"
 
@@ -1001,7 +1004,7 @@ msgstr "Zachowaj"
 
 #: ../src/jarabe/desktop/activitieslist.py:365
 #: ../src/jarabe/desktop/activitieslist.py:419
-#: ../src/jarabe/journal/journaltoolbox.py:398
+#: ../src/jarabe/journal/journaltoolbox.py:413
 #: ../src/jarabe/journal/palettes.py:126
 msgid "Erase"
 msgstr "Usuń"
@@ -1073,7 +1076,7 @@ msgstr "Uaktualnienie oprogramowania"
 msgid "Update your activities to ensure compatibility with your new software"
 msgstr ""
 "Uaktualnij swoje Aktywności aby zapewnić ich zgodność z twoim nowym "
-"oprogramowaniem."
+"oprogramowaniem"
 
 #: ../src/jarabe/desktop/homebox.py:76
 msgid "Check now"
@@ -1095,25 +1098,32 @@ msgstr "Widok ulubionych"
 msgid "<Ctrl>1"
 msgstr "<Ctrl>1"
 
-#: ../src/jarabe/desktop/keydialog.py:143
+#: ../src/jarabe/desktop/keydialog.py:94
+#, python-format
+msgid ""
+"A wireless encryption key is required for\n"
+" the wireless network '%s'."
+msgstr ""
+
+#: ../src/jarabe/desktop/keydialog.py:144
 msgid "Key Type:"
 msgstr "Rodzaj klucza:"
 
-#: ../src/jarabe/desktop/keydialog.py:163
+#: ../src/jarabe/desktop/keydialog.py:164
 msgid "Authentication Type:"
 msgstr "Rodzaj uwierzytelniania:"
 
-#: ../src/jarabe/desktop/keydialog.py:229
+#: ../src/jarabe/desktop/keydialog.py:230
 msgid "WPA & WPA2 Personal"
 msgstr "WPA & WPA2 Personal"
 
-#: ../src/jarabe/desktop/keydialog.py:238
+#: ../src/jarabe/desktop/keydialog.py:239
 msgid "Wireless Security:"
 msgstr "Zabezpieczenia sieci bezprzewodowej:"
 
 #. TRANS: Action label for resuming an activity.
 #: ../src/jarabe/desktop/meshbox.py:91
-#: ../src/jarabe/journal/journaltoolbox.py:494
+#: ../src/jarabe/journal/journaltoolbox.py:509
 #: ../src/jarabe/journal/palettes.py:71 ../src/jarabe/view/palettes.py:84
 msgid "Resume"
 msgstr "Wznów"
@@ -1123,13 +1133,14 @@ msgstr "Wznów"
 msgid "Join"
 msgstr "Dołącz"
 
-#: ../src/jarabe/desktop/networkviews.py:500
+#: ../src/jarabe/desktop/networkviews.py:502
 #, python-format
 msgid "Ad-hoc Network %d"
-msgstr "Sieć ad-hoc &d"
+msgstr "Sieć ad-hoc %d"
 
-#: ../src/jarabe/desktop/networkviews.py:634
-#, python-format, 
+#: ../src/jarabe/desktop/networkviews.py:636
+#, python-format
+#, python-format,
 msgid "Mesh Network %d"
 msgstr "Sieć kratowa %d"
 
@@ -1211,7 +1222,8 @@ msgid "Open with"
 msgstr "Otwórz za pomocą"
 
 #: ../src/jarabe/frame/clipboardobject.py:50
-#, python-format, 
+#, python-format
+#, python-format,
 msgid "%s clipping"
 msgstr "%s przcinanie (do schowka)"
 
@@ -1300,101 +1312,101 @@ msgid "Tags:"
 msgstr "Etykiety:"
 
 #: ../src/jarabe/journal/journalactivity.py:115
-#: ../src/jarabe/journal/journaltoolbox.py:453
+#: ../src/jarabe/journal/journaltoolbox.py:468
 #: ../src/jarabe/journal/palettes.py:198
 #: ../src/jarabe/journal/volumestoolbar.py:368
 msgid "Journal"
 msgstr "Dziennik"
 
-#: ../src/jarabe/journal/journaltoolbox.py:71
+#: ../src/jarabe/journal/journaltoolbox.py:72
 msgid "Search"
 msgstr "Szukaj"
 
-#: ../src/jarabe/journal/journaltoolbox.py:138
+#: ../src/jarabe/journal/journaltoolbox.py:139
 msgid "Anytime"
 msgstr "Kiedykolwiek"
 
-#: ../src/jarabe/journal/journaltoolbox.py:140
+#: ../src/jarabe/journal/journaltoolbox.py:141
 msgid "Today"
 msgstr "Dziś"
 
-#: ../src/jarabe/journal/journaltoolbox.py:142
+#: ../src/jarabe/journal/journaltoolbox.py:143
 msgid "Since yesterday"
 msgstr "Od wczoraj"
 
 #. TRANS: Filter entries modified during the last 7 days.
-#: ../src/jarabe/journal/journaltoolbox.py:144
+#: ../src/jarabe/journal/journaltoolbox.py:145
 msgid "Past week"
 msgstr "Tydzień wstecz"
 
 #. TRANS: Filter entries modified during the last 30 days.
-#: ../src/jarabe/journal/journaltoolbox.py:146
+#: ../src/jarabe/journal/journaltoolbox.py:147
 msgid "Past month"
 msgstr "Miesiąc wstecz"
 
 #. TRANS: Filter entries modified during the last 356 days.
-#: ../src/jarabe/journal/journaltoolbox.py:148
+#: ../src/jarabe/journal/journaltoolbox.py:149
 msgid "Past year"
 msgstr "Rok wstecz"
 
-#: ../src/jarabe/journal/journaltoolbox.py:155
+#: ../src/jarabe/journal/journaltoolbox.py:156
 msgid "Anyone"
 msgstr "Ktokolwiek"
 
-#: ../src/jarabe/journal/journaltoolbox.py:157
+#: ../src/jarabe/journal/journaltoolbox.py:158
 msgid "My friends"
 msgstr "Moi przyjaciele"
 
-#: ../src/jarabe/journal/journaltoolbox.py:158
+#: ../src/jarabe/journal/journaltoolbox.py:159
 msgid "My class"
 msgstr "Moja klasa"
 
-#: ../src/jarabe/journal/journaltoolbox.py:300
+#: ../src/jarabe/journal/journaltoolbox.py:301
 msgid "Anything"
 msgstr "Cokolwiek"
 
-#: ../src/jarabe/journal/journaltoolbox.py:381
+#: ../src/jarabe/journal/journaltoolbox.py:396
 #: ../src/jarabe/journal/palettes.py:93
 msgid "Copy to"
 msgstr "Kopiuj do"
 
-#: ../src/jarabe/journal/journaltoolbox.py:389
+#: ../src/jarabe/journal/journaltoolbox.py:404
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
 msgid "Duplicate"
 msgstr "Duplikuj"
 
-#: ../src/jarabe/journal/journaltoolbox.py:422
+#: ../src/jarabe/journal/journaltoolbox.py:437
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254
 #: ../src/jarabe/journal/volumestoolbar.py:315
 #, python-format
 msgid "Error while copying the entry. %s"
 msgstr "Błąd podczas kopiowania wpisu: %s"
 
-#: ../src/jarabe/journal/journaltoolbox.py:423
+#: ../src/jarabe/journal/journaltoolbox.py:438
 #: ../src/jarabe/journal/palettes.py:142 ../src/jarabe/journal/palettes.py:255
 #: ../src/jarabe/journal/volumestoolbar.py:316
 msgid "Error"
 msgstr "Błąd"
 
 #. TRANS: Action label for starting an entry.
-#: ../src/jarabe/journal/journaltoolbox.py:497
+#: ../src/jarabe/journal/journaltoolbox.py:512
 #: ../src/jarabe/journal/palettes.py:74
 msgid "Start"
 msgstr "Uruchom"
 
-#: ../src/jarabe/journal/journaltoolbox.py:525
+#: ../src/jarabe/journal/journaltoolbox.py:540
 msgid "Sort by date modified"
 msgstr "Sortuj wg daty modyfikacji"
 
-#: ../src/jarabe/journal/journaltoolbox.py:526
+#: ../src/jarabe/journal/journaltoolbox.py:541
 msgid "Sort by date created"
 msgstr "Sortuj wg daty utworzenia"
 
-#: ../src/jarabe/journal/journaltoolbox.py:527
+#: ../src/jarabe/journal/journaltoolbox.py:542
 msgid "Sort by size"
 msgstr "Sortuj wg rozmiaru"
 
-#: ../src/jarabe/journal/journaltoolbox.py:536
+#: ../src/jarabe/journal/journaltoolbox.py:551
 msgid "Sort view"
 msgstr "Sortowanie"
 
@@ -1471,7 +1483,7 @@ msgstr "Pokaż szczegóły"
 
 #: ../src/jarabe/journal/palettes.py:160
 msgid "Entries without a file cannot be sent."
-msgstr "Wpisy bez pliku nie zostaną wysłane"
+msgstr "Wpisy bez pliku nie zostaną wysłane."
 
 #: ../src/jarabe/journal/palettes.py:245 ../src/jarabe/journal/palettes.py:278
 #: ../src/jarabe/journal/volumestoolbar.py:306
@@ -1636,7 +1648,7 @@ msgstr "Nie powiodła się inicjalizacja modemu."
 
 #: ../src/jarabe/model/network.py:224
 msgid "Failed to select the specified GSM APN"
-msgstr "Nie można wybrać podanego APN sieci GSM."
+msgstr "Nie można wybrać podanego APN sieci GSM"
 
 #: ../src/jarabe/model/network.py:226
 msgid "Not searching for networks."
@@ -1718,7 +1730,7 @@ msgstr "Nie udało się uruchomić <b>%s</b>."
 
 #: ../src/jarabe/view/palettes.py:48
 msgid "Starting..."
-msgstr "Uruchamianie"
+msgstr "Uruchamianie..."
 
 #: ../src/jarabe/view/palettes.py:58
 msgid "Activity failed to start"
@@ -1760,7 +1772,7 @@ msgstr "Źródło pakietu czynności"
 
 #: ../src/jarabe/view/viewsource.py:393
 msgid "Sugar Toolkit Source"
-msgstr "Źródło Narzędzi Dropsa"
+msgstr "Źródło Narzędzi systemu Bajtek.edu.pl"
 
 #: ../src/jarabe/view/viewsource.py:400 ../src/jarabe/view/viewsource.py:401
 #, python-format
@@ -1769,7 +1781,7 @@ msgstr "Pokaż źródło: %r"
 
 #: ../src/jarabe/util/emulator.py:40
 msgid "Sugar in a window"
-msgstr "Drops w oknie"
+msgstr "Bajtek.edu.pl w oknie"
 
 #~ msgid "Pick a buddy picture"
 #~ msgstr "Wybierz obrazek znajomego"

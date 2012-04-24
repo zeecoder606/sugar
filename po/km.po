@@ -18,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-20 00:32-0400\n"
-"PO-Revision-Date: 2011-10-08 09:43+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2012-04-24 00:33-0400\n"
+"PO-Revision-Date: 2012-03-22 15:08+0200\n"
+"Last-Translator: ryansburgoyne <ryansburgoyne@lighteningpoint.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: km\n"
 "MIME-Version: 1.0\n"
@@ -37,25 +37,29 @@ msgstr "អំពី​ខ្ញុំ"
 msgid "You must enter a name."
 msgstr "អ្នក​ត្រូវ​តែ​បញ្ចូល​ឈ្មោះ"
 
+# "hue" translated as "various colors". Any other insights into what is the difference between hue and color in this context?
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
+#, python-format, fuzzy
 msgid "stroke:   color=%s hue=%s"
-msgstr ""
+msgstr "គូស៖  ពណ៌=%s ពណ៌ផ្សេងៗ=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:78
 #, python-format
 msgid "stroke:   %s"
-msgstr ""
+msgstr "គូស៖  %s"
 
+# See above under stroke hue.
 #: ../extensions/cpsection/aboutme/model.py:80
 #, python-format
+#, python-format, fuzzy
 msgid "fill:     color=%s hue=%s"
-msgstr ""
+msgstr "លាបពេញ៖  ពណ៌=%s ពណ៌ផ្សេងៗ=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:82
 #, python-format
 msgid "fill:     %s"
-msgstr ""
+msgstr "លាបពេញ៖  %s"
 
 #: ../extensions/cpsection/aboutme/model.py:94
 msgid "Error in specified color modifiers."
@@ -179,7 +183,7 @@ msgstr "ក្រប"
 #: ../extensions/cpsection/keyboard/__init__.py:21
 #: ../extensions/cpsection/keyboard/view.py:32
 msgid "Keyboard"
-msgstr "ក្តារ​ចុច​"
+msgstr "ក្តារ​ចុច"
 
 #: ../extensions/cpsection/keyboard/view.py:190
 msgid "Keyboard Model"
@@ -187,7 +191,7 @@ msgstr "ម៉ូដែល​ក្ដារចុច"
 
 #: ../extensions/cpsection/keyboard/view.py:250
 msgid "Key(s) to change layout"
-msgstr ""
+msgstr "កន្លែងចុចសម្រាប់ប្ដូររបៀបរៀប"
 
 #: ../extensions/cpsection/keyboard/view.py:319
 msgid "Keyboard Layout(s)"
@@ -217,6 +221,8 @@ msgid ""
 "Add languages in the order you prefer. If a translation is not available, "
 "the next in the list will be used."
 msgstr ""
+"បន្ថែមភាសានានាតាមរបៀបដែលអ្នកចូលចិត្ត បេីការបកប្រែមួយគ្មានទេ "
+"នោះភាសាបន្ទាប់នឹងត្រូវប្រេីជំវិញ"
 
 #: ../extensions/cpsection/modemconfiguration/__init__.py:21
 msgid "Modem Configuration"
@@ -232,25 +238,27 @@ msgstr "ពាក្យ​សម្ងាត់ ៖"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:118
 msgid "Number:"
-msgstr "លេខ"
+msgstr "លេខ ៖"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:130
 msgid "Access Point Name (APN):"
-msgstr ""
+msgstr "នាមនៃកន្លែងចូលទាក់ទង (APN) ៖"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:142
 msgid "Personal Identity Number (PIN):"
-msgstr ""
+msgstr "លេខសំគាល់ខ្លួន (PIN) ៖"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:154
 msgid "Personal Unblocking Key (PUK):"
-msgstr ""
+msgstr "លេកកូដសំងាត់ផ្តាល់ខ្លួនសម្រាប់បើកចំហ (PUK) ៖"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:175
 msgid ""
 "You will need to provide the following information to set up a mobile "
 "broadband connection to a cellular (3G) network."
 msgstr ""
+"អ្នកត្រូវផ្ដល់នូវព័ត៌មានទាំងអស់នេះដេីមបីឲអ្នកអាចទាក់ទងនឹងបណ្ដាញឥតខ្សែ (3G) "
+"បាន"
 
 #: ../extensions/cpsection/network/__init__.py:21
 #: ../extensions/cpsection/network/view.py:29
@@ -263,12 +271,12 @@ msgstr "ស្ថានភាព​មិន​ស្គាល់"
 
 #: ../extensions/cpsection/network/model.py:99
 msgid "Error in specified radio argument use on/off."
-msgstr "​មាន​បញ្ហានៅ​ក្នុង​វិទ្យុនេះដែលប្រើ បិទ​/បើក"
+msgstr "មាន​បញ្ហានៅ​ក្នុង​វិទ្យុនេះដែលប្រើ បិទ​/បើក"
 
 #: ../extensions/cpsection/network/model.py:140
 msgid "Error in specified argument use 0/1."
 msgstr ""
-"​មាន​​បញ្ហា​នៅ​​ក្នុង​ការ​កំណត់​​នៃ​ភាព​មិន​ត្រូវ​គ្នា​ដល់​ការ​ប្រើ បិត/បើក"
+"មាន​​បញ្ហា​នៅ​​ក្នុង​ការ​កំណត់​​នៃ​ភាព​មិន​ត្រូវ​គ្នា​ដល់​ការ​ប្រើ បិត/បើក"
 
 #: ../extensions/cpsection/network/view.py:61
 msgid "Wireless"
@@ -288,7 +296,7 @@ msgstr "ផ្តាច់​ប្រព័ន្ឋ​ជាមុន​ប្
 
 #: ../extensions/cpsection/network/view.py:107
 msgid "Discard network history"
-msgstr "ផ្តាច់​ប្រព័ន្ឋ​ជាមុន​ប្រសិន​"
+msgstr "ផ្តាច់​ប្រព័ន្ឋ​ជាមុន​ប្រសិន"
 
 #: ../extensions/cpsection/network/view.py:122
 msgid "Collaboration"
@@ -375,7 +383,7 @@ msgstr "ប្រព័ន្ធ​របស់​អ្នក​ទាន់ស
 #, python-format
 msgid "You can install %s update"
 msgid_plural "You can install %s updates"
-msgstr[0] ""
+msgstr[0] "អ្នកអាចដំឡេីងប្រូក្រាមដែលទាន់សម័យ %s បាន"
 
 #: ../extensions/cpsection/updater/view.py:159
 msgid "Checking for updates..."
@@ -383,17 +391,17 @@ msgstr "កំពុង​ពិនិត្យ​រក​មើលបច្ច
 
 #: ../extensions/cpsection/updater/view.py:164
 msgid "Installing updates..."
-msgstr "ដំឡើង​បច្ចុប្បន្នភាព"
+msgstr "ដំឡើង​បច្ចុប្បន្នភាព..."
 
 #: ../extensions/cpsection/updater/view.py:173
 #, python-format
 msgid "%s update was installed"
 msgid_plural "%s updates were installed"
-msgstr[0] ""
+msgstr[0] "ប្រូក្រាមដែលទាន់សម័យ %s បានដំឡេីងហេីយ"
 
 #: ../extensions/cpsection/updater/view.py:255
 msgid "Install selected"
-msgstr ""
+msgstr "ដំឡេីងប្រូក្រាមដែលបានជ្រេីសរេីស"
 
 #: ../extensions/cpsection/updater/view.py:276
 #, python-format
@@ -403,7 +411,7 @@ msgstr "ទំហំ​ទាញយក ៖ %s"
 #: ../extensions/cpsection/updater/view.py:364
 #, python-format
 msgid "From version %(current)s to %(new)s (Size: %(size)s)"
-msgstr ""
+msgstr "ពីកំណែ %(current)s ទៅជា %(new)s (ទំហំ ៖ %(size)s)"
 
 #. TRANS: download size is 0
 #: ../extensions/cpsection/updater/view.py:382
@@ -445,9 +453,9 @@ msgstr "ថាមពលនៅសល់តិចតួចណាស់"
 
 #: ../extensions/deviceicon/battery.py:158
 #, python-format
-#, python-format, fuzzy
+#, python-format,
 msgid "%(hour)d:%(min).2d remaining"
-msgstr "%(ម៉ោង)d %(នាទី)២d នៅសល់"
+msgstr "%(hour)d:%(min).2d នៅសល់"
 
 #: ../extensions/deviceicon/battery.py:161
 msgid "Charged"
@@ -460,8 +468,8 @@ msgstr "អាសយដ្ឋាន​ភ្ជាប់​​អ៊ីនធឺ
 
 #: ../extensions/deviceicon/network.py:104
 #: ../extensions/deviceicon/network.py:303
-#: ../src/jarabe/desktop/networkviews.py:140
-#: ../src/jarabe/desktop/networkviews.py:509
+#: ../src/jarabe/desktop/networkviews.py:141
+#: ../src/jarabe/desktop/networkviews.py:510
 msgid "Disconnect"
 msgstr "ផ្ដាច់"
 
@@ -471,8 +479,8 @@ msgstr "ផ្ដាច់"
 # have a good mapping
 #: ../extensions/deviceicon/network.py:112
 #: ../extensions/deviceicon/network.py:295
-#: ../src/jarabe/desktop/networkviews.py:244
-#: ../src/jarabe/desktop/networkviews.py:548
+#: ../src/jarabe/desktop/networkviews.py:245
+#: ../src/jarabe/desktop/networkviews.py:549
 #: ../src/jarabe/desktop/networkviews.py:683
 msgid "Connecting..."
 msgstr "តភ្ជាប់..."
@@ -480,15 +488,15 @@ msgstr "តភ្ជាប់..."
 # TODO: show the channel number
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
-#: ../src/jarabe/desktop/networkviews.py:254
-#: ../src/jarabe/desktop/networkviews.py:554
+#: ../src/jarabe/desktop/networkviews.py:255
+#: ../src/jarabe/desktop/networkviews.py:555
 #: ../src/jarabe/desktop/networkviews.py:689
 msgid "Connected"
 msgstr "ត​ភ្ជាប់​ហើយ"
 
 #: ../extensions/deviceicon/network.py:130
 msgid "No wireless connection"
-msgstr ""
+msgstr "គ្មានការទាក់ទងឥតខ្សែទេ"
 
 #: ../extensions/deviceicon/network.py:144
 msgid "Channel"
@@ -504,15 +512,15 @@ msgstr "ល្បឿន"
 
 #: ../extensions/deviceicon/network.py:213
 msgid "Wireless modem"
-msgstr ""
+msgstr "ឧបករណ៍ភ្ជាប់ប្រព័ន្ធកុំព្យូទ័រឥតខ្សែ"
 
 #: ../extensions/deviceicon/network.py:281
 msgid "Please wait..."
 msgstr "សូម​រង់ចាំ..."
 
 #: ../extensions/deviceicon/network.py:286
-#: ../src/jarabe/desktop/networkviews.py:136
-#: ../src/jarabe/desktop/networkviews.py:505
+#: ../src/jarabe/desktop/networkviews.py:137
+#: ../src/jarabe/desktop/networkviews.py:506
 #: ../src/jarabe/desktop/networkviews.py:639
 msgid "Connect"
 msgstr "ភ្ជាប់"
@@ -532,7 +540,7 @@ msgstr "បោះបង់"
 
 #: ../extensions/deviceicon/network.py:333
 msgid "Try connection again"
-msgstr ""
+msgstr "សាកល្បងភ្ជាប់ម្ដងទៀត"
 
 #: ../extensions/deviceicon/network.py:336
 #, python-format
@@ -548,7 +556,7 @@ msgstr "ការ​ផ្តល់​យោ​បល់ ៖ %s"
 #: ../extensions/deviceicon/network.py:349
 #, python-format
 msgid "Connected for %s"
-msgstr ""
+msgstr "តភ្ជាប់ហេីយសម្រាប់ %s"
 
 #: ../extensions/deviceicon/network.py:355
 #: ../extensions/deviceicon/network.py:356
@@ -558,36 +566,36 @@ msgstr "%d គីឡូបៃ"
 
 #: ../extensions/deviceicon/network.py:361
 msgid "Check your Pin/Puk configuration."
-msgstr ""
+msgstr "ពិនិត្យមេីលសណ្ឋាន PIN/PUK របស់អ្នក"
 
 #: ../extensions/deviceicon/network.py:364
 msgid "Check your Access Point Name (APN) configuration"
-msgstr ""
+msgstr "ពិនិត្យមេីលសណ្ឋាននៃនាមកន្លែងចូលភ្ជាប់ (APN) របស់អ្នក"
 
 #: ../extensions/deviceicon/network.py:368
 msgid "Check the Number configuration."
-msgstr ""
+msgstr "ពិនិត្យមេីលសណ្ឋានលេខ"
 
 #: ../extensions/deviceicon/network.py:370
 msgid "Check your configuration."
-msgstr ""
+msgstr "ពិនិត្យមេីលសណ្ឋានរបស់អ្នក"
 
-#: ../extensions/deviceicon/network.py:612
+#: ../extensions/deviceicon/network.py:615
 msgid "Mesh Network"
 msgstr "បណ្ដាញត"
 
-#: ../extensions/deviceicon/network.py:656
+#: ../extensions/deviceicon/network.py:659
 #, python-format
 msgid "Mesh Network %s"
 msgstr "បណ្ដាញត %s"
 
-#: ../extensions/deviceicon/network.py:779
+#: ../extensions/deviceicon/network.py:782
 msgid "No GSM connection available."
-msgstr ""
+msgstr "ការតភ្ជាប់ GSM គ្មានទេ"
 
-#: ../extensions/deviceicon/network.py:780
+#: ../extensions/deviceicon/network.py:783
 msgid "Create a connection in the control panel."
-msgstr ""
+msgstr "បង្កេីតការតភ្ជាប់មួយឡេីងតាមក្ដាឧបករណ៍"
 
 #: ../extensions/deviceicon/speaker.py:61
 msgid "My Speakers"
@@ -603,7 +611,7 @@ msgstr "ស្ងាត់"
 
 #: ../extensions/deviceicon/touchpad.py:38
 msgid "finger"
-msgstr ""
+msgstr "ម្រាមដៃ"
 
 #: ../extensions/deviceicon/touchpad.py:39
 msgid "stylus"
@@ -611,7 +619,7 @@ msgstr "ដែក​ចារ"
 
 #: ../extensions/deviceicon/touchpad.py:68
 msgid "My touchpad"
-msgstr ""
+msgstr "ទ្រនាប់ស្ទាបរបស់ខ្ញុំ"
 
 #: ../extensions/globalkey/screenshot.py:59
 msgid "Mesh"
@@ -634,12 +642,12 @@ msgstr "សកម្មភាព"
 
 #: ../extensions/globalkey/screenshot.py:72
 msgid "Screenshot"
-msgstr "រូបថត​អេក្រង់​"
+msgstr "រូបថត​អេក្រង់"
 
 #: ../extensions/globalkey/screenshot.py:74
 #, python-format
 msgid "Screenshot of \"%s\""
-msgstr ""
+msgstr "រូបថតអេក្រង់អំពី «%s»"
 
 #: ../data/sugar.schemas.in.h:1
 msgid ""
@@ -649,7 +657,7 @@ msgstr ""
 
 #: ../data/sugar.schemas.in.h:2
 msgid "Additional directories which can contain updated translations."
-msgstr ""
+msgstr "ក្របផ្សេងទៀតដែលអាចនឹងមានការបកប្រែទាន់សម័យនៅក្នុងក្របនោះបាន"
 
 #: ../data/sugar.schemas.in.h:3
 msgid "Backup URL"
@@ -657,7 +665,7 @@ msgstr "កន្លែង​ចំលង​ទុក"
 
 #: ../data/sugar.schemas.in.h:4
 msgid "Bundle IDs of protected activities"
-msgstr ""
+msgstr "ទីសំគាល់នៃកញ្ចប់របស់សកម្មភាផដែលបានការពារ"
 
 #: ../data/sugar.schemas.in.h:5
 #, fuzzy
@@ -676,11 +684,11 @@ msgstr "ពន្យារកាច់ជ្រុង"
 
 #: ../data/sugar.schemas.in.h:7
 msgid "Default font face"
-msgstr ""
+msgstr "អក្សរពុម្ពមួយឈុតៗដែលត្រូវរេីសដោយស្វ័យប្រវត្តិ"
 
 #: ../data/sugar.schemas.in.h:8
 msgid "Default font size"
-msgstr ""
+msgstr "ទំហំអក្សរដែលត្រូវរេីសដោយស្វ័យប្រវត្តិ"
 
 #: ../data/sugar.schemas.in.h:9
 msgid "Default nick"
@@ -688,27 +696,27 @@ msgstr ""
 
 #: ../data/sugar.schemas.in.h:10
 msgid "Delay for the activation of the frame using the corners."
-msgstr ""
+msgstr "ការពន្យារពេលនឹងធ្វើឲស៊ុំមានសកម្មភាពដោយប្រើកាច់ជ្រុង"
 
 #: ../data/sugar.schemas.in.h:11
 msgid "Delay for the activation of the frame using the edges."
-msgstr ""
+msgstr "ការពន្យារពេលនឹងធ្វើឲស៊ុំមានសកម្មភាពដោយប្រើគែម"
 
 #: ../data/sugar.schemas.in.h:12
 msgid "Directory to search for translations"
-msgstr ""
+msgstr "ស្វែងរកការបកប្រែនៅក្នុងសំណុំឯកសារនេះ"
 
 #: ../data/sugar.schemas.in.h:13
 msgid "Edge Delay"
-msgstr ""
+msgstr "ការពន្យារពេលគែម"
 
 #: ../data/sugar.schemas.in.h:14
 msgid "Favorites Layout"
-msgstr ""
+msgstr "របៀបរៀបវត្ថុដែលអ្នកចូលចិត្តជាងគេ"
 
 #: ../data/sugar.schemas.in.h:15
 msgid "Favorites resume mode"
-msgstr ""
+msgstr "របៀបចាប់ផ្ដើមវត្ថុដែលអ្នកចូលចិត្តជាងគេឡើងវិញ"
 
 #: ../data/sugar.schemas.in.h:16
 #, fuzzy
@@ -940,29 +948,29 @@ msgstr ""
 
 #: ../src/jarabe/controlpanel/cmd.py:52
 msgid "To apply your changes you have to restart sugar.\n"
-msgstr "ដើម្បី​ទទួល​បាន​សំណើ​សុំ​អោយ​ប្តូរ​ត្រូវ​ចាប់​ផ្តើម​ស៊ូហ្គឺ​ឡើង​វិញ \n"
+msgstr "ដើម្បី​ទទួល​បាន​សំណើ​សុំ​អោយ​ប្តូរ​ត្រូវ​ចាប់​ផ្តើម​ស៊ូហ្គឺ​ឡើង​វិញ\n"
 
 # This is assuming the context is a warning message, like, "Warning: this operation will be permanent."
-#: ../src/jarabe/controlpanel/gui.py:296 ../src/jarabe/journal/palettes.py:161
+#: ../src/jarabe/controlpanel/gui.py:297 ../src/jarabe/journal/palettes.py:161
 #: ../src/jarabe/journal/palettes.py:246 ../src/jarabe/journal/palettes.py:279
 #: ../src/jarabe/journal/volumestoolbar.py:307
 msgid "Warning"
 msgstr "ប្រយ័ត្ន"
 
-#: ../src/jarabe/controlpanel/gui.py:297
+#: ../src/jarabe/controlpanel/gui.py:298
 #: ../src/jarabe/controlpanel/sectionview.py:41
 msgid "Changes require restart"
 msgstr "ការ​ប្តូរ​តំរូវ​អោយ​ចាប់​​ផ្តើម​ម៉ាស៊ីន​ឡើង​វិញ"
 
-#: ../src/jarabe/controlpanel/gui.py:300
+#: ../src/jarabe/controlpanel/gui.py:301
 msgid "Cancel changes"
 msgstr "បោះបង់ការប្តូរ"
 
-#: ../src/jarabe/controlpanel/gui.py:305 ../src/jarabe/desktop/homebox.py:73
+#: ../src/jarabe/controlpanel/gui.py:306 ../src/jarabe/desktop/homebox.py:73
 msgid "Later"
 msgstr "បន្ទាប់"
 
-#: ../src/jarabe/controlpanel/gui.py:309
+#: ../src/jarabe/controlpanel/gui.py:310
 msgid "Restart now"
 msgstr "ចាប់​​ផ្តើម​ឡើង​វិញ​ឥឡូវនេះ"
 
@@ -1092,19 +1100,26 @@ msgstr "ពេញនិយមមើល"
 msgid "<Ctrl>1"
 msgstr "<បញ្ជា>១"
 
-#: ../src/jarabe/desktop/keydialog.py:143
+#: ../src/jarabe/desktop/keydialog.py:94
+#, python-format
+msgid ""
+"A wireless encryption key is required for\n"
+" the wireless network '%s'."
+msgstr ""
+
+#: ../src/jarabe/desktop/keydialog.py:144
 msgid "Key Type:"
 msgstr "ប្រភេទ​ឆ្នុច ៖"
 
-#: ../src/jarabe/desktop/keydialog.py:163
+#: ../src/jarabe/desktop/keydialog.py:164
 msgid "Authentication Type:"
 msgstr "ប្រភេទផ្ទៀង ៖"
 
-#: ../src/jarabe/desktop/keydialog.py:229
+#: ../src/jarabe/desktop/keydialog.py:230
 msgid "WPA & WPA2 Personal"
 msgstr "WPA & WPA2 ផ្ទាល់ខ្លួន"
 
-#: ../src/jarabe/desktop/keydialog.py:238
+#: ../src/jarabe/desktop/keydialog.py:239
 msgid "Wireless Security:"
 msgstr "ប្រព័ន្ធ​សន្តិសុខ​ឥត​ខ្សែ ៖"
 
@@ -1121,7 +1136,7 @@ msgstr "បន្ត"
 msgid "Join"
 msgstr "ចូល​រួម"
 
-#: ../src/jarabe/desktop/networkviews.py:501
+#: ../src/jarabe/desktop/networkviews.py:502
 #, python-format
 msgid "Ad-hoc Network %d"
 msgstr ""
@@ -1168,7 +1183,7 @@ msgstr "%s នៃ%s"
 #, python-format
 #, python-format, fuzzy
 msgid "Transfer from %s"
-msgstr "ផ្ទេរ​មកពី%r"
+msgstr "ផ្ទេរ​មកពី%s"
 
 #: ../src/jarabe/frame/activitiestray.py:569
 msgid "Accept"
@@ -1362,12 +1377,12 @@ msgstr "អ្វី​ទាំង​អស់"
 #: ../src/jarabe/journal/palettes.py:93
 #, fuzzy
 msgid "Copy to"
-msgstr "​ចម្លង​ទៅ"
+msgstr "ចម្លង​ទៅ"
 
 #: ../src/jarabe/journal/journaltoolbox.py:404
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
 msgid "Duplicate"
-msgstr "ស្ទួន​"
+msgstr "ស្ទួន"
 
 #: ../src/jarabe/journal/journaltoolbox.py:437
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254

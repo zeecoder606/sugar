@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: 2011-09-28 09:35+0200\n"
+"POT-Creation-Date: 2012-04-24 00:33-0400\n"
+"PO-Revision-Date: 2011-10-25 06:50+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ta\n"
@@ -27,11 +27,13 @@ msgstr "நீங்கள் பெயரை பதிவு செய்யு
 
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
+#, python-format,
 msgid "stroke:   color=%s hue=%s"
-msgstr "stroke:   color=%s hue=%s"
+msgstr "stroke:    color=%s hue=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:78
 #, python-format
+#, python-format,
 msgid "stroke:   %s"
 msgstr "stroke:   %s"
 
@@ -55,69 +57,69 @@ msgstr "தவறை குறித்த நிறத்தால் நிற
 
 #: ../extensions/cpsection/aboutme/view.py:235
 msgid "Click to change your color:"
-msgstr "நிறத்தை மாற்ற சொடுக்கு்"
+msgstr "நிறத்தை மாற்ற சொடுக்கு்:"
 
 #: ../extensions/cpsection/aboutcomputer/__init__.py:21
 msgid "About my Computer"
 msgstr "என்னுடைய கணினியைப் பற்றி"
 
-#: ../extensions/cpsection/aboutcomputer/model.py:42
+#: ../extensions/cpsection/aboutcomputer/model.py:43
 msgid "Not available"
-msgstr "கிடைக்கக்கூடிய வாய்ப்பில்லை."
+msgstr "கிடைக்கக்கூடிய வாய்ப்பில்லை"
 
-#: ../extensions/cpsection/aboutcomputer/model.py:171
+#: ../extensions/cpsection/aboutcomputer/model.py:183
 #, python-format
 msgid "%(interface)s: %(version)s"
 msgstr "%(interface)s: %(version)s"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:61
+#: ../extensions/cpsection/aboutcomputer/view.py:59
 msgid "Identity"
 msgstr "அடையாளம்"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:70
+#: ../extensions/cpsection/aboutcomputer/view.py:68
 msgid "Serial Number:"
-msgstr "தொடர் இலக்கம்"
+msgstr "தொடர் இலக்கம்:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:92
+#: ../extensions/cpsection/aboutcomputer/view.py:90
 msgid "Software"
 msgstr "மென்பொருள்"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:101
+#: ../extensions/cpsection/aboutcomputer/view.py:99
 msgid "Build:"
-msgstr "கட்டியெழுப்பு"
+msgstr "கட்டியெழுப்பு:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:116
+#: ../extensions/cpsection/aboutcomputer/view.py:114
 msgid "Sugar:"
-msgstr "சுகர்"
+msgstr "சுகர்:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:132
+#: ../extensions/cpsection/aboutcomputer/view.py:129
 msgid "Firmware:"
-msgstr "கூட்டுப்பொருள்"
+msgstr "கூட்டுப்பொருள்:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:147
+#: ../extensions/cpsection/aboutcomputer/view.py:144
 msgid "Wireless Firmware:"
-msgstr "இணைப்பில்லாத கூட்டுப்பொருள்"
+msgstr "இணைப்பில்லாத கூட்டுப்பொருள்:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:170
+#: ../extensions/cpsection/aboutcomputer/view.py:167
 msgid "Copyright and License"
 msgstr "பிரதிசெய்து உறுதிப்படுத்து"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:188
+#: ../extensions/cpsection/aboutcomputer/view.py:185
 msgid ""
 "Sugar is the graphical user interface that you are looking at. Sugar is free "
 "software, covered by the GNU General Public License, and you are welcome to "
 "change it and/or distribute copies of it under certain conditions described "
 "therein."
 msgstr ""
-"சுகர் என்பது பாவனையாளருக்கு பார்த்து தலையீடு செய்வ  தற்கு  சிறப்பாக "
-"அமைக்கப்பட்டுள்ளது.சுகர்  இலவச  மென்பொருளானதோடு,இது GNU  பொது மக்கள் "
+"சுகர் என்பது பாவனையாளருக்கு பார்த்து தலையீடு செய்வ தற்கு  சிறப்பாக "
+"அமைக்கப்பட்டுள்ளது.சுகர் இலவச  மென்பொருளானதோடு,இது GNU பொது மக்கள் "
 "அனுமதியின்கீழ் கையாளப்படுகின்றதை மாற்றுவதற்கோ பிரதிகளை விநியோகிப்பதற்கோ "
 "குறித்த சில நிபந்தனைகளின்கீழ் இதனை மாற்றவோ இதன் பிரதிக ளை விநியோகிக்கவோ "
 "முடியும்."
 
-#: ../extensions/cpsection/aboutcomputer/view.py:200
+#: ../extensions/cpsection/aboutcomputer/view.py:197
 msgid "Full license:"
-msgstr "முழு அனுமதி"
+msgstr "முழு அனுமதி:"
 
 #: ../extensions/cpsection/datetime/__init__.py:21
 msgid "Date & Time"
@@ -125,7 +127,7 @@ msgstr "திகதியும் நேரமும்"
 
 #: ../extensions/cpsection/datetime/model.py:92
 msgid "Error timezone does not exist."
-msgstr "தவறு நேர வலையமைப்பு   ஏற்கனவே இல்லை."
+msgstr "தவறு நேர வலையமைப்பு ஏற்கனவே இல்லை."
 
 #: ../extensions/cpsection/datetime/view.py:70 ../data/sugar.schemas.in.h:52
 msgid "Timezone"
@@ -189,17 +191,18 @@ msgstr "மொழி"
 
 #: ../extensions/cpsection/language/model.py:30
 msgid "Could not access ~/.i18n. Create standard settings."
-msgstr "அடையவில்லை~/.i18n. தரமானவற்றை உருவாக்கு"
+msgstr "அடையவில்லை~/.i18n. தரமானவற்றை உருவாக்கு."
 
 #: ../extensions/cpsection/language/model.py:129
 #, python-format
 msgid "Language for code=%s could not be determined."
-msgstr "மொழி பரிபாஷை=%s முடிவுசெய்யவில்லை"
+msgstr "மொழி பரிபாஷை=%s முடிவுசெய்யவில்லை."
 
 #: ../extensions/cpsection/language/model.py:152
-#, python-format, fuzzy
+#, python-format
+#, python-format,
 msgid "Sorry I do not speak '%s'."
-msgstr "மன்னிக்கவும் நான் பேசவில்லை"
+msgstr "மன்னிக்கவும் நான் பேசவில்லை இல்லை'%s'."
 
 #: ../extensions/cpsection/language/view.py:57
 msgid ""
@@ -227,7 +230,7 @@ msgstr "எண்:"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:130
 msgid "Access Point Name (APN):"
-msgstr "அனுகு புள்ளியின் பெயர் (APN);"
+msgstr "அனுகு புள்ளியின் பெயர் (APN):"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:142
 msgid "Personal Identity Number (PIN):"
@@ -252,15 +255,15 @@ msgstr "வலையமைப்பு"
 
 #: ../extensions/cpsection/network/model.py:71
 msgid "State is unknown."
-msgstr "தரம் அறியப்படாதது"
+msgstr "தரம் அறியப்படாதது."
 
 #: ../extensions/cpsection/network/model.py:99
 msgid "Error in specified radio argument use on/off."
-msgstr "குறித்த வானொலி விவாதம்  தவறு.உபயோகியுங்கள்on/off."
+msgstr "குறித்த வானொலி விவாதம் தவறு.உபயோகியுங்கள்on/off."
 
 #: ../extensions/cpsection/network/model.py:140
 msgid "Error in specified argument use 0/1."
-msgstr "குறித்த வானொலி விவாதம்  தவறு..உபயோகியுங்கள்0/1."
+msgstr "குறித்த வானொலி விவாதம் தவறு..உபயோகியுங்கள்0/1."
 
 #: ../extensions/cpsection/network/view.py:61
 msgid "Wireless"
@@ -277,12 +280,12 @@ msgstr "வானொலி"
 #: ../extensions/cpsection/network/view.py:98
 msgid "Discard network history if you have trouble connecting to the network"
 msgstr ""
-"வ லையமைப்பு இணைக்கும்போது பிரச்சினைகள் இருப்பின் வலையமைப்பை  துண்டித்து "
+"வ லையமைப்பு இணைக்கும்போது பிரச்சினைகள் இருப்பின் வலையமைப்பை துண்டித்து "
 "மீண்டும்     வலையமைப்பை இணைக்க."
 
 #: ../extensions/cpsection/network/view.py:107
 msgid "Discard network history"
-msgstr "வலையமைப்பை    துண்டிக்கவும்"
+msgstr "வலையமைப்பை துண்டிக்கவும்"
 
 #: ../extensions/cpsection/network/view.py:122
 msgid "Collaboration"
@@ -300,7 +303,7 @@ msgstr ""
 
 #: ../extensions/cpsection/network/view.py:140
 msgid "Server:"
-msgstr "வழங்கி"
+msgstr "வழங்கி:"
 
 #: ../extensions/cpsection/power/__init__.py:21
 msgid "Power"
@@ -308,11 +311,11 @@ msgstr "வலு"
 
 #: ../extensions/cpsection/power/model.py:90
 msgid "Error in automatic pm argument, use on/off."
-msgstr "தன்னியக்க pmவிவாதத்தில்  தவறு. உபயோகிon/off."
+msgstr "தன்னியக்க pmவிவாதத்தில் தவறு. உபயோகிon/off."
 
 #: ../extensions/cpsection/power/model.py:120
 msgid "Error in extreme pm argument, use on/off."
-msgstr "கடுமையான pm விவாதம் தவறு .  உபயோகி on/off."
+msgstr "கடுமையான pm விவாதம் தவறு . உபயோகி on/off."
 
 #: ../extensions/cpsection/power/view.py:48
 msgid "Power management"
@@ -320,7 +323,7 @@ msgstr "வலு முகாமைத்துவம்"
 
 #: ../extensions/cpsection/power/view.py:58
 msgid "Automatic power management (increases battery life)"
-msgstr "தன்னியக்க வலு முகாமைத்துவம் (மின் கலத்தின்  வலுவைக் கூட்டுதல்)."
+msgstr "தன்னியக்க வலு முகாமைத்துவம் (மின் கலத்தின் வலுவைக் கூட்டுதல்)."
 
 #: ../extensions/cpsection/power/view.py:86
 msgid ""
@@ -450,24 +453,24 @@ msgstr "IP விலாசம்%s"
 
 #: ../extensions/deviceicon/network.py:104
 #: ../extensions/deviceicon/network.py:303
-#: ../src/jarabe/desktop/networkviews.py:140
-#: ../src/jarabe/desktop/networkviews.py:508
+#: ../src/jarabe/desktop/networkviews.py:141
+#: ../src/jarabe/desktop/networkviews.py:510
 msgid "Disconnect"
 msgstr "இணைப்பை துண்டி"
 
 #: ../extensions/deviceicon/network.py:112
 #: ../extensions/deviceicon/network.py:295
-#: ../src/jarabe/desktop/networkviews.py:243
-#: ../src/jarabe/desktop/networkviews.py:547
-#: ../src/jarabe/desktop/networkviews.py:680
+#: ../src/jarabe/desktop/networkviews.py:245
+#: ../src/jarabe/desktop/networkviews.py:549
+#: ../src/jarabe/desktop/networkviews.py:683
 msgid "Connecting..."
-msgstr "இணைத்தல்"
+msgstr "இணைத்தல்..."
 
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
-#: ../src/jarabe/desktop/networkviews.py:253
-#: ../src/jarabe/desktop/networkviews.py:553
-#: ../src/jarabe/desktop/networkviews.py:686
+#: ../src/jarabe/desktop/networkviews.py:255
+#: ../src/jarabe/desktop/networkviews.py:555
+#: ../src/jarabe/desktop/networkviews.py:689
 msgid "Connected"
 msgstr "இணைக்கப்பட்டுள்ளது"
 
@@ -496,9 +499,9 @@ msgid "Please wait..."
 msgstr "தயவுசெய்து காத்திருக்கவும்..."
 
 #: ../extensions/deviceicon/network.py:286
-#: ../src/jarabe/desktop/networkviews.py:136
-#: ../src/jarabe/desktop/networkviews.py:504
-#: ../src/jarabe/desktop/networkviews.py:637
+#: ../src/jarabe/desktop/networkviews.py:137
+#: ../src/jarabe/desktop/networkviews.py:506
+#: ../src/jarabe/desktop/networkviews.py:639
 msgid "Connect"
 msgstr "இணை"
 
@@ -536,8 +539,8 @@ msgstr "%s க்காக இணைக்கப்பட்டுள்ளத�
 
 #: ../extensions/deviceicon/network.py:355
 #: ../extensions/deviceicon/network.py:356
-#, python-format, 
 #, python-format
+#, python-format,
 msgid "%d KB"
 msgstr "%d KB"
 
@@ -558,20 +561,20 @@ msgstr "எண்னின் அமைப்புகளை பரிசோ�
 msgid "Check your configuration."
 msgstr "உங்களின் அமைப்புகளை பரிசோதிக்கவும்."
 
-#: ../extensions/deviceicon/network.py:612
+#: ../extensions/deviceicon/network.py:615
 msgid "Mesh Network"
 msgstr "மெஷ் பிணையம்"
 
-#: ../extensions/deviceicon/network.py:656
+#: ../extensions/deviceicon/network.py:659
 #, python-format
 msgid "Mesh Network %s"
 msgstr "மெஷ் பிணையம் %s"
 
-#: ../extensions/deviceicon/network.py:779
+#: ../extensions/deviceicon/network.py:782
 msgid "No GSM connection available."
 msgstr "ஜிஎஸ்எம் இணைப்பு இல்லவே இல்லை."
 
-#: ../extensions/deviceicon/network.py:780
+#: ../extensions/deviceicon/network.py:783
 msgid "Create a connection in the control panel."
 msgstr "கட்டுப்பாடு மட்டத்திலிருந்து ஒரு இணைப்பை உருவாக்கவும்."
 
@@ -581,7 +584,7 @@ msgstr "எனது ஒலி பெருக்கிகள்"
 
 #: ../extensions/deviceicon/speaker.py:138
 msgid "Unmute"
-msgstr "ஒலியை  ஆரம்பி"
+msgstr "ஒலியை ஆரம்பி"
 
 #: ../extensions/deviceicon/speaker.py:141
 msgid "Mute"
@@ -641,7 +644,7 @@ msgstr "அளவுக்கதிகமான அடைவுகள் மே�
 
 #: ../data/sugar.schemas.in.h:3
 msgid "Backup URL"
-msgstr "URL ஊடாக  மேலே செல்"
+msgstr "URL ஊடாக மேலே செல்"
 
 #: ../data/sugar.schemas.in.h:4
 msgid "Bundle IDs of protected activities"
@@ -675,12 +678,12 @@ msgstr "தன்னார்ந்த புனை"
 
 #: ../data/sugar.schemas.in.h:10
 msgid "Delay for the activation of the frame using the corners."
-msgstr "மூலையைப் பயன்படுத்துவதனால் சட்டகத்தின் செயற்பாடு தாமதம் அடைகின்றது"
+msgstr "மூலையைப் பயன்படுத்துவதனால் சட்டகத்தின் செயற்பாடு தாமதம் அடைகின்றது."
 
 #: ../data/sugar.schemas.in.h:11
 msgid "Delay for the activation of the frame using the edges."
 msgstr ""
-"ஒரத்தினைப் பயன் படுத்துவதனால் சட்டகச் செயற்பாட்டில் தாமதம் ஏற்படுகின்றது"
+"ஒரத்தினைப் பயன் படுத்துவதனால் சட்டகச் செயற்பாட்டில் தாமதம் ஏற்படுகின்றது."
 
 #: ../data/sugar.schemas.in.h:12
 msgid "Directory to search for translations"
@@ -700,11 +703,11 @@ msgstr "விருப்பத்துக்குரியதை மீழ �
 
 #: ../data/sugar.schemas.in.h:16
 msgid "Font face that is used throughout the desktop."
-msgstr "திரையினூடாக உட்செல்வதற்கு உபயோகிக்கும் பெயரைப் பயன்படுத்து"
+msgstr "திரையினூடாக உட்செல்வதற்கு உபயோகிக்கும் பெயரைப் பயன்படுத்து."
 
 #: ../data/sugar.schemas.in.h:17
 msgid "Font size that is used throughout the desktop."
-msgstr "திரையினூடாக உட்செல்வதற்கு உபயோகிக்கும் பெயரைப் பயன்படுத்து"
+msgstr "திரையினூடாக உட்செல்வதற்கு உபயோகிக்கும் பெயரைப் பயன்படுத்து."
 
 #: ../data/sugar.schemas.in.h:18
 msgid "GSM network APN"
@@ -760,7 +763,7 @@ msgid ""
 "server."
 msgstr ""
 "உண்மையாயின் Sugar எங்களை Jabberவழங்கி (கணினி)யின் ஊடக தேடல் நிலைக்கு இட்டுச் "
-"செல்லும்"
+"செல்லும்."
 
 #: ../data/sugar.schemas.in.h:31
 msgid "If TRUE, Sugar will show a \"Log out\" option."
@@ -798,7 +801,7 @@ msgstr "விசைப்பலகை விருப்பங்கள்"
 
 #: ../data/sugar.schemas.in.h:38
 msgid "Layout of the favorites view."
-msgstr "விருப்பத்தித்குரிய செயற்பாட்டின் தளக்கோலதின் பார்வை"
+msgstr "விருப்பத்தித்குரிய செயற்பாட்டின் தளக்கோலதின் பார்வை."
 
 #: ../data/sugar.schemas.in.h:39
 msgid ""
@@ -817,7 +820,7 @@ msgstr "தன்னியக்க வலு"
 
 #: ../data/sugar.schemas.in.h:42
 msgid "Power Automatic."
-msgstr "தன்னியக்க வலு"
+msgstr "தன்னியக்க வலு."
 
 #: ../data/sugar.schemas.in.h:43
 msgid "Power Extreme"
@@ -825,7 +828,7 @@ msgstr "கூடுதலான வலு"
 
 #: ../data/sugar.schemas.in.h:44
 msgid "Power Extreme."
-msgstr "கூடுதலான வலு"
+msgstr "கூடுதலான வலு."
 
 #: ../data/sugar.schemas.in.h:45
 msgid "Publish to Gadget"
@@ -833,7 +836,7 @@ msgstr "கருவிக்கு வெளிப்படுத்து"
 
 #: ../data/sugar.schemas.in.h:46
 msgid "Setting for muting the sound device."
-msgstr "ஒலித்திட்டமிடலை இல்லாமல் செய்வதற்கான செயற்பாடு"
+msgstr "ஒலித்திட்டமிடலை இல்லாமல் செய்வதற்கான செயற்பாடு."
 
 #: ../data/sugar.schemas.in.h:47
 msgid "Show Log out"
@@ -857,15 +860,15 @@ msgstr "இந்த விசைப்பலகை மாதிறி பயன
 
 #: ../data/sugar.schemas.in.h:53
 msgid "Timezone setting for the system."
-msgstr "நேர வலையமைப்பை செயற்படுத்துவதற்கான அமைப்பு"
+msgstr "நேர வலையமைப்பை செயற்படுத்துவதற்கான அமைப்பு."
 
 #: ../data/sugar.schemas.in.h:54
 msgid "Url of the jabber server to use."
-msgstr "jabber வழங்கி (கணினி)யிலுள்ள Url ஐ உபயோகி"
+msgstr "jabber வழங்கி (கணினி)யிலுள்ள Url ஐ உபயோகி."
 
 #: ../data/sugar.schemas.in.h:55
 msgid "Url where the backup is saved to."
-msgstr "Url எதனுள் சேமிக்கப்பட்டுள்ளது"
+msgstr "Url எதனுள் சேமிக்கப்பட்டுள்ளது."
 
 #: ../data/sugar.schemas.in.h:56
 msgid "User Color"
@@ -877,15 +880,14 @@ msgstr "உபயோகிப்பவரின் பெயர்"
 
 #: ../data/sugar.schemas.in.h:58
 msgid "User name that is used throughout the desktop."
-msgstr ""
-"திரையினுாடாக உட்செல்வதற்கு                உபயோகிக்கும் பெயரைப் பயன்படுத்து"
+msgstr "திரையினுாடாக உட்செல்வதற்கு உபயோகிக்கும் பெயரைப் பயன்படுத்து."
 
 #: ../data/sugar.schemas.in.h:59
 msgid ""
 "Users will not be allowed to erase these activities through the list view."
 msgstr ""
 "பட்டியல் பார்வை மூலமாக இந்த செயற்பாடுகளை அழிக்க பயனாளர்கள் அனுமதிக்க "
-"படமாட்டார்"
+"படமாட்டார்."
 
 #: ../data/sugar.schemas.in.h:60
 msgid "Volume Level"
@@ -893,7 +895,7 @@ msgstr "சத்தத்தின் அளவு"
 
 #: ../data/sugar.schemas.in.h:61
 msgid "Volume level for the sound device."
-msgstr "ஒலிஉபகரணத்திற்கான சத்தத்தின் அளவு"
+msgstr "ஒலிஉபகரணத்திற்கான சத்தத்தின் அளவு."
 
 #: ../data/sugar.schemas.in.h:62
 msgid ""
@@ -901,7 +903,7 @@ msgid ""
 "for that activity to be resumed."
 msgstr ""
 "மீழ ஆரம்பிப்பதற்கு விரும்பிய icon மீது அழுத்தியவுடன் இறுதியாக செய்த "
-"செயற்பாடுகளைப் பெற்றுக் கொள்ளலாம்"
+"செயற்பாடுகளைப் பெற்றுக் கொள்ளலாம்."
 
 #: ../src/jarabe/controlpanel/cmd.py:28
 #, python-format
@@ -945,33 +947,33 @@ msgstr ""
 "-------hசாவி----இந்த சாவிக்கான தகவலைக் காட்டு\n"
 "------g சாவி---- தற்போதைய சாவிக்கான பெறுமதியினைப் பெற்றுக்கொள்\n"
 "-----s சாவி------ தற்போதைய சாவிக்கான பெறுமதியினை ஒழுங்குபடுத்து \n"
-"------c சாவி----- தற்போதைய சாவிக்கான பெறுமதியினை நீக்கு\n"
-"------"
+"------c சாவி----- தற்போதைய சாவிக்கான பெறுமதியினை நீக்கு \n"
+"    "
 
 #: ../src/jarabe/controlpanel/cmd.py:52
 msgid "To apply your changes you have to restart sugar.\n"
-msgstr "உங்களுடைய மாற்றங்களைப் பதிவதற்கு சுகரை மீள் ஆரம்பி\n"
+msgstr "உங்களுடைய மாற்றங்களைப் பதிவதற்கு சுகரை மீள் ஆரம்பி.\n"
 
-#: ../src/jarabe/controlpanel/gui.py:296 ../src/jarabe/journal/palettes.py:161
+#: ../src/jarabe/controlpanel/gui.py:297 ../src/jarabe/journal/palettes.py:161
 #: ../src/jarabe/journal/palettes.py:246 ../src/jarabe/journal/palettes.py:279
 #: ../src/jarabe/journal/volumestoolbar.py:307
 msgid "Warning"
 msgstr "எச்சரிக்கை"
 
-#: ../src/jarabe/controlpanel/gui.py:297
+#: ../src/jarabe/controlpanel/gui.py:298
 #: ../src/jarabe/controlpanel/sectionview.py:41
 msgid "Changes require restart"
 msgstr "மாற்றத்தினை மீள் ஆரம்பிப்பதற்கான கோரிக்கை"
 
-#: ../src/jarabe/controlpanel/gui.py:300
+#: ../src/jarabe/controlpanel/gui.py:301
 msgid "Cancel changes"
 msgstr "மாற்றத்தினை இரத்துசெய்"
 
-#: ../src/jarabe/controlpanel/gui.py:305 ../src/jarabe/desktop/homebox.py:73
+#: ../src/jarabe/controlpanel/gui.py:306 ../src/jarabe/desktop/homebox.py:73
 msgid "Later"
 msgstr "பின்னர்"
 
-#: ../src/jarabe/controlpanel/gui.py:309
+#: ../src/jarabe/controlpanel/gui.py:310
 msgid "Restart now"
 msgstr "இப்போது மீள் ஆரம்பி"
 
@@ -985,9 +987,10 @@ msgid "Ok"
 msgstr "சரி"
 
 #: ../src/jarabe/desktop/activitieslist.py:230
-#, python-format, fuzzy
+#, python-format
+#, python-format,
 msgid "Version %s"
-msgstr "பதிப்பு %கள்"
+msgstr "பதிப்புகள் %s"
 
 #: ../src/jarabe/desktop/activitieslist.py:356
 msgid "Confirm erase"
@@ -1006,7 +1009,7 @@ msgstr "வைத்திரு"
 
 #: ../src/jarabe/desktop/activitieslist.py:365
 #: ../src/jarabe/desktop/activitieslist.py:419
-#: ../src/jarabe/journal/journaltoolbox.py:398
+#: ../src/jarabe/journal/journaltoolbox.py:413
 #: ../src/jarabe/journal/palettes.py:126
 msgid "Erase"
 msgstr "அழி"
@@ -1061,7 +1064,7 @@ msgstr "பதிவு வெற்றிகரமானது"
 msgid "You are now registered with your school server."
 msgstr ""
 "நீங்கள் தற்போது உங்கள் பாடசாலையிலுள்ள வழங்கி (கணினி) யில் பதிவு "
-"செய்யப்பட்டுள்ளீர்"
+"செய்யப்பட்டுள்ளீர்."
 
 #: ../src/jarabe/desktop/favoritesview.py:641
 msgid "Register"
@@ -1100,25 +1103,32 @@ msgstr "விருப்புக்குரிய பார்வை"
 msgid "<Ctrl>1"
 msgstr "<Ctrl>1"
 
-#: ../src/jarabe/desktop/keydialog.py:143
+#: ../src/jarabe/desktop/keydialog.py:94
+#, python-format
+msgid ""
+"A wireless encryption key is required for\n"
+" the wireless network '%s'."
+msgstr ""
+
+#: ../src/jarabe/desktop/keydialog.py:144
 msgid "Key Type:"
-msgstr "சாவி டைப்/வகை"
+msgstr "சாவி டைப்/வகை:"
 
-#: ../src/jarabe/desktop/keydialog.py:163
+#: ../src/jarabe/desktop/keydialog.py:164
 msgid "Authentication Type:"
-msgstr "நம்பத்தகுந்த டைப்/வகை"
+msgstr "நம்பத்தகுந்த டைப்/வகை:"
 
-#: ../src/jarabe/desktop/keydialog.py:229
+#: ../src/jarabe/desktop/keydialog.py:230
 msgid "WPA & WPA2 Personal"
 msgstr "WPA & WPA2 தனிப்பட்ட"
 
-#: ../src/jarabe/desktop/keydialog.py:238
+#: ../src/jarabe/desktop/keydialog.py:239
 msgid "Wireless Security:"
-msgstr "இணைப்பற்ற பாதுகாப்பு"
+msgstr "இணைப்பற்ற பாதுகாப்பு:"
 
 #. TRANS: Action label for resuming an activity.
 #: ../src/jarabe/desktop/meshbox.py:91
-#: ../src/jarabe/journal/journaltoolbox.py:494
+#: ../src/jarabe/journal/journaltoolbox.py:509
 #: ../src/jarabe/journal/palettes.py:71 ../src/jarabe/view/palettes.py:84
 msgid "Resume"
 msgstr "மீழ ஆரம்பி"
@@ -1128,23 +1138,23 @@ msgstr "மீழ ஆரம்பி"
 msgid "Join"
 msgstr "இணை"
 
-#: ../src/jarabe/desktop/networkviews.py:500
+#: ../src/jarabe/desktop/networkviews.py:502
 #, python-format
 msgid "Ad-hoc Network %d"
 msgstr "Ad-hoc பிணையம் %d"
 
-#: ../src/jarabe/desktop/networkviews.py:634
+#: ../src/jarabe/desktop/networkviews.py:636
 #, python-format
 msgid "Mesh Network %d"
 msgstr "மெஷ் பிணையம் %d"
 
 #: ../src/jarabe/desktop/schoolserver.py:143
 msgid "Cannot connect to the server."
-msgstr "வழங்கி (கணினி) யினை இணைக்க முடியாது"
+msgstr "வழங்கி (கணினி) யினை இணைக்க முடியாது."
 
 #: ../src/jarabe/desktop/schoolserver.py:150
 msgid "The server could not complete the request."
-msgstr "வழங்கி (கணினி) கட்டளையை முழுமையாக ஏற்கவில்லை"
+msgstr "வழங்கி (கணினி) கட்டளையை முழுமையாக ஏற்கவில்லை."
 
 #: ../src/jarabe/frame/activitiestray.py:187
 #: ../src/jarabe/frame/activitiestray.py:574
@@ -1168,11 +1178,11 @@ msgstr "%dMB"
 
 #: ../src/jarabe/frame/activitiestray.py:544
 #, python-format
+#, python-format,
 msgid "%s of %s"
-msgstr "%s of %s"
+msgstr "%s இல் %s"
 
 #: ../src/jarabe/frame/activitiestray.py:558
-#, python-format, 
 #, python-format
 #, python-format,
 msgid "Transfer from %s"
@@ -1196,17 +1206,15 @@ msgstr "இல்லாமல் செய்"
 
 #: ../src/jarabe/frame/activitiestray.py:643
 msgid "The other participant canceled the file transfer"
-msgstr ""
+msgstr "கோப்பு பதிவேற்றத்தை மற்ற இணைப்பாளர் இரத்துசெய்து விட்டார்"
 
 #: ../src/jarabe/frame/activitiestray.py:691
-#, python-format, 
 #, python-format
 #, python-format,
 msgid "Transfer to %s"
 msgstr "%s க்கு மாற்றம் செய்"
 
 #: ../src/jarabe/frame/clipboardmenu.py:56
-#, fuzzy
 msgctxt "Clipboard"
 msgid "Remove"
 msgstr "அகற்று"
@@ -1247,11 +1255,11 @@ msgstr "F4"
 
 #: ../src/jarabe/intro/window.py:90
 msgid "Name:"
-msgstr "பெயர்"
+msgstr "பெயர்:"
 
 #: ../src/jarabe/intro/window.py:126
 msgid "Click to change color:"
-msgstr "நிற மாற்றத்திற்காக அழுத்து"
+msgstr "நிற மாற்றத்திற்காக அழுத்து:"
 
 #: ../src/jarabe/intro/window.py:187 ../src/jarabe/journal/detailview.py:105
 msgid "Back"
@@ -1299,112 +1307,112 @@ msgstr "திகதியில்லை"
 
 #: ../src/jarabe/journal/expandedentry.py:301
 msgid "Participants:"
-msgstr "பங்குபற்றுநர்"
+msgstr "பங்குபற்றுநர்:"
 
 #: ../src/jarabe/journal/expandedentry.py:323
 msgid "Description:"
-msgstr "விளக்கம்"
+msgstr "விளக்கம்:"
 
 #: ../src/jarabe/journal/expandedentry.py:348
 msgid "Tags:"
-msgstr "இணைக்கயிறு"
+msgstr "இணைக்கயிறு:"
 
 #: ../src/jarabe/journal/journalactivity.py:115
-#: ../src/jarabe/journal/journaltoolbox.py:453
+#: ../src/jarabe/journal/journaltoolbox.py:468
 #: ../src/jarabe/journal/palettes.py:198
 #: ../src/jarabe/journal/volumestoolbar.py:368
 msgid "Journal"
 msgstr "சஞ்சிகை"
 
-#: ../src/jarabe/journal/journaltoolbox.py:71
+#: ../src/jarabe/journal/journaltoolbox.py:72
 msgid "Search"
 msgstr "தேடு"
 
-#: ../src/jarabe/journal/journaltoolbox.py:138
+#: ../src/jarabe/journal/journaltoolbox.py:139
 msgid "Anytime"
 msgstr "எந்நேரம்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:140
+#: ../src/jarabe/journal/journaltoolbox.py:141
 msgid "Today"
 msgstr "இன்று"
 
-#: ../src/jarabe/journal/journaltoolbox.py:142
+#: ../src/jarabe/journal/journaltoolbox.py:143
 msgid "Since yesterday"
 msgstr "நேற்று வரை"
 
 #. TRANS: Filter entries modified during the last 7 days.
-#: ../src/jarabe/journal/journaltoolbox.py:144
+#: ../src/jarabe/journal/journaltoolbox.py:145
 msgid "Past week"
 msgstr "கடந்த வாரம்"
 
 #. TRANS: Filter entries modified during the last 30 days.
-#: ../src/jarabe/journal/journaltoolbox.py:146
+#: ../src/jarabe/journal/journaltoolbox.py:147
 msgid "Past month"
 msgstr "கடந்த மாதம்"
 
 #. TRANS: Filter entries modified during the last 356 days.
-#: ../src/jarabe/journal/journaltoolbox.py:148
+#: ../src/jarabe/journal/journaltoolbox.py:149
 msgid "Past year"
 msgstr "கடந்த வருடம்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:155
+#: ../src/jarabe/journal/journaltoolbox.py:156
 msgid "Anyone"
 msgstr "யாராவது"
 
-#: ../src/jarabe/journal/journaltoolbox.py:157
+#: ../src/jarabe/journal/journaltoolbox.py:158
 msgid "My friends"
 msgstr "எனது நண்பர்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:158
+#: ../src/jarabe/journal/journaltoolbox.py:159
 msgid "My class"
 msgstr "எனது வகுப்பு"
 
-#: ../src/jarabe/journal/journaltoolbox.py:300
+#: ../src/jarabe/journal/journaltoolbox.py:301
 msgid "Anything"
 msgstr "ஏதாவது"
 
-#: ../src/jarabe/journal/journaltoolbox.py:381
+#: ../src/jarabe/journal/journaltoolbox.py:396
 #: ../src/jarabe/journal/palettes.py:93
 msgid "Copy to"
 msgstr "க்கு பிரதி செய்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:389
+#: ../src/jarabe/journal/journaltoolbox.py:404
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
 msgid "Duplicate"
 msgstr "நகல்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:422
+#: ../src/jarabe/journal/journaltoolbox.py:437
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254
 #: ../src/jarabe/journal/volumestoolbar.py:315
 #, python-format
 msgid "Error while copying the entry. %s"
 msgstr "இருப்பதை %s பிரதி செய்யும்பொழுது பிழை"
 
-#: ../src/jarabe/journal/journaltoolbox.py:423
+#: ../src/jarabe/journal/journaltoolbox.py:438
 #: ../src/jarabe/journal/palettes.py:142 ../src/jarabe/journal/palettes.py:255
 #: ../src/jarabe/journal/volumestoolbar.py:316
 msgid "Error"
 msgstr "தவறு"
 
 #. TRANS: Action label for starting an entry.
-#: ../src/jarabe/journal/journaltoolbox.py:497
+#: ../src/jarabe/journal/journaltoolbox.py:512
 #: ../src/jarabe/journal/palettes.py:74
 msgid "Start"
 msgstr "ஆரம்பி"
 
-#: ../src/jarabe/journal/journaltoolbox.py:525
+#: ../src/jarabe/journal/journaltoolbox.py:540
 msgid "Sort by date modified"
 msgstr "மாற்றப்பற்ற திகதிகளின்படி வைக்கவும்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:526
+#: ../src/jarabe/journal/journaltoolbox.py:541
 msgid "Sort by date created"
 msgstr "உருவாக்கப்பட்ட திகதிகளின்படி வைக்கவும்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:527
+#: ../src/jarabe/journal/journaltoolbox.py:542
 msgid "Sort by size"
 msgstr "அளவுகளின் படி வைக்கவும்"
 
-#: ../src/jarabe/journal/journaltoolbox.py:536
+#: ../src/jarabe/journal/journaltoolbox.py:551
 msgid "Sort view"
 msgstr "வைப்பு பார்வை"
 
@@ -1414,11 +1422,11 @@ msgstr "உங்களுடைய சஞ்சிகை வெறுமைய�
 
 #: ../src/jarabe/journal/listview.py:319
 msgid "Your documents folder is empty"
-msgstr ""
+msgstr "உங்களுடைய ஆவணஅடைவு ஆனது காலியாக உள்ளது"
 
 #: ../src/jarabe/journal/listview.py:321
 msgid "The device is empty"
-msgstr ""
+msgstr "கருவி காலியாகவுள்ளது"
 
 #: ../src/jarabe/journal/listview.py:323
 msgid "No matching entries"
@@ -1426,7 +1434,7 @@ msgstr "பொருத்தமற்றப் பதிவுகள்"
 
 #: ../src/jarabe/journal/listview.py:397
 msgid "Clear search"
-msgstr "தேடலை  நீக்கு"
+msgstr "தேடலை நீக்கு"
 
 #: ../src/jarabe/journal/misc.py:273
 #, python-format
@@ -1444,7 +1452,7 @@ msgstr "உங்கள் சஞ்சிகை நிரம்புயுள�
 
 #: ../src/jarabe/journal/modalalert.py:68
 msgid "Please delete some old Journal entries to make space for new ones."
-msgstr "தயவு செய்து புதிய தகவல்களைப் பதிவதற்காக சில பழைய தகவல்களை அழிக்கவும்"
+msgstr "தயவு செய்து புதிய தகவல்களைப் பதிவதற்காக சில பழைய தகவல்களை அழிக்கவும்."
 
 #: ../src/jarabe/journal/modalalert.py:80
 msgid "Show Journal"
@@ -1486,7 +1494,7 @@ msgstr "இருக்கின்றவையில் கோப்பி�
 #: ../src/jarabe/journal/palettes.py:245 ../src/jarabe/journal/palettes.py:278
 #: ../src/jarabe/journal/volumestoolbar.py:306
 msgid "Entries without a file cannot be copied."
-msgstr "இருக்கின்றவையில் கோப்பில்லாதவைகளை பிரதி செய்ய  முடியாது."
+msgstr "இருக்கின்றவையில் கோப்பில்லாதவைகளை பிரதி செய்ய முடியாது."
 
 #: ../src/jarabe/journal/palettes.py:267
 msgid "Clipboard"
@@ -1520,7 +1528,7 @@ msgstr "கருவியின் நிலை மாற்றமாற்ற�
 
 #: ../src/jarabe/model/network.py:165
 msgid "The state change is normal."
-msgstr "நிலைமாற்றம் சரியாக உள்ளது"
+msgstr "நிலைமாற்றம் சரியாக உள்ளது."
 
 #: ../src/jarabe/model/network.py:167
 msgid "The device is now managed."
@@ -1528,11 +1536,11 @@ msgstr "கருவியானது மேலாண்மை செய்ய�
 
 #: ../src/jarabe/model/network.py:169
 msgid "The device is no longer managed."
-msgstr "கருவியானது இனிமேலும் மேலாண்மை செய்யப்படமாட்டாது"
+msgstr "கருவியானது இனிமேலும் மேலாண்மை செய்யப்படமாட்டாது."
 
 #: ../src/jarabe/model/network.py:171
 msgid "The device could not be readied for configuration."
-msgstr "கருவியின் அமைப்புகளை படிக்க முடியவில்லை"
+msgstr "கருவியின் அமைப்புகளை படிக்க முடியவில்லை."
 
 #: ../src/jarabe/model/network.py:173
 msgid ""
@@ -1563,7 +1571,7 @@ msgstr "802.1x ஏற்ப்பியின் அமைப்புகள் 
 
 #: ../src/jarabe/model/network.py:185
 msgid "The 802.1X supplicant quit or failed unexpectedly."
-msgstr "802.1x ஏற்ப்பியினாது எதிர்பாராமல் தோழ்வியுற்றது (அ) வெளியேறிவிட்டது"
+msgstr "802.1x ஏற்ப்பியினாது எதிர்பாராமல் தோழ்வியுற்றது (அ) வெளியேறிவிட்டது."
 
 #: ../src/jarabe/model/network.py:187
 msgid "The 802.1X supplicant took too long to authenticate."
@@ -1613,7 +1621,7 @@ msgstr "தானியக்க IP சேவை எதிர்பாராத 
 
 #: ../src/jarabe/model/network.py:210
 msgid "The AutoIP service quit or failed unexpectedly."
-msgstr "தானியக்க IP சேவை எதிர்பாராமல் தோழ்வியுற்றது (அ) வெளியேறிவிட்டது"
+msgstr "தானியக்க IP சேவை எதிர்பாராமல் தோழ்வியுற்றது (அ) வெளியேறிவிட்டது."
 
 #: ../src/jarabe/model/network.py:212
 msgid "Dialing failed because the line was busy."
@@ -1723,7 +1731,7 @@ msgstr "<b>%s</b> ஆரம்பமானது தோழ்வியுற�
 
 #: ../src/jarabe/view/palettes.py:48
 msgid "Starting..."
-msgstr "ஆரம்பி"
+msgstr "ஆரம்பி..."
 
 #: ../src/jarabe/view/palettes.py:58
 msgid "Activity failed to start"
@@ -1744,10 +1752,9 @@ msgstr "புதிதை ஆரம்பி"
 
 #: ../src/jarabe/view/palettes.py:180
 msgid "Show contents"
-msgstr "உள்ளடக்கியதைக்  காட்டு"
+msgstr "உள்ளடக்கியதைக் காட்டு"
 
 #: ../src/jarabe/view/palettes.py:229
-#, fuzzy
 msgctxt "Volume"
 msgid "Remove"
 msgstr "அகற்று"
@@ -1762,7 +1769,7 @@ msgstr "வளம் (மூலம்)"
 
 #: ../src/jarabe/view/viewsource.py:374
 msgid "Activity Bundle Source"
-msgstr "செயற்பாட்டு  வளத் (மூலம்) தொகுதி"
+msgstr "செயற்பாட்டு வளத் (மூலம்) தொகுதி"
 
 #: ../src/jarabe/view/viewsource.py:393
 msgid "Sugar Toolkit Source"

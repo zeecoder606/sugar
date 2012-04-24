@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Update 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 11:55-0400\n"
-"PO-Revision-Date: 2011-09-28 18:22+0200\n"
+"POT-Creation-Date: 2012-04-24 00:33-0400\n"
+"PO-Revision-Date: 2012-01-12 07:59+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Bengali <core@bengalinux.org>\n"
 "Language: bn\n"
@@ -61,48 +61,48 @@ msgstr "রং পরিবর্তন করতে ক্লিক করু�
 msgid "About my Computer"
 msgstr "আমার কম্পিউটার সম্পর্কে"
 
-#: ../extensions/cpsection/aboutcomputer/model.py:42
+#: ../extensions/cpsection/aboutcomputer/model.py:43
 msgid "Not available"
 msgstr "পাওয়া যায় নি"
 
-#: ../extensions/cpsection/aboutcomputer/model.py:171
+#: ../extensions/cpsection/aboutcomputer/model.py:183
 #, python-format
 msgid "%(interface)s: %(version)s"
 msgstr "%(interface)s: %(version)s"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:61
+#: ../extensions/cpsection/aboutcomputer/view.py:59
 msgid "Identity"
 msgstr "পরিচয়"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:70
+#: ../extensions/cpsection/aboutcomputer/view.py:68
 msgid "Serial Number:"
 msgstr "ক্রমিক সংখ্যা:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:92
+#: ../extensions/cpsection/aboutcomputer/view.py:90
 msgid "Software"
 msgstr "সফটওয়্যার"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:101
+#: ../extensions/cpsection/aboutcomputer/view.py:99
 msgid "Build:"
 msgstr "তৈরী করো:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:116
+#: ../extensions/cpsection/aboutcomputer/view.py:114
 msgid "Sugar:"
 msgstr "সুগার:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:132
+#: ../extensions/cpsection/aboutcomputer/view.py:129
 msgid "Firmware:"
 msgstr "ফার্মওয়্যার:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:147
+#: ../extensions/cpsection/aboutcomputer/view.py:144
 msgid "Wireless Firmware:"
 msgstr "তারবিহীন ফার্মওয়্যার:"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:170
+#: ../extensions/cpsection/aboutcomputer/view.py:167
 msgid "Copyright and License"
 msgstr "কপিরাইট এবং লাইসেন্স"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:188
+#: ../extensions/cpsection/aboutcomputer/view.py:185
 msgid ""
 "Sugar is the graphical user interface that you are looking at. Sugar is free "
 "software, covered by the GNU General Public License, and you are welcome to "
@@ -114,7 +114,7 @@ msgstr ""
 "সাপেক্ষে আপনি এটি নিজের প্রয়োজনমতো পরিবর্তন করতে বা এর অনুলিপি বিতরন করতে "
 "পারবেন।"
 
-#: ../extensions/cpsection/aboutcomputer/view.py:200
+#: ../extensions/cpsection/aboutcomputer/view.py:197
 msgid "Full license:"
 msgstr "সম্পূর্ণ লাইসেন্স:"
 
@@ -445,8 +445,8 @@ msgstr "IP ঠিকানা: %s"
 
 #: ../extensions/deviceicon/network.py:104
 #: ../extensions/deviceicon/network.py:303
-#: ../src/jarabe/desktop/networkviews.py:140
-#: ../src/jarabe/desktop/networkviews.py:508
+#: ../src/jarabe/desktop/networkviews.py:141
+#: ../src/jarabe/desktop/networkviews.py:510
 msgid "Disconnect"
 msgstr "সংযোগ বিচ্ছিন্ন করুন"
 
@@ -456,17 +456,17 @@ msgstr "সংযোগ বিচ্ছিন্ন করুন"
 # have a good mapping
 #: ../extensions/deviceicon/network.py:112
 #: ../extensions/deviceicon/network.py:295
-#: ../src/jarabe/desktop/networkviews.py:243
-#: ../src/jarabe/desktop/networkviews.py:547
-#: ../src/jarabe/desktop/networkviews.py:680
+#: ../src/jarabe/desktop/networkviews.py:245
+#: ../src/jarabe/desktop/networkviews.py:549
+#: ../src/jarabe/desktop/networkviews.py:683
 msgid "Connecting..."
 msgstr "সংযুক্ত করা হচ্ছে..."
 
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
-#: ../src/jarabe/desktop/networkviews.py:253
-#: ../src/jarabe/desktop/networkviews.py:553
-#: ../src/jarabe/desktop/networkviews.py:686
+#: ../src/jarabe/desktop/networkviews.py:255
+#: ../src/jarabe/desktop/networkviews.py:555
+#: ../src/jarabe/desktop/networkviews.py:689
 msgid "Connected"
 msgstr "সংযোগ স্থাপিত হয়েছে"
 
@@ -495,9 +495,9 @@ msgid "Please wait..."
 msgstr "অনুগ্রহ করে অপেক্ষা করুন..."
 
 #: ../extensions/deviceicon/network.py:286
-#: ../src/jarabe/desktop/networkviews.py:136
-#: ../src/jarabe/desktop/networkviews.py:504
-#: ../src/jarabe/desktop/networkviews.py:637
+#: ../src/jarabe/desktop/networkviews.py:137
+#: ../src/jarabe/desktop/networkviews.py:506
+#: ../src/jarabe/desktop/networkviews.py:639
 msgid "Connect"
 msgstr "সংযুক্ত করুন"
 
@@ -555,21 +555,21 @@ msgstr "নাম্বার কনফিগারেশন পরীক্ষ�
 msgid "Check your configuration."
 msgstr "আপনার কনফিগারেশন পরীক্ষা করুন।"
 
-#: ../extensions/deviceicon/network.py:612
+#: ../extensions/deviceicon/network.py:615
 msgid "Mesh Network"
 msgstr "মেশ নেটওয়ার্ক"
 
-#: ../extensions/deviceicon/network.py:656
+#: ../extensions/deviceicon/network.py:659
 #, python-format
 #, python-format,
 msgid "Mesh Network %s"
 msgstr "মেশ নেটওয়ার্ক %s"
 
-#: ../extensions/deviceicon/network.py:779
+#: ../extensions/deviceicon/network.py:782
 msgid "No GSM connection available."
 msgstr "কোন GSM সংযোগ পাওয়া যায়নি।"
 
-#: ../extensions/deviceicon/network.py:780
+#: ../extensions/deviceicon/network.py:783
 msgid "Create a connection in the control panel."
 msgstr "কন্ট্রোল প্যানেলে একটি সংযোগ তৈরি করুন।"
 
@@ -801,7 +801,7 @@ msgid ""
 "List of keyboard layouts. Each entry should be in the form layout(variant)"
 msgstr ""
 "কীবোর্ড লেআউটের তালিকা। ফরম বহির্বিন্যাসে (ভেরিয়েন্ট) প্রত্যেক প্রবেশ থাকতে "
-"হবে।"
+"হবে"
 
 #: ../data/sugar.schemas.in.h:40
 msgid "List of keyboard options."
@@ -857,11 +857,11 @@ msgstr "সিস্টেমের জন্য সময়অঞ্চলের 
 
 #: ../data/sugar.schemas.in.h:54
 msgid "Url of the jabber server to use."
-msgstr "jabber সার্ভার ব্যবহারের জন্য Url।"
+msgstr "jabber সার্ভার ব্যবহারের জন্য URL।"
 
 #: ../data/sugar.schemas.in.h:55
 msgid "Url where the backup is saved to."
-msgstr "ব্যাকআপ সংরক্ষণ করার জন্য Url."
+msgstr "ব্যাকআপ সংরক্ষণ করার জন্য URL।"
 
 #: ../data/sugar.schemas.in.h:56
 msgid "User Color"
@@ -933,39 +933,38 @@ msgstr ""
 "ব্যবহারবিধি: সুগার-কন্ট্রোল-প্যানেল [অপশন] কী [আরগুমেন্ট ...]\n"
 "    সুগার পরিবেশের কন্ট্রোল। \n"
 "    অপশন: \n"
-"    -h           সহায়তা বর্তা প্রদদর্শন করে এবং প্রস্থান করে\n"
-"    -l           বিদ্যমান সকল অপশন তালিকা বদ্ধ করে\n"
+"    -h           সহায়তা বর্তা প্রদদর্শন করে এবং প্রস্থান করে \n"
+"    -l           বিদ্যমান সকল অপশন তালিকা বদ্ধ করে \n"
 "    -h কী       কী সম্পর্কে তথ্য প্রদর্শন করে \n"
-"    -g কী       কী এর বর্তমান মান পাওয়া যায়\n"
-"    -s কী       কী এর বর্তমান মান নির্ধারণ করে \n"
-"    -c কী       কী এর বর্তমান মান মুছে ফেলে\n"
-" \n"
+"    -g কী       কী এর বর্তমান মান পাওয়া যায় \n"
+"    -s কী       কী এর বর্তমান মান নির্ধারণ করে  \n"
+"    -c কী       কী এর বর্তমান মান মুছে ফেলে \n"
 "    "
 
 #: ../src/jarabe/controlpanel/cmd.py:52
 msgid "To apply your changes you have to restart sugar.\n"
 msgstr "তোমার পরিবর্তন কার্যকর করার জন্য সুগার পুনরায় চালু করতে হবে।\n"
 
-#: ../src/jarabe/controlpanel/gui.py:296 ../src/jarabe/journal/palettes.py:161
+#: ../src/jarabe/controlpanel/gui.py:297 ../src/jarabe/journal/palettes.py:161
 #: ../src/jarabe/journal/palettes.py:246 ../src/jarabe/journal/palettes.py:279
 #: ../src/jarabe/journal/volumestoolbar.py:307
 msgid "Warning"
 msgstr "সতর্কবানী"
 
-#: ../src/jarabe/controlpanel/gui.py:297
+#: ../src/jarabe/controlpanel/gui.py:298
 #: ../src/jarabe/controlpanel/sectionview.py:41
 msgid "Changes require restart"
 msgstr "পরিবর্তন করা হলে 'পুনরায় চালুকরণ' প্রয়োজন"
 
-#: ../src/jarabe/controlpanel/gui.py:300
+#: ../src/jarabe/controlpanel/gui.py:301
 msgid "Cancel changes"
 msgstr "পরিবর্তন বাতিল করো"
 
-#: ../src/jarabe/controlpanel/gui.py:305 ../src/jarabe/desktop/homebox.py:73
+#: ../src/jarabe/controlpanel/gui.py:306 ../src/jarabe/desktop/homebox.py:73
 msgid "Later"
 msgstr "পরবর্তীতে"
 
-#: ../src/jarabe/controlpanel/gui.py:309
+#: ../src/jarabe/controlpanel/gui.py:310
 msgid "Restart now"
 msgstr "এখনই পুনরায় চালু করো"
 
@@ -1000,7 +999,7 @@ msgstr "রাখো"
 
 #: ../src/jarabe/desktop/activitieslist.py:365
 #: ../src/jarabe/desktop/activitieslist.py:419
-#: ../src/jarabe/journal/journaltoolbox.py:398
+#: ../src/jarabe/journal/journaltoolbox.py:413
 #: ../src/jarabe/journal/palettes.py:126
 msgid "Erase"
 msgstr "মোছো"
@@ -1093,25 +1092,32 @@ msgstr "পছন্দনীয় ভিউ"
 msgid "<Ctrl>1"
 msgstr "<Ctrl>1"
 
-#: ../src/jarabe/desktop/keydialog.py:143
+#: ../src/jarabe/desktop/keydialog.py:94
+#, python-format
+msgid ""
+"A wireless encryption key is required for\n"
+" the wireless network '%s'."
+msgstr ""
+
+#: ../src/jarabe/desktop/keydialog.py:144
 msgid "Key Type:"
 msgstr "কী ধরণ:"
 
-#: ../src/jarabe/desktop/keydialog.py:163
+#: ../src/jarabe/desktop/keydialog.py:164
 msgid "Authentication Type:"
 msgstr "পরিচয় প্রমানের ধরণ:"
 
-#: ../src/jarabe/desktop/keydialog.py:229
+#: ../src/jarabe/desktop/keydialog.py:230
 msgid "WPA & WPA2 Personal"
 msgstr "WPA & WPA2 ব্যক্তিগত"
 
-#: ../src/jarabe/desktop/keydialog.py:238
+#: ../src/jarabe/desktop/keydialog.py:239
 msgid "Wireless Security:"
 msgstr "তারবিহীন সংযোগের নিরাপত্তা:"
 
 #. TRANS: Action label for resuming an activity.
 #: ../src/jarabe/desktop/meshbox.py:91
-#: ../src/jarabe/journal/journaltoolbox.py:494
+#: ../src/jarabe/journal/journaltoolbox.py:509
 #: ../src/jarabe/journal/palettes.py:71 ../src/jarabe/view/palettes.py:84
 msgid "Resume"
 msgstr "পুনরায় শুরু করুন"
@@ -1121,12 +1127,12 @@ msgstr "পুনরায় শুরু করুন"
 msgid "Join"
 msgstr "যোগ দাও"
 
-#: ../src/jarabe/desktop/networkviews.py:500
+#: ../src/jarabe/desktop/networkviews.py:502
 #, python-format
 msgid "Ad-hoc Network %d"
 msgstr "অ্যাড-হক নেটওয়ার্ক %d"
 
-#: ../src/jarabe/desktop/networkviews.py:634
+#: ../src/jarabe/desktop/networkviews.py:636
 #, python-format
 #, python-format,
 msgid "Mesh Network %d"
@@ -1300,81 +1306,81 @@ msgid "Tags:"
 msgstr "ট্যাগ:"
 
 #: ../src/jarabe/journal/journalactivity.py:115
-#: ../src/jarabe/journal/journaltoolbox.py:453
+#: ../src/jarabe/journal/journaltoolbox.py:468
 #: ../src/jarabe/journal/palettes.py:198
 #: ../src/jarabe/journal/volumestoolbar.py:368
 msgid "Journal"
 msgstr "জার্নাল"
 
-#: ../src/jarabe/journal/journaltoolbox.py:71
+#: ../src/jarabe/journal/journaltoolbox.py:72
 msgid "Search"
 msgstr "অনুসন্ধান"
 
-#: ../src/jarabe/journal/journaltoolbox.py:138
+#: ../src/jarabe/journal/journaltoolbox.py:139
 msgid "Anytime"
 msgstr "যে কোন সময়"
 
-#: ../src/jarabe/journal/journaltoolbox.py:140
+#: ../src/jarabe/journal/journaltoolbox.py:141
 msgid "Today"
 msgstr "আজ"
 
-#: ../src/jarabe/journal/journaltoolbox.py:142
+#: ../src/jarabe/journal/journaltoolbox.py:143
 msgid "Since yesterday"
 msgstr "গতকাল পর্যন্ত"
 
 # TRANS: Filter entries modified during the last 7 days.
 #. TRANS: Filter entries modified during the last 7 days.
-#: ../src/jarabe/journal/journaltoolbox.py:144
+#: ../src/jarabe/journal/journaltoolbox.py:145
 msgid "Past week"
 msgstr "পূর্ব সপ্তাহ"
 
 # TRANS: Filter entries modified during the last 30 days.
 #. TRANS: Filter entries modified during the last 30 days.
-#: ../src/jarabe/journal/journaltoolbox.py:146
+#: ../src/jarabe/journal/journaltoolbox.py:147
 msgid "Past month"
 msgstr "পূর্ব মাস"
 
 # TRANS: Filter entries modified during the last 356 days.
 #. TRANS: Filter entries modified during the last 356 days.
-#: ../src/jarabe/journal/journaltoolbox.py:148
+#: ../src/jarabe/journal/journaltoolbox.py:149
 msgid "Past year"
 msgstr "পূর্ব বছর"
 
-#: ../src/jarabe/journal/journaltoolbox.py:155
+#: ../src/jarabe/journal/journaltoolbox.py:156
 msgid "Anyone"
 msgstr "যে কেউ"
 
-#: ../src/jarabe/journal/journaltoolbox.py:157
+#: ../src/jarabe/journal/journaltoolbox.py:158
 msgid "My friends"
 msgstr "আমার বন্ধুরা"
 
-#: ../src/jarabe/journal/journaltoolbox.py:158
+#: ../src/jarabe/journal/journaltoolbox.py:159
 msgid "My class"
 msgstr "আমার ক্লাস"
 
 # TRANS: Item in a combo box that filters by entry type.
-#: ../src/jarabe/journal/journaltoolbox.py:300
+#: ../src/jarabe/journal/journaltoolbox.py:301
 msgid "Anything"
 msgstr "যে কোন কিছু"
 
-#: ../src/jarabe/journal/journaltoolbox.py:381
+#: ../src/jarabe/journal/journaltoolbox.py:396
 #: ../src/jarabe/journal/palettes.py:93
 msgid "Copy to"
 msgstr ""
 
-#: ../src/jarabe/journal/journaltoolbox.py:389
+#: ../src/jarabe/journal/journaltoolbox.py:404
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
 msgid "Duplicate"
 msgstr ""
 
-#: ../src/jarabe/journal/journaltoolbox.py:422
+#: ../src/jarabe/journal/journaltoolbox.py:437
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254
 #: ../src/jarabe/journal/volumestoolbar.py:315
 #, python-format
 msgid "Error while copying the entry. %s"
 msgstr "এন্ট্রি অনুলিপি করার সময় ত্রুটি। %s"
 
-#: ../src/jarabe/journal/journaltoolbox.py:423
+#: ../src/jarabe/journal/journaltoolbox.py:438
 #: ../src/jarabe/journal/palettes.py:142 ../src/jarabe/journal/palettes.py:255
 #: ../src/jarabe/journal/volumestoolbar.py:316
 msgid "Error"
@@ -1382,24 +1388,24 @@ msgstr "ত্রুটি"
 
 # TRANS: Action label for starting an entry.
 #. TRANS: Action label for starting an entry.
-#: ../src/jarabe/journal/journaltoolbox.py:497
+#: ../src/jarabe/journal/journaltoolbox.py:512
 #: ../src/jarabe/journal/palettes.py:74
 msgid "Start"
 msgstr "আরম্ভ"
 
-#: ../src/jarabe/journal/journaltoolbox.py:525
+#: ../src/jarabe/journal/journaltoolbox.py:540
 msgid "Sort by date modified"
 msgstr "পরিবর্ধনের তারিখ অনুযায়ী সাজানো"
 
-#: ../src/jarabe/journal/journaltoolbox.py:526
+#: ../src/jarabe/journal/journaltoolbox.py:541
 msgid "Sort by date created"
 msgstr "তৈরি করা তারিখ অনুযায়ী সাজানো"
 
-#: ../src/jarabe/journal/journaltoolbox.py:527
+#: ../src/jarabe/journal/journaltoolbox.py:542
 msgid "Sort by size"
 msgstr "আকার অনুযায়ী সাজানো"
 
-#: ../src/jarabe/journal/journaltoolbox.py:536
+#: ../src/jarabe/journal/journaltoolbox.py:551
 msgid "Sort view"
 msgstr "প্রদর্শন ক্রমানুসারে সাজানো"
 
@@ -1550,7 +1556,7 @@ msgid ""
 "The 802.1X supplicant disconnected from the access point or authentication "
 "server."
 msgstr ""
-"802.1X  সাপ্লিকেন্ট প্রবেশাধিকার পয়েন্ট বা প্রমাণীকরণ সার্ভার থেকে বিছিন্ন।"
+"802.1X সাপ্লিকেন্ট প্রবেশাধিকার পয়েন্ট বা প্রমাণীকরণ সার্ভার থেকে বিছিন্ন।"
 
 #: ../src/jarabe/model/network.py:183
 msgid "Configuration of the 802.1X supplicant failed."
@@ -1602,7 +1608,7 @@ msgstr "AutoIP সার্ভিস শুরু করতে ব্যর্�
 
 #: ../src/jarabe/model/network.py:208
 msgid "The AutoIP service reported an unexpected error."
-msgstr "AutoIP সার্ভিস  ত্রুটি অপ্রত্যাশিত ত্রুটি রিপোর্ট করেছে।"
+msgstr "AutoIP সার্ভিস ত্রুটি অপ্রত্যাশিত ত্রুটি রিপোর্ট করেছে।"
 
 #: ../src/jarabe/model/network.py:210
 msgid "The AutoIP service quit or failed unexpectedly."
@@ -1678,7 +1684,7 @@ msgstr "ব্যবহারকারী বা ক্লায়েন্ট স
 
 #: ../src/jarabe/model/network.py:247
 msgid "The device's carrier/link changed."
-msgstr "The device's carrier/link changed."
+msgstr ""
 
 #: ../src/jarabe/view/buddymenu.py:67
 msgid "Remove friend"
