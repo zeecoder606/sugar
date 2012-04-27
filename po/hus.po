@@ -1162,7 +1162,7 @@ msgstr "<Ctrl>1"
 msgid ""
 "A wireless encryption key is required for\n"
 " the wireless network '%s'."
-msgstr ""
+msgstr "Jun i tsinat exbadh dhuche’ yejentál abal\n an yab ts’ájlidh tsolóm '%s'."
 
 #: ../src/jarabe/desktop/keydialog.py:144
 msgid "Key Type:"
@@ -1258,7 +1258,7 @@ msgstr "Ka t'ixk'a'"
 
 #: ../src/jarabe/frame/activitiestray.py:643
 msgid "The other participant canceled the file transfer"
-msgstr ""
+msgstr "Xi jún an t’ojnal in t’apiy an dhuchlab xi k’wajatak in abnál"
 
 #: ../src/jarabe/frame/activitiestray.py:691
 #, python-format
@@ -1473,11 +1473,11 @@ msgstr "A chudhél dhuchlab kwa'ajat jolat"
 
 #: ../src/jarabe/journal/listview.py:319
 msgid "Your documents folder is empty"
-msgstr ""
+msgstr "A dhayáb-úwil yab jant’oj in kwa’al"
 
 #: ../src/jarabe/journal/listview.py:321
 msgid "The device is empty"
-msgstr ""
+msgstr "An punk’udh eyendhanél k’wajat naptal"
 
 #: ../src/jarabe/journal/listview.py:323
 msgid "No matching entries"
