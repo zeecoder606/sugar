@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2012-06-14 07:47+0200\n"
+"PO-Revision-Date: 2012-06-26 08:17+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Runasimipi.org\n"
 "Language: quz\n"
@@ -255,9 +255,8 @@ msgstr ""
 
 #  "Configuración del módem"
 #: ../extensions/cpsection/modemconfiguration/__init__.py:21
-#, fuzzy
 msgid "Modem Configuration"
-msgstr "Modem nisqap kamachinan"
+msgstr "Modem nisqap kamachiynin"
 
 #  "Nombre de usuario:"
 #: ../extensions/cpsection/modemconfiguration/view.py:94
@@ -765,13 +764,12 @@ msgstr "\"%s\" pantallap-rikchaynin"
 #  "\"disabled\" (desactivado) para preguntar apodo al inicio; \"system\" (sistema) "
 #  "para reutilizar el nombre largo de la cuenta UNIX."
 #: ../data/sugar.schemas.in.h:1
-#, fuzzy
 msgid ""
 "\"disabled\" to ask nick on initialization; \"system\" to reuse UNIX account "
 "long name."
 msgstr ""
-"\"disabled\" (mana purichisqa) qallariypi sutichanmanta tapurinapaq; \"system\" "
-"\"(sistema)\" cuenta UNIX nisqap hatun sutiwan purinapaq."
+"qallariypi sutichanmanta tapurinapaqqa \"disabled\" (mana purichisqa); cuenta "
+"UNIX nisqap hatun sutiwan purinapaqqa \"system\" \"(sistema)\"."
 
 #  "Directorios adicionales que pueden contener traducciones actualizadas."
 #: ../data/sugar.schemas.in.h:2
@@ -1359,6 +1357,9 @@ msgid ""
 "A wireless encryption key is required for\n"
 " the wireless network '%s'."
 msgstr ""
+"kaypaqqa \n"
+" encriptada haykunatam mañakun, hinam kay '%s' llik'a inalambrico "
+"nisqapaqqa."
 
 #  "Tipo de clave:"
 #: ../src/jarabe/desktop/keydialog.py:144
@@ -1484,7 +1485,6 @@ msgstr "Kayman %s apachiy"
 
 # "Eliminar"
 #: ../src/jarabe/frame/clipboardmenu.py:56
-#, fuzzy
 msgctxt "Clipboard"
 msgid "Remove"
 msgstr "Chinkachiy"
@@ -2152,10 +2152,9 @@ msgstr "Ukhunpi kasqata rikuchiy"
 
 # "Eliminar"
 #: ../src/jarabe/view/palettes.py:229
-#, fuzzy
 msgctxt "Volume"
 msgid "Remove"
-msgstr "Chinkachiy"
+msgstr "Qhichuy"
 
 #  "Fuente de la instancia"
 #: ../src/jarabe/view/viewsource.py:263
