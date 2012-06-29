@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-29 17:36-0400\n"
-"PO-Revision-Date: 2009-07-11 04:34-0400\n"
-"Last-Translator: Kateřina Kodíčková <gunasita@gmail.com>\n"
+"POT-Creation-Date: 2011-03-21 07:08-0400\n"
+"PO-Revision-Date: 2011-03-31 21:16+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: ../extensions/cpsection/aboutme/__init__.py:24
 msgid "About Me"
@@ -23,7 +23,7 @@ msgstr "O Mě"
 
 #: ../extensions/cpsection/aboutme/model.py:43
 msgid "You must enter a name."
-msgstr "Musíš zadat jméno"
+msgstr "Musíš zadat jméno."
 
 #: ../extensions/cpsection/aboutme/model.py:68
 #, python-format
@@ -59,7 +59,7 @@ msgstr "Jméno:"
 
 #: ../extensions/cpsection/aboutme/view.py:128
 msgid "Click to change your color:"
-msgstr "Kliknout při změně barvy"
+msgstr "Kliknout při změně barvy:"
 
 #: ../extensions/cpsection/aboutcomputer/__init__.py:21
 msgid "About my Computer"
@@ -121,7 +121,7 @@ msgstr "Datum & Čas"
 msgid "Error timezone does not exist."
 msgstr ""
 
-#: ../extensions/cpsection/datetime/view.py:68 ../data/sugar.schemas.in.h:19
+#: ../extensions/cpsection/datetime/view.py:68 ../data/sugar.schemas.in.h:23
 msgid "Timezone"
 msgstr ""
 
@@ -234,11 +234,11 @@ msgstr "Server:"
 msgid "Power"
 msgstr "Síla"
 
-#: ../extensions/cpsection/power/model.py:54
+#: ../extensions/cpsection/power/model.py:84
 msgid "Error in automatic pm argument, use on/off."
 msgstr ""
 
-#: ../extensions/cpsection/power/model.py:81
+#: ../extensions/cpsection/power/model.py:111
 msgid "Error in extreme pm argument, use on/off."
 msgstr ""
 
@@ -280,36 +280,45 @@ msgstr ""
 msgid "Charged"
 msgstr "Nabité"
 
-#: ../extensions/deviceicon/network.py:40
+#: ../extensions/deviceicon/network.py:45
 #, python-format
 msgid "IP address: %s"
 msgstr ""
 
-#: ../extensions/deviceicon/network.py:104
+#: ../extensions/deviceicon/network.py:111
 msgid "Disconnect..."
 msgstr "Odpojit..."
 
-#: ../extensions/deviceicon/network.py:109
-#: ../src/jarabe/desktop/meshbox.py:250
+#: ../extensions/deviceicon/network.py:115
+msgid "Create new wireless network"
+msgstr ""
+
+#: ../extensions/deviceicon/network.py:121
+#: ../src/jarabe/desktop/meshbox.py:244
 msgid "Connecting..."
 msgstr "Připojování..."
 
-#: ../extensions/deviceicon/network.py:113
-#: ../extensions/deviceicon/network.py:166
-#: ../src/jarabe/desktop/meshbox.py:256
+#: ../extensions/deviceicon/network.py:125
+#: ../extensions/deviceicon/network.py:187
+#: ../src/jarabe/desktop/meshbox.py:250
 msgid "Connected"
 msgstr "Připojeno"
 
-#: ../extensions/deviceicon/network.py:126
+#: ../extensions/deviceicon/network.py:147
 msgid "Channel"
 msgstr ""
 
-#: ../extensions/deviceicon/network.py:141
+#: ../extensions/deviceicon/network.py:162
 msgid "Wired Network"
 msgstr ""
 
-#: ../extensions/deviceicon/network.py:169
+#: ../extensions/deviceicon/network.py:190
 msgid "Speed"
+msgstr ""
+
+#: ../extensions/deviceicon/network.py:429
+#, python-format
+msgid "%s's network"
 msgstr ""
 
 #: ../extensions/deviceicon/speaker.py:59
@@ -318,7 +327,7 @@ msgstr ""
 
 #: ../extensions/deviceicon/speaker.py:133
 msgid "Unmute"
-msgstr ""
+msgstr "Nahlas"
 
 #: ../extensions/deviceicon/speaker.py:136
 msgid "Mute"
@@ -344,100 +353,116 @@ msgid "Corner Delay"
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:4
-msgid "Delay for the activation of the frame using the corners."
+msgid "Default font face"
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:5
-msgid "Delay for the activation of the frame using the edges."
+msgid "Default font size"
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:6
-msgid "Edge Delay"
+msgid "Delay for the activation of the frame using the corners."
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:7
-msgid "Favorites Layout"
+msgid "Delay for the activation of the frame using the edges."
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:8
-msgid "Favorites resume mode"
+msgid "Edge Delay"
 msgstr ""
 
 #: ../data/sugar.schemas.in.h:9
+msgid "Favorites Layout"
+msgstr ""
+
+#: ../data/sugar.schemas.in.h:10
+msgid "Favorites resume mode"
+msgstr ""
+
+#: ../data/sugar.schemas.in.h:11
+msgid "Font face that is used throughout the desktop."
+msgstr ""
+
+#: ../data/sugar.schemas.in.h:12
+msgid "Font size that is used throughout the desktop."
+msgstr ""
+
+#: ../data/sugar.schemas.in.h:13
 msgid ""
 "If TRUE, Sugar will make us searchable for the other users of the Jabber "
 "server."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:10
+#: ../data/sugar.schemas.in.h:14
 msgid "Jabber Server"
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:11
+#: ../data/sugar.schemas.in.h:15
 msgid "Layout of the favorites view."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:12
+#: ../data/sugar.schemas.in.h:16
 msgid "Power Automatic"
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:13
+#: ../data/sugar.schemas.in.h:17
 msgid "Power Automatic."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:14
+#: ../data/sugar.schemas.in.h:18
 msgid "Power Extreme"
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:15
+#: ../data/sugar.schemas.in.h:19
 msgid "Power Extreme."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:16
+#: ../data/sugar.schemas.in.h:20
 msgid "Publish to Gadget"
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:17
+#: ../data/sugar.schemas.in.h:21
 msgid "Setting for muting the sound device."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:18
+#: ../data/sugar.schemas.in.h:22
 msgid "Sound Muted"
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:20
+#: ../data/sugar.schemas.in.h:24
 msgid "Timezone setting for the system."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:21
+#: ../data/sugar.schemas.in.h:25
 msgid "Url of the jabber server to use."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:22
+#: ../data/sugar.schemas.in.h:26
 msgid "Url where the backup is saved to."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:23
+#: ../data/sugar.schemas.in.h:27
 msgid "User Color"
 msgstr "Použít Barvu"
 
-#: ../data/sugar.schemas.in.h:24
+#: ../data/sugar.schemas.in.h:28
 msgid "User Name"
 msgstr "Použít Jméno"
 
-#: ../data/sugar.schemas.in.h:25
+#: ../data/sugar.schemas.in.h:29
 msgid "User name that is used throughout the desktop."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:26
+#: ../data/sugar.schemas.in.h:30
 msgid "Volume Level"
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:27
+#: ../data/sugar.schemas.in.h:31
 msgid "Volume level for the sound device."
 msgstr ""
 
-#: ../data/sugar.schemas.in.h:28
+#: ../data/sugar.schemas.in.h:32
 msgid ""
 "When in resume mode, clicking on a favorite icon will cause the last entry "
 "for that activity to be resumed."
@@ -503,7 +528,7 @@ msgstr "Restartovat nyní"
 
 #: ../src/jarabe/controlpanel/toolbar.py:61 ../src/jarabe/intro/window.py:188
 msgid "Done"
-msgstr ""
+msgstr "Hotovo"
 
 #: ../src/jarabe/controlpanel/toolbar.py:115
 #: ../src/jarabe/desktop/homebox.py:111
@@ -545,33 +570,33 @@ msgstr "Trojúhelník"
 
 #: ../src/jarabe/desktop/favoritesview.py:330
 msgid "Registration Failed"
-msgstr ""
+msgstr "Registrace selhala"
 
 #: ../src/jarabe/desktop/favoritesview.py:331
 #, python-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../src/jarabe/desktop/favoritesview.py:333
 msgid "Registration Successful"
-msgstr ""
+msgstr "Registrace proběhla úspěšně"
 
 #: ../src/jarabe/desktop/favoritesview.py:334
 msgid "You are now registered with your school server."
-msgstr ""
+msgstr "Nyní jseš zaregistrovaný na školním serveru."
 
-#: ../src/jarabe/desktop/favoritesview.py:674
+#: ../src/jarabe/desktop/favoritesview.py:677
 msgid "Register"
 msgstr "Ragistrovat se"
 
 #: ../src/jarabe/desktop/homebox.py:67
 msgid "Confirm erase"
-msgstr ""
+msgstr "Potvrdit odstranění"
 
 #: ../src/jarabe/desktop/homebox.py:69
 #, python-format
 msgid "Confirm erase: Do you want to permanently erase %s?"
-msgstr ""
+msgstr "Potvrdit odstranění: Opravdu to chceš odstranit navždy %s?"
 
 #: ../src/jarabe/desktop/homebox.py:73 ../src/jarabe/frame/clipboardmenu.py:62
 #: ../src/jarabe/view/viewsource.py:218
@@ -582,11 +607,11 @@ msgstr ""
 #: ../src/jarabe/journal/journaltoolbox.py:357
 #: ../src/jarabe/journal/palettes.py:112 ../src/jarabe/view/palettes.py:153
 msgid "Erase"
-msgstr ""
+msgstr "Odstranit"
 
 #: ../src/jarabe/desktop/homebox.py:106
 msgid "Software Update"
-msgstr ""
+msgstr "Aktualizovat Software"
 
 #: ../src/jarabe/desktop/homebox.py:107
 msgid "Update your activities to ensure compatibility with your new software"
@@ -594,7 +619,7 @@ msgstr ""
 
 #: ../src/jarabe/desktop/homebox.py:116
 msgid "Check now"
-msgstr ""
+msgstr "Zkontrolovat nyní"
 
 #: ../src/jarabe/desktop/homebox.py:233
 msgid "List view"
@@ -612,32 +637,32 @@ msgstr "Zobrazit oblíbené"
 msgid "<Ctrl>1"
 msgstr "<Ctrl>1"
 
-#: ../src/jarabe/desktop/keydialog.py:131
+#: ../src/jarabe/desktop/keydialog.py:135
 msgid "Key Type:"
-msgstr ""
+msgstr "Druh Klíče:"
 
-#: ../src/jarabe/desktop/keydialog.py:151
+#: ../src/jarabe/desktop/keydialog.py:155
 msgid "Authentication Type:"
 msgstr ""
 
-#: ../src/jarabe/desktop/keydialog.py:215
+#: ../src/jarabe/desktop/keydialog.py:220
 msgid "WPA & WPA2 Personal"
 msgstr ""
 
-#: ../src/jarabe/desktop/keydialog.py:224
+#: ../src/jarabe/desktop/keydialog.py:229
 msgid "Wireless Security:"
 msgstr ""
 
-#: ../src/jarabe/desktop/meshbox.py:134
+#: ../src/jarabe/desktop/meshbox.py:160
 msgid "Connect"
 msgstr "Připojit"
 
-#: ../src/jarabe/desktop/meshbox.py:138
+#: ../src/jarabe/desktop/meshbox.py:164
 msgid "Disconnect"
 msgstr "Odpojit"
 
 #. TRANS: Action label for resuming an activity.
-#: ../src/jarabe/desktop/meshbox.py:444
+#: ../src/jarabe/desktop/meshbox.py:474
 #: ../src/jarabe/frame/activitiestray.py:761
 #: ../src/jarabe/journal/journaltoolbox.py:425
 #: ../src/jarabe/journal/palettes.py:72 ../src/jarabe/view/palettes.py:66
@@ -645,7 +670,7 @@ msgid "Resume"
 msgstr "Shrnutí"
 
 # ?
-#: ../src/jarabe/desktop/meshbox.py:449
+#: ../src/jarabe/desktop/meshbox.py:479
 #: ../src/jarabe/frame/activitiestray.py:235
 msgid "Join"
 msgstr "Připojit"
@@ -656,7 +681,7 @@ msgstr ""
 
 #: ../src/jarabe/desktop/schoolserver.py:51
 msgid "Cannot connect to the server."
-msgstr ""
+msgstr "Nemohu se připojit k serveru."
 
 #: ../src/jarabe/desktop/schoolserver.py:56
 msgid "The server could not complete the request."
@@ -665,7 +690,7 @@ msgstr ""
 #: ../src/jarabe/frame/activitiestray.py:240
 #: ../src/jarabe/frame/activitiestray.py:698
 msgid "Decline"
-msgstr ""
+msgstr "Nepřijmout"
 
 #: ../src/jarabe/frame/activitiestray.py:650
 #, python-format
@@ -758,27 +783,27 @@ msgstr "Zpět"
 msgid "Next"
 msgstr "Další"
 
-#: ../src/jarabe/journal/collapsedentry.py:258
-#: ../src/jarabe/journal/expandedentry.py:159
+#: ../src/jarabe/journal/collapsedentry.py:260
+#: ../src/jarabe/journal/expandedentry.py:158
 #: ../src/jarabe/journal/palettes.py:66
 msgid "Untitled"
-msgstr ""
+msgstr "Neoznačený"
 
-#: ../src/jarabe/journal/expandedentry.py:205
+#: ../src/jarabe/journal/expandedentry.py:211
 msgid "No preview"
-msgstr ""
+msgstr "Bez náhledu"
 
-#: ../src/jarabe/journal/expandedentry.py:224
+#: ../src/jarabe/journal/expandedentry.py:230
 msgid "Participants:"
 msgstr "Účastníci:"
 
-#: ../src/jarabe/journal/expandedentry.py:247
+#: ../src/jarabe/journal/expandedentry.py:253
 msgid "Description:"
 msgstr "Popis:"
 
-#: ../src/jarabe/journal/expandedentry.py:273
+#: ../src/jarabe/journal/expandedentry.py:282
 msgid "Tags:"
-msgstr ""
+msgstr "Vysačky:"
 
 #: ../src/jarabe/journal/journalactivity.py:108
 #: ../src/jarabe/journal/volumestoolbar.py:47
@@ -791,7 +816,7 @@ msgstr "Hledat"
 
 #: ../src/jarabe/journal/journaltoolbox.py:124
 msgid "Anytime"
-msgstr ""
+msgstr "Kdykoliv"
 
 #: ../src/jarabe/journal/journaltoolbox.py:126
 msgid "Today"
@@ -799,7 +824,7 @@ msgstr "Dnes"
 
 #: ../src/jarabe/journal/journaltoolbox.py:128
 msgid "Since yesterday"
-msgstr ""
+msgstr "Včera"
 
 #. TRANS: Filter entries modified during the last 7 days.
 #: ../src/jarabe/journal/journaltoolbox.py:130
@@ -818,7 +843,7 @@ msgstr "Minulý rok"
 
 #: ../src/jarabe/journal/journaltoolbox.py:141
 msgid "Anyone"
-msgstr ""
+msgstr "Kdokoliv"
 
 #: ../src/jarabe/journal/journaltoolbox.py:143
 msgid "My friends"
@@ -831,7 +856,7 @@ msgstr "Moje třída"
 #. TRANS: Item in a combo box that filters by entry type.
 #: ../src/jarabe/journal/journaltoolbox.py:271
 msgid "Anything"
-msgstr ""
+msgstr "Cokoliv"
 
 #: ../src/jarabe/journal/journaltoolbox.py:347
 #: ../src/jarabe/journal/palettes.py:90
@@ -852,13 +877,13 @@ msgstr "Tvůj Deník je prázdný"
 msgid "No matching entries "
 msgstr ""
 
-#: ../src/jarabe/journal/listview.py:370
+#: ../src/jarabe/journal/listview.py:372
 msgid "Clear search"
-msgstr ""
+msgstr "Smazat nalezené"
 
 #: ../src/jarabe/journal/misc.py:93
 msgid "No date"
-msgstr ""
+msgstr "Bez data"
 
 #: ../src/jarabe/journal/modalalert.py:63
 msgid "Your Journal is full"
@@ -915,7 +940,7 @@ msgstr ""
 
 #: ../src/jarabe/view/buddymenu.py:62
 msgid "Remove friend"
-msgstr ""
+msgstr "Vyjmout přítele"
 
 #: ../src/jarabe/view/buddymenu.py:65
 msgid "Make friend"
@@ -958,7 +983,7 @@ msgstr "Zastavit"
 
 #: ../src/jarabe/view/palettes.py:174
 msgid "Remove favorite"
-msgstr ""
+msgstr "Vyjmout oblíbené"
 
 #: ../src/jarabe/view/palettes.py:178
 msgid "Make favorite"
@@ -994,12 +1019,3 @@ msgstr ""
 #, python-format
 msgid "View source: %r"
 msgstr "Zobrazit zdroj: %r"
-
-#: ../extensions/deviceicon/network.py:114
-msgid "Create new wireless network"
-msgstr ""
-
-#: ../extensions/deviceicon/network.py:415
-#, python-format
-msgid "%s's network %s"
-msgstr ""
