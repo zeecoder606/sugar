@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2012-06-25 20:11+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2012-06-26 01:55+0200\n"
+"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: aym\n"
 "MIME-Version: 1.0\n"
@@ -105,12 +105,12 @@ msgstr "Saythapiyaña:"
 #  "Azúcar:"
 #: ../extensions/cpsection/aboutcomputer/view.py:114
 msgid "Sugar:"
-msgstr "Misk'i:"
+msgstr "Sugar sata wakichäwi:"
 
 #  "Firmware:"
 #: ../extensions/cpsection/aboutcomputer/view.py:129
 msgid "Firmware:"
-msgstr "Firmware:"
+msgstr "Firmware sata wakichäwi:"
 
 #  "Firmware de la red inalámbrica:"
 #: ../extensions/cpsection/aboutcomputer/view.py:144
@@ -1759,170 +1759,197 @@ msgstr "Wakichata mayjt'ayaña aliqata apanaqatawa."
 
 #: ../src/jarabe/model/network.py:169
 msgid "The device is no longer managed."
-msgstr ""
+msgstr "Wakichata mayjt'ayaña janiwa aliqata apanaqatati"
 
 #: ../src/jarabe/model/network.py:171
 msgid "The device could not be readied for configuration."
-msgstr ""
+msgstr "Wakichata mayjt'ayaña machaqachaña janiwa wakiyasiti"
 
 #: ../src/jarabe/model/network.py:173
 msgid ""
 "IP configuration could not be reserved (no available address, timeout, etc)."
 msgstr ""
+"Uka wakichata IP ukasti janiwa tumpatäkiti (janiwa uka katuña thakixa "
+"wakiyatati, pachatsa qhipt'ata, yaqhanakampi) "
 
 #: ../src/jarabe/model/network.py:176
 msgid "The IP configuration is no longer valid."
-msgstr ""
+msgstr "Uka wakichata IP ukasti janiwa askïxiti "
 
 #: ../src/jarabe/model/network.py:178
 msgid "Secrets were required, but not provided."
-msgstr ""
+msgstr "Jist'araña chimpunakawa wakisi, ukanakasa janikiwa wakichatati"
 
 #: ../src/jarabe/model/network.py:180
 msgid ""
 "The 802.1X supplicant disconnected from the access point or authentication "
 "server."
 msgstr ""
+"Uka wakichata 802.1X apanaqaña mayachasiñata apanukutawa ukampinsa server de "
+"autenticación taypitsa"
 
 #: ../src/jarabe/model/network.py:183
 msgid "Configuration of the 802.1X supplicant failed."
-msgstr ""
+msgstr "Uka wakichata 802.1X apanaqaña mayjt'ayañataki wakichäwixa pantjatawa. "
 
 #: ../src/jarabe/model/network.py:185
 msgid "The 802.1X supplicant quit or failed unexpectedly."
 msgstr ""
+"Uka wakichata 802.1X apanaqaña mayjt'ayañataki wakichäwixa maya akatjamata "
+"pantjatawa."
 
 #: ../src/jarabe/model/network.py:187
 msgid "The 802.1X supplicant took too long to authenticate."
 msgstr ""
+"Uka wakichata 802.1X apanaqaña mayjt'ayañataki wakichäwixa wali jayata "
+"uñt'ayasi."
 
 #: ../src/jarabe/model/network.py:189
 msgid "The PPP service failed to start within the allowed time."
-msgstr ""
+msgstr "Uka wakisiri PPP wakichataxa suma qalltañapa pachana pantjatawa."
 
 #: ../src/jarabe/model/network.py:191
 msgid "The PPP service disconnected unexpectedly."
-msgstr ""
+msgstr "Uka wakisiri PPP wakichataxa maya akatjamata chaqtawayi."
 
 #: ../src/jarabe/model/network.py:193
 msgid "The PPP service quit or failed unexpectedly."
 msgstr ""
+"Uka wakisiri PPP wakichataxa suma qalltkasina chaqtawayi ukampinsa maya "
+"akatjamata pantjasiwi."
 
 #: ../src/jarabe/model/network.py:195
 msgid "The DHCP service failed to start within the allowed time."
-msgstr ""
+msgstr "Uka wakisiri DHCP wakichata suma qalltañapa pachana pantjatawa."
 
 #: ../src/jarabe/model/network.py:197
 msgid "The DHCP service reported an unexpected error."
-msgstr ""
+msgstr "Uka wakisiri DHCP wakichata maya akatjamata pantjatawa uñasi."
 
 #: ../src/jarabe/model/network.py:199
 msgid "The DHCP service quit or failed unexpectedly."
 msgstr ""
+"Uka wakisiri DHCP wakichataxa suma qalltkasina chaqtawayi ukampinsa maya "
+"akatjamata pantjasiwi."
 
 #: ../src/jarabe/model/network.py:201
 msgid "The shared connection service failed to start."
 msgstr ""
+"Uka wakisiri waljanimpi mayachasiñataki wakichataxa qalltkasina pantjasiwi."
 
 #: ../src/jarabe/model/network.py:203
 msgid "The shared connection service quit or failed unexpectedly."
 msgstr ""
+"Uka wakisiri waljanimpi mayachasiñataki wakichataxa suma qalltkasina "
+"chaqtawayi ukampinsa maya akatjamata pantjasiwi."
 
 #: ../src/jarabe/model/network.py:206
 msgid "The AutoIP service failed to start."
-msgstr ""
+msgstr "Uka wakisiri AutoIP wakichataxa suma qalltkasina pantjasiwi."
 
 #: ../src/jarabe/model/network.py:208
 msgid "The AutoIP service reported an unexpected error."
-msgstr ""
+msgstr "Uka wakisiri AutoIP wakichataxa maya akatjamata pantjasitapa uñstayani."
 
 #: ../src/jarabe/model/network.py:210
 msgid "The AutoIP service quit or failed unexpectedly."
 msgstr ""
+"Uka wakisiri AutoIP wakichataxa suma qalltkasina chaqtawayi ukampinsa maya "
+"akatjamata pantjasiwi."
 
 #: ../src/jarabe/model/network.py:212
 msgid "Dialing failed because the line was busy."
 msgstr ""
+"Mayachasïwi pantjasiwiwa kunattixa mayachasiña wakisirina taqina "
+"apnaqatapata. "
 
 #: ../src/jarabe/model/network.py:214
 msgid "Dialing failed because there was no dial tone."
 msgstr ""
+"Mayachasïwi pantjasiwiwa kunattixa jani maya jawsuri sijiqiri utjatapata. "
 
 #: ../src/jarabe/model/network.py:216
 msgid "Dialing failed because there was no carrier."
-msgstr ""
+msgstr "Mayachasïwi pantjasiwiwa kunattixa uka apanaqairinaka jani utjatapata. "
 
 #: ../src/jarabe/model/network.py:218
 msgid "Dialing timed out."
-msgstr ""
+msgstr "Jawsaña pacha wakisirixa tukusiwiwa"
 
 #: ../src/jarabe/model/network.py:220
 msgid "Dialing failed."
-msgstr ""
+msgstr "Jawsäwi pantjasiwiwa."
 
 #: ../src/jarabe/model/network.py:222
 msgid "Modem initialization failed."
-msgstr ""
+msgstr "Modem sata wakichatana suma qalltäwipa pantatawa."
 
 #: ../src/jarabe/model/network.py:224
 msgid "Failed to select the specified GSM APN"
-msgstr ""
+msgstr "Pantjasitawa akïri wakichatanakaru mantkasina (APN) GSM"
 
 #: ../src/jarabe/model/network.py:226
 msgid "Not searching for networks."
-msgstr ""
+msgstr "Janiwa thaqasiti mayachasiña thakinaka."
 
 #: ../src/jarabe/model/network.py:228
 msgid "Network registration was denied."
-msgstr ""
+msgstr "Mayachasiña thakinaka taypina qillqantayasiña jani katuqatawa."
 
+# Registración en la red expiró.
 #: ../src/jarabe/model/network.py:230
 msgid "Network registration timed out."
-msgstr ""
+msgstr "Mayachasiña thakinaka taypina qillqantayasiña janiwa katuqasxiti."
 
+# Falló la registración con la red GSM solicitada.
 #: ../src/jarabe/model/network.py:232
 msgid "Failed to register with the requested GSM network."
 msgstr ""
+"Mayachasiñata qillqantayasiña pantjasiwiwa uka wakisiri GSM wakichata "
+"wakisipana."
 
 #: ../src/jarabe/model/network.py:234
 msgid "PIN check failed."
-msgstr ""
+msgstr "PIN wakichata qhantayaña pantjata."
 
+# Firmware necesario para el dispositivo puede faltar.
 #: ../src/jarabe/model/network.py:236
 msgid "Necessary firmware for the device may be missing."
-msgstr ""
+msgstr "Firmware wakichata wakisiri mayjt'ayaña pantjata."
 
 #: ../src/jarabe/model/network.py:238
 msgid "The device was removed."
-msgstr ""
+msgstr "Wakichata mayjt'ayaña yänaka chhaqatawa."
 
+# NetworkManager fue dormido.
 #: ../src/jarabe/model/network.py:240
 msgid "NetworkManager went to sleep."
-msgstr ""
+msgstr "NetworkManager wakichata ikjawayiwa."
 
 #: ../src/jarabe/model/network.py:242
 msgid "The device's active connection was removed or disappeared."
 msgstr ""
+"Wakichata mayjt'ayiri yänaka yaqha tuqiru apanukusiwi jani ukaxa chhaqatawa."
 
 #: ../src/jarabe/model/network.py:245
 msgid "A user or client requested the disconnection."
-msgstr ""
+msgstr "Yaqha mayachasiriwa mayachasiñata jaltayawi."
 
 #: ../src/jarabe/model/network.py:247
 msgid "The device's carrier/link changed."
-msgstr ""
+msgstr "Uka apanaqiri/link wakichata mayjt'awayi."
 
 #: ../src/jarabe/view/buddymenu.py:67
 msgid "Remove friend"
-msgstr ""
+msgstr "Mayachasiri masiru apanukuña"
 
 #: ../src/jarabe/view/buddymenu.py:70
 msgid "Make friend"
-msgstr ""
+msgstr "Mayachasiri masiru katuqaña"
 
 #: ../src/jarabe/view/buddymenu.py:87
 msgid "Shutdown"
-msgstr ""
+msgstr "Jiwayaña"
 
 #  "Reiniciar"
 #: ../src/jarabe/view/buddymenu.py:95
@@ -1931,34 +1958,34 @@ msgstr "Wasitata qalltaña"
 
 #: ../src/jarabe/view/buddymenu.py:101
 msgid "Logout"
-msgstr ""
+msgstr "Mistuña"
 
 #: ../src/jarabe/view/buddymenu.py:106
 msgid "My Settings"
-msgstr ""
+msgstr "Nayana chiqachataja"
 
 #: ../src/jarabe/view/buddymenu.py:142
 #, python-format
 msgid "Invite to %s"
-msgstr ""
+msgstr "Jawst'añataki  %s"
 
 #: ../src/jarabe/view/launcher.py:145
 #, python-format
 msgid "<b>%s</b> failed to start."
-msgstr ""
+msgstr "<b>%s</b> suma qalltkasina panjasiwi."
 
 #: ../src/jarabe/view/palettes.py:48
 msgid "Starting..."
-msgstr ""
+msgstr "Qalltaskiwa..."
 
 #: ../src/jarabe/view/palettes.py:58
 msgid "Activity failed to start"
-msgstr ""
+msgstr "Luräwi suma qalltkasina pantjasiwi"
 
 #. TODO: share-with, keep
 #: ../src/jarabe/view/palettes.py:91
 msgid "View Source"
-msgstr ""
+msgstr "Wakisiri qillqatanakapa uñakipaña"
 
 #  "Parar"
 #: ../src/jarabe/view/palettes.py:102
@@ -1967,11 +1994,11 @@ msgstr "Sayt'ayaña"
 
 #: ../src/jarabe/view/palettes.py:139
 msgid "Start new"
-msgstr ""
+msgstr "Mayampi qalltaña"
 
 #: ../src/jarabe/view/palettes.py:180
 msgid "Show contents"
-msgstr ""
+msgstr "Wakichatanaka uñachayaña"
 
 # "Eliminar"
 #  SYNTAX ERROR: msgctxt "Clipboard"
@@ -1983,27 +2010,27 @@ msgstr "Chhaqtayaña"
 
 #: ../src/jarabe/view/viewsource.py:263
 msgid "Instance Source"
-msgstr ""
+msgstr "Wakisiri wakichatana nakhtayiripa"
 
 #  "Fuente"
 #: ../src/jarabe/view/viewsource.py:312
 msgid "Source"
-msgstr "Naktayiri"
+msgstr "Nakhtayiri"
 
 #: ../src/jarabe/view/viewsource.py:374
 msgid "Activity Bundle Source"
-msgstr ""
+msgstr "Luräwi wakichatanakana nakhtayiripa"
 
 #: ../src/jarabe/view/viewsource.py:393
 msgid "Sugar Toolkit Source"
-msgstr ""
+msgstr "SugarToolkit wakichata nakhtayiri"
 
 #: ../src/jarabe/view/viewsource.py:400 ../src/jarabe/view/viewsource.py:401
 #, python-format
 msgid "View source: %r"
-msgstr ""
+msgstr "Nakhtayiri ch'ikupa uñjaña: %r"
 
 #  "Sugar en una ventana"
 #: ../src/jarabe/util/emulator.py:40
 msgid "Sugar in a window"
-msgstr "Mis'ki wakichawi"
+msgstr "Sugar sata wakichäwina uñstäwipa"
