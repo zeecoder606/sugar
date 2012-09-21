@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2012-06-26 01:55+0200\n"
-"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
+"PO-Revision-Date: 2012-09-21 19:37+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: aym\n"
 "MIME-Version: 1.0\n"
@@ -442,11 +442,11 @@ msgstr "Software wakichäwimaxa machaqachatawa"
 #  msgstr[1] "Puedes instalar %s actualizaciones"
 #: ../extensions/cpsection/updater/view.py:141
 #, python-format
-#, python-format, fuzzy
+#, python-format, 
 msgid "You can install %s update"
 msgid_plural "You can install %s updates"
-msgstr[0] "Uchantaña qalltasmawa machaqachaña"
-msgstr[1] "Uchantaña qalltasmawa machaqachañanaka"
+msgstr[0] "%s wakichata machaqachaña qalltasmawa"
+msgstr[1] "%s wakichatanaka machaqachaña qalltasmawa"
 
 #  "Buscando actualizaciones..."
 #: ../extensions/cpsection/updater/view.py:159
@@ -462,11 +462,11 @@ msgstr "Machaqaptayaña ut'ayaski..."
 #  msgstr[1] "%s actualizaciones fueron instaladas"
 #: ../extensions/cpsection/updater/view.py:173
 #, python-format
-#, python-format, fuzzy
+#, python-format, 
 msgid "%s update was installed"
 msgid_plural "%s updates were installed"
-msgstr[0] "%s machaqatawi uchatawxiwa"
-msgstr[1] "%s machaqatawinakaxa uchatawxiwa"
+msgstr[0] "%s wakichata machaqachäwixa wakichatäxiwa"
+msgstr[1] "%s wakichatanaka machaqachäwixa wakichatäxiwa"
 
 #  "Instalación seleccionada"
 #: ../extensions/cpsection/updater/view.py:255
@@ -613,9 +613,8 @@ msgstr "Mayachaña"
 
 #  "Desconectado"
 #: ../extensions/deviceicon/network.py:287
-#, fuzzy
 msgid "Disconnected"
-msgstr "Jaljtayaña"
+msgstr "Mayachatata mistuta"
 
 #  "Cancelar"
 #: ../extensions/deviceicon/network.py:294
@@ -758,7 +757,7 @@ msgstr ""
 
 #: ../data/sugar.schemas.in.h:2
 msgid "Additional directories which can contain updated translations."
-msgstr ""
+msgstr "Sutinaka wakichata yapxatataxa machaqachata aru jaqukipatanispawa."
 
 #: ../data/sugar.schemas.in.h:3
 msgid "Backup URL"
@@ -1759,26 +1758,26 @@ msgstr "Wakichata mayjt'ayaña aliqata apanaqatawa."
 
 #: ../src/jarabe/model/network.py:169
 msgid "The device is no longer managed."
-msgstr "Wakichata mayjt'ayaña janiwa aliqata apanaqatati"
+msgstr "Wakichata mayjt'ayaña janiwa aliqata apanaqatati."
 
 #: ../src/jarabe/model/network.py:171
 msgid "The device could not be readied for configuration."
-msgstr "Wakichata mayjt'ayaña machaqachaña janiwa wakiyasiti"
+msgstr "Wakichata mayjt'ayaña machaqachaña janiwa wakiyasiti."
 
 #: ../src/jarabe/model/network.py:173
 msgid ""
 "IP configuration could not be reserved (no available address, timeout, etc)."
 msgstr ""
 "Uka wakichata IP ukasti janiwa tumpatäkiti (janiwa uka katuña thakixa "
-"wakiyatati, pachatsa qhipt'ata, yaqhanakampi) "
+"wakiyatati, pachatsa qhipt'ata, yaqhanakampi)."
 
 #: ../src/jarabe/model/network.py:176
 msgid "The IP configuration is no longer valid."
-msgstr "Uka wakichata IP ukasti janiwa askïxiti "
+msgstr "Uka wakichata IP ukasti janiwa askïxiti."
 
 #: ../src/jarabe/model/network.py:178
 msgid "Secrets were required, but not provided."
-msgstr "Jist'araña chimpunakawa wakisi, ukanakasa janikiwa wakichatati"
+msgstr "Jist'araña chimpunakawa wakisi, ukanakasa janikiwa wakichatati."
 
 #: ../src/jarabe/model/network.py:180
 msgid ""
@@ -1786,11 +1785,11 @@ msgid ""
 "server."
 msgstr ""
 "Uka wakichata 802.1X apanaqaña mayachasiñata apanukutawa ukampinsa server de "
-"autenticación taypitsa"
+"autenticación taypitsa."
 
 #: ../src/jarabe/model/network.py:183
 msgid "Configuration of the 802.1X supplicant failed."
-msgstr "Uka wakichata 802.1X apanaqaña mayjt'ayañataki wakichäwixa pantjatawa. "
+msgstr "Uka wakichata 802.1X apanaqaña mayjt'ayañataki wakichäwixa pantjatawa."
 
 #: ../src/jarabe/model/network.py:185
 msgid "The 802.1X supplicant quit or failed unexpectedly."
@@ -1861,20 +1860,20 @@ msgstr ""
 msgid "Dialing failed because the line was busy."
 msgstr ""
 "Mayachasïwi pantjasiwiwa kunattixa mayachasiña wakisirina taqina "
-"apnaqatapata. "
+"apnaqatapata."
 
 #: ../src/jarabe/model/network.py:214
 msgid "Dialing failed because there was no dial tone."
 msgstr ""
-"Mayachasïwi pantjasiwiwa kunattixa jani maya jawsuri sijiqiri utjatapata. "
+"Mayachasïwi pantjasiwiwa kunattixa jani maya jawsuri sijiqiri utjatapata."
 
 #: ../src/jarabe/model/network.py:216
 msgid "Dialing failed because there was no carrier."
-msgstr "Mayachasïwi pantjasiwiwa kunattixa uka apanaqairinaka jani utjatapata. "
+msgstr "Mayachasïwi pantjasiwiwa kunattixa uka apanaqairinaka jani utjatapata."
 
 #: ../src/jarabe/model/network.py:218
 msgid "Dialing timed out."
-msgstr "Jawsaña pacha wakisirixa tukusiwiwa"
+msgstr "Jawsaña pacha wakisirixa tukusiwiwa."
 
 #: ../src/jarabe/model/network.py:220
 msgid "Dialing failed."
@@ -2003,7 +2002,6 @@ msgstr "Wakichatanaka uñachayaña"
 # "Eliminar"
 #  SYNTAX ERROR: msgctxt "Clipboard"
 #: ../src/jarabe/view/palettes.py:229
-#, fuzzy
 msgctxt "Volume"
 msgid "Remove"
 msgstr "Chhaqtayaña"
