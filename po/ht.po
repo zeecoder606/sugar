@@ -7,54 +7,55 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2008-03-12 09:14-0400\n"
-"Last-Translator: Jude Augusma <jayme2901@yahoo.com>\n"
+"PO-Revision-Date: 2012-10-05 20:46+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ht\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n !=1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../extensions/cpsection/aboutme/__init__.py:24
 msgid "About Me"
-msgstr ""
+msgstr "Enfòmasyon pèsonèl"
 
 #: ../extensions/cpsection/aboutme/model.py:48
 msgid "You must enter a name."
-msgstr ""
+msgstr "Ou dwe rantre yon non."
 
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
 msgid "stroke:   color=%s hue=%s"
-msgstr ""
+msgstr "stroke:   koulè=%s hue=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:78
 #, python-format
 msgid "stroke:   %s"
-msgstr ""
+msgstr "stroke:   %s"
 
 #: ../extensions/cpsection/aboutme/model.py:80
 #, python-format
 msgid "fill:     color=%s hue=%s"
-msgstr ""
+msgstr "fill:     koulè=%s hue=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:82
 #, python-format
 msgid "fill:     %s"
-msgstr ""
+msgstr "fill:     %s"
 
 #: ../extensions/cpsection/aboutme/model.py:94
 msgid "Error in specified color modifiers."
-msgstr "Erè nan modifikatè endike koulè yo"
+msgstr "Erè nan modifikatè endike koulè yo."
 
 #: ../extensions/cpsection/aboutme/model.py:97
 msgid "Error in specified colors."
-msgstr "Erè nan koulè endike yo"
+msgstr "Erè nan koulè endike yo."
 
 #: ../extensions/cpsection/aboutme/view.py:235
-#, fuzzy
 msgid "Click to change your color:"
-msgstr "Klike pou chanje koulè"
+msgstr "Klike pou chanje koulè:"
 
 #: ../extensions/cpsection/aboutcomputer/__init__.py:21
 msgid "About my Computer"
@@ -67,23 +68,23 @@ msgstr "Pa disponib"
 #: ../extensions/cpsection/aboutcomputer/model.py:183
 #, python-format
 msgid "%(interface)s: %(version)s"
-msgstr ""
+msgstr "%(interface)s: %(version)s"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:59
 msgid "Identity"
-msgstr ""
+msgstr "Idantite"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:68
 msgid "Serial Number:"
-msgstr ""
+msgstr "Nimero seri:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:90
 msgid "Software"
-msgstr ""
+msgstr "Pwogram"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:99
 msgid "Build:"
-msgstr ""
+msgstr "Bati:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:114
 msgid "Sugar:"
@@ -91,7 +92,7 @@ msgstr ""
 
 #: ../extensions/cpsection/aboutcomputer/view.py:129
 msgid "Firmware:"
-msgstr ""
+msgstr "Mikrolojisyèl:"
 
 #: ../extensions/cpsection/aboutcomputer/view.py:144
 msgid "Wireless Firmware:"
@@ -115,7 +116,7 @@ msgstr ""
 
 #: ../extensions/cpsection/datetime/__init__.py:21
 msgid "Date & Time"
-msgstr ""
+msgstr "Dat ak lè"
 
 #: ../extensions/cpsection/datetime/model.py:92
 msgid "Error timezone does not exist."
@@ -123,41 +124,41 @@ msgstr "Erè lè lokal pa egziste."
 
 #: ../extensions/cpsection/datetime/view.py:70 ../data/sugar.schemas.in.h:52
 msgid "Timezone"
-msgstr ""
+msgstr "Lè lokal"
 
 #: ../extensions/cpsection/frame/__init__.py:21
 msgid "Frame"
-msgstr ""
+msgstr "Ankadreman"
 
 #: ../extensions/cpsection/frame/model.py:41
 #: ../extensions/cpsection/frame/model.py:66
 msgid "Value must be an integer."
-msgstr ""
+msgstr "Valè-a dwe yon antye."
 
 #: ../extensions/cpsection/frame/view.py:27
 msgid "never"
-msgstr ""
+msgstr "Jamè"
 
 #: ../extensions/cpsection/frame/view.py:28
 msgid "instantaneous"
-msgstr ""
+msgstr "imediat"
 
 #: ../extensions/cpsection/frame/view.py:29
 #, python-format
 msgid "%s seconds"
-msgstr ""
+msgstr "%s segond"
 
 #: ../extensions/cpsection/frame/view.py:54
 msgid "Activation Delay"
-msgstr ""
+msgstr "Reta aktivasyon"
 
 #: ../extensions/cpsection/frame/view.py:78
 msgid "Corner"
-msgstr ""
+msgstr "Kwen"
 
 #: ../extensions/cpsection/frame/view.py:113
 msgid "Edge"
-msgstr ""
+msgstr "Bò"
 
 #: ../extensions/cpsection/keyboard/__init__.py:21
 #: ../extensions/cpsection/keyboard/view.py:32
@@ -179,12 +180,11 @@ msgstr ""
 #: ../extensions/cpsection/language/__init__.py:21
 #: ../extensions/cpsection/language/view.py:33
 msgid "Language"
-msgstr ""
+msgstr "Lang"
 
 #: ../extensions/cpsection/language/model.py:30
-#, fuzzy
 msgid "Could not access ~/.i18n. Create standard settings."
-msgstr "Pa ka rantre %s. Kreye reglaj estanda"
+msgstr "Aksè enposib ~/.i18n. Kreye paramèt pa defo yo."
 
 #: ../extensions/cpsection/language/model.py:129
 #, python-format
@@ -239,24 +239,23 @@ msgstr ""
 #: ../extensions/cpsection/network/__init__.py:21
 #: ../extensions/cpsection/network/view.py:29
 msgid "Network"
-msgstr ""
+msgstr "Rezo"
 
 #: ../extensions/cpsection/network/model.py:71
 msgid "State is unknown."
-msgstr "Yo pa konnen eta l'"
+msgstr "Yo pa konnen eta l'."
 
 #: ../extensions/cpsection/network/model.py:99
 msgid "Error in specified radio argument use on/off."
-msgstr "Erè nan itilizasyon limen/etenn agiman radio endike-a. "
+msgstr "Erè nan itilizasyon limen/etenn agiman radio endike-a."
 
 #: ../extensions/cpsection/network/model.py:140
-#, fuzzy
 msgid "Error in specified argument use 0/1."
-msgstr "Erè nan itilizasyon limen/etenn agiman radio endike-a. "
+msgstr "Agiman espesifye-a pa kòrèk sèvi 0/1."
 
 #: ../extensions/cpsection/network/view.py:61
 msgid "Wireless"
-msgstr ""
+msgstr "San fil"
 
 #: ../extensions/cpsection/network/view.py:69
 msgid "Turn off the wireless radio to save battery life"
@@ -276,7 +275,7 @@ msgstr ""
 
 #: ../extensions/cpsection/network/view.py:122
 msgid "Collaboration"
-msgstr ""
+msgstr "Kolaborasyon"
 
 #: ../extensions/cpsection/network/view.py:130
 msgid ""
@@ -287,36 +286,40 @@ msgstr ""
 
 #: ../extensions/cpsection/network/view.py:140
 msgid "Server:"
-msgstr ""
+msgstr "Sèvè:"
 
 #: ../extensions/cpsection/power/__init__.py:21
 msgid "Power"
-msgstr ""
+msgstr "Alimantasyon"
 
 #: ../extensions/cpsection/power/model.py:90
 msgid "Error in automatic pm argument, use on/off."
-msgstr ""
+msgstr "Agiman pou jere alimantasyon otomatik la pa kòrèk sèvi ak limen/etenn."
 
 #: ../extensions/cpsection/power/model.py:120
 msgid "Error in extreme pm argument, use on/off."
-msgstr ""
+msgstr "Agiman pou gere alimantasyon ak dèyo pa kòrèk sèvi ak limen/etenn."
 
 #: ../extensions/cpsection/power/view.py:48
 msgid "Power management"
-msgstr ""
+msgstr "Jere alimantasyon"
 
 #: ../extensions/cpsection/power/view.py:58
 msgid "Automatic power management (increases battery life)"
-msgstr ""
+msgstr "automatic power management(ogmante tan batri a ap bay)"
 
 #: ../extensions/cpsection/power/view.py:86
+#, fuzzy
 msgid ""
 "Extreme power management (disables wireless radio, increases battery life)"
 msgstr ""
+"Jesyon ekstrèm enèji batri a(retire posibilite capte ond wireless, ogmante "
+"tan batri a ap bay)"
 
 #: ../extensions/cpsection/updater/__init__.py:21
+#, fuzzy
 msgid "Software update"
-msgstr ""
+msgstr "Mete logisyèl la ajou"
 
 #: ../extensions/cpsection/updater/view.py:63
 msgid ""
@@ -404,7 +407,7 @@ msgstr ""
 
 #: ../extensions/deviceicon/battery.py:71
 msgid "My Battery"
-msgstr ""
+msgstr "Batri-m"
 
 #: ../extensions/deviceicon/battery.py:147
 #, fuzzy
@@ -413,20 +416,20 @@ msgstr "Retire"
 
 #: ../extensions/deviceicon/battery.py:150
 msgid "Charging"
-msgstr ""
+msgstr "Ap chaje"
 
 #: ../extensions/deviceicon/battery.py:153
 msgid "Very little power remaining"
-msgstr ""
+msgstr "Yon ti kras chaj ki rete"
 
 #: ../extensions/deviceicon/battery.py:158
 #, python-format
 msgid "%(hour)d:%(min).2d remaining"
-msgstr ""
+msgstr "%(hour)d:%(min).2d ki rete"
 
 #: ../extensions/deviceicon/battery.py:161
 msgid "Charged"
-msgstr ""
+msgstr "Fin chaje"
 
 #: ../extensions/deviceicon/network.py:49
 #, python-format
@@ -437,7 +440,6 @@ msgstr ""
 #: ../extensions/deviceicon/network.py:303
 #: ../src/jarabe/desktop/networkviews.py:141
 #: ../src/jarabe/desktop/networkviews.py:510
-#, fuzzy
 msgid "Disconnect"
 msgstr "Dekonekte"
 
@@ -450,17 +452,17 @@ msgstr "Dekonekte"
 #: ../src/jarabe/desktop/networkviews.py:245
 #: ../src/jarabe/desktop/networkviews.py:549
 #: ../src/jarabe/desktop/networkviews.py:683
-#, fuzzy
 msgid "Connecting..."
-msgstr "Dekonekte..."
+msgstr "An koneksyon..."
 
+# TODO: show the channel number
 #: ../extensions/deviceicon/network.py:117
 #: ../extensions/deviceicon/network.py:185
 #: ../src/jarabe/desktop/networkviews.py:255
 #: ../src/jarabe/desktop/networkviews.py:555
 #: ../src/jarabe/desktop/networkviews.py:689
 msgid "Connected"
-msgstr ""
+msgstr "Konekte"
 
 #: ../extensions/deviceicon/network.py:130
 msgid "No wireless connection"
@@ -476,7 +478,7 @@ msgstr ""
 
 #: ../extensions/deviceicon/network.py:188
 msgid "Speed"
-msgstr ""
+msgstr "Vitès"
 
 #: ../extensions/deviceicon/network.py:213
 msgid "Wireless modem"
@@ -491,7 +493,7 @@ msgstr ""
 #: ../src/jarabe/desktop/networkviews.py:506
 #: ../src/jarabe/desktop/networkviews.py:639
 msgid "Connect"
-msgstr ""
+msgstr "Konekte"
 
 #: ../extensions/deviceicon/network.py:287
 msgid "Disconnected"
@@ -504,7 +506,7 @@ msgstr "Dekonekte"
 #: ../src/jarabe/frame/activitiestray.py:704
 #: ../src/jarabe/frame/activitiestray.py:732
 msgid "Cancel"
-msgstr ""
+msgstr "Anile"
 
 #: ../extensions/deviceicon/network.py:333
 msgid "Try connection again"
@@ -549,13 +551,13 @@ msgstr ""
 
 #: ../extensions/deviceicon/network.py:615
 msgid "Mesh Network"
-msgstr "Rezo "
+msgstr "Rezo"
 
 #: ../extensions/deviceicon/network.py:659
 #, python-format
-#, python-format, fuzzy
+#, python-format, 
 msgid "Mesh Network %s"
-msgstr "Rezo "
+msgstr "Rezo %s"
 
 #: ../extensions/deviceicon/network.py:782
 msgid "No GSM connection available."
@@ -567,15 +569,15 @@ msgstr ""
 
 #: ../extensions/deviceicon/speaker.py:61
 msgid "My Speakers"
-msgstr ""
+msgstr "Opalè m' yo"
 
 #: ../extensions/deviceicon/speaker.py:138
 msgid "Unmute"
-msgstr ""
+msgstr "Aktive son an"
 
 #: ../extensions/deviceicon/speaker.py:141
 msgid "Mute"
-msgstr ""
+msgstr "Dezaktive son an"
 
 #: ../extensions/deviceicon/touchpad.py:38
 msgid "finger"
@@ -591,7 +593,7 @@ msgstr ""
 
 #: ../extensions/globalkey/screenshot.py:59
 msgid "Mesh"
-msgstr ""
+msgstr "Rezo maye"
 
 #: ../extensions/globalkey/screenshot.py:61
 #: ../src/jarabe/frame/zoomtoolbar.py:41
@@ -881,6 +883,8 @@ msgid ""
 "sugar-control-panel: WARNING, found more than one option with the same name: "
 "%s module: %r"
 msgstr ""
+"Sugar-control-panel: Atansyon, yo jwenn plizyè opsyon ak yon menm non: %s "
+"modil: %r"
 
 #: ../src/jarabe/controlpanel/cmd.py:30
 #, python-format
@@ -892,10 +896,11 @@ msgstr "Sugar-kontwòl-panèl: kle=%s pa yon opsyon disponib"
 msgid "sugar-control-panel: %s"
 msgstr "Sugar-kontwòl-panèl: %s"
 
+# TRANS: Translators, there's a empty line at the end of this string,
+# which must appear in the translated string (msgstr) as well.
 #. TRANS: Translators, there's a empty line at the end of this string,
 #. which must appear in the translated string (msgstr) as well.
 #: ../src/jarabe/controlpanel/cmd.py:38
-#, fuzzy
 msgid ""
 "Usage: sugar-control-panel [ option ] key [ args ... ] \n"
 "    Control for the sugar environment. \n"
@@ -916,7 +921,7 @@ msgstr ""
 "\t-h kle\tmontre enfòmasyon sou kle sa \n"
 "\t-g kle\tpwan valè kouran kle-a \n"
 "\t-s kle\tfikse valè Kouran pou kle-a \n"
-"\t"
+"    "
 
 #: ../src/jarabe/controlpanel/cmd.py:52
 msgid "To apply your changes you have to restart sugar.\n"
@@ -926,24 +931,24 @@ msgstr "Pou aplike chanjman ou yo ou bezwen reyinisyalize program nan.\n"
 #: ../src/jarabe/journal/palettes.py:246 ../src/jarabe/journal/palettes.py:279
 #: ../src/jarabe/journal/volumestoolbar.py:307
 msgid "Warning"
-msgstr ""
+msgstr "Avètisman"
 
 #: ../src/jarabe/controlpanel/gui.py:298
 #: ../src/jarabe/controlpanel/sectionview.py:41
 msgid "Changes require restart"
-msgstr ""
+msgstr "Redemare pou aplike chanjman yo"
 
 #: ../src/jarabe/controlpanel/gui.py:301
 msgid "Cancel changes"
-msgstr ""
+msgstr "Anile chanjman yo"
 
 #: ../src/jarabe/controlpanel/gui.py:306 ../src/jarabe/desktop/homebox.py:73
 msgid "Later"
-msgstr ""
+msgstr "Pi ta"
 
 #: ../src/jarabe/controlpanel/gui.py:310
 msgid "Restart now"
-msgstr ""
+msgstr "Redemare kounye a menm"
 
 #: ../src/jarabe/controlpanel/toolbar.py:63 ../src/jarabe/intro/window.py:201
 msgid "Done"
@@ -952,7 +957,7 @@ msgstr "Fini"
 #: ../src/jarabe/controlpanel/toolbar.py:125
 #: ../src/jarabe/desktop/favoritesview.py:347
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: ../src/jarabe/desktop/activitieslist.py:230
 #, python-format
@@ -961,43 +966,45 @@ msgstr ""
 
 #: ../src/jarabe/desktop/activitieslist.py:356
 msgid "Confirm erase"
-msgstr ""
+msgstr "Konfime sa ou efase a"
 
 #: ../src/jarabe/desktop/activitieslist.py:358
 #, python-format
 msgid "Confirm erase: Do you want to permanently erase %s?"
-msgstr ""
+msgstr "Konfime sa ou efase a: ou vle retire'l net %s?"
 
 #: ../src/jarabe/desktop/activitieslist.py:362
 #: ../src/jarabe/frame/clipboardmenu.py:67
 #: ../src/jarabe/view/viewsource.py:280
 msgid "Keep"
-msgstr ""
+msgstr "Kenbe"
 
 #: ../src/jarabe/desktop/activitieslist.py:365
 #: ../src/jarabe/desktop/activitieslist.py:419
 #: ../src/jarabe/journal/journaltoolbox.py:413
 #: ../src/jarabe/journal/palettes.py:126
 msgid "Erase"
-msgstr ""
+msgstr "Efase"
 
 #: ../src/jarabe/desktop/activitieslist.py:435
 msgid "Remove favorite"
-msgstr ""
+msgstr "Siprime favori"
 
 #: ../src/jarabe/desktop/activitieslist.py:439
 msgid "Make favorite"
-msgstr ""
+msgstr "Ajoute nan favori"
 
+# TRANS: label for the freeform layout in the favorites view
 #. TRANS: label for the freeform layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:127
 msgid "Freeform"
-msgstr ""
+msgstr "Fòm lib"
 
+# TRANS: label for the ring layout in the favorites view
 #. TRANS: label for the ring layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:215
 msgid "Ring"
-msgstr ""
+msgstr "Zanno"
 
 #. TRANS: label for the spiral layout in the favorites view
 #: ../src/jarabe/desktop/favoriteslayout.py:402
@@ -1016,20 +1023,21 @@ msgstr ""
 
 #: ../src/jarabe/desktop/favoritesview.py:338
 msgid "Registration Failed"
-msgstr ""
+msgstr "enskripsyon an pa fèt"
 
+# se yon kòd enfòmatik li pa dwe chanje
 #: ../src/jarabe/desktop/favoritesview.py:339
 #, python-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../src/jarabe/desktop/favoritesview.py:341
 msgid "Registration Successful"
-msgstr ""
+msgstr "enskripsyon an fèt"
 
 #: ../src/jarabe/desktop/favoritesview.py:342
 msgid "You are now registered with your school server."
-msgstr ""
+msgstr "ou pa enskri avek sèvè lekol ou a."
 
 #: ../src/jarabe/desktop/favoritesview.py:641
 msgid "Register"
@@ -1042,31 +1050,32 @@ msgstr ""
 
 #: ../src/jarabe/desktop/homebox.py:66
 msgid "Software Update"
-msgstr ""
+msgstr "Mete logisyèl la ajou"
 
 #: ../src/jarabe/desktop/homebox.py:67
 msgid "Update your activities to ensure compatibility with your new software"
 msgstr ""
+"Mete aktivite ou yo ajou pou asire yap byen mache avèk nouvo lojisyèl ou a"
 
 #: ../src/jarabe/desktop/homebox.py:76
 msgid "Check now"
-msgstr ""
+msgstr "Verifye kounye a"
 
 #: ../src/jarabe/desktop/homebox.py:197
 msgid "List view"
-msgstr ""
+msgstr "Gade lis"
 
 #: ../src/jarabe/desktop/homebox.py:198
 msgid "<Ctrl>2"
-msgstr ""
+msgstr "<Ctrl>2"
 
 #: ../src/jarabe/desktop/homebox.py:253
 msgid "Favorites view"
-msgstr ""
+msgstr "Fas prefere"
 
 #: ../src/jarabe/desktop/homebox.py:254
 msgid "<Ctrl>1"
-msgstr ""
+msgstr "<Ctrl>1"
 
 #: ../src/jarabe/desktop/keydialog.py:94
 #, python-format
@@ -1112,20 +1121,20 @@ msgstr ""
 #, python-format
 #, python-format, fuzzy
 msgid "Mesh Network %d"
-msgstr "Rezo "
+msgstr "Rezo %d"
 
 #: ../src/jarabe/desktop/schoolserver.py:143
 msgid "Cannot connect to the server."
-msgstr ""
+msgstr "Pa kapab konekte nan sèvè a."
 
 #: ../src/jarabe/desktop/schoolserver.py:150
 msgid "The server could not complete the request."
-msgstr ""
+msgstr "Sèvè a pa kapab konplete rekèt la."
 
 #: ../src/jarabe/frame/activitiestray.py:187
 #: ../src/jarabe/frame/activitiestray.py:574
 msgid "Decline"
-msgstr ""
+msgstr "Refize"
 
 #: ../src/jarabe/frame/activitiestray.py:523
 #, python-format
@@ -1160,7 +1169,7 @@ msgstr ""
 #: ../src/jarabe/frame/activitiestray.py:722
 #, python-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: ../src/jarabe/frame/activitiestray.py:626
 #: ../src/jarabe/frame/activitiestray.py:639
@@ -1190,7 +1199,7 @@ msgstr "Louvri"
 
 #: ../src/jarabe/frame/clipboardmenu.py:90
 msgid "Open with"
-msgstr ""
+msgstr "Ouvri ak"
 
 #: ../src/jarabe/frame/clipboardobject.py:50
 #, python-format
@@ -1219,11 +1228,11 @@ msgstr ""
 
 #: ../src/jarabe/intro/window.py:90
 msgid "Name:"
-msgstr "Non"
+msgstr "Non:"
 
 #: ../src/jarabe/intro/window.py:126
 msgid "Click to change color:"
-msgstr "Klike pou chanje koulè"
+msgstr "Klike pou chanje koulè:"
 
 #: ../src/jarabe/intro/window.py:187 ../src/jarabe/journal/detailview.py:105
 msgid "Back"
@@ -1237,11 +1246,11 @@ msgstr "Prochen"
 #: ../src/jarabe/journal/listmodel.py:144 ../src/jarabe/journal/palettes.py:64
 #: ../src/jarabe/journal/volumestoolbar.py:130
 msgid "Untitled"
-msgstr ""
+msgstr "San tit"
 
 #: ../src/jarabe/journal/expandedentry.py:245
 msgid "No preview"
-msgstr ""
+msgstr "Pa gen previziyalizasyon"
 
 #: ../src/jarabe/journal/expandedentry.py:264
 #, python-format
@@ -1267,73 +1276,77 @@ msgstr ""
 #: ../src/jarabe/journal/expandedentry.py:294
 #: ../src/jarabe/journal/misc.py:108
 msgid "No date"
-msgstr ""
+msgstr "Pa gen dat"
 
 #: ../src/jarabe/journal/expandedentry.py:301
 msgid "Participants:"
-msgstr ""
+msgstr "Patisipan yo:"
 
 #: ../src/jarabe/journal/expandedentry.py:323
 msgid "Description:"
-msgstr ""
+msgstr "Deskripsyon:"
 
 #: ../src/jarabe/journal/expandedentry.py:348
 msgid "Tags:"
-msgstr ""
+msgstr "Etikèt:"
 
 #: ../src/jarabe/journal/journalactivity.py:115
 #: ../src/jarabe/journal/journaltoolbox.py:468
 #: ../src/jarabe/journal/palettes.py:198
 #: ../src/jarabe/journal/volumestoolbar.py:368
 msgid "Journal"
-msgstr ""
+msgstr "Jounal"
 
 #: ../src/jarabe/journal/journaltoolbox.py:72
 msgid "Search"
-msgstr ""
+msgstr "Chache"
 
 #: ../src/jarabe/journal/journaltoolbox.py:139
 msgid "Anytime"
-msgstr ""
+msgstr "Nenpòt lè"
 
 #: ../src/jarabe/journal/journaltoolbox.py:141
 msgid "Today"
-msgstr ""
+msgstr "Jodia"
 
 #: ../src/jarabe/journal/journaltoolbox.py:143
 msgid "Since yesterday"
-msgstr ""
+msgstr "Depi Yè"
 
+# TRANS: Filter entries modified during the last 7 days.
 #. TRANS: Filter entries modified during the last 7 days.
 #: ../src/jarabe/journal/journaltoolbox.py:145
 msgid "Past week"
-msgstr ""
+msgstr "Semèn pase a"
 
+# TRANS: Filter entries modified during the last 30 days.
 #. TRANS: Filter entries modified during the last 30 days.
 #: ../src/jarabe/journal/journaltoolbox.py:147
 msgid "Past month"
-msgstr ""
+msgstr "Mwa pase"
 
+# TRANS: Filter entries modified during the last 356 days.
 #. TRANS: Filter entries modified during the last 356 days.
 #: ../src/jarabe/journal/journaltoolbox.py:149
 msgid "Past year"
-msgstr ""
+msgstr "Lane pase a"
 
 #: ../src/jarabe/journal/journaltoolbox.py:156
 msgid "Anyone"
-msgstr ""
+msgstr "Nenpòt moun"
 
 #: ../src/jarabe/journal/journaltoolbox.py:158
 msgid "My friends"
-msgstr ""
+msgstr "Zanmi m yo"
 
 #: ../src/jarabe/journal/journaltoolbox.py:159
 msgid "My class"
-msgstr ""
+msgstr "Klas mwen"
 
+# TRANS: Item in a combo box that filters by entry type.
 #: ../src/jarabe/journal/journaltoolbox.py:301
 msgid "Anything"
-msgstr ""
+msgstr "Nenpòt bagay"
 
 #: ../src/jarabe/journal/journaltoolbox.py:396
 #: ../src/jarabe/journal/palettes.py:93
@@ -1382,7 +1395,7 @@ msgstr ""
 
 #: ../src/jarabe/journal/listview.py:316
 msgid "Your Journal is empty"
-msgstr ""
+msgstr "Jounal ou vid"
 
 #: ../src/jarabe/journal/listview.py:319
 msgid "Your documents folder is empty"
@@ -1394,7 +1407,7 @@ msgstr ""
 
 #: ../src/jarabe/journal/listview.py:323
 msgid "No matching entries"
-msgstr ""
+msgstr "Pa gen antre ki matche"
 
 #: ../src/jarabe/journal/listview.py:397
 msgid "Clear search"
@@ -1412,7 +1425,7 @@ msgstr ""
 
 #: ../src/jarabe/journal/modalalert.py:64
 msgid "Your Journal is full"
-msgstr ""
+msgstr "Jounal ou plen"
 
 #: ../src/jarabe/journal/modalalert.py:68
 msgid "Please delete some old Journal entries to make space for new ones."
@@ -1420,16 +1433,16 @@ msgstr ""
 
 #: ../src/jarabe/journal/modalalert.py:80
 msgid "Show Journal"
-msgstr ""
+msgstr "Montre jounal la"
 
 #: ../src/jarabe/journal/objectchooser.py:146
 msgid "Choose an object"
-msgstr ""
+msgstr "chwazi yon bagay"
 
 #: ../src/jarabe/journal/objectchooser.py:151
 #: ../src/jarabe/view/viewsource.py:410
 msgid "Close"
-msgstr ""
+msgstr "Fèmen"
 
 #: ../src/jarabe/journal/palettes.py:72
 msgid "Resume with"
@@ -1484,7 +1497,7 @@ msgstr ""
 #: ../src/jarabe/view/palettes.py:202 ../src/jarabe/view/palettes.py:254
 #, python-format
 msgid "%(free_space)d MB Free"
-msgstr ""
+msgstr "%(free_space)d MB vid"
 
 #: ../src/jarabe/model/network.py:163
 msgid "The reason for the device state change is unknown."
@@ -1667,7 +1680,7 @@ msgstr "Fèmen"
 
 #: ../src/jarabe/view/buddymenu.py:95
 msgid "Restart"
-msgstr ""
+msgstr "Redemare"
 
 #: ../src/jarabe/view/buddymenu.py:101
 msgid "Logout"
@@ -1689,7 +1702,7 @@ msgstr ""
 
 #: ../src/jarabe/view/palettes.py:48
 msgid "Starting..."
-msgstr "ap louvri"
+msgstr "ap louvri..."
 
 #: ../src/jarabe/view/palettes.py:58
 msgid "Activity failed to start"
@@ -1710,7 +1723,7 @@ msgstr ""
 
 #: ../src/jarabe/view/palettes.py:180
 msgid "Show contents"
-msgstr ""
+msgstr "Afiche kontni yo"
 
 #: ../src/jarabe/view/palettes.py:229
 #, fuzzy
@@ -1826,3 +1839,14 @@ msgstr ""
 
 #~ msgid "Battery fully charged"
 #~ msgstr "Batri foul chaj"
+
+# TODO: Add "Start with" menu item
+#~ msgid "Copy"
+#~ msgstr "Kopye"
+
+# Only show disconnect when there's a mesh device, because mesh takes
+# priority over the normal wireless device.  NM doesn't have a "disconnect"
+# method for a device either (for various reasons) so this doesn't
+# have a good mapping
+#~ msgid "Disconnect..."
+#~ msgstr "Dekonekte..."
