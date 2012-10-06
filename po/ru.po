@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2011-09-28 19:50+0200\n"
+"PO-Revision-Date: 2012-10-06 16:12+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -325,9 +325,12 @@ msgstr ""
 "Автоматическое управление питанием (увеличивает срок службы аккумулятора)"
 
 #: ../extensions/cpsection/power/view.py:86
+#, fuzzy
 msgid ""
 "Extreme power management (disables wireless radio, increases battery life)"
 msgstr ""
+"Экстремальное управление питанием (запрещает беспроводную связь, увеличивает "
+"срок службы аккумулятора)"
 
 #: ../extensions/cpsection/updater/__init__.py:21
 msgid "Software update"
@@ -370,7 +373,7 @@ msgstr[2] "Вы можете установить %s обновление"
 
 #: ../extensions/cpsection/updater/view.py:159
 msgid "Checking for updates..."
-msgstr "Проверка обновлений.."
+msgstr "Проверка обновлений..."
 
 #: ../extensions/cpsection/updater/view.py:164
 msgid "Installing updates..."
@@ -702,12 +705,14 @@ msgid "Favorites resume mode"
 msgstr "Режим возобновления"
 
 #: ../data/sugar.schemas.in.h:16
+#, fuzzy
 msgid "Font face that is used throughout the desktop."
-msgstr "Шрифт, используемый на рабочем столе"
+msgstr "Шрифт, используемый на рабочем столе."
 
 #: ../data/sugar.schemas.in.h:17
+#, fuzzy
 msgid "Font size that is used throughout the desktop."
-msgstr "Шрифт, используемый на рабочем столе"
+msgstr "Шрифт, используемый на рабочем столе."
 
 #: ../data/sugar.schemas.in.h:18
 msgid "GSM network APN"
@@ -809,7 +814,7 @@ msgstr ""
 
 #: ../data/sugar.schemas.in.h:40
 msgid "List of keyboard options."
-msgstr "Список опций клавиатуры"
+msgstr "Список опций клавиатуры."
 
 #: ../data/sugar.schemas.in.h:41
 msgid "Power Automatic"
@@ -1779,173 +1784,3 @@ msgstr "Исходный код: %r"
 msgid "Sugar in a window"
 msgstr ""
 
-#~ msgid "Add to journal"
-#~ msgstr "Добавить в журнал"
-
-#, python-format
-#~ msgid "Clipboard object: %s."
-#~ msgstr "Объект буфера: %s."
-
-#~ msgid "Encryption Type:"
-#~ msgstr "Тип шифрования:"
-
-#~ msgid "Reboot"
-#~ msgstr "Перезагрузить"
-
-#~ msgid "Disconnect..."
-#~ msgstr "Разъединить..."
-
-#~ msgid "My Battery life"
-#~ msgstr "Моя Батарейка"
-
-#~ msgid "Battery charging"
-#~ msgstr "Батарейка заряжается"
-
-#~ msgid "Battery discharging"
-#~ msgstr "Батарейка разряжается"
-
-#~ msgid "Battery fully charged"
-#~ msgstr "Батарейка полностью заряжена"
-
-#~ msgid "Share with:"
-#~ msgstr "Разделить с:"
-
-#~ msgid "Private"
-#~ msgstr "Личное"
-
-# в русском языке мы не Пишем Каждое Слово с Заглавной Буквы
-#~ msgid "My Neighborhood"
-#~ msgstr "Мои соседи"
-
-#~ msgid "Undo"
-#~ msgstr "Отменить"
-
-#~ msgid "Redo"
-#~ msgstr "Повторить"
-
-#~ msgid "Copy"
-#~ msgstr "Копировать"
-
-#~ msgid "Paste"
-#~ msgstr "Вставить"
-
-#, python-format
-#~ msgid "%s Activity"
-#~ msgstr "%s Активность"
-
-#~ msgid "Keep error"
-#~ msgstr "Ошибка сохранения"
-
-#~ msgid "Keep error: all changes will be lost"
-#~ msgstr "Ошибка сохранения: все изменения будут потеряны"
-
-#~ msgid "Don't stop"
-#~ msgstr "Не останавливаться"
-
-#~ msgid "Stop anyway"
-#~ msgstr "Все равно остановиться"
-
-#~ msgid "Continue"
-#~ msgstr "Продолжить"
-
-#~ msgid "OK"
-#~ msgstr "ОК"
-
-#, python-format
-#~ msgid "%d year"
-#~ msgstr "%d год"
-
-#, python-format
-#~ msgid "%d years"
-#~ msgstr "%d лет"
-
-#, python-format
-#~ msgid "%d month"
-#~ msgstr "%d месяц"
-
-#, python-format
-#~ msgid "%d months"
-#~ msgstr "%d месяцев"
-
-#, python-format
-#~ msgid "%d week"
-#~ msgstr "%d неделя"
-
-#, python-format
-#~ msgid "%d weeks"
-#~ msgstr "%d недель"
-
-#, python-format
-#~ msgid "%d day"
-#~ msgstr "%d день"
-
-#, python-format
-#~ msgid "%d days"
-#~ msgstr "%d дней"
-
-#, python-format
-#~ msgid "%d hour"
-#~ msgstr "%d час"
-
-#, python-format
-#~ msgid "%d hours"
-#~ msgstr "%d часов"
-
-#, python-format
-#~ msgid "%d minute"
-#~ msgstr "%d минута"
-
-#, python-format
-#~ msgid "%d minutes"
-#~ msgstr "%d минут"
-
-#, python-format
-#~ msgid "%d second"
-#~ msgstr "%d секунда"
-
-#~ msgid " and "
-#~ msgstr " и "
-
-#~ msgid ", "
-#~ msgstr ", "
-
-#~ msgid "off"
-#~ msgstr "выкл"
-
-#~ msgid "on"
-#~ msgstr "вкл"
-
-#~ msgid "Permission denied. You need to be root to run this method."
-#~ msgstr "Доступ запрещен. Вы должны быть root-ом чтобы выполнить этот метод."
-
-#~ msgid "Error in reading timezone"
-#~ msgstr "Ошибка чтения часового пояса."
-
-#, python-format
-#~ msgid "Error copying timezone (from %s): %s"
-#~ msgstr "Ошибка копирования часового пояса (из %s): %s"
-
-#, python-format
-#~ msgid "Changing permission of timezone: %s"
-#~ msgstr "Изменяются права доступа часового пояса: %s"
-
-#~ msgid "Connected to a School Mesh Portal"
-#~ msgstr "Подключен к Местному Школьному Серверу"
-
-#~ msgid "Looking for a School Mesh Portal..."
-#~ msgstr "Поиск Местного Школьного Сервера..."
-
-#~ msgid "Connected to an XO Mesh Portal"
-#~ msgstr "Подключен к Местному Серверу XO"
-
-#~ msgid "Looking for an XO Mesh Portal..."
-#~ msgstr "Поиск Местного Сервера XO..."
-
-#~ msgid "Connected to a Simple Mesh"
-#~ msgstr "Подключен к Простой Местной Сети"
-
-#~ msgid "Starting a Simple Mesh"
-#~ msgstr "Запуск Простой Местной Сети"
-
-#~ msgid "Unknown Mesh"
-#~ msgstr "Неизвестная Местная Сеть"
