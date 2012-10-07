@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2011-10-12 08:26+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2012-04-27 08:16+0200\n"
+"Last-Translator: Bulgantamir  <ar_uul_us@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: mn\n"
 "MIME-Version: 1.0\n"
@@ -174,11 +174,11 @@ msgstr "Гарын загвар"
 
 #: ../extensions/cpsection/keyboard/view.py:250
 msgid "Key(s) to change layout"
-msgstr ""
+msgstr "Гарын бичих горимыг солих"
 
 #: ../extensions/cpsection/keyboard/view.py:319
 msgid "Keyboard Layout(s)"
-msgstr ""
+msgstr "Гарын үсгийн байрлал"
 
 #: ../extensions/cpsection/language/__init__.py:21
 #: ../extensions/cpsection/language/view.py:33
@@ -223,11 +223,11 @@ msgstr "Дугаар:"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:130
 msgid "Access Point Name (APN):"
-msgstr ""
+msgstr "Хандалтын цэгт өгсөн нэр (APN):"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:142
 msgid "Personal Identity Number (PIN):"
-msgstr ""
+msgstr "Хувийн нэвтрэх тоо (PIN):"
 
 #: ../extensions/cpsection/modemconfiguration/view.py:154
 msgid "Personal Unblocking Key (PUK):"
@@ -271,10 +271,12 @@ msgstr "Радио"
 #: ../extensions/cpsection/network/view.py:98
 msgid "Discard network history if you have trouble connecting to the network"
 msgstr ""
+"Хэрэв та сүлжээнд холбогдохгүй байгаа бол сүлжээний ажиллагааны тухай "
+"хэсгийг устга"
 
 #: ../extensions/cpsection/network/view.py:107
 msgid "Discard network history"
-msgstr ""
+msgstr "Сүлжээний ажиллагааны тухай хэсгийг устга"
 
 #: ../extensions/cpsection/network/view.py:122
 msgid "Collaboration"
@@ -1290,7 +1292,7 @@ msgstr "Гүйцэтгэгчид:"
 
 #: ../src/jarabe/journal/expandedentry.py:323
 msgid "Description:"
-msgstr "Тайлбар:"
+msgstr "Тодорхойлолт:"
 
 #: ../src/jarabe/journal/expandedentry.py:348
 msgid "Tags:"
