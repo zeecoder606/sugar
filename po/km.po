@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-24 00:33-0400\n"
-"PO-Revision-Date: 2012-03-22 15:08+0200\n"
+"PO-Revision-Date: 2012-07-09 15:50+0200\n"
 "Last-Translator: ryansburgoyne <ryansburgoyne@lighteningpoint.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: km\n"
@@ -37,24 +37,22 @@ msgstr "អំពី​ខ្ញុំ"
 msgid "You must enter a name."
 msgstr "អ្នក​ត្រូវ​តែ​បញ្ចូល​ឈ្មោះ"
 
-# "hue" translated as "various colors". Any other insights into what is the difference between hue and color in this context?
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
-#, python-format, fuzzy
+#, python-format, 
 msgid "stroke:   color=%s hue=%s"
-msgstr "គូស៖  ពណ៌=%s ពណ៌ផ្សេងៗ=%s"
+msgstr "គូស៖  ពណ៌ធំ=%s ពណ៌តូច=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:78
 #, python-format
 msgid "stroke:   %s"
 msgstr "គូស៖  %s"
 
-# See above under stroke hue.
 #: ../extensions/cpsection/aboutme/model.py:80
 #, python-format
-#, python-format, fuzzy
+#, python-format, 
 msgid "fill:     color=%s hue=%s"
-msgstr "លាបពេញ៖  ពណ៌=%s ពណ៌ផ្សេងៗ=%s"
+msgstr "លាបពេញ៖  ពណ៌ធំ=%s ពណ៌តូច=%s"
 
 #: ../extensions/cpsection/aboutme/model.py:82
 #, python-format
@@ -654,6 +652,8 @@ msgid ""
 "\"disabled\" to ask nick on initialization; \"system\" to reuse UNIX account "
 "long name."
 msgstr ""
+"ជ្រើសរើស «កុំប្រើ» ដើម្បីឲកុំព្យូទ័រសួរឈ្មោះក្រៅនៅពេលដែលកុំព្យូទ័រចាប់ផ្ដើម "
+"ជ្រើសរើស «ប្រព័ន្ធ» ដើម្បីប្រើឈ្មោះវេងយូនិកជាឈ្មោះក្រៅ"
 
 #: ../data/sugar.schemas.in.h:2
 msgid "Additional directories which can contain updated translations."
@@ -692,7 +692,7 @@ msgstr "ទំហំអក្សរដែលត្រូវរេីសដោយ
 
 #: ../data/sugar.schemas.in.h:9
 msgid "Default nick"
-msgstr ""
+msgstr "ឈ្មោះក្រៅដាក់ដោយចៃដន្យ"
 
 #: ../data/sugar.schemas.in.h:10
 msgid "Delay for the activation of the frame using the corners."
@@ -719,26 +719,24 @@ msgid "Favorites resume mode"
 msgstr "របៀបចាប់ផ្ដើមវត្ថុដែលអ្នកចូលចិត្តជាងគេឡើងវិញ"
 
 #: ../data/sugar.schemas.in.h:16
-#, fuzzy
 msgid "Font face that is used throughout the desktop."
-msgstr "ឈ្មោះ​អ្នក​ប្រើ​ដែល​ត្រូវ​បាន​ប្រើ​ពាស​ពេញ​លើ​ផ្ទៃ​តុ"
+msgstr "ម៉ូតអក្សរ​ដែល​ត្រូវ​បាន​ប្រើ​ពាស​ពេញ​លើ​ផ្ទៃ​តុ"
 
 #: ../data/sugar.schemas.in.h:17
-#, fuzzy
 msgid "Font size that is used throughout the desktop."
-msgstr "ឈ្មោះ​អ្នក​ប្រើ​ដែល​ត្រូវ​បាន​ប្រើ​ពាស​ពេញ​លើ​ផ្ទៃ​តុ"
+msgstr "ទំហំតួអក្សរដែល​ត្រូវ​បាន​ប្រើ​ពាស​ពេញ​លើ​ផ្ទៃ​តុ"
 
 #: ../data/sugar.schemas.in.h:18
 msgid "GSM network APN"
-msgstr ""
+msgstr "នាមនៃកន្លែងចូលទាក់ទង (APN) បណ្ដាញ GSM"
 
 #: ../data/sugar.schemas.in.h:19
 msgid "GSM network PIN"
-msgstr ""
+msgstr "លេខសំគាល់ខ្លួន (PIN) នៃបណ្ដាញ GSM"
 
 #: ../data/sugar.schemas.in.h:20
 msgid "GSM network PUK"
-msgstr ""
+msgstr "លេខកូដសំងាត់ផ្ទាល់ខ្លួនសម្រាប់បើកចំហ (PUK) នៃបណ្ដាញ GSM"
 
 #: ../data/sugar.schemas.in.h:21
 msgid "GSM network access point name configuration"
