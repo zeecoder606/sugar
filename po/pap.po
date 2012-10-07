@@ -315,9 +315,10 @@ msgid "Automatic power management (increases battery life)"
 msgstr "Maneho outomátiko di karga (prolongá bida di bateria)"
 
 #: ../extensions/cpsection/power/view.py:86
+#, fuzzy
 msgid ""
 "Extreme power management (disables wireless radio, increases battery life)"
-msgstr ""
+msgstr "Maneho ekstremo di karga (ta paga radio, prolongá bida di bateria)"
 
 #: ../extensions/cpsection/updater/__init__.py:21
 msgid "Software update"
@@ -1780,3 +1781,10 @@ msgstr ""
 #, fuzzy
 #~ msgid "You must enter a server."
 #~ msgstr "Bo mester fill in un nomber."
+
+# TODO: Add "Start with" menu item
+#~ msgid "Copy"
+#~ msgstr "Kopia"
+
+#~ msgid "Disconnect..."
+#~ msgstr "Deskonekta..."
