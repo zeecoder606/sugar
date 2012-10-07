@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-18 02:39-0400\n"
-"PO-Revision-Date: 2012-07-15 06:14+0200\n"
+"PO-Revision-Date: 2012-07-23 03:33+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: quz\n"
@@ -20,7 +20,7 @@ msgstr ""
 #  "Acerca de mí"
 #: ../extensions/cpsection/aboutme/__init__.py:24
 msgid "About Me"
-msgstr "Nuqamanta"
+msgstr "Ñuqamanta"
 
 #  "Debe ingresar un nombre."
 #: ../extensions/cpsection/aboutme/model.py:48
@@ -31,7 +31,7 @@ msgstr "Sutiykitapuni churay."
 #: ../extensions/cpsection/aboutme/model.py:75
 #, python-format
 msgid "stroke:   color=%s hue=%s"
-msgstr "muyunkuna:   lipi=%s tonalidad=%s"
+msgstr "muyunkuna:   llimp'i=%s tonalidad=%s"
 
 #  "borde:   %s"
 #: ../extensions/cpsection/aboutme/model.py:78
@@ -54,17 +54,17 @@ msgstr "hunt'ana:     %s"
 #  "Error en modificadores de color especificados."
 #: ../extensions/cpsection/aboutme/model.py:94
 msgid "Error in specified color modifiers."
-msgstr "Pantay aqllasqa llimp'ikunapi."
+msgstr "Akllasqa llimp'ikunap kamachiyninpi pantay kachkan."
 
 #  "Error en colores especificados."
 #: ../extensions/cpsection/aboutme/model.py:97
 msgid "Error in specified colors."
-msgstr "Pantay aqllasqa llimp'ikunapi."
+msgstr "Akllasqa llimp'ikunapim pantay kachkan."
 
 #  "Clic para cambiar su color:"
 #: ../extensions/cpsection/aboutme/view.py:235
 msgid "Click to change your color:"
-msgstr "Llimp'iykita aqllanapaq klik ruway:"
+msgstr "Llimp'iykita akllanapaqqa klik ruway:"
 
 #  "Acerca de mi computadora"
 #: ../extensions/cpsection/aboutcomputer/__init__.py:21
@@ -74,12 +74,12 @@ msgstr "Computadoraymanta"
 #  "No disponible"
 #: ../extensions/cpsection/aboutcomputer/model.py:43
 msgid "Not available"
-msgstr "Mana jap'ikunchu"
+msgstr "Mana hap'ikunchu"
 
 #  "Identidad"
 #: ../extensions/cpsection/aboutcomputer/view.py:59
 msgid "Identity"
-msgstr "Kawsaypi"
+msgstr "Pin kaynin"
 
 #  "Número de serie:"
 #: ../extensions/cpsection/aboutcomputer/view.py:68
@@ -99,7 +99,7 @@ msgstr "Ruwasqa kuti:"
 #  "Azúcar:"
 #: ../extensions/cpsection/aboutcomputer/view.py:114
 msgid "Sugar:"
-msgstr "Misk'i:"
+msgstr "Sugar:"
 
 #  "Firmware:"
 #: ../extensions/cpsection/aboutcomputer/view.py:129
@@ -109,7 +109,7 @@ msgstr "Firmware:"
 #  "Firmware de la red inalámbrica:"
 #: ../extensions/cpsection/aboutcomputer/view.py:144
 msgid "Wireless Firmware:"
-msgstr "Firmware jila llika inala:"
+msgstr "Inalambrica llik'ap Firmware nisqan:"
 
 #  "Licencia y derechos de autor"
 #: ../extensions/cpsection/aboutcomputer/view.py:167
@@ -664,8 +664,9 @@ msgid "Stop playback"
 msgstr ""
 
 #: ../extensions/deviceicon/speech.py:97
+#, fuzzy
 msgid "Pitch"
-msgstr ""
+msgstr "Hayk'a kuti"
 
 #: ../extensions/deviceicon/speech.py:106
 msgid "Rate"
@@ -1344,7 +1345,7 @@ msgstr "%dMB"
 #: ../src/jarabe/frame/activitiestray.py:545
 #, python-format
 msgid "%s of %s"
-msgstr "%s de %s"
+msgstr "%s kaypa %s kaynin"
 
 #  "Transferencia desde %s"
 #: ../src/jarabe/frame/activitiestray.py:559
@@ -1497,7 +1498,7 @@ msgstr "Aswan willay:"
 #  "Etiquetas:"
 #: ../src/jarabe/journal/expandedentry.py:348
 msgid "Tags:"
-msgstr "Sutichaq:"
+msgstr "Sutichaqkuna:"
 
 #: ../src/jarabe/journal/journalactivity.py:115
 #: ../src/jarabe/journal/journaltoolbox.py:468
