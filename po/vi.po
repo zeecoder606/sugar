@@ -320,11 +320,10 @@ msgid "Automatic power management (increases battery life)"
 msgstr "Tự động quản lý năng lượng (tăng thời gian chạy bằng pin)"
 
 #: ../extensions/cpsection/power/view.py:86
-#, fuzzy
 msgid ""
 "Extreme power management (disables wireless radio, increases battery life)"
 msgstr ""
-"Rất quản lý năng lượng (tắt máy thu thanh không dây, tăng thời gian chạy "
+"Quản lý năng lượng tối đa (tắt máy thu thanh không dây, tăng thời gian chạy "
 "bằng pin)"
 
 #: ../extensions/cpsection/updater/__init__.py:21
@@ -515,7 +514,7 @@ msgstr "Thôi"
 
 #: ../extensions/deviceicon/network.py:333
 msgid "Try connection again"
-msgstr ""
+msgstr "Thử kết nối lại"
 
 #: ../extensions/deviceicon/network.py:336
 #, python-format
@@ -525,35 +524,36 @@ msgstr "Lỗi: %s"
 #: ../extensions/deviceicon/network.py:340
 #, python-format
 msgid "Suggestion: %s"
-msgstr ""
+msgstr "Gợi ý: %s"
 
 #: ../extensions/deviceicon/network.py:349
 #, python-format
 msgid "Connected for %s"
-msgstr ""
+msgstr "Đã kết nối cho %s"
 
 #: ../extensions/deviceicon/network.py:355
 #: ../extensions/deviceicon/network.py:356
 #, python-format
-#, python-format, fuzzy
+#, python-format,
 msgid "%d KB"
-msgstr "%dKB"
+msgstr "%d KB"
 
 #: ../extensions/deviceicon/network.py:361
+#, fuzzy
 msgid "Check your Pin/Puk configuration."
-msgstr ""
+msgstr "Kiểm tra cấu hình PIN/PUK."
 
 #: ../extensions/deviceicon/network.py:364
 msgid "Check your Access Point Name (APN) configuration"
-msgstr ""
+msgstr "Kiểm tra cấu hình Tên điểm kết nối (APN)"
 
 #: ../extensions/deviceicon/network.py:368
 msgid "Check the Number configuration."
-msgstr ""
+msgstr "Kiểm tra cấu hình Số."
 
 #: ../extensions/deviceicon/network.py:370
 msgid "Check your configuration."
-msgstr ""
+msgstr "Kiểm tra cấu hình."
 
 #: ../extensions/deviceicon/network.py:615
 msgid "Mesh Network"
@@ -567,11 +567,11 @@ msgstr "Mạng mắc lưới %s"
 
 #: ../extensions/deviceicon/network.py:782
 msgid "No GSM connection available."
-msgstr ""
+msgstr "Không tồn tại kết nối GSM nào"
 
 #: ../extensions/deviceicon/network.py:783
 msgid "Create a connection in the control panel."
-msgstr ""
+msgstr "Tạo 1 kết nối trong bảng điều khiển"
 
 #: ../extensions/deviceicon/speaker.py:61
 msgid "My Speakers"
@@ -587,15 +587,15 @@ msgstr "Câm"
 
 #: ../extensions/deviceicon/touchpad.py:38
 msgid "finger"
-msgstr ""
+msgstr "ngón tay"
 
 #: ../extensions/deviceicon/touchpad.py:39
 msgid "stylus"
-msgstr ""
+msgstr "bút cảm ứng"
 
 #: ../extensions/deviceicon/touchpad.py:68
 msgid "My touchpad"
-msgstr ""
+msgstr "chuột laptop của tôi"
 
 #: ../extensions/globalkey/screenshot.py:59
 msgid "Mesh"
@@ -643,17 +643,16 @@ msgstr "URL sao lưu"
 
 #: ../data/sugar.schemas.in.h:4
 msgid "Bundle IDs of protected activities"
-msgstr ""
+msgstr "Các gói xác nhận của những hoạt động bảo hộ"
 
 #: ../data/sugar.schemas.in.h:5
-#, fuzzy
 msgid ""
 "Color for the XO icon that is used throughout the desktop. The string is "
 "composed of the stroke color and fill color, format is that of rgb colors. "
 "Example: #AC32FF,#9A5200"
 msgstr ""
-"Màu của biểu tượng XO được dùng trong toàn môi trường. Chuỗi bao gồm màu nét "
-"và màu tô đầy, định dạng là RBG, v.d. #AC32FF,#9A5200"
+"Màu của biểu tượng XO được sử dụng xuyên suốt màn hình chính.Các chuỗi bao "
+"gồm màu viền và màu tô đầy, định dạng màu là RGB. Ví dụ: #AC32FF ,#9A5200"
 
 #: ../data/sugar.schemas.in.h:6
 msgid "Corner Delay"
@@ -764,9 +763,8 @@ msgid "If TRUE, Sugar will show a \"Log out\" option."
 msgstr "TRUE (đúng) thì Sugar hiển thị một tùy chọn « Đăng xuất »."
 
 #: ../data/sugar.schemas.in.h:32
-#, fuzzy
 msgid "If TRUE, Sugar will show a \"Restart\" option."
-msgstr "TRUE (đúng) thì Sugar hiển thị một tùy chọn « Đăng xuất »."
+msgstr "Nếu Đúng, Sugar sẽ hiển thị một tùy chọn \"Khởi động lại\"."
 
 #: ../data/sugar.schemas.in.h:33
 msgid ""
@@ -774,6 +772,9 @@ msgid ""
 "Sugar sees no \"known\" network when it starts, it does autoconnect to an Ad-"
 "hoc network."
 msgstr ""
+"Nếu Đúng, Sugar sẽ hiển thị mặc ​​định của mạng Ad-hoc cho kênh 1,6 và 11. "
+"Nếu đường thấy không có mạng \"nổi tiếng\" khi nó bắt đầu, nó tự động kết nối "
+"đến một mạng Ad-hoc.)"
 
 #: ../data/sugar.schemas.in.h:34
 msgid "Jabber Server"
@@ -834,11 +835,11 @@ msgstr "Hiện Đăng xuất"
 
 #: ../data/sugar.schemas.in.h:48
 msgid "Show Restart"
-msgstr ""
+msgstr "Hiện khởi động lại"
 
 #: ../data/sugar.schemas.in.h:49
 msgid "Show Sugar Ad-hoc networks"
-msgstr ""
+msgstr "Hiển thị mạng Ad-hoc Sugar"
 
 #: ../data/sugar.schemas.in.h:50
 msgid "Sound Muted"
@@ -876,6 +877,8 @@ msgstr "Tên người dùng được sử dụng trên toàn bộ môi trường
 msgid ""
 "Users will not be allowed to erase these activities through the list view."
 msgstr ""
+"Người dùng sẽ không được phép xóa các hoạt động này thông qua việc xem danh "
+"sách"
 
 #: ../data/sugar.schemas.in.h:60
 msgid "Volume Level"
@@ -1065,7 +1068,7 @@ msgstr "Đăng ký"
 #: ../src/jarabe/desktop/favoritesview.py:643
 #: ../src/jarabe/desktop/favoritesview.py:660
 msgid "Register again"
-msgstr ""
+msgstr "Đăng ký lại"
 
 #: ../src/jarabe/desktop/homebox.py:66
 msgid "Software Update"
@@ -1101,6 +1104,8 @@ msgid ""
 "A wireless encryption key is required for\n"
 " the wireless network '%s'."
 msgstr ""
+"Một nhân tố mã hóa không dây được yêu cầu cho\n"
+" mạng không dây '%s'."
 
 #: ../src/jarabe/desktop/keydialog.py:144
 msgid "Key Type:"
@@ -1134,7 +1139,7 @@ msgstr "Vào"
 #: ../src/jarabe/desktop/networkviews.py:502
 #, python-format
 msgid "Ad-hoc Network %d"
-msgstr ""
+msgstr "Mạng không dự tính trước, không theo thể thức %d"
 
 #: ../src/jarabe/desktop/networkviews.py:636
 #, python-format
@@ -1198,7 +1203,7 @@ msgstr "Hủy"
 
 #: ../src/jarabe/frame/activitiestray.py:643
 msgid "The other participant canceled the file transfer"
-msgstr ""
+msgstr "Những người tham gia khác đã ngưng truyền tập tin"
 
 #: ../src/jarabe/frame/activitiestray.py:691
 #, python-format
@@ -1207,10 +1212,9 @@ msgid "Transfer to %s"
 msgstr "Truyền tới %s"
 
 #: ../src/jarabe/frame/clipboardmenu.py:56
-#, fuzzy
 msgctxt "Clipboard"
 msgid "Remove"
-msgstr "Bỏ"
+msgstr "bỏ"
 
 #: ../src/jarabe/frame/clipboardmenu.py:62
 #: ../src/jarabe/frame/clipboardmenu.py:85
@@ -1371,7 +1375,7 @@ msgstr "Bất cứ gì"
 #: ../src/jarabe/journal/journaltoolbox.py:396
 #: ../src/jarabe/journal/palettes.py:93
 msgid "Copy to"
-msgstr ""
+msgstr "sao chép đến"
 
 #: ../src/jarabe/journal/journaltoolbox.py:404
 #: ../src/jarabe/journal/palettes.py:104 ../src/jarabe/view/viewsource.py:274
@@ -1382,8 +1386,9 @@ msgstr "Nhân đôi"
 #: ../src/jarabe/journal/palettes.py:141 ../src/jarabe/journal/palettes.py:254
 #: ../src/jarabe/journal/volumestoolbar.py:315
 #, python-format
+#, python-format,
 msgid "Error while copying the entry. %s"
-msgstr ""
+msgstr "lỗi trong khi đang sao chép mục. %s"
 
 #: ../src/jarabe/journal/journaltoolbox.py:438
 #: ../src/jarabe/journal/palettes.py:142 ../src/jarabe/journal/palettes.py:255
@@ -1400,19 +1405,19 @@ msgstr "Khởi chạy"
 
 #: ../src/jarabe/journal/journaltoolbox.py:540
 msgid "Sort by date modified"
-msgstr ""
+msgstr "Sắp xếp theo ngày sửa đổi"
 
 #: ../src/jarabe/journal/journaltoolbox.py:541
 msgid "Sort by date created"
-msgstr ""
+msgstr "Sắp xếp theo ngày khởi tạo"
 
 #: ../src/jarabe/journal/journaltoolbox.py:542
 msgid "Sort by size"
-msgstr ""
+msgstr "Sắp xếp theo kích cỡ"
 
 #: ../src/jarabe/journal/journaltoolbox.py:551
 msgid "Sort view"
-msgstr ""
+msgstr "sắp xếp hiển thị"
 
 #: ../src/jarabe/journal/listview.py:316
 msgid "Your Journal is empty"
@@ -1420,11 +1425,11 @@ msgstr "Nhật ký của bạn còn trống"
 
 #: ../src/jarabe/journal/listview.py:319
 msgid "Your documents folder is empty"
-msgstr ""
+msgstr "danh mục tài liệu của bạn trống rỗng"
 
 #: ../src/jarabe/journal/listview.py:321
 msgid "The device is empty"
-msgstr ""
+msgstr "không có thiết bị"
 
 #: ../src/jarabe/journal/listview.py:323
 msgid "No matching entries"
@@ -1436,13 +1441,15 @@ msgstr "Xoá trường tìm"
 
 #: ../src/jarabe/journal/misc.py:273
 #, python-format
+#, python-format,
 msgid "Older Version Of %s Activity"
-msgstr ""
+msgstr "Phiên bản cũ hơn của %s hoạt động"
 
 #: ../src/jarabe/journal/misc.py:274
 #, python-format
+#, python-format,
 msgid "Do you want to downgrade to version %s"
-msgstr ""
+msgstr "Bạn có muốn hạ cấp xuống phiên bản %s"
 
 #: ../src/jarabe/journal/modalalert.py:64
 msgid "Your Journal is full"
@@ -1489,12 +1496,12 @@ msgstr "Xem chi tiết"
 
 #: ../src/jarabe/journal/palettes.py:160
 msgid "Entries without a file cannot be sent."
-msgstr ""
+msgstr "mục không có tập tin nào thì không thể gửi được"
 
 #: ../src/jarabe/journal/palettes.py:245 ../src/jarabe/journal/palettes.py:278
 #: ../src/jarabe/journal/volumestoolbar.py:306
 msgid "Entries without a file cannot be copied."
-msgstr ""
+msgstr "mục không có tập tin nào thì không thể sao chép được"
 
 #: ../src/jarabe/journal/palettes.py:267
 msgid "Clipboard"
@@ -1513,9 +1520,8 @@ msgid "No activity to resume entry"
 msgstr "Không có hoạt động để tiếp tục nhập vào"
 
 #: ../src/jarabe/journal/volumestoolbar.py:209
-#, fuzzy
 msgid "Documents"
-msgstr "Tài liệu"
+msgstr "tài liệu"
 
 #: ../src/jarabe/journal/volumestoolbar.py:391
 #: ../src/jarabe/view/palettes.py:202 ../src/jarabe/view/palettes.py:254
@@ -1525,170 +1531,171 @@ msgstr "%(free_space)d MB còn rảnh"
 
 #: ../src/jarabe/model/network.py:163
 msgid "The reason for the device state change is unknown."
-msgstr ""
+msgstr "lí do thay đổi trạng thái của thiết bị là không rõ"
 
 #: ../src/jarabe/model/network.py:165
 msgid "The state change is normal."
-msgstr ""
+msgstr "thay đổi trạng thái là bình thường"
 
 #: ../src/jarabe/model/network.py:167
 msgid "The device is now managed."
-msgstr ""
+msgstr "hiện tại thiết bị được quản lí"
 
 #: ../src/jarabe/model/network.py:169
 msgid "The device is no longer managed."
-msgstr ""
+msgstr "thiết bị không được quản lí nữa"
 
 #: ../src/jarabe/model/network.py:171
 msgid "The device could not be readied for configuration."
-msgstr ""
+msgstr "thiết bị không thể sẵn sàng cho cấu hình"
 
 #: ../src/jarabe/model/network.py:173
 msgid ""
 "IP configuration could not be reserved (no available address, timeout, etc)."
-msgstr ""
+msgstr "cấu hình IP không thể bảo lưu (không có sẵn địa chỉ, thời gian chờ..)"
 
 #: ../src/jarabe/model/network.py:176
 msgid "The IP configuration is no longer valid."
-msgstr ""
+msgstr "cấu hình IP không còn hợp lệ"
 
 #: ../src/jarabe/model/network.py:178
 msgid "Secrets were required, but not provided."
-msgstr ""
+msgstr "các bí mật được yêu cầu, nhưng không được cung cấp"
 
 #: ../src/jarabe/model/network.py:180
 msgid ""
 "The 802.1X supplicant disconnected from the access point or authentication "
 "server."
 msgstr ""
+"802.1X hổ trợ khi mất kết nối từ điểm truy cập hoặc thẩm định từ máy chủ"
 
 #: ../src/jarabe/model/network.py:183
 msgid "Configuration of the 802.1X supplicant failed."
-msgstr ""
+msgstr "cấu hình của 802.1X hổ trợ bị thất bại"
 
 #: ../src/jarabe/model/network.py:185
 msgid "The 802.1X supplicant quit or failed unexpectedly."
-msgstr ""
+msgstr "802.1 không hổ trợ hoặc bất ngờ thất bại"
 
 #: ../src/jarabe/model/network.py:187
 msgid "The 802.1X supplicant took too long to authenticate."
-msgstr ""
+msgstr "802.1 đã hổ trợ quá dài để xác thực"
 
 #: ../src/jarabe/model/network.py:189
 msgid "The PPP service failed to start within the allowed time."
-msgstr ""
+msgstr "Khởi chạy dịch vụ PPP trong thời gian cho phép thất bại"
 
 #: ../src/jarabe/model/network.py:191
 msgid "The PPP service disconnected unexpectedly."
-msgstr ""
+msgstr "Dịch vụ PPP mất kết nối đột ngột"
 
 #: ../src/jarabe/model/network.py:193
 msgid "The PPP service quit or failed unexpectedly."
-msgstr ""
+msgstr "Dịch vụ PPP bị thoát ra không mong muốn"
 
 #: ../src/jarabe/model/network.py:195
 msgid "The DHCP service failed to start within the allowed time."
-msgstr ""
+msgstr "Khởi chạy dịch vụ DHCP trong thời gian cho phép thất bại"
 
 #: ../src/jarabe/model/network.py:197
 msgid "The DHCP service reported an unexpected error."
-msgstr ""
+msgstr "Dịch vụ DHCP ghi nhận lỗi không mong muốn"
 
 #: ../src/jarabe/model/network.py:199
 msgid "The DHCP service quit or failed unexpectedly."
-msgstr ""
+msgstr "Dịch vụ DHCP bị thoát ra không mong muốn"
 
 #: ../src/jarabe/model/network.py:201
 msgid "The shared connection service failed to start."
-msgstr ""
+msgstr "Khởi chạy dịch vụ chia sẻ kết nối thất bại"
 
 #: ../src/jarabe/model/network.py:203
 msgid "The shared connection service quit or failed unexpectedly."
-msgstr ""
+msgstr "Dịch vụ chia sẻ kết nối bị thoát ra không mong muốn"
 
 #: ../src/jarabe/model/network.py:206
 msgid "The AutoIP service failed to start."
-msgstr ""
+msgstr "Dịch vụ AutoIP khởi chạy thất bại"
 
 #: ../src/jarabe/model/network.py:208
 msgid "The AutoIP service reported an unexpected error."
-msgstr ""
+msgstr "Dịch vụ AutoIP ghi nhận lỗi không mong muốn"
 
 #: ../src/jarabe/model/network.py:210
 msgid "The AutoIP service quit or failed unexpectedly."
-msgstr ""
+msgstr "Dịch vụ AutoIP bị thoát ra không mong muốn"
 
 #: ../src/jarabe/model/network.py:212
 msgid "Dialing failed because the line was busy."
-msgstr ""
+msgstr "Quay số thất bại vì đường dây đang bận"
 
 #: ../src/jarabe/model/network.py:214
 msgid "Dialing failed because there was no dial tone."
-msgstr ""
+msgstr "Quay số thất bại vì không có tín hiệu"
 
 #: ../src/jarabe/model/network.py:216
 msgid "Dialing failed because there was no carrier."
-msgstr ""
+msgstr "Quay số thất bại vì không có nhà cung cấp dịch vụ"
 
 #: ../src/jarabe/model/network.py:218
 msgid "Dialing timed out."
-msgstr ""
+msgstr "Quay số đã quá hạn"
 
 #: ../src/jarabe/model/network.py:220
 msgid "Dialing failed."
-msgstr ""
+msgstr "Quay số thất bại"
 
 #: ../src/jarabe/model/network.py:222
 msgid "Modem initialization failed."
-msgstr ""
+msgstr "Khởi tạo modem thất bại"
 
 #: ../src/jarabe/model/network.py:224
 msgid "Failed to select the specified GSM APN"
-msgstr ""
+msgstr "Lựa chọn GSM APN được chỉ định thất bại"
 
 #: ../src/jarabe/model/network.py:226
 msgid "Not searching for networks."
-msgstr ""
+msgstr "Không tìm kiếm mạng lưới"
 
 #: ../src/jarabe/model/network.py:228
 msgid "Network registration was denied."
-msgstr ""
+msgstr "Đăng ki mạng lưới bị từ chối"
 
 #: ../src/jarabe/model/network.py:230
 msgid "Network registration timed out."
-msgstr ""
+msgstr "Đăng kí mạng lưới đã quá hạn"
 
 #: ../src/jarabe/model/network.py:232
 msgid "Failed to register with the requested GSM network."
-msgstr ""
+msgstr "Thất bại trong việc đăng ký vs bằng mạng lưới GSM đã yêu cầu"
 
 #: ../src/jarabe/model/network.py:234
 msgid "PIN check failed."
-msgstr ""
+msgstr "Kiểm tra mã PIN thất bại"
 
 #: ../src/jarabe/model/network.py:236
 msgid "Necessary firmware for the device may be missing."
-msgstr ""
+msgstr "Phần vữa cần thiết cho thiết bị có thể bị thiếu"
 
 #: ../src/jarabe/model/network.py:238
 msgid "The device was removed."
-msgstr ""
+msgstr "Thiết bị đã bị gỡ bỏ"
 
 #: ../src/jarabe/model/network.py:240
 msgid "NetworkManager went to sleep."
-msgstr ""
+msgstr "Trình quản lí mạng lưới đã chuyển qua chế độ ngủ"
 
 #: ../src/jarabe/model/network.py:242
 msgid "The device's active connection was removed or disappeared."
-msgstr ""
+msgstr "Kết nối hiện thời của thiết bị đã bị loại bỏ hoặc mất kết nối"
 
 #: ../src/jarabe/model/network.py:245
 msgid "A user or client requested the disconnection."
-msgstr ""
+msgstr "Người sử dụng hoặc máy khách yêu cầu ngắt kết nối"
 
 #: ../src/jarabe/model/network.py:247
 msgid "The device's carrier/link changed."
-msgstr ""
+msgstr "Nhà cung cấp dịch vụ/đường dẫn của thiết bị đã thay đổi"
 
 #: ../src/jarabe/view/buddymenu.py:67
 msgid "Remove friend"
@@ -1722,7 +1729,7 @@ msgstr "Mời vào %s"
 #: ../src/jarabe/view/launcher.py:145
 #, python-format
 msgid "<b>%s</b> failed to start."
-msgstr ""
+msgstr "<b>%s</b> thất bại trong việc khởi chạy"
 
 #: ../src/jarabe/view/palettes.py:48
 msgid "Starting..."
@@ -1730,7 +1737,7 @@ msgstr "Đang khởi chạy..."
 
 #: ../src/jarabe/view/palettes.py:58
 msgid "Activity failed to start"
-msgstr ""
+msgstr "hoạt động thất bại trong việc khởi chạy"
 
 #. TODO: share-with, keep
 #: ../src/jarabe/view/palettes.py:91
@@ -1750,7 +1757,6 @@ msgid "Show contents"
 msgstr "Hiện nội dung"
 
 #: ../src/jarabe/view/palettes.py:229
-#, fuzzy
 msgctxt "Volume"
 msgid "Remove"
 msgstr "Bỏ"
@@ -1769,7 +1775,7 @@ msgstr "Nguồn bó hoạt động"
 
 #: ../src/jarabe/view/viewsource.py:393
 msgid "Sugar Toolkit Source"
-msgstr ""
+msgstr "Nguồn bộ dụng cụ Sugar"
 
 #: ../src/jarabe/view/viewsource.py:400 ../src/jarabe/view/viewsource.py:401
 #, python-format
@@ -1778,7 +1784,7 @@ msgstr "Xem nguồn: %r"
 
 #: ../src/jarabe/util/emulator.py:40
 msgid "Sugar in a window"
-msgstr ""
+msgstr "Sugar trong 1 cửa sổ"
 
 #~ msgid "APN:"
 #~ msgstr "APN:"
@@ -1893,3 +1899,115 @@ msgstr ""
 
 #~ msgid "Warm Edges"
 #~ msgstr "Cạnh ấm"
+
+#~ msgid "Unused."
+#~ msgstr "ko sử dụng"
+
+#~ msgid "Pause playback"
+#~ msgstr "tạm dừng phát lại"
+
+#~ msgid "GSM network telephone number configuration (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "số cấu hình mạng điện thoại sử dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "GSM network access point name configuration (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "tên cấu hình điểm truy cập mạng bằng cách sử sụng hệ thống truyền thông di "
+#~ "động toàn cầu"
+
+#~ msgid "URL where the backup is saved to."
+#~ msgstr "Địa chỉ URL vào đó lưu bản sao lưu."
+
+#~ msgid "To apply your changes you have to restart Sugar.\n"
+#~ msgstr "Để áp dụng các thay đổi thì cần phải khởi chạy lại Sugar.\n"
+
+#~ msgid "GSM network number (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "số truy cập mạng bằng cách sử dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "The device's existing connection was assumed."
+#~ msgstr "kết nối đã tồn tại của thiết bị đã được giả định"
+
+#~ msgid "GSM network password configuration (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "số cấu hình mạng điện thoại sử dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "The supplicant is now available."
+#~ msgstr "Nguồn cung cấp bây giờ đã có."
+
+#~ msgid "GSM network personal unlock key configuration (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "mạng lưới cá nhân mở khóa quan trọng cấu hình sử dụng hệ thống truyền thông "
+#~ "di động toàn cầu"
+
+#~ msgid "GSM network username (DEPRECATED/UNUSED)"
+#~ msgstr "tên người dùng mạng sử dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "Pitch value for the speech sugar service"
+#~ msgstr "Giá trị cao thấp cho dịch vụ phát âm sugar"
+
+#~ msgid "GSM network password (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "Mật khẩu của người dùng để truy cập vào mạng bằng cách sử dụng hệ thống "
+#~ "truyền thông di động toàn cầu"
+
+#~ msgid "Say selected text"
+#~ msgstr "đoạn văn bản được chọn"
+
+#~ msgid "Pitch"
+#~ msgstr "độ cao thấp"
+
+#~ msgid "GSM network APN (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "một giao thức máy tính cho phép của người dùng máy tính để truy cập vào mạng "
+#~ "bằng cách sử dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "GSM network username configuration (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "tên người dùng cấu hình mạng sử dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "Rate value for the speech sugar service"
+#~ msgstr "Giá trị tỉ lệ cho dịch vụ phát âm Sugar"
+
+#~ msgid "URL of the jabber server to use."
+#~ msgstr "Địa chỉ URL của máy phục vụ Jabber cần dùng."
+
+#~ msgid "GSM network PIN (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "Mật khẩu của người dùng để truy cập vào mạng bằng cách sử dụng hệ thống "
+#~ "truyền thông di động toàn cầu"
+
+#~ msgid "GSM network PUK (DEPRECATED/UNUSED)"
+#~ msgstr ""
+#~ "Mật khẩu của nhà điều hành mạng cung cấp để truy cập vào mạng bằng cách sử "
+#~ "dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "The Bluetooth connection failed or timed out."
+#~ msgstr "kết nối Bluetooth bị thất bại hoặc quá thời gian"
+
+#~ msgid "The modem could not be found."
+#~ msgstr "modem k thể tìm thấy"
+
+#~ msgid ""
+#~ "GSM network personal identification number configuration (DEPRECATED/UNUSED)"
+#~ msgstr "số cấu hình mạng cá nhân sử dụng hệ thống truyền thông di động toàn cầu"
+
+#~ msgid "Stop playback"
+#~ msgstr "dừng phát lại"
+
+#~ msgid "Rate"
+#~ msgstr "mật độ"
+
+#, python-format
+#, python-format,
+#~ msgid "View source: %s"
+#~ msgstr "Xem nguồn: %s"
+
+#~ msgid "Speech"
+#~ msgstr "phát biểu"
+
+#~ msgid "Pitch value used by the speech service in Sugar"
+#~ msgstr "Giá trị cao thấp được sử dụng bởi dịch vụ phát âm trong Sugar"
+
+#~ msgid "Rate value used by the speech service in Sugar"
+#~ msgstr "Giá trị tỉ lệ được sử dụng bởi dịch vụ phát âm trong Sugar"
