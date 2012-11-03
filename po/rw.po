@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-18 02:39-0400\n"
-"PO-Revision-Date: 2012-09-13 15:15+0200\n"
+"PO-Revision-Date: 2012-11-02 21:51+0200\n"
 "Last-Translator: Jimmy <jimmy@laptop.org>\n"
 "Language-Team: Sugar Labs\n"
 "Language: rw\n"
@@ -1566,15 +1566,15 @@ msgstr "802.1X yivanye ku ihuriro cyangwa kuri seriveri"
 
 #: ../src/jarabe/model/network.py:231
 msgid "Configuration of the 802.1X supplicant failed."
-msgstr ""
+msgstr "Iboneza ry'umurongo 802.1 usaba ntirikunze"
 
 #: ../src/jarabe/model/network.py:233
 msgid "The 802.1X supplicant quit or failed unexpectedly."
-msgstr ""
+msgstr "Umurongo 802.1X ry'usaba ryavuyeho cyangwa ryananiranye bitunguranye."
 
 #: ../src/jarabe/model/network.py:235
 msgid "The 802.1X supplicant took too long to authenticate."
-msgstr ""
+msgstr "Umurongo 802.1X watwaye igihe kinini mu kwemeze."
 
 #: ../src/jarabe/model/network.py:237
 msgid "The PPP service failed to start within the allowed time."
@@ -1642,7 +1642,7 @@ msgstr "Guhamagara byananiranye."
 
 #: ../src/jarabe/model/network.py:270
 msgid "Modem initialization failed."
-msgstr ""
+msgstr "Iboneza rya modemu ryananiranye."
 
 #: ../src/jarabe/model/network.py:272
 msgid "Failed to select the specified GSM APN"
