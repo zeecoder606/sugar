@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-18 02:39-0400\n"
-"PO-Revision-Date: 2012-04-03 04:56+0200\n"
+"PO-Revision-Date: 2012-12-27 06:58+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hi\n"
@@ -567,24 +567,23 @@ msgstr "वाणी"
 #: ../extensions/deviceicon/speech.py:138
 #: ../extensions/deviceicon/speech.py:143
 msgid "Say selected text"
-msgstr ""
+msgstr "चयनित पाठ के बारे में बोलें"
 
 #: ../extensions/deviceicon/speech.py:83
 msgid "Stop playback"
-msgstr ""
+msgstr "पार्श्व रोकें"
 
 #: ../extensions/deviceicon/speech.py:97
 msgid "Pitch"
-msgstr ""
+msgstr "पिच"
 
 #: ../extensions/deviceicon/speech.py:106
-#, fuzzy
 msgid "Rate"
-msgstr "तारीख़"
+msgstr "दर"
 
 #: ../extensions/deviceicon/speech.py:133
 msgid "Pause playback"
-msgstr ""
+msgstr "पार्श्व को ठहराव दें"
 
 #: ../extensions/deviceicon/speaker.py:61
 msgid "My Speakers"
@@ -717,52 +716,52 @@ msgstr "प्रयोक्ता नाम जिसका प्रयोग
 
 #: ../data/sugar.schemas.in.h:18
 msgid "GSM network APN (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम संजाल APN (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:19
 msgid "GSM network PIN (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम संजाल पिन (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:20
 msgid "GSM network PUK (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम संजाल PUK (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:21
 msgid "GSM network access point name configuration (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क पहुँच बिंदु नाम विन्यास (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:22
 msgid "GSM network number (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क संख्या (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:23
 msgid "GSM network password (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क कूटशब्द (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:24
 msgid "GSM network password configuration (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क कूटशब्द विन्यास (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:25
 msgid ""
 "GSM network personal identification number configuration (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क व्यक्तिगत पहचान संख्या विन्यास (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:26
 msgid "GSM network personal unlock key configuration (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क निजी अनलॉक कुंजी विन्यास (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:27
 msgid "GSM network telephone number configuration (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क टेलीफोन संख्या विन्यास (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:28
 msgid "GSM network username (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क उपयोक्तानाम (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:29
 msgid "GSM network username configuration (DEPRECATED/UNUSED)"
-msgstr ""
+msgstr "जीएसएम नेटवर्क उपयोक्तानाम विन्यास (पदावनत/अप्रयुक्त)"
 
 #: ../data/sugar.schemas.in.h:30
 msgid ""
@@ -822,11 +821,11 @@ msgstr "कुंजीपट विकल्पों की सूची."
 
 #: ../data/sugar.schemas.in.h:41
 msgid "Pitch value for the speech sugar service"
-msgstr ""
+msgstr "वाक् शुगर सेवा के लिए पिच मान"
 
 #: ../data/sugar.schemas.in.h:42
 msgid "Pitch value used by the speech service in Sugar"
-msgstr ""
+msgstr "शूगर में वाक् सेवा के द्वारा उपयोग किया गया पिच मान"
 
 #: ../data/sugar.schemas.in.h:43
 msgid "Power Automatic"
@@ -842,11 +841,11 @@ msgstr "गॅजेट में प्रकाशित करें"
 
 #: ../data/sugar.schemas.in.h:46
 msgid "Rate value for the speech sugar service"
-msgstr ""
+msgstr "वाक् शुगर सेवा के लिए दर मान"
 
 #: ../data/sugar.schemas.in.h:47
 msgid "Rate value used by the speech service in Sugar"
-msgstr ""
+msgstr "शूगर में वाक् सेवा द्वारा इस्तेमाल किया गया दर मान"
 
 #: ../data/sugar.schemas.in.h:48
 msgid "Setting for muting the sound device."
@@ -1119,6 +1118,8 @@ msgid ""
 "A wireless encryption key is required for\n"
 " the wireless network '%s'."
 msgstr ""
+"गोपन कुंजी आवश्यक है\n"
+"बेतार नेटवर्क '%s' के लिए."
 
 #: ../src/jarabe/desktop/keydialog.py:140
 msgid "Key Type:"
@@ -1708,23 +1709,23 @@ msgstr "डिवाइस कैरियर / लिंक बदल गया
 
 #: ../src/jarabe/model/network.py:297
 msgid "The device's existing connection was assumed."
-msgstr ""
+msgstr "युक्ति के मौजूदा कनेक्शन को मान लिया गया था."
 
 #: ../src/jarabe/model/network.py:299
 msgid "The supplicant is now available."
-msgstr ""
+msgstr "निवेदक अब उपलब्ध है."
 
 #: ../src/jarabe/model/network.py:301
 msgid "The modem could not be found."
-msgstr ""
+msgstr "मोडेम नहीं पाया जा सका."
 
 #: ../src/jarabe/model/network.py:303
 msgid "The Bluetooth connection failed or timed out."
-msgstr ""
+msgstr "ब्लूटूथ कनेक्शन विफल रहा या समय समाप्त हो गया."
 
 #: ../src/jarabe/model/network.py:305
 msgid "Unused."
-msgstr ""
+msgstr "अप्रयुक्त."
 
 #: ../src/jarabe/view/buddymenu.py:67
 msgid "Remove friend"
