@@ -258,9 +258,6 @@ def main():
     sound.restore()
     keyboard.setup()
 
-    from jarabe import http
-    http.start_server()
-
     sys.path.append(config.ext_path)
 
     if not intro.check_profile():
