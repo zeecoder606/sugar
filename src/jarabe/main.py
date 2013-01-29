@@ -72,6 +72,7 @@ from jarabe.view.service import UIService
 _metacity_process = None
 _window_manager_started = False
 _starting_desktop = False
+_http_server_process = None
 
 
 def unfreeze_dcon_cb():
@@ -235,6 +236,13 @@ def _start_intro():
     window.connect('done', __intro_window_done_cb)
     window.show_all()
 
+def _start_http_server():
+    global _http_server_process
+    _http_server_process = subprocess.Popen(["sugar-http-server"])
+
+def _stop_http_server():
+    global _http_server_process
+    _http_server_process.terminate()
 
 def main():
     GLib.threads_init()
@@ -265,11 +273,14 @@ def main():
     else:
         _begin_desktop_startup()
 
+    _start_http_server()
+
     try:
         Gtk.main()
     except KeyboardInterrupt:
         print 'Ctrl+C pressed, exiting...'
 
+    _stop_http_server()
     _stop_window_manager()
 
 main()
