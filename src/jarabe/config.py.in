@@ -19,6 +19,5 @@
 data_path = '@prefix@/share/sugar/data'
 locale_path = '@prefix@/share/locale'
 ext_path = '@prefix@/share/sugar/extensions'
-html_toolkit_path = '@prefix@/share/sugar-toolkit-html'
 version = '@SUCROSE_VERSION@'
 
