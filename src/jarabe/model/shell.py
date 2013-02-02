@@ -54,7 +54,8 @@ class Activity(GObject.GObject):
     LAUNCH_FAILED = 1
     LAUNCHED = 2
 
-    def __init__(self, activity_info, activity_id, color, window=None):
+    def __init__(self, activity_info, activity_id, bundle_id, color,
+                 window=None, pid=None):
         """Initialise the HomeActivity
 
         activity_info -- sugar3.activity.registry.ActivityInfo instance,
@@ -74,6 +75,8 @@ class Activity(GObject.GObject):
         self._activity_info = activity_info
         self._launch_time = time.time()
         self._launch_status = Activity.LAUNCHING
+        self._bundle_id = bundle_id
+        self._pid = pid
 
         if color is not None:
             self._color = color
@@ -204,16 +207,13 @@ class Activity(GObject.GObject):
             return self._windows[0]
         return None
 
-    def get_type(self):
+    def get_bundle_id(self):
         """Retrieve the activity bundle id for future reference"""
-        if not self._windows:
-            return None
-        else:
-            return SugarExt.wm_get_bundle_id(self._windows[0].get_xid())
+        self._bundle_id
 
     def is_journal(self):
         """Returns boolean if the activity is of type JournalActivity"""
-        return self.get_type() == 'org.laptop.JournalActivity'
+        return self._bundle_id == 'org.laptop.JournalActivity'
 
     def get_launch_time(self):
         """Return the time at which the activity was first launched
@@ -225,9 +225,7 @@ class Activity(GObject.GObject):
 
     def get_pid(self):
         """Returns the activity's PID"""
-        if not self._windows:
-            return None
-        return self._windows[0].get_pid()
+        return self._pid
 
     def get_bundle_path(self):
         """Returns the activity's bundle directory"""
@@ -530,12 +528,19 @@ class ShellModel(GObject.GObject):
 
             activity_id = SugarExt.wm_get_activity_id(xid)
 
-            service_name = SugarExt.wm_get_bundle_id(xid)
-            if service_name:
+            bundle_id = SugarExt.wm_get_bundle_id(xid)
+            if bundle_id:
                 registry = get_registry()
-                activity_info = registry.get_bundle(service_name)
+                activity_info = registry.get_bundle(bundle_id)
             else:
                 activity_info = None
+
+            if not activity_id and window.get_pid():
+                for home_activity in self._activities:
+                    launch_status = home_activity.get_launch_status()
+                    if home_activity.get_pid() == window.get_pid() and \
+                        launch_status == Activity.LAUNCHING:
+                            activity_id = home_activity.get_activity_id()
 
             if activity_id:
                 home_activity = self.get_activity_by_id(activity_id)
@@ -551,7 +556,7 @@ class ShellModel(GObject.GObject):
                 logging.debug('first window registered for %s', activity_id)
                 color = self._shared_activities.get(activity_id, None)
                 home_activity = Activity(activity_info, activity_id,
-                                         color, window)
+                                         bundle_id, color, window=window)
                 self._add_activity(home_activity)
             else:
                 logging.debug('window registered for %s', activity_id)
@@ -626,15 +631,16 @@ class ShellModel(GObject.GObject):
         self.emit('activity-removed', home_activity)
         self._activities.remove(home_activity)
 
-    def notify_launch(self, activity_id, service_name):
+    def notify_launch(self, activity_id, bundle_id, pid):
         registry = get_registry()
-        activity_info = registry.get_bundle(service_name)
+        activity_info = registry.get_bundle(bundle_id)
         if not activity_info:
             raise ValueError("Activity service name '%s'" \
                              " was not found in the bundle registry."
-                             % service_name)
+                             % bundle_id)
         color = self._shared_activities.get(activity_id, None)
-        home_activity = Activity(activity_info, activity_id, color)
+        home_activity = Activity(activity_info, activity_id, bundle_id,
+                                 color, pid=pid)
         self._add_activity(home_activity)
 
         self._set_active_activity(home_activity)
@@ -650,7 +656,7 @@ class ShellModel(GObject.GObject):
         home_activity = self.get_activity_by_id(activity_id)
         if home_activity:
             logging.debug('Activity %s (%s) launch failed', activity_id,
-                home_activity.get_type())
+                home_activity.get_bundle_id())
             if self.get_launcher(activity_id) is not None:
                 self.emit('launch-failed', home_activity)
             else:

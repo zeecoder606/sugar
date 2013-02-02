@@ -80,9 +80,9 @@ class UIService(dbus.service.Object):
         return False
 
     @dbus.service.method(_DBUS_SHELL_IFACE,
-                         in_signature='ss', out_signature='')
-    def NotifyLaunch(self, bundle_id, activity_id):
-        shell.get_model().notify_launch(activity_id, bundle_id)
+                         in_signature='ssi', out_signature='')
+    def NotifyLaunch(self, bundle_id, activity_id, pid):
+        shell.get_model().notify_launch(activity_id, bundle_id, pid)
 
     @dbus.service.method(_DBUS_SHELL_IFACE,
                          in_signature='s', out_signature='')
