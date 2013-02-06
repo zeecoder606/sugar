@@ -13,13 +13,15 @@ def _ensure_profile():
     if not os.path.exists(b2g_profile_path):
         shutil.copytree(sugar_html_path, b2g_profile_path)
 
+    return b2g_profile_path
+
 def start():
-    _ensure_profile()
+    profile_path = _ensure_profile()
 
     b2g_bin = os.path.join(os.environ["B2G_PATH"], "b2g")
 
     global _b2g_process
-    _b2g_process = subprocess.Popen([b2g_bin])
+    _b2g_process = subprocess.Popen([b2g_bin, "-profile", profile_path])
 
 def stop():
     global _b2g_process
