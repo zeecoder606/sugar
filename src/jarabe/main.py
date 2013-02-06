@@ -67,6 +67,7 @@ from jarabe import intro
 from jarabe.intro.window import IntroWindow
 from jarabe import frame
 from jarabe.view.service import UIService
+from jarabe import b2g
 
 
 _metacity_process = None
@@ -260,6 +261,8 @@ def main():
 
     sys.path.append(config.ext_path)
 
+    b2g.start()
+
     if not intro.check_profile():
         _start_intro()
     else:
@@ -269,6 +272,8 @@ def main():
         Gtk.main()
     except KeyboardInterrupt:
         print 'Ctrl+C pressed, exiting...'
+
+    b2g.stop()
 
     _stop_window_manager()
 
